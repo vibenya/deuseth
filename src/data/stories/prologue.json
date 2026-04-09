@@ -1,0 +1,386 @@
+[
+  {
+    "heroId": 30,
+    "entityMap": {},
+    "blocks": [
+      {
+        "key": "e0ou5",
+        "text": "The Renegade",
+        "type": "header-two",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "bmal5",
+        "text": "",
+        "type": "image",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {
+          "aspect_ratio": {
+            "width": 1000,
+            "height": 417.5,
+            "ratio": 41.75
+          },
+          "width": 2000,
+          "height": 835,
+          "forceUpload": false,
+          "url": "/images/episodes/prologue_boozy.jpg",
+          "loading_progress": 0,
+          "selected": false,
+          "loading": true,
+          "file": null,
+          "direction": "center"
+        }
+      },
+      {
+        "key": "25fm3",
+        "text": "I got so drunk again yesterday. More than drunk, I was wasted. I even thought Layla was flirting with me. I'm just going nuts, I guess. She’s so persistent. And my tentacles still need caressing, what a shame.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "8ulib",
+        "text": "High time for me to leave. I do not believe all this nonsense about the lost City. So stupid.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "9b85j",
+        "text": "Two bottles of gas will be enough to keep me going for a couple of days. I’ve always done things my own way. Fuck the Resistance! It’s easier for me to survive alone. Or die alone. Whatever.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "46ikn",
+        "text": "I’ve got to get out of the camp while I’m still drunk, as I guess I'll regret it when I sober up. So, really, I have no choice but to stay drunk forever.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "dv99k",
+        "text": "No fear! Bye, losers!",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }
+    ]
+  },
+  {
+    "heroId": 47,
+    "entityMap": {},
+    "blocks": [
+      {
+        "key": "fv0u0",
+        "text": "Nao",
+        "type": "header-two",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "6b06p",
+        "text": "We have spent days walking through this desert and yet we haven’t seen a single sign of gas anywhere. Ashley tripped on her way and fell down from exhaustion. Tensions were running high, and Temoto raised his voice and spoke impatiently. He called me a liar, he said that I am leading us to death.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "6c6ao",
+        "text": "I reminded everyone of the Great War, and that we are the only survivors left in these damned lands. Even if we don’t find this City, we can’t just hug each other in the middle of this desert and die. We have nothing left but to keep walking to meet our destiny. Who are we? Where are we from? What is our mission? I don’t know. And no other token does.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "cb5pn",
+        "text": "The crowd started to make a racket, and I saw a deadly eblyga crawling up the rock looking to bite me with its sharp, poisonous teeth. I smashed its head with my heel and went on with my speech. The crowd was impressed.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "lf2a",
+        "text": "Again, I reminded my flock that we had to try and find the lost City, and I promised that we’d revive our civilization there and find peace when we cross the desert. I looked at the silent crowd, boring into the eyes of every token, trying to give them a piece of the hope that is almost dead in my own heart.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "d5dvm",
+        "text": "I said I saw a source of gas a little bit ahead. “We can make a halt, spend the night and replenish our supplies there”, — I told them, and their faces lit up with hope. Right now they are following me, and I hope I’m lucky enough to actually find gas ahead.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "c8o1j",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }
+    ]
+  },
+  {
+    "heroId": 1,
+    "entityMap": {},
+    "blocks": [
+      {
+        "key": "d981d",
+        "text": "Temoto",
+        "type": "header-two",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "f7753",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "7aa5t",
+        "text": "How to seize the power:",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "53ps7",
+        "text": "Weave conspiracies behind Nao’s back to set everyone up against him.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "6gmok",
+        "text": "Find Nao’s weakness and disgrace him publicly.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "duhht",
+        "text": "Gain the trust of all tokens by chatting with them heart to heart, and then become popular in the group and continue to secretly brainwash everyone.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "3uvc7",
+        "text": "Do something sensational to surprise the tokens and make them respect me (Set eblygas on Ashley and save her? Need to think it over).",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "7et75",
+        "text": "Enlist the support of strong tokens.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "d6112",
+        "text": "Unite those who do not like Nao.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "1f8er",
+        "text": "Choose the right moment or organize a meeting.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "3r14n",
+        "text": "Come up with a beautiful speech, so that everyone supports me.",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "9n9m4",
+        "text": "Drum up all of the tokens, overthrow Nao and seize power (ha-ha!).",
+        "type": "ordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }
+    ]
+  },
+  {
+    "heroId": 5,
+    "entityMap": {},
+    "blocks": [
+      {
+        "key": "2dp4q",
+        "text": "Harold",
+        "type": "header-two",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "6trrk",
+        "text": "I volunteered to go scouting to find the source of gas and a safe place for the camp. I had to scour for a long time, but I noticed a small oasis and literally ran to it with all my might.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "bbsk5",
+        "text": "Lucky me! A large presence of gas in a quiet place, hidden from the evil eyes. We can make a stop here…\n",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }
+    ]
+  },
+  {
+    "heroId": 3,
+    "entityMap": {},
+    "blocks": [
+      {
+        "key": "9du46",
+        "text": "Tracey",
+        "type": "header-two",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "29fpm",
+        "text": "I'm so worried about my brother Harold! He left at dawn, and now it's already dark, but he's still not back. I hope nothing bad happened to my little brother. I’ll slay anyone who hurt him.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }
+    ]
+  },
+  {
+    "heroId": 20,
+    "entityMap": {},
+    "blocks": [
+      {
+        "key": "841qg",
+        "text": "Ashley Mazel",
+        "type": "header-two",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "26f5s",
+        "text": "There's no such thing as luck; there is only statistics.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "3f1ea",
+        "text": "Some of the other tokens think I'm a weakling. Some say I'm slowing down and hurting the group. I'm one of the last 50, just like them. I have the same chance of getting out of here alive as anyone else, assuming we don't all die first. I'm not afraid to die, so at least I have that going for me.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "beutg",
+        "text": "Some tokens are natural born followers. They think that Nao can save them. Perhaps I could be the leader if I gave a shit enough about what the others thought. I don't. Temoto isn't any better. I don't appreciate his know-it-all attitude. Shut up, kid.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "3eujh",
+        "text": "Perhaps I'll try to form alliances with some of the other outcasts. I wouldn't mind sharing a glass of gas with Danko or Daedalus. I guess it doesn't matter since we'll probably all die anyway.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "cqua8",
+        "text": "There's no such thing as luck.",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }
+    ]
+  }
+]

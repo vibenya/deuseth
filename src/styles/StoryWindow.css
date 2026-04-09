@@ -1,0 +1,49 @@
+.story-win {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.85); overflow-y: auto; padding: 40px 20px;
+}
+.story-win__inner {
+  background: #fff; border-radius: 8px; max-width: 700px; width: 100%;
+  position: relative; max-height: 90vh; overflow-y: auto;
+}
+.story-win__inner--dark { background: #1a1a2e; color: #fff; }
+.story-win__inner--temp { text-align: center; padding: 60px 40px; }
+.story-win__wrap-all { position: relative; }
+.story-win__close {
+  position: absolute; top: 16px; right: 16px; z-index: 10;
+  width: 32px; height: 32px; cursor: pointer;
+  background: none; border: none; padding: 0;
+}
+.story-win__close svg { width: 14px; height: 14px; }
+.story-win__inner--dark .story-win__close svg path { fill: #fff; }
+.story-win__wrap { padding: 24px; }
+.story-win__header { margin-bottom: 24px; }
+.story-win__header--all { margin-top: 24px; padding-top: 24px; border-top: 1px solid #eee; }
+.story-win__header-inner { display: flex; align-items: center; gap: 16px; }
+.story-win__image { flex: 0 0 60px; }
+.story-win__image img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+.story-win__about { flex: 1; }
+.story-win__name { font-family: var(--al); font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.story-win__text { font-size: 13px; color: #666; line-height: 1.4; }
+.story-win__inner--dark .story-win__text { color: #aaa; }
+.story-win__content-wrap { padding: 0; }
+.story-win__content-wrap--all { padding: 24px; }
+.story-win__heading { font-family: var(--al); font-size: 28px; margin-bottom: 24px; }
+.story-win__dante { margin-bottom: 40px; }
+
+.temp-title { font-family: var(--al); font-size: 24px; margin-bottom: 16px; }
+.temp-text { color: #666; line-height: 1.6; }
+
+/* Block renderer */
+.block-renderer { line-height: 1.8; }
+.graf { margin-bottom: 16px; }
+.graf--h2 { font-family: var(--al); font-size: 28px; }
+.graf--h3 { font-family: var(--al); font-size: 24px; }
+.graf--h4 { font-family: var(--al); font-size: 20px; }
+.graf--p { font-size: 16px; }
+.graf--blockquote { border-left: 3px solid #ee8060; padding-left: 16px; font-style: italic; color: #666; }
+.graf--figure { margin: 24px 0; }
+.graf--figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.story-win__inner--dark .graf--p { color: #ddd; }
+.story-win__inner--dark .graf--blockquote { color: #aaa; }

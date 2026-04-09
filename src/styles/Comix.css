@@ -1,0 +1,15 @@
+.comix { display: flex; align-items: stretch; overflow: hidden; background: #f5f0e8; }
+.comix__img { flex: 0 0 auto; }
+.comix__img--left { display: flex; flex-direction: column; }
+.comix__imgwrap img { display: block; width: 100%; height: auto; }
+.comix__imgwrap--hide { display: block; }
+.comix__inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
+.comix__title { font-family: var(--al); font-size: 36px; margin-bottom: 16px; }
+.comix__para { font-size: 16px; line-height: 1.6; color: #666; max-width: 400px; }
+.comix__tokenpic { max-width: 300px; margin: 20px 0; }
+.comix__tokenpic--hide { display: block; }
+@media (max-width: 768px) {
+  .comix { flex-direction: column; }
+  .comix__imgwrap--hide { display: none; }
+  .comix__img { display: none; }
+}

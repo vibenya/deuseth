@@ -1,0 +1,4 @@
+.story-guy { cursor: pointer; display: inline-block; }
+.story-guy__image { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+.story-guy:hover .story-guy__image { border-color: #ee8060; }
+.story-guy--mentioned .story-guy__image { border-color: #ee8060; transform: scale(1.1); }

@@ -1,0 +1,126 @@
+[
+  {
+    "title": "Getting started",
+    "items": [
+      {
+        "question": "What do I need to participate in the race?",
+        "text": [
+          "You will need to install <a href=\"https://metamask.io/\">MetaMask</a>, a digital wallet integrated in Chrome and Firefox. Once you have installed the wallet, fill it with some ETH to purchase the hero you want.",
+          "Note: A digital wallet like MetaMask acts like a bank account. Make sure you don’t forget your password or the seed words."
+        ]
+      },
+      {
+        "question": "Why is MetaMask locked?",
+        "text": [
+          "Occasionally the ‘DEUS ETH’ page displays a lock screen. This happens because MetaMask automatically locks your account after a certain period of time automatically. To unlock simply click on the MetaMask extension and type your password in."
+        ]
+      },
+      {
+        "question": "How do I get Ethereum?",
+        "text": [
+          "For U.S. citizens only: you can buy ether (ETH) in MetaMask. ETH is a digital currency that enables our game to run.",
+          "For everyone else: you will need to purchase ETH from an exchange. The easiest way is using Coinbase and then transferring the ETH from your Coinbase wallet to your MetaMask wallet. Unfortunately, you cannot participate in DEUS ETH show with a Coinbase wallet or any other wallets.  You cannot use USD/CAD to buy a token-hero — currencies need to be converted into ETH first."
+        ]
+      },
+      {
+        "question": "How to send ETH to MetaMask?",
+        "text": [
+          "For U.S. citizens only: you are able to purchase ETH directly from the MetaMask wallet using the Coinbase widget. This is more convenient and doesn’t require you to create two accounts.",
+          "For everyone else: you need to buy ETH from an exchange using normal fiat currency. Coinbase is the easiest to set up, however the choice is ultimately yours. Copy your MetaMask address by clicking on the ‘...’ then ‘Copy Address to clipboard’. Go to Coinbase and click ‘Accounts’ and select your ETH Wallet and then click ‘Send’. Paste the MetaMask address in the box with the amount you’d like to transfer."
+        ]
+      },
+      {
+        "question": "Can I buy a token-hero if the race has already started?",
+        "text": [
+          "If a participant decides to quit the race and sell the token, you can buy it on the decentralized exchange.",
+          "Even dead tokens can be sold because there is a chance that they will be reborn."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Understanding DEUS ETH",
+    "items": [
+      {
+        "question": "What do I do to survive in the race?",
+        "text": [
+          "All the deaths happen randomly.",
+          "The only thing you can do is take alternative routes when possible. It means you can occasionally move your token to a different path if you believe it will help your token survive.",
+          "Follow the plot development on Facebook to know when to act.",
+          "To take an alternative route, you’ll need to make a transaction to an address that we’ll provide.",
+          "If you don’t choose a different path, you’ll continue walking along the main road.",
+          "Please note, you can only change route where paths intersect!"
+        ]
+      },
+      {
+        "question": "Does it cost extra money to choose alternative routes?",
+        "text": [
+          "Some of the alternative paths will cost ETH. You decide which path to take. If you don’t want to pay anything, you just take the main road or free alternative paths if any are available."
+        ]
+      },
+      {
+        "question": "Are the tokens tradable? Can I sell my token if I want to quit the game?",
+        "text": [
+          "Yes. You can sell your token at any time, even if it’s dead. If the sold token wins, its current holder gets the prize.",
+          "To sell your tokens please go to <a href='https://deuseth.com/my-heroes'>My Heroes</a> and click 'Sell' button."
+        ]
+      },
+      {
+        "question": "Why do branded tokens not die?",
+        "text": [
+          "These are our partners’ heroes that can’t die or win. Their sole function is marketing."
+        ]
+      },
+      {
+        "question": "Is there any difference between heroes in terms of survival?",
+        "text": [
+          "No. All the heroes have the same chances of survival.",
+          "In order to increase your chances you can sometimes choose alternative routes, but there is no guarantee it will help your hero reach the finish line. All deaths happen 100% automatically and randomly."
+        ]
+      },
+      {
+        "question": "How long will the race last?",
+        "text": [
+          "The race will take 3 weeks."
+        ]
+      },
+      {
+        "question": "Will the creators participate in the game?",
+        "text": [
+          "We refuse to participate, because it could be misinterpreted by the community. All 50 tokens will be sold to random participants."
+        ]
+      },
+      {
+        "question": "What happens to my token after the show?",
+        "text": [
+          "Your token is an actor who can participate in various franchise shows. Deus ETH is a pilot project. Keep an eye on the announcements in order not to miss the upcoming stories."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Other",
+    "items": [
+      {
+        "question": "Can I trust this project?",
+        "text": [
+          "Our smart contracts guarantee that the winners will be random.",
+          "The creators are not able to withdraw the prize money.",
+          "Only 10% will go to the creators. The rest of the sum will be shared between the 3 winners."
+        ]
+      },
+      {
+        "question": "Can I order a custom token?",
+        "text": [
+          "Yes, our designers will be happy to create a dream token-hero for you. Just send us an e-mail at <a href=\"mailto:hello@deuseth.com\">hello@deuseth.com</a> with a description of your ideal hero. We’ll get back to you to discuss the details."
+        ]
+      },
+      {
+        "question": "How do I receive my prize?",
+        "text": [
+          "When the show ends, you can request your prize at our smart contract address <a href=\"https://etherscan.io/address/bank.deuseth.eth\" target=\"_blank\">bank.deuseth.eth</a>."
+        ]
+      }
+    ]
+  }
+]

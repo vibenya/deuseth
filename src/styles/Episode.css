@@ -1,0 +1,353 @@
+/* ===== Fullscreen Episode Player ===== */
+.ep-player {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  color: #fff;
+  z-index: 1;
+}
+
+/* Media block — top */
+.ep-player__media-block {
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  background: transparent;
+  margin-top: 0;
+}
+.ep-player__media {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 10;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.ep-player__media-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  animation: epFadeIn 0.3s ease;
+}
+.ep-player__img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.ep-player__video-preview {
+  position: relative; cursor: pointer;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.ep-player__video-preview img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain; display: block;
+}
+.ep-player__play-icon {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 56px; color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  pointer-events: none;
+  transition: transform 0.2s;
+}
+.ep-player__video-preview:hover .ep-player__play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Media arrows */
+.ep-player__arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(0,0,0,0.4); border: none;
+  cursor: pointer; z-index: 10; font-size: 0;
+  transition: background 0.2s;
+}
+.ep-player__arrow:hover { background: rgba(0,0,0,0.7); }
+.ep-player__arrow::after {
+  content: ''; display: block; width: 10px; height: 10px;
+  border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+  margin: auto;
+}
+.ep-player__arrow--left { left: 12px; }
+.ep-player__arrow--left::after { transform: rotate(135deg); margin-left: 14px; }
+.ep-player__arrow--right { right: 12px; }
+.ep-player__arrow--right::after { transform: rotate(-45deg); margin-left: 10px; }
+
+/* Dots */
+.ep-player__dots {
+  display: flex; gap: 6px; align-items: center; justify-content: center;
+  padding: 8px 0;
+  background: transparent;
+}
+.ep-player__dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  border: none; padding: 0;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ep-player__dot--active {
+  background: #ee8060;
+  transform: scale(1.4);
+}
+.ep-player__dot:hover { background: rgba(255,255,255,0.5); }
+
+/* Info area below media */
+.ep-player__info {
+  flex: 1; min-height: 0;
+  overflow-y: auto;
+  padding: 14px 20px 80px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Episode title */
+.ep-player__title-row {
+  margin-bottom: 12px;
+}
+.ep-player__title {
+  font-family: var(--al);
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 0;
+}
+.ep-player__number {
+  opacity: 0.5;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 2px;
+  font-family: inherit;
+}
+
+/* Collapsible sections (libretto + director's note) */
+.ep-player__section {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ep-player__section-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+  opacity: 0.4; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 6px;
+}
+.ep-player__section-label::after {
+  content: '';
+  width: 6px; height: 6px;
+  border-right: 1.5px solid rgba(255,255,255,0.4);
+  border-bottom: 1.5px solid rgba(255,255,255,0.4);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.ep-player__section--open .ep-player__section-label::after {
+  transform: rotate(-135deg);
+}
+.ep-player__section-text {
+  font-size: 14px; line-height: 1.6;
+  opacity: 0.75;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.ep-player__section-text p {
+  margin: 0 0 8px;
+}
+.ep-player__section-text p:last-child { margin-bottom: 0; }
+.ep-player__section-text .mention {
+  color: #ee8060; border-bottom: 1px dotted #ee8060;
+}
+.ep-player__section--open .ep-player__section-text {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* RIP row */
+.ep-player__rip-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.ep-player__rip-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+  opacity: 0.4;
+  margin-right: 4px;
+}
+
+/* Character avatars */
+.ep-player__char {
+  width: 34px; height: 34px; border-radius: 4px;
+  overflow: visible; cursor: pointer;
+  position: relative;
+  border: none;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.ep-player__char:hover { transform: scale(1.12); }
+.ep-player__char img {
+  width: 100%; height: auto; object-fit: contain; display: block;
+}
+.ep-player__char--dead { }
+.ep-player__char--dead img { filter: grayscale(0.4); }
+.ep-player__char--reborn { }
+
+/* ===== Bottom Episode Navigation ===== */
+.ep-nav {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 12px 10px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  gap: 4px;
+}
+
+/* Side buttons (prev / next) */
+.ep-nav__side {
+  flex: 1; min-width: 0;
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; cursor: pointer; color: #fff;
+  padding: 10px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.ep-nav__side:hover:not(:disabled) { background: rgba(255,255,255,0.06); }
+.ep-nav__side:disabled { opacity: 0.15; cursor: default; }
+.ep-nav__side--next { justify-content: flex-end; }
+.ep-nav__side--next .ep-nav__side-meta { text-align: right; }
+
+.ep-nav__side-meta {
+  display: flex; flex-direction: column; gap: 1px;
+  min-width: 0;
+  text-align: left;
+}
+.ep-nav__side-label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px;
+  opacity: 0.45;
+  font-family: var(--al);
+}
+.ep-nav__side-label--dim { opacity: 0.2; }
+.ep-nav__side-title {
+  font-size: 13px; font-weight: 500;
+  opacity: 0.85;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Arrows */
+.ep-nav__arrow {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+  transition: all 0.2s;
+}
+.ep-nav__side:hover:not(:disabled) .ep-nav__arrow {
+  background: rgba(238,128,96,0.15);
+  border-color: rgba(238,128,96,0.3);
+}
+.ep-nav__arrow::after {
+  content: ''; display: block; width: 7px; height: 7px;
+  border-right: 1.5px solid #fff; border-bottom: 1.5px solid #fff;
+  position: absolute; top: 50%; left: 50%;
+}
+.ep-nav__arrow--left::after {
+  transform: translate(-30%, -50%) rotate(135deg);
+}
+.ep-nav__arrow--right::after {
+  transform: translate(-70%, -50%) rotate(-45deg);
+}
+
+/* Center button — progress ring */
+.ep-nav__center {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  background: none; border: none; cursor: pointer; color: #fff;
+  padding: 4px 12px 2px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.ep-nav__center:hover { background: rgba(255,255,255,0.06); }
+
+.ep-nav__progress-ring {
+  position: relative;
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+}
+.ep-nav__ring-svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  transform: rotate(-90deg);
+}
+.ep-nav__ring-bg {
+  fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 2.5;
+}
+.ep-nav__ring-fill {
+  fill: none; stroke: #ee8060; stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease;
+}
+.ep-nav__progress-text {
+  font-size: 13px; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+.ep-nav__progress-sep {
+  opacity: 0.3; margin: 0 1px;
+  font-weight: 400;
+}
+.ep-nav__center-label {
+  font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px;
+  opacity: 0.35;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ep-player__media { aspect-ratio: 16 / 11; }
+  .ep-player__arrow { width: 32px; height: 32px; }
+  .ep-player__arrow--left { left: 4px; }
+  .ep-player__arrow--right { right: 4px; }
+  .ep-player__info { padding: 12px 16px 80px; }
+  .ep-player__title { font-size: 20px; }
+  .ep-player__char { width: 38px; height: 38px; }
+  .ep-nav__side-title { max-width: 80px; }
+  .ep-nav { padding: 0 8px 8px; }
+}
+
+@keyframes epFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Legacy classes kept for other pages */
+.episode { color: #fff; padding: 40px 0; }
+.episode--adventures { }
+.episode__header { text-align: center; margin-bottom: 30px; }
+.episode__chapter {
+  font-size: 14px; text-transform: uppercase; letter-spacing: 2px;
+  opacity: 0.7; margin-bottom: 8px;
+}
+.episode__title { font-family: var(--al); font-size: 36px; }
+.episode__inner { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.episode__uptitle {
+  font-size: 14px; text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 16px; opacity: 0.7;
+}
+.episode__summary { font-size: 14px; opacity: 0.7; margin-bottom: 20px; }
+.episode__slide-wrap { padding: 0 5px; }
+.episode__slide { display: block; width: 100%; height: auto; border-radius: 4px; }
+.episode__video-preview { position: relative; cursor: pointer; }
+.episode__video-preview img { display: block; width: 100%; border-radius: 4px; }
+.episode__video-preview::after {
+  content: '\25B6'; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); font-size: 48px; color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.episode__rip { text-align: center; padding: 40px 0; }
+.episode__guys-wrap { display: flex; justify-content: center; }
+.episode__guys { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }

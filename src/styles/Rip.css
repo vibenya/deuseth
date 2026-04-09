@@ -1,0 +1,4 @@
+.rip { cursor: pointer; display: inline-block; }
+.rip__img-wrap { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.3); transition: border-color 0.2s; }
+.rip:hover .rip__img-wrap { border-color: #ee8060; }
+.rip__image { display: block; width: 100%; height: 100%; object-fit: cover; }

@@ -1,0 +1,11 @@
+.modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); }
+.modal__content { background: #1a1a2e; border-radius: 8px; padding: 30px; max-width: 600px; width: 90vw; max-height: 80vh; overflow-y: auto; position: relative; color: #fff; }
+.modal__content h3 { font-family: var(--al); font-size: 24px; margin-bottom: 16px; }
+.modal__content p { margin-bottom: 12px; line-height: 1.7; }
+.modal__iframe { border: none; border-radius: 4px; }
+.modal__close {
+  position: absolute; top: 20px; right: 20px;
+  width: 40px; height: 40px; cursor: pointer;
+  background: none; border: none; padding: 0;
+}
+.modal__close svg { width: 20px; height: 20px; }

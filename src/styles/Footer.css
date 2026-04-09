@@ -1,0 +1,33 @@
+.footer {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 32px 24px;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__copy {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer__link {
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.footer__link:hover {
+  opacity: 1;
+}

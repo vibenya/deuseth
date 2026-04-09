@@ -1,0 +1,13 @@
+.cast { max-width: 800px; margin: 0 auto; padding: 100px 20px 60px; }
+.cast__title { font-family: var(--al); font-size: 28px; margin-bottom: 20px; }
+.cast__all { margin-bottom: 40px; }
+.cast__credits { margin-bottom: 40px; }
+.cast__all-heroes { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.cast__authors { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.cast__thanks { font-size: 14px; color: #666; margin-bottom: 8px; line-height: 1.5; }
+.cast__link { color: #ee8060; }
+
+.cast-hero { display: inline-flex; align-items: baseline; gap: 4px; margin: 0; }
+.cast-hero__name { font-weight: 700; font-size: 14px; }
+.cast-hero__name--vitalik { font-size: 16px; }
+.cast-hero__ep { font-size: 13px; color: #999; }

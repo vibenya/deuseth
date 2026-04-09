@@ -1,0 +1,58 @@
+/* ===== Fullscreen Adventures ===== */
+.adventures--fullscreen {
+  position: fixed; inset: 0;
+  z-index: 200;
+  background: #0a0a14;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.adventures__bg {
+  position: absolute; inset: -20px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(0.35);
+  z-index: 0;
+}
+
+
+/* Bottom drawer */
+.adventures__drawer-overlay {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(0,0,0,0.6);
+  animation: advFadeIn 0.2s ease;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.adventures__drawer {
+  background: rgba(10,10,20,0.96);
+  backdrop-filter: blur(20px);
+  padding: 12px 20px 24px;
+  max-height: 55vh;
+  overflow-y: auto;
+  border-radius: 16px 16px 0 0;
+  animation: advSlideUp 0.25s ease;
+}
+.adventures__drawer-handle {
+  width: 36px; height: 4px; border-radius: 2px;
+  background: rgba(255,255,255,0.25);
+  margin: 0 auto 12px;
+  cursor: pointer;
+}
+.adventures__drawer-header {
+  font-family: var(--al); font-size: 18px;
+  margin-bottom: 12px; color: #fff;
+}
+
+@keyframes advFadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes advSlideUp { from { transform: translateY(100%) } to { transform: translateY(0) } }
+
+/* Slider (used inside drawer) */
+.adventures__slider-wrap { margin: 0 -4px; }
+.adventures__slider-wrap .slick-track { display: flex; gap: 0; }
+.adventures__slider-wrap .slick-slide { padding: 0 5px; }
+.adventures__slide { cursor: pointer; border-radius: 6px; overflow: hidden; opacity: 0.5; transition: all 0.3s; border: 2px solid transparent; }
+.adventures__slide--active { opacity: 1; border-color: #ee8060; }
+.adventures__slide--disabled { opacity: 0.3; cursor: default; }
+.adventures__slide-img { display: block; width: 100%; height: auto; }
+.adventures__slide-label { padding: 6px; text-align: center; font-size: 11px; color: #fff; background: rgba(0,0,0,0.6); text-transform: uppercase; letter-spacing: 1px; }
