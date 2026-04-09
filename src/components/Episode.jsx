@@ -85,6 +85,7 @@ export default function Episode({
 
   return (
     <div className="ep-player">
+      <div className="ep-player__body">
       {/* Media block */}
       <div className="ep-player__media-block">
         <div className="ep-player__media">
@@ -175,6 +176,7 @@ export default function Episode({
           />
         )}
       </div>
+      </div>{/* end ep-player__body */}
 
       {/* Bottom episode navigation */}
       {episodeNav && (
