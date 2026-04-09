@@ -43,6 +43,27 @@
   background: rgba(251,191,36,0.12);
   color: #fbbf24;
 }
+.char-modal__price {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  font-family: var(--alsans);
+  font-weight: 500;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.35);
+}
+.char-modal__price--gold {
+  background: rgba(251,191,36,0.1);
+  color: #fbbf24;
+}
+.char-modal__price--warm {
+  background: rgba(238,128,96,0.1);
+  color: #ee8060;
+}
 .char-modal__bio {
   font-size: 15px;
   line-height: 1.7;

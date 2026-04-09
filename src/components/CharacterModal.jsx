@@ -31,6 +31,15 @@ export default function CharacterModal({ character, status, onClose }) {
         <span className={`char-modal__status char-modal__status--${status}`}>
           {statusLabel[status] || status}
         </span>
+        <span className={
+          'char-modal__price' +
+          (character.lastSalePrice >= 1.0 ? ' char-modal__price--gold' :
+           character.lastSalePrice >= 0.5 ? ' char-modal__price--warm' : '')
+        }>
+          {character.lastSalePrice != null
+            ? `Last sold for Ξ ${character.lastSalePrice}`
+            : 'Never sold on-chain'}
+        </span>
         <p className="char-modal__bio">{character.bio}</p>
       </div>
     </div>

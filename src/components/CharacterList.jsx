@@ -83,12 +83,17 @@ export default function CharacterList({ currentEpisodeId, episodes, onCharacterC
       else dead.push(c)
     })
 
-    return { alive, diedNow, dead, reborn: rebornList }
+    const ethLost = diedNow.reduce((sum, c) => sum + (c.lastSalePrice || 0), 0)
+
+    return { alive, diedNow, dead, reborn: rebornList, ethLost }
   }, [deadBefore, diedThisEpisode, reborn])
 
   const statusOf = (id) => getStatus(id, deadBefore, diedThisEpisode, reborn)
 
   const handleClick = (c) => {
+    if (onCharacterClick) {
+      onCharacterClick(c)
+    }
     setSelectedChar(c)
   }
 
@@ -102,19 +107,28 @@ export default function CharacterList({ currentEpisodeId, episodes, onCharacterC
           'clist__char' +
           ` clist__char--${status}` +
           (isHidden ? ' clist__char--hidden' : '') +
-          (status === 'died-now' && revealed ? ' clist__char--reveal' : '')
+          (status === 'died-now' && revealed ? ' clist__char--reveal' : '') +
+          (c.lastSalePrice == null ? ' clist__char--unclaimed' : '')
         }
         style={{ '--i': index }}
         onClick={() => handleClick(c)}
-        title={c.name}
+        title={c.lastSalePrice == null ? 'Unclaimed — never sold on-chain' : c.name}
       >
         <div className="clist__char-img-wrap">
           <img src={c.preview} alt={c.name} className="clist__char-img" />
+          {c.lastSalePrice != null && <span className="clist__eth-mark">Ξ</span>}
           {status === 'died-now' && revealed && <div className="clist__skull">&#10013;</div>}
           {status === 'dead' && <div className="clist__skull clist__skull--faded">&#10013;</div>}
           {status === 'reborn' && <div className="clist__reborn-flash" />}
         </div>
         <span className="clist__char-name">{c.name}</span>
+        <span className={
+          'clist__char-price' +
+          (c.lastSalePrice >= 1.0 ? ' clist__char-price--gold' :
+           c.lastSalePrice >= 0.5 ? ' clist__char-price--warm' : '')
+        }>
+          {c.lastSalePrice != null ? `Ξ ${c.lastSalePrice}` : '—'}
+        </span>
       </div>
     )
   }
@@ -141,6 +155,9 @@ export default function CharacterList({ currentEpisodeId, episodes, onCharacterC
               {revealed ? 'R.I.P. This Episode' : 'Revealing...'}
             </span>
             <span className="clist__section-count">{revealed ? grouped.diedNow.length : '?'}</span>
+            {revealed && grouped.ethLost > 0 && (
+              <span className="clist__section-eth-lost">Ξ {grouped.ethLost} lost this episode</span>
+            )}
           </div>
           {!revealed && (
             <div className="clist__suspense-bar">

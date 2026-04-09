@@ -5,7 +5,8 @@
     "bio": "A straight-up brawler calling himself a Desert Ninja and searching for glory.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_temoto.png"
+    "preview": "/images/characters/preview_temoto.png",
+    "lastSalePrice": 0.5
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "bio": "He survived the deaths of his family to become one of the main leaders during the Wars of Token Independence.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_jay.png"
+    "preview": "/images/characters/preview_jay.png",
+    "lastSalePrice": 0.1
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "bio": "Bad girl with her heart fighting agains mankind, exept her little brother Harold.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_tracey.png"
+    "preview": "/images/characters/preview_tracey.png",
+    "lastSalePrice": 0.5
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "bio": "Former soldier who has found peace in his heart to become a teacher and friend to Jay.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_ben.png"
+    "preview": "/images/characters/preview_ben.png",
+    "lastSalePrice": 0.5
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "bio": "No matter what's going on he is full of sunshine and joy sharing it with everyone around.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_harold.png"
+    "preview": "/images/characters/preview_harold.png",
+    "lastSalePrice": null
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "bio": "When he is fine — he is a depressive child; when he is angry — he turns into an ultimate killer machine.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_lee.png"
+    "preview": "/images/characters/preview_lee.png",
+    "lastSalePrice": 1
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "bio": "He was a bodyguard of the latest Tokenville mayor, but deserted from his post in hope of having a greater purpose.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_the_eye.png"
+    "preview": "/images/characters/preview_the_eye.png",
+    "lastSalePrice": 0.6
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "bio": "Crazy but ingenious doctor and a very moody person. You must think twice before asking for his help. He might kill you if he decides there is no point for you to continue living.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_dr_jonas_busch.png"
+    "preview": "/images/characters/preview_dr_jonas_busch.png",
+    "lastSalePrice": 0.666
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "bio": "Engeneering is art, and war is an inspiration for Daedalus who invents his way to survival.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_daedalus.png"
+    "preview": "/images/characters/preview_daedalus.png",
+    "lastSalePrice": 0.3
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "bio": "Named for Maxim Gorkiy's character he is the one to find the shortest path to the unknown.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_danko.png"
+    "preview": "/images/characters/preview_danko.png",
+    "lastSalePrice": null
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "bio": "It is where the strobe lights shine, and music and acid pour over the edge. They say that now there are no such places anymore. Lies! She will prove that they are wrong.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_lucy.png"
+    "preview": "/images/characters/preview_lucy.png",
+    "lastSalePrice": null
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "bio": "Tokenville is a city of possibilities. He is a simple Chinese miner who came to the gold rush. He was late to get his profit, but maybe he can win his life.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_rock.png"
+    "preview": "/images/characters/preview_rock.png",
+    "lastSalePrice": 0.9
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "bio": "There was a time when his concerts were gathering stadiums. But the disaster left him deaf. Now he envies those who are still able to hear music.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_gary.png"
+    "preview": "/images/characters/preview_gary.png",
+    "lastSalePrice": 0.1
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "bio": "Some events break your life into before and after. Yesterday you were a simple kid, and today you have an advanced project to maintain your life. He never asked for it. 60% token, 40% smart contract.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_dustin.png"
+    "preview": "/images/characters/preview_dustin.png",
+    "lastSalePrice": 1
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "bio": "Believing he's a hero who'll find his way to survive and save others, he possesses a mix of courageous altruism and gigantic arrogance and ego.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_anthony.png"
+    "preview": "/images/characters/preview_anthony.png",
+    "lastSalePrice": null
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "bio": "A criminal who believes that his mission is to get rid of all the other criminals in the world.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_black_hat.png"
+    "preview": "/images/characters/preview_black_hat.png",
+    "lastSalePrice": 0.777
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "bio": "A charming thief girl, who robs the rich ones. But sharing her loot with the poor is not so easy anymore. It's apocalypse, you know...",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_ruby.png"
+    "preview": "/images/characters/preview_ruby.png",
+    "lastSalePrice": 0.1
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "bio": "He is not happy to be the savior. But it seems that he has no choice at all.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_noir.png"
+    "preview": "/images/characters/preview_noir.png",
+    "lastSalePrice": null
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "bio": "Big. Strong. Clumsy. Childish. It's easy to be friends with him, but it will be a big mistake to cross his path.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_mega.png"
+    "preview": "/images/characters/preview_mega.png",
+    "lastSalePrice": 1
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@
     "bio": "She's so damn unlucky. But so far she managed to survive. Maybe she is not that unlucky.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_ashley_mazel.png"
+    "preview": "/images/characters/preview_ashley_mazel.png",
+    "lastSalePrice": null
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@
     "bio": "He used to live in luxury and respect. He has lost everything except his pride and is willing to get everything back.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_viceroy_vincent_the_vice.png"
+    "preview": "/images/characters/preview_viceroy_vincent_the_vice.png",
+    "lastSalePrice": null
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@
     "bio": "All his words are fake and jokes are offensive. His goals are incomprehensible even to himself. But it seems that even the end of the world does not upset him.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_roosevelt.png"
+    "preview": "/images/characters/preview_roosevelt.png",
+    "lastSalePrice": null
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@
     "bio": "Music is her salvation. Violin gives her joy and hope. But no one knows what kind of pain the violin girl hides. Every time you ask her, she just plays a new melody.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_claudia.png"
+    "preview": "/images/characters/preview_claudia.png",
+    "lastSalePrice": null
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@
     "bio": "His life is sand, the sun and his faithful horse. It has always been like this.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_carlos.png"
+    "preview": "/images/characters/preview_carlos.png",
+    "lastSalePrice": null
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@
     "bio": "He used to be bullied at school. He will not let this happen again. Never ever.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_arnold_van_houten.png"
+    "preview": "/images/characters/preview_arnold_van_houten.png",
+    "lastSalePrice": 0.4
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@
     "bio": "She's smart, it's true. Unfortunately, she knows this. To even more regret, she will let everyone know about it.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_narciss.png"
+    "preview": "/images/characters/preview_narciss.png",
+    "lastSalePrice": null
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@
     "bio": "He used to be an ETH's man, but the tokens left his church. He had no choice but to follow them.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_teri.png"
+    "preview": "/images/characters/preview_teri.png",
+    "lastSalePrice": null
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@
     "bio": "The truth is unpleasant. But who are we without the truth? She won and lost a hundred fights for the truth, and her war is far from being over.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_emma.png"
+    "preview": "/images/characters/preview_emma.png",
+    "lastSalePrice": 0.09
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@
     "bio": "She sees the invisible. She answers with riddles. She knows everything about the future, and does not cling to the past. But the present is not available to her.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_vacio.png"
+    "preview": "/images/characters/preview_vacio.png",
+    "lastSalePrice": 0.1
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@
     "bio": "He is faint-hearted, weak and clumsy. The Scientist tried to make him better, but he failed. Unfortunately the Scientist has died in Tokenville. Now, only a glass of gas can change Bozzy for a while.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_boozy.png"
+    "preview": "/images/characters/preview_boozy.png",
+    "lastSalePrice": null
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@
     "bio": "She grew up in the streets. She's small and fast. Her fingers are so brisk that you won't even notice how your purse vanished.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_shannon.png"
+    "preview": "/images/characters/preview_shannon.png",
+    "lastSalePrice": null
   },
   {
     "id": 32,
@@ -253,7 +284,8 @@
     "bio": "The thirst for power destroyed our world. Only absolute freedom from any social institutions will give us hope. Do not you agree, patriarchal scum?",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_rick.png"
+    "preview": "/images/characters/preview_rick.png",
+    "lastSalePrice": null
   },
   {
     "id": 33,
@@ -261,7 +293,8 @@
     "bio": "The world is dead, but we are not! Why not celebrate this in my tent? I have candles and half a bottle of champagne.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_edmund_the_wise.png"
+    "preview": "/images/characters/preview_edmund_the_wise.png",
+    "lastSalePrice": 0.09
   },
   {
     "id": 34,
@@ -269,7 +302,8 @@
     "bio": "He does not save kittens from trees. Although, there are no kittens, nor trees anymore. He loves his bike, the road and reliable guns in his hands.",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_corley.png"
+    "preview": "/images/characters/preview_corley.png",
+    "lastSalePrice": 1
   },
   {
     "id": 35,
@@ -277,7 +311,8 @@
     "bio": "They hear. They talk. They leave marks on his body. Nobody believed him, but everyone was wrong. The invisible is real.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_zergaldo.png"
+    "preview": "/images/characters/preview_zergaldo.png",
+    "lastSalePrice": null
   },
   {
     "id": 36,
@@ -285,7 +320,8 @@
     "bio": "Only a fool calls a gold mine a ruin. Yes, in every abandoned temple there are traps and guards. But what's wrong with taking something that does not belong to anyone? Dead do not care...",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_kate.png"
+    "preview": "/images/characters/preview_kate.png",
+    "lastSalePrice": 1
   },
   {
     "id": 37,
@@ -293,7 +329,8 @@
     "bio": "Years of self-restraint and meditation have opened the new way for him. But how can he show this path to others whose minds are not so open?",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_johannes.png"
+    "preview": "/images/characters/preview_johannes.png",
+    "lastSalePrice": 1
   },
   {
     "id": 38,
@@ -301,7 +338,8 @@
     "bio": "A warrior lives in every woman. This woman is a warrior herself. And she will do her best to teach other women to defend themselves.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_layla_the_rightful.png"
+    "preview": "/images/characters/preview_layla_the_rightful.png",
+    "lastSalePrice": 0.2
   },
   {
     "id": 39,
@@ -309,7 +347,8 @@
     "bio": "Previously, he studied fundamental mathematics, but science did not bring him satisfaction. Now he's a thief. Hide your keys from Kesh!",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_kesh.png"
+    "preview": "/images/characters/preview_kesh.png",
+    "lastSalePrice": 0.2
   },
   {
     "id": 40,
@@ -317,7 +356,8 @@
     "bio": "Daddy always said that I would inherit his mob empire. Daddy died, and his empire fell. Well, seems like I will have to build a new one myself.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_valentine.png"
+    "preview": "/images/characters/preview_valentine.png",
+    "lastSalePrice": null
   },
   {
     "id": 41,
@@ -325,7 +365,8 @@
     "bio": "Live to sleep, not sleep to live. These times it's not so easy to stick to the old motto. But this cobblestone is as good as a sweet pillow.",
     "group": "humanity",
     "collection": "original",
-    "preview": "/images/characters/preview_konstanz.png"
+    "preview": "/images/characters/preview_konstanz.png",
+    "lastSalePrice": null
   },
   {
     "id": 42,
@@ -333,7 +374,8 @@
     "bio": "Theaters have been applauding Stacey for years. It's time for new challenges, but as always, her posture and her voice are often underestimated weapons.",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_mrs_stacey.png"
+    "preview": "/images/characters/preview_mrs_stacey.png",
+    "lastSalePrice": null
   },
   {
     "id": 43,
@@ -341,7 +383,8 @@
     "bio": "Open your books at page 52. What do you mean by \"I don't have one\"? You, young mister, are dismissed!",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_mrs_strict.png"
+    "preview": "/images/characters/preview_mrs_strict.png",
+    "lastSalePrice": 0.09
   },
   {
     "id": 44,
@@ -349,7 +392,8 @@
     "bio": "Tenderlings are dead. Not everyone, unfortunately. But I'll help them with this. Isn't it a duty of the strong to help the weak?",
     "group": "survival",
     "collection": "original",
-    "preview": "/images/characters/preview_leo.png"
+    "preview": "/images/characters/preview_leo.png",
+    "lastSalePrice": 0.09
   },
   {
     "id": 45,
@@ -357,7 +401,8 @@
     "bio": "I have real stuff for you, bro. Where did I get it? I wish I knew. Everything looks like smoke to me.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_beck.png"
+    "preview": "/images/characters/preview_beck.png",
+    "lastSalePrice": null
   },
   {
     "id": 46,
@@ -365,7 +410,8 @@
     "bio": "Why can't I see a smile on your face? Are you not glad to meet a funny clown in the desert?",
     "group": "faith",
     "collection": "original",
-    "preview": "/images/characters/preview_silence.png"
+    "preview": "/images/characters/preview_silence.png",
+    "lastSalePrice": 0.2
   },
   {
     "id": 47,
@@ -373,7 +419,8 @@
     "bio": "We are the only survivors left in these damned lands. Follow me, and I will take you to freedom.",
     "group": "order",
     "collection": "original",
-    "preview": "/images/characters/preview_nao.png"
+    "preview": "/images/characters/preview_nao.png",
+    "lastSalePrice": null
   },
   {
     "id": 48,
@@ -381,7 +428,8 @@
     "bio": "The Thing is a thing from outer space. Handle with care.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_the_thing.png"
+    "preview": "/images/characters/preview_the_thing.png",
+    "lastSalePrice": null
   },
   {
     "id": 49,
@@ -389,7 +437,8 @@
     "bio": "Genius merchant who knows exactly where and what to buy or sell with incredible profit.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_rad.png"
+    "preview": "/images/characters/preview_rad.png",
+    "lastSalePrice": null
   },
   {
     "id": 50,
@@ -397,7 +446,8 @@
     "bio": "His eyes watched all of the dark alleys. His hands cleared the pockets of citizens in all of the bars. Someone says that he had lost everything. The Filthy King grins at the beard: he knows that communication is not something that you lose overnight.",
     "group": "research",
     "collection": "original",
-    "preview": "/images/characters/preview_filthy_king.png"
+    "preview": "/images/characters/preview_filthy_king.png",
+    "lastSalePrice": 0.5
   },
   {
     "id": 51,
@@ -405,7 +455,8 @@
     "bio": "Did you not know that your body is a temple of the Holy Spirit? You are not your own, Teri! But the Wolves offered you everything and everything you took from them.",
     "group": "3",
     "collection": "special",
-    "preview": "/images/cards/card_00001.png"
+    "preview": "/images/cards/card_00001.png",
+    "lastSalePrice": null
   },
   {
     "id": 52,
@@ -413,7 +464,8 @@
     "bio": "The Bible says: “Be not among drunkards or among gluttonous eaters”. But Teri lost his faith, ate too much and burst as a bubble.",
     "group": "2",
     "collection": "special",
-    "preview": "/images/cards/card_00002.png"
+    "preview": "/images/cards/card_00002.png",
+    "lastSalePrice": null
   },
   {
     "id": 53,
@@ -421,7 +473,8 @@
     "bio": "We are huge fans of Rick and Morty, and this is a sort of a tribute to the series. This is a very rare occasion: Temoto is not slaying the enemies, and he’s not fighting for leadership. He’s just sleeping as a little kid.",
     "group": "4",
     "collection": "special",
-    "preview": "/images/cards/card_00003.png"
+    "preview": "/images/cards/card_00003.png",
+    "lastSalePrice": null
   },
   {
     "id": 54,
@@ -429,7 +482,8 @@
     "bio": "The pinkest, the richest and the most beloved Unicorn ever. Loves it when Vitalik strikes his mane and pets him.",
     "group": "2",
     "collection": "special",
-    "preview": "/images/cards/card_00004.png"
+    "preview": "/images/cards/card_00004.png",
+    "lastSalePrice": null
   },
   {
     "id": 55,
@@ -437,7 +491,8 @@
     "bio": "We are huge fans of Rick and Morty, and this is a sort of a tribute to the series. See how happy Temoto can be if there’s no bloody fight?",
     "group": "1",
     "collection": "special",
-    "preview": "/images/cards/card_00005.png"
+    "preview": "/images/cards/card_00005.png",
+    "lastSalePrice": null
   },
   {
     "id": 56,
@@ -445,7 +500,8 @@
     "bio": "He fought like a beast and slayed as many RoboKitties as he could. That’s why he’s all covered in blood. That’s why he’s a hero.",
     "group": "3",
     "collection": "special",
-    "preview": "/images/cards/card_00006.png"
+    "preview": "/images/cards/card_00006.png",
+    "lastSalePrice": null
   },
   {
     "id": 57,
@@ -453,7 +509,8 @@
     "bio": "She’s a lady! Also, she’s half a CryptoKitty, and her fur and ears are purrfect. They say cats have 9 lives. No surprise Danko won the survival race.",
     "group": "2",
     "collection": "special",
-    "preview": "/images/cards/card_00007.png"
+    "preview": "/images/cards/card_00007.png",
+    "lastSalePrice": null
   },
   {
     "id": 58,
@@ -461,7 +518,8 @@
     "bio": "We still remember you, Okay Guy! Your heritage is immortal, and we will love you untill the end of times.",
     "group": "2",
     "collection": "special",
-    "preview": "/images/cards/card_00008.png"
+    "preview": "/images/cards/card_00008.png",
+    "lastSalePrice": null
   },
   {
     "id": 59,
@@ -469,7 +527,8 @@
     "bio": "Rich, stylish and smart. And dangerous, very dangerous. These Wolves are no good. Be cautious! If you get invited to the Wolf Party, don’t get seduced by their hospitality! Run for your life.",
     "group": "4",
     "collection": "special",
-    "preview": "/images/cards/card_00009.png"
+    "preview": "/images/cards/card_00009.png",
+    "lastSalePrice": null
   },
   {
     "id": 60,
@@ -477,7 +536,8 @@
     "bio": "We are huge fans of Rick and Morty, and this is a sort of a tribute to the series. No, seriously. Just imagine all the tokens drawn like this! We’re so happy that we never did this. Temoto’s still cute, though.",
     "group": "1",
     "collection": "special",
-    "preview": "/images/cards/card_00010.png"
+    "preview": "/images/cards/card_00010.png",
+    "lastSalePrice": null
   },
   {
     "id": 61,
@@ -485,7 +545,8 @@
     "bio": "Suited up and very classy. This man always looks good on the red carpet.",
     "group": "3",
     "collection": "special",
-    "preview": "/images/cards/card_00011.png"
+    "preview": "/images/cards/card_00011.png",
+    "lastSalePrice": null
   },
   {
     "id": 62,
@@ -493,7 +554,8 @@
     "bio": "Everybody loved Ben, but Smart Contract knows no mercy. Ben’s death was random, just like all the other deaths of the show. We are so sorry, but there was nothing we could do.",
     "group": "2",
     "collection": "special",
-    "preview": "/images/cards/card_00012.png"
+    "preview": "/images/cards/card_00012.png",
+    "lastSalePrice": null
   },
   {
     "id": 63,
@@ -501,7 +563,8 @@
     "bio": "He was whining about literally everything from the very beginning of the show. ETH knows why the tokens didn’t kill him for that, and how he managed to become one of the winners of the deadly race.",
     "group": "4",
     "collection": "special",
-    "preview": "/images/cards/card_00013.png"
+    "preview": "/images/cards/card_00013.png",
+    "lastSalePrice": null
   },
   {
     "id": 64,
@@ -509,7 +572,8 @@
     "bio": "If you haven’t seen Bushworld Adventures, watch it now. No, seriously. It’s about the adventures of Rick and Morty, only they are drawn very differently to what we all are used to. We made Kesh look like a character from that episode, and we love him this way.",
     "group": "4",
     "collection": "special",
-    "preview": "/images/cards/card_00014.png"
+    "preview": "/images/cards/card_00014.png",
+    "lastSalePrice": null
   },
   {
     "id": 65,
@@ -517,7 +581,8 @@
     "bio": "Harold is one of the kindest tokens of the group. He always did his best to help everyone around. Also, he’s very fast. Faster than Death, obviously. Congrats, Harold, you won this race.",
     "group": "3",
     "collection": "special",
-    "preview": "/images/cards/card_00015.png"
+    "preview": "/images/cards/card_00015.png",
+    "lastSalePrice": null
   },
   {
     "id": 66,
@@ -525,7 +590,8 @@
     "bio": "Yep, that’s the thing that wanted to buy Nao’s life! This subtle little creature lives in the dark, and we don’t know if it’s evil or not. Well, Nao somehow got away from death. Was it CryptoHamster who helped him escape from the cave? We can only guess.",
     "group": "1",
     "collection": "special",
-    "preview": "/images/cards/card_00016.png"
+    "preview": "/images/cards/card_00016.png",
+    "lastSalePrice": null
   },
   {
     "id": 67,
@@ -533,7 +599,8 @@
     "bio": "A very contradictory character. Violent, but friendly. So aggressive, but always willing to protect the weak. He could be a fine leader, but this never happened. Still, he’s badass and we all love him. Remember: cool tokens don’t look at explosions.",
     "group": "3",
     "collection": "special",
-    "preview": "/images/cards/card_00017.png"
+    "preview": "/images/cards/card_00017.png",
+    "lastSalePrice": null
   },
   {
     "id": 68,
@@ -541,7 +608,8 @@
     "bio": "She’s not just a cutie in short shorts. She’s smart, brave and inventive. And she is one of the winners of the race. Suck it, you sexist pigs.",
     "group": "2",
     "collection": "special",
-    "preview": "/images/cards/card_00018.png"
+    "preview": "/images/cards/card_00018.png",
+    "lastSalePrice": null
   },
   {
     "id": 69,
@@ -549,6 +617,7 @@
     "bio": "Cute. But psycho. But cute. This little girl surprised us all when it turned out that she’s one of the winners! No wonder they say little pigeons can carry great messages. ",
     "group": "1",
     "collection": "special",
-    "preview": "/images/cards/card_00019.png"
+    "preview": "/images/cards/card_00019.png",
+    "lastSalePrice": null
   }
 ]

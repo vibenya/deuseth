@@ -93,6 +93,14 @@
   color: #ef4444;
   opacity: 0.6;
 }
+.clist__section-eth-lost {
+  font-size: 10px;
+  color: #ef4444;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+  font-family: var(--alsans);
+}
 
 /* Reborn section accent */
 .clist__section--reborn .clist__section-icon {
@@ -176,6 +184,45 @@
   white-space: nowrap;
   font-family: var(--alsans);
   font-weight: 500;
+}
+
+/* Price badge */
+.clist__char-price {
+  font-size: 8px;
+  font-family: var(--alsans);
+  font-weight: 500;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  white-space: nowrap;
+}
+.clist__char-price--gold {
+  color: #fbbf24;
+  text-shadow: 0 0 6px rgba(251,191,36,0.4);
+}
+.clist__char-price--warm {
+  color: #ee8060;
+  text-shadow: 0 0 6px rgba(238,128,96,0.3);
+}
+
+/* Unclaimed — never sold */
+.clist__char--unclaimed .clist__char-img-wrap {
+  border: 1px dashed rgba(255,255,255,0.1);
+}
+
+/* Eth mark for claimed characters */
+.clist__eth-mark {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  font-size: 8px;
+  line-height: 1;
+  color: rgba(255,255,255,0.2);
+  pointer-events: none;
+  transition: color 0.2s;
+  z-index: 1;
+}
+.clist__char:hover .clist__eth-mark {
+  color: rgba(255,255,255,0.5);
 }
 
 /* ===== STATUS: ALIVE ===== */

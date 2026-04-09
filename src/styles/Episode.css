@@ -348,6 +348,14 @@
   transform: translate(-50%, -50%); font-size: 48px; color: #fff;
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
+/* Obituary token info footer */
+.ep-player__obit-token-info {
+  opacity: 0.3;
+  font-size: 11px;
+  font-family: var(--alsans);
+  margin-top: 16px;
+}
+
 .episode__rip { text-align: center; padding: 40px 0; }
 .episode__guys-wrap { display: flex; justify-content: center; }
 .episode__guys { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }

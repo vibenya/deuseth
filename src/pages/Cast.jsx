@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import characters from '../data/characters.json'
 import CastHero from '../components/CastHero'
 import '../styles/Cast.css'
@@ -12,6 +12,7 @@ const PRODUCTION_TEAM = [
 
 export default function Cast() {
   const [heroEpisodes, setHeroEpisodes] = useState({})
+  const [sortBy, setSortBy] = useState('episodes')
 
   useEffect(() => {
     fetch('/data/adventures.json')
@@ -23,10 +24,11 @@ export default function Cast() {
 
         // For each episode (skip prologue at index 0), if a hero is NOT in rip, they survived
         const episodes = adventures.filter((a) => a.id > 0)
+        const cumulativeDead = new Set()
         episodes.forEach((ep) => {
-          const dead = new Set(ep.rip || [])
+          if (ep.rip) ep.rip.forEach(id => cumulativeDead.add(id))
           characters.forEach((c) => {
-            if (!dead.has(c.id)) {
+            if (!cumulativeDead.has(c.id)) {
               epCount[c.id] = (epCount[c.id] || 0) + 1
             }
           })
@@ -37,18 +39,47 @@ export default function Cast() {
   }, [])
 
   // Only original 50 characters (id 1-50)
-  const mainCast = characters
-    .filter((c) => c.id >= 1 && c.id <= 50)
-    .map((c) => ({ ...c, ep: heroEpisodes[c.id] || 0 }))
-    .sort((a, b) => b.ep - a.ep)
+  const mainCast = useMemo(() => {
+    const cast = characters
+      .filter((c) => c.id >= 1 && c.id <= 50)
+      .map((c) => ({ ...c, ep: heroEpisodes[c.id] || 0 }))
+
+    if (sortBy === 'price') {
+      return cast.sort((a, b) => (b.lastSalePrice ?? -1) - (a.lastSalePrice ?? -1))
+    }
+    return cast.sort((a, b) => b.ep - a.ep)
+  }, [heroEpisodes, sortBy])
+
+  const soldCount = mainCast.filter((c) => c.lastSalePrice != null).length
+  const totalVolume = mainCast.reduce((sum, c) => sum + (c.lastSalePrice || 0), 0)
 
   return (
     <div className="cast">
       <div className="cast__all">
         <h1 className="cast__title">Cast</h1>
+
+        <p className="cast__stat-bar">
+          {soldCount} sold &middot; Ξ {totalVolume.toFixed(1)} total volume
+        </p>
+
+        <div className="cast__sort">
+          <button
+            className={`cast__sort-tab${sortBy === 'episodes' ? ' cast__sort-tab--active' : ''}`}
+            onClick={() => setSortBy('episodes')}
+          >
+            By Episodes
+          </button>
+          <button
+            className={`cast__sort-tab${sortBy === 'price' ? ' cast__sort-tab--active' : ''}`}
+            onClick={() => setSortBy('price')}
+          >
+            By Price
+          </button>
+        </div>
+
         <div className="cast__all-heroes">
           {mainCast.map((hero) => (
-            <CastHero key={hero.id} name={hero.name} ep={hero.ep} />
+            <CastHero key={hero.id} name={hero.name} ep={hero.ep} price={hero.lastSalePrice} />
           ))}
         </div>
       </div>

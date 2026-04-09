@@ -73,7 +73,8 @@ export default function Episode({
     })
   }, [items.length])
 
-  function openObit(id) {
+  function openObit(c) {
+    const id = typeof c === 'object' ? c.id : c
     if (obits && obits[id]) setActiveObit(id)
   }
 
@@ -246,6 +247,11 @@ export default function Episode({
             </button>
             <h3>{activeChar.name} &mdash; {isReborn ? 'Revived' : 'Obituary'}</h3>
             <div dangerouslySetInnerHTML={{ __html: activeObitData.text || activeObitData }} />
+            <div className="ep-player__obit-token-info">
+              Token #{activeChar.id} — {activeChar.lastSalePrice != null
+                ? `Last sold for Ξ ${activeChar.lastSalePrice}`
+                : 'Never claimed'}
+            </div>
           </div>
         </div>
       )}

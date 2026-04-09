@@ -7,7 +7,39 @@
 .cast__thanks { font-size: 14px; color: #666; margin-bottom: 8px; line-height: 1.5; }
 .cast__link { color: #ee8060; }
 
+.cast__stat-bar {
+  font-family: var(--alsans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.35);
+  margin-bottom: 16px;
+}
+
+.cast__sort {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cast__sort-tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--alsans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.35);
+  padding: 0;
+}
+
+.cast__sort-tab--active {
+  color: rgba(0,0,0,0.85);
+}
+
 .cast-hero { display: inline-flex; align-items: baseline; gap: 4px; margin: 0; }
 .cast-hero__name { font-weight: 700; font-size: 14px; }
 .cast-hero__name--vitalik { font-size: 16px; }
 .cast-hero__ep { font-size: 13px; color: #999; }
+.cast-hero__price { font-family: var(--alsans); font-size: 11px; color: rgba(0,0,0,0.35); margin-left: 2px; }
