@@ -86,88 +86,86 @@ export default function Episode({
   return (
     <div className="ep-player">
       <div className="ep-player__body">
-      {/* Media block */}
-      <div className="ep-player__media-block">
-        <div className="ep-player__media">
-          {currentItem && (
-            <div className="ep-player__media-inner" key={mediaIndex}>
-              {currentItem.type === 'image' && (
-                <img className="ep-player__img" src={currentItem.src} alt="" />
-              )}
-              {currentItem.type === 'youtube' && (
-                <div className="ep-player__video-preview" onClick={() => setVideoModal(currentItem.id)}>
-                  <img src={currentItem.preview} alt="" />
-                  <div className="ep-player__play-icon">&#9654;</div>
-                </div>
-              )}
-              {currentItem.type === 'coub' && (
-                <div className="ep-player__video-preview" onClick={() => setVideoModal({ coub: currentItem.id })}>
-                  <img src={currentItem.preview} alt="" />
-                  <div className="ep-player__play-icon">&#9654;</div>
-                </div>
-              )}
+      {/* Left column: media + text */}
+      <div className="ep-player__left">
+        <div className="ep-player__media-block">
+          <div className="ep-player__media">
+            {currentItem && (
+              <div className="ep-player__media-inner" key={mediaIndex}>
+                {currentItem.type === 'image' && (
+                  <img className="ep-player__img" src={currentItem.src} alt="" />
+                )}
+                {currentItem.type === 'youtube' && (
+                  <div className="ep-player__video-preview" onClick={() => setVideoModal(currentItem.id)}>
+                    <img src={currentItem.preview} alt="" />
+                    <div className="ep-player__play-icon">&#9654;</div>
+                  </div>
+                )}
+                {currentItem.type === 'coub' && (
+                  <div className="ep-player__video-preview" onClick={() => setVideoModal({ coub: currentItem.id })}>
+                    <img src={currentItem.preview} alt="" />
+                    <div className="ep-player__play-icon">&#9654;</div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Title overlay */}
+            <div className="ep-player__media-overlay">
+              <span className="ep-player__number">{number}</span>
+              <h2 className="ep-player__title">{title}</h2>
             </div>
-          )}
 
-          {items.length > 1 && mediaIndex > 0 && (
-            <button className="ep-player__arrow ep-player__arrow--left" onClick={() => goMedia(-1)} />
-          )}
-          {items.length > 1 && mediaIndex < items.length - 1 && (
-            <button className="ep-player__arrow ep-player__arrow--right" onClick={() => goMedia(1)} />
-          )}
-        </div>
-
-        {/* Media controls: dots */}
-        {items.length > 1 && (
-          <div className="ep-player__dots">
-            {items.map((_, i) => (
-              <button
-                key={i}
-                className={'ep-player__dot' + (i === mediaIndex ? ' ep-player__dot--active' : '')}
-                onClick={() => setMediaIndex(i)}
-              />
-            ))}
+            {items.length > 1 && mediaIndex > 0 && (
+              <button className="ep-player__arrow ep-player__arrow--left" onClick={() => goMedia(-1)} />
+            )}
+            {items.length > 1 && mediaIndex < items.length - 1 && (
+              <button className="ep-player__arrow ep-player__arrow--right" onClick={() => goMedia(1)} />
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Info area below media */}
-      <div className="ep-player__info">
-        {/* Episode title */}
-        <div className="ep-player__title-row">
-          <h2 className="ep-player__title">
-            <span className="ep-player__number">{number}</span> {title}
-          </h2>
-        </div>
-
-        {/* Libretto — inline, 2 lines collapsed */}
-        {text && text.length > 0 && (
-          <div
-            className={'ep-player__section' + (librettoExpanded ? ' ep-player__section--open' : '')}
-            onClick={() => setLibrettoExpanded(v => !v)}
-          >
-            <div className="ep-player__section-label">Libretto</div>
-            {/* trusted content from local JSON */}
-            <div className="ep-player__section-text">
-              {text.map((para, i) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: para }} />
+          {items.length > 1 && (
+            <div className="ep-player__dots">
+              {items.map((_, i) => (
+                <button
+                  key={i}
+                  className={'ep-player__dot' + (i === mediaIndex ? ' ep-player__dot--active' : '')}
+                  onClick={() => setMediaIndex(i)}
+                />
               ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
-        {/* Director's note — inline, 2 lines collapsed */}
-        {comment && (
-          <div
-            className={'ep-player__section' + (commentExpanded ? ' ep-player__section--open' : '')}
-            onClick={() => setCommentExpanded(v => !v)}
-          >
-            <div className="ep-player__section-label">Director's Note</div>
-            <div className="ep-player__section-text">{comment}</div>
-          </div>
-        )}
+        <div className="ep-player__text-sections">
+          {text && text.length > 0 && (
+            <div
+              className={'ep-player__section' + (librettoExpanded ? ' ep-player__section--open' : '')}
+              onClick={() => setLibrettoExpanded(v => !v)}
+            >
+              <div className="ep-player__section-label">Libretto</div>
+              <div className="ep-player__section-text">
+                {text.map((para, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: para }} />
+                ))}
+              </div>
+            </div>
+          )}
 
-        {/* All 50 characters — elimination board */}
+          {comment && (
+            <div
+              className={'ep-player__section' + (commentExpanded ? ' ep-player__section--open' : '')}
+              onClick={() => setCommentExpanded(v => !v)}
+            >
+              <div className="ep-player__section-label">Director's Note</div>
+              <div className="ep-player__section-text">{comment}</div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Right column: characters */}
+      <div className="ep-player__right">
         {episodes && episodes.length > 0 && (
           <CharacterList
             currentEpisodeId={episodeId}
