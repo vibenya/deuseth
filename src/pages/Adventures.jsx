@@ -8,6 +8,8 @@ export default function Adventures() {
   const [episodes, setEpisodes] = useState([])
   const [activeId, setActiveId] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [bottomBg, setBottomBg] = useState(null)
+  const [topBg, setTopBg] = useState(null)
   const { episodeId } = useParams()
   const navigate = useNavigate()
 
@@ -36,6 +38,17 @@ export default function Adventures() {
   const hasNext = activeIdx < episodes.length - 1
   const hasPrev = activeIdx > 0
 
+  useEffect(() => {
+    const bg = activeEpisode?.background
+    if (!bg) return
+    setTopBg(bg)
+    const t = setTimeout(() => {
+      setBottomBg(bg)
+      setTopBg(null)
+    }, 800)
+    return () => clearTimeout(t)
+  }, [activeEpisode?.background])
+
   const handleChangeEpisode = useCallback((id) => {
     const ep = episodes.find(e => e.id === id)
     if (ep) {
@@ -58,9 +71,12 @@ export default function Adventures() {
 
   return (
     <div className="adventures adventures--fullscreen">
-      {/* Blurred background */}
-      {activeEpisode && (
-        <div className="adventures__bg" style={{ backgroundImage: `url(${activeEpisode.background})` }} />
+      {/* Blurred background — crossfade between episodes */}
+      {bottomBg && (
+        <div className="adventures__bg" style={{ backgroundImage: `url(${bottomBg})` }} />
+      )}
+      {topBg && (
+        <div className="adventures__bg adventures__bg--fade-in" key={topBg} style={{ backgroundImage: `url(${topBg})` }} />
       )}
 
       {/* Episode player */}

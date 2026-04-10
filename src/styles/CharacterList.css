@@ -1,5 +1,6 @@
 /* ===== Elimination Board ===== */
 
+
 .clist {
   display: flex;
   flex-direction: column;
@@ -149,6 +150,7 @@
   z-index: 1;
   border-right: 1px solid rgba(255,255,255,0.07);
   border-bottom: 1px solid rgba(255,255,255,0.07);
+  transform: translateZ(0);
 }
 .clist__char:hover {
   background: rgba(255,255,255,0.05);
@@ -162,6 +164,8 @@
   object-fit: contain;
   object-position: bottom;
   display: block;
+  position: relative;
+  z-index: 1;
   transition: filter 0.5s, opacity 0.5s;
 }
 
@@ -200,78 +204,79 @@
 
 /* ===== STATUS: ALIVE ===== */
 .clist__char--alive {
-  background: rgba(74, 222, 128, 0.08);
+  background: transparent;
 }
 .clist__char--alive .clist__char-img {
-  filter: none;
   opacity: 1;
 }
 
 /* ===== STATUS: DIED THIS EPISODE ===== */
 /* Characters stay visible, then after a pause animate getting shot */
 
-.clist__char--died-now {
-  animation: clistGetShot 2.2s var(--shot-delay, 0s) ease forwards,
-             clistBgDie 2.2s var(--shot-delay, 0s) ease forwards;
+.clist__char--died-now .clist__char-img {
+  opacity: 1;
 }
-.clist__char--died-now .clist__char-img-wrap {
-  animation: clistShotGlow 2.2s var(--shot-delay, 0s) ease forwards;
-}
-.clist__char--died-now .clist__char-name {
-  animation: clistNameDie 2.2s var(--shot-delay, 0s) ease forwards;
+.clist__char--died-settled .clist__char-img {
+  filter: grayscale(1) brightness(0.2);
+  transition: filter 1.5s ease;
 }
 .clist__skull {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(239,68,68,0.35) 0%, transparent 70%);
-  border-radius: 4px;
-  animation: clistBloodFlash 2.2s var(--shot-delay, 0s) ease forwards;
+  animation: clistBloodSplash 2.2s var(--shot-delay, 0s) cubic-bezier(0.15, 0, 0.35, 1) forwards;
   opacity: 0;
+  transform: scale(0.05) rotate(15deg);
+  transform-origin: 50% 50%;
   pointer-events: none;
-  z-index: 2;
+  z-index: 0;
 }
+.clist__skull::before,
+.clist__skull::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20.5%;
+  width: 141%;
+  height: 18%;
+  margin-top: -9%;
+  background: #B01F2F;
+}
+.clist__skull::before { transform: rotate(45deg); }
+.clist__skull::after  { transform: rotate(-45deg); }
 
 /* ===== STATUS: DEAD (before this episode) ===== */
 .clist__skull--faded {
-  color: rgba(255,255,255,0.25);
-  text-shadow: none;
-  font-size: 14px;
-  animation: none;
+  animation: clistXFadeOut 1s ease forwards;
+  transform: scale(1.0) rotate(0deg);
 }
 .clist__char--dead .clist__char-img {
-  filter: grayscale(0.9) brightness(0.5);
-  opacity: 0.6;
+  filter: grayscale(1) brightness(0.2);
+  opacity: 1;
+}
+.clist__char--dead:hover .clist__char-img {
+  filter: grayscale(0.8) brightness(0.4);
 }
 .clist__char--dead .clist__char-name {
   opacity: 0.3;
   text-decoration: line-through;
   text-decoration-color: rgba(255,255,255,0.12);
 }
-.clist__char--dead:hover .clist__char-img {
-  filter: grayscale(0.5) brightness(0.7);
-  opacity: 0.8;
-}
 
 /* ===== STATUS: REBORN ===== */
-.clist__char--reborn .clist__char-img-wrap {
-  filter: drop-shadow(0 0 8px rgba(251,191,36,0.4));
-}
 .clist__char--reborn .clist__char-img {
-  filter: none;
-  opacity: 1;
-  animation: clistRebornGlow 2s ease-in-out infinite;
+  filter: grayscale(1) brightness(0.15);
+  animation: clistRebornRevive 1.8s var(--reborn-delay, 0s) ease-out forwards;
+}
+.clist__reborn-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: clistRebornFlash 1.8s var(--reborn-delay, 0s) ease-out forwards;
 }
 .clist__char--reborn .clist__char-name {
   color: #fbbf24;
   opacity: 0.9;
-}
-.clist__reborn-flash {
-  position: absolute;
-  inset: -4px;
-  border: 1px solid rgba(251,191,36,0.25);
-  border-radius: 6px;
-  animation: clistRebornPulse 2s ease-in-out infinite;
-  pointer-events: none;
 }
 
 /* ===== Animations ===== */
@@ -285,51 +290,49 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Shot: pause → instant impact flash → shake → slow fade to dead */
-@keyframes clistGetShot {
-  0%,  60%  { opacity: 1; }
-  62%        { opacity: 1; }
-  100%       { opacity: 0.65; }
+
+
+@keyframes clistXFadeOut {
+  0%   { opacity: 1;   transform: scale(1.0)  rotate(0deg); }
+  30%  { opacity: 1;   transform: scale(1.08) rotate(3deg); }
+  100% { opacity: 0;   transform: scale(0.05) rotate(-15deg); }
 }
 
-@keyframes clistBgDie {
-  0%,  59%  { background: rgba(74, 222, 128, 0.08); }
-  60%        { background: rgba(239, 68, 68, 0.5); }
-  70%,  100% { background: rgba(239, 68, 68, 0.12); }
+@keyframes clistBloodSplash {
+  0%,  59%  { opacity: 0;   transform: scale(0.05) rotate(15deg); }
+  60%        { opacity: 1;   transform: scale(0.6)  rotate(10deg); }
+  70%        { opacity: 1;   transform: scale(1.08) rotate(-3deg); }
+  100%       { opacity: 1;   transform: scale(1.0)  rotate(0deg); }
 }
 
-@keyframes clistShotGlow {
-  0%,  59%  { filter: none; }
-  60%        { filter: brightness(4) saturate(0); }           /* white flash — instant */
-  63%        { filter: brightness(2) saturate(3) hue-rotate(300deg); } /* red hit */
-  70%        { filter: brightness(1.2) saturate(1) hue-rotate(300deg); }
-  100%       { filter: grayscale(0.9) brightness(0.55); }
+/* Revive — gentle strobe then settle */
+@keyframes clistRebornRevive {
+  0%   { filter: grayscale(1) brightness(0.15); }
+  10%  { filter: brightness(2.5) saturate(0); }
+  15%  { filter: brightness(0.8) saturate(0); }
+  22%  { filter: brightness(2.8) saturate(0); }
+  28%  { filter: brightness(0.9) saturate(0); }
+  35%  { filter: brightness(2.2) saturate(0.4); }
+  55%  { filter: brightness(1.3) saturate(1.1); }
+  100% { filter: brightness(1); }
 }
 
-@keyframes clistNameDie {
-  0%,  60%  { color: inherit; opacity: 0.65; text-decoration: none; }
-  63%        { color: #ef4444; opacity: 1; }
-  100%       { color: rgba(255,255,255,0.2); opacity: 0.3;
-                text-decoration: line-through;
-                text-decoration-color: rgba(255,255,255,0.12); }
-}
-
-@keyframes clistBloodFlash {
-  0%,  59%  { opacity: 0; }
-  60%        { opacity: 1; }
-  68%        { opacity: 0.5; }
-  100%       { opacity: 0; }
-}
-
+/* Ambient glow after revive */
 @keyframes clistRebornGlow {
-  0%, 100% { filter: brightness(1) drop-shadow(0 0 0 transparent); }
-  50% { filter: brightness(1.15) drop-shadow(0 0 4px rgba(251,191,36,0.3)); }
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.15) drop-shadow(0 0 4px rgba(251,191,36,0.4)); }
 }
 
-@keyframes clistRebornPulse {
-  0%, 100% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.08); }
+@keyframes clistRebornFlash {
+  0%   { background: transparent;           opacity: 0; }
+  15%  { background: rgba(255,255,255,0.7); opacity: 1; }
+  30%  { background: rgba(255,255,255,0.1); opacity: 0.8; }
+  50%  { background: rgba(255,255,255,0.6); opacity: 1; }
+  70%  { background: rgba(255,255,255,0.1); opacity: 0.5; }
+  85%  { background: rgba(255,255,255,0.4); opacity: 0.7; }
+  100% { background: transparent;           opacity: 0; }
 }
+
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {

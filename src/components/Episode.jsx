@@ -31,9 +31,11 @@ export default function Episode({
     () => computeStatuses(episodes || [], episodeId),
     [episodes, episodeId]
   )
-  const aliveCount = mainCast.length - deadBefore.size - diedThisEpisode.size + reborn.size
-  const diedNowCount = diedThisEpisode.size
-  const rebornCount = reborn.size
+  // On reborn episodes (Hard Fork) computeStatuses already clears deadBefore
+  // when it populates `reborn`, so we must NOT add reborn.size — doing so
+  // double-counts and overflows past mainCast.length.
+  const aliveCount = mainCast.length - deadBefore.size - diedThisEpisode.size
+  const deadCount = mainCast.length - aliveCount
 
   const isReborn = episodeId === 8
 
@@ -67,8 +69,7 @@ export default function Episode({
           onOpenDrawer={onOpenDrawer}
           onOpenVideo={setVideoModal}
           aliveCount={aliveCount}
-          diedNowCount={diedNowCount}
-          rebornCount={rebornCount}
+          deadCount={deadCount}
           keyboardEnabled={activeObit === null && !videoModal}
         />
 
