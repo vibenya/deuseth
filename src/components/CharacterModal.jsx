@@ -1,6 +1,27 @@
 import { useEffect } from 'react'
+import timelines from '../data/token_timelines.json'
 import '../styles/Modal.css'
 import '../styles/CharacterModal.css'
+
+const ETHERSCAN_TX = 'https://etherscan.io/tx/'
+
+const VENUE_LABEL = {
+  'StockExchange': 'stock',
+  'DeusMarketplace': 'market',
+  'Wyvern v1': 'OpenSea (Wyvern)',
+  'Wyvern v2': 'OpenSea (Wyvern v2)',
+  'Seaport 1.1': 'OpenSea (Seaport)',
+  'Seaport 1.4': 'OpenSea (Seaport)',
+  'Seaport 1.5': 'OpenSea (Seaport)',
+  'Seaport 1.6': 'OpenSea (Seaport)',
+}
+
+function formatPrice(p) {
+  if (p == null) return null
+  if (p >= 100) return p.toFixed(0)
+  if (p >= 1) return p.toFixed(2)
+  return p.toFixed(3).replace(/0+$/, '').replace(/\.$/, '')
+}
 
 export default function CharacterModal({ character, status, onClose }) {
   useEffect(() => {
@@ -18,6 +39,14 @@ export default function CharacterModal({ character, status, onClose }) {
     reborn: 'Reborn',
   }
 
+  const timeline = timelines[character.id]
+  const stats = timeline?.stats
+
+  // Only meaningful events: mint, sale, burn. Skip transfers/lists/delists in UI.
+  const events = (timeline?.timeline || []).filter(
+    e => e.type === 'mint' || e.type === 'sale' || e.type === 'burn'
+  )
+
   return (
     <div className="modal char-modal" onClick={onClose}>
       <div className="modal__content char-modal__content" onClick={e => e.stopPropagation()}>
@@ -31,16 +60,55 @@ export default function CharacterModal({ character, status, onClose }) {
         <span className={`char-modal__status char-modal__status--${status}`}>
           {statusLabel[status] || status}
         </span>
-        <span className={
-          'char-modal__price' +
-          (character.lastSalePrice >= 1.0 ? ' char-modal__price--gold' :
-           character.lastSalePrice >= 0.5 ? ' char-modal__price--warm' : '')
-        }>
-          {character.lastSalePrice != null
-            ? `Last sold for Ξ ${character.lastSalePrice}`
-            : 'Never sold on-chain'}
-        </span>
+
+        {stats && stats.total_sales > 0 && (
+          <div className="char-modal__stats">
+            <span className="char-modal__stat">
+              <b>{stats.total_sales}</b> sale{stats.total_sales > 1 ? 's' : ''}
+            </span>
+            <span className="char-modal__stat">
+              high <b>Ξ {formatPrice(stats.highest_sale)}</b>
+            </span>
+            {stats.last_sale != null && (
+              <span className="char-modal__stat">
+                last <b>Ξ {formatPrice(stats.last_sale)}</b>
+              </span>
+            )}
+          </div>
+        )}
+
         <p className="char-modal__bio">{character.bio}</p>
+
+        {events.length > 0 && (
+          <div className="char-modal__timeline">
+            <div className="char-modal__timeline-title">Provenance</div>
+            <ol className="char-modal__timeline-list">
+              {events.map((e, i) => (
+                <li key={i} className={`char-modal__event char-modal__event--${e.type}`}>
+                  <span className="char-modal__event-date">{e.date}</span>
+                  <span className="char-modal__event-body">
+                    {e.type === 'mint' && (
+                      <>Minted on <b>{e.version}</b>{e.price != null && <> for <b>Ξ {formatPrice(e.price)}</b></>}</>
+                    )}
+                    {e.type === 'sale' && (
+                      <>Sold for <b>Ξ {formatPrice(e.price)}</b>{' '}
+                      <span className="char-modal__event-venue">{VENUE_LABEL[e.venue] || e.venue}</span></>
+                    )}
+                    {e.type === 'burn' && <>Sent to burn address ⚰️</>}
+                  </span>
+                  <a
+                    className="char-modal__event-link"
+                    href={`${ETHERSCAN_TX}${e.tx}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View on Etherscan"
+                    onClick={evt => evt.stopPropagation()}
+                  >↗</a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
       </div>
     </div>
   )

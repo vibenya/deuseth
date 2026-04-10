@@ -6,7 +6,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_temoto.png",
-    "lastSalePrice": 0.5
+    "lastSalePrice": 0.95,
+    "highestSalePrice": 0.95,
+    "saleCount": 1
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_jay.png",
-    "lastSalePrice": 0.1
+    "lastSalePrice": 0.1,
+    "highestSalePrice": 0.1,
+    "saleCount": 1
   },
   {
     "id": 3,
@@ -24,7 +28,9 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_tracey.png",
-    "lastSalePrice": 0.5
+    "lastSalePrice": 1.0,
+    "highestSalePrice": 1.0,
+    "saleCount": 1
   },
   {
     "id": 4,
@@ -33,7 +39,9 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_ben.png",
-    "lastSalePrice": 0.5
+    "lastSalePrice": 1.69,
+    "highestSalePrice": 1.69,
+    "saleCount": 1
   },
   {
     "id": 5,
@@ -42,7 +50,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_harold.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 6,
@@ -51,7 +60,8 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_lee.png",
-    "lastSalePrice": 1
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 7,
@@ -60,7 +70,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_the_eye.png",
-    "lastSalePrice": 0.6
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 8,
@@ -69,7 +80,9 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_dr_jonas_busch.png",
-    "lastSalePrice": 0.666
+    "lastSalePrice": 1.0,
+    "highestSalePrice": 1.0,
+    "saleCount": 1
   },
   {
     "id": 9,
@@ -78,7 +91,8 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_daedalus.png",
-    "lastSalePrice": 0.3
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 10,
@@ -87,7 +101,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_danko.png",
-    "lastSalePrice": null
+    "lastSalePrice": 2.0,
+    "highestSalePrice": 2.0,
+    "saleCount": 1
   },
   {
     "id": 11,
@@ -96,7 +112,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_lucy.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.63,
+    "highestSalePrice": 0.63,
+    "saleCount": 1
   },
   {
     "id": 12,
@@ -105,7 +123,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_rock.png",
-    "lastSalePrice": 0.9
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 13,
@@ -114,7 +133,9 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_gary.png",
-    "lastSalePrice": 0.1
+    "lastSalePrice": 2.0,
+    "highestSalePrice": 2.0,
+    "saleCount": 3
   },
   {
     "id": 14,
@@ -123,7 +144,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_dustin.png",
-    "lastSalePrice": 1
+    "lastSalePrice": 0.2437,
+    "highestSalePrice": 0.2437,
+    "saleCount": 1
   },
   {
     "id": 15,
@@ -132,7 +155,9 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_anthony.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.75,
+    "highestSalePrice": 0.75,
+    "saleCount": 2
   },
   {
     "id": 16,
@@ -141,7 +166,8 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_black_hat.png",
-    "lastSalePrice": 0.777
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 17,
@@ -150,7 +176,9 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_ruby.png",
-    "lastSalePrice": 0.1
+    "lastSalePrice": 0.1,
+    "highestSalePrice": 0.1,
+    "saleCount": 1
   },
   {
     "id": 18,
@@ -159,7 +187,9 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_noir.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.21,
+    "highestSalePrice": 0.21,
+    "saleCount": 1
   },
   {
     "id": 19,
@@ -168,7 +198,8 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_mega.png",
-    "lastSalePrice": 1
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 20,
@@ -177,7 +208,9 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_ashley_mazel.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.7325,
+    "highestSalePrice": 1.7325,
+    "saleCount": 1
   },
   {
     "id": 21,
@@ -186,7 +219,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_viceroy_vincent_the_vice.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 22,
@@ -195,7 +229,9 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_roosevelt.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.21,
+    "highestSalePrice": 0.21,
+    "saleCount": 1
   },
   {
     "id": 23,
@@ -204,7 +240,8 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_claudia.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 24,
@@ -213,7 +250,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_carlos.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 25,
@@ -222,7 +260,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_arnold_van_houten.png",
-    "lastSalePrice": 0.4
+    "lastSalePrice": 1.0,
+    "highestSalePrice": 1.0,
+    "saleCount": 1
   },
   {
     "id": 26,
@@ -231,7 +271,8 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_narciss.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 27,
@@ -240,7 +281,8 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_teri.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 28,
@@ -249,7 +291,9 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_emma.png",
-    "lastSalePrice": 0.09
+    "lastSalePrice": 0.09,
+    "highestSalePrice": 0.09,
+    "saleCount": 1
   },
   {
     "id": 29,
@@ -258,7 +302,9 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_vacio.png",
-    "lastSalePrice": 0.1
+    "lastSalePrice": 0.1,
+    "highestSalePrice": 0.1,
+    "saleCount": 1
   },
   {
     "id": 30,
@@ -267,7 +313,9 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_boozy.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.95,
+    "highestSalePrice": 0.95,
+    "saleCount": 2
   },
   {
     "id": 31,
@@ -276,7 +324,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_shannon.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "highestSalePrice": 1.0,
+    "saleCount": 3
   },
   {
     "id": 32,
@@ -285,7 +335,9 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_rick.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.7,
+    "highestSalePrice": 0.7,
+    "saleCount": 1
   },
   {
     "id": 33,
@@ -294,7 +346,9 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_edmund_the_wise.png",
-    "lastSalePrice": 0.09
+    "lastSalePrice": 0.09,
+    "highestSalePrice": 0.09,
+    "saleCount": 1
   },
   {
     "id": 34,
@@ -303,7 +357,8 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_corley.png",
-    "lastSalePrice": 1
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 35,
@@ -312,7 +367,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_zergaldo.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 36,
@@ -321,7 +377,8 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_kate.png",
-    "lastSalePrice": 1
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 37,
@@ -330,7 +387,8 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_johannes.png",
-    "lastSalePrice": 1
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 38,
@@ -339,7 +397,8 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_layla_the_rightful.png",
-    "lastSalePrice": 0.2
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 39,
@@ -348,7 +407,8 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_kesh.png",
-    "lastSalePrice": 0.2
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 40,
@@ -357,7 +417,8 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_valentine.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 41,
@@ -366,7 +427,9 @@
     "group": "humanity",
     "collection": "original",
     "preview": "/images/characters/preview_konstanz.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.07,
+    "highestSalePrice": 0.07,
+    "saleCount": 1
   },
   {
     "id": 42,
@@ -375,7 +438,8 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_mrs_stacey.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 43,
@@ -384,7 +448,9 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_mrs_strict.png",
-    "lastSalePrice": 0.09
+    "lastSalePrice": 0.09,
+    "highestSalePrice": 0.1,
+    "saleCount": 2
   },
   {
     "id": 44,
@@ -393,7 +459,9 @@
     "group": "survival",
     "collection": "original",
     "preview": "/images/characters/preview_leo.png",
-    "lastSalePrice": 0.09
+    "lastSalePrice": 0.09,
+    "highestSalePrice": 0.09,
+    "saleCount": 1
   },
   {
     "id": 45,
@@ -402,7 +470,9 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_beck.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.21,
+    "highestSalePrice": 0.21,
+    "saleCount": 2
   },
   {
     "id": 46,
@@ -411,7 +481,9 @@
     "group": "faith",
     "collection": "original",
     "preview": "/images/characters/preview_silence.png",
-    "lastSalePrice": 0.2
+    "lastSalePrice": 1.0,
+    "highestSalePrice": 1.0,
+    "saleCount": 1
   },
   {
     "id": 47,
@@ -420,7 +492,8 @@
     "group": "order",
     "collection": "original",
     "preview": "/images/characters/preview_nao.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 48,
@@ -429,7 +502,8 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_the_thing.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 49,
@@ -438,7 +512,8 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_rad.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 50,
@@ -447,7 +522,8 @@
     "group": "research",
     "collection": "original",
     "preview": "/images/characters/preview_filthy_king.png",
-    "lastSalePrice": 0.5
+    "lastSalePrice": 1.0,
+    "saleCount": 0
   },
   {
     "id": 51,
@@ -456,7 +532,8 @@
     "group": "3",
     "collection": "special",
     "preview": "/images/cards/card_00001.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 52,
@@ -465,7 +542,8 @@
     "group": "2",
     "collection": "special",
     "preview": "/images/cards/card_00002.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 53,
@@ -474,7 +552,8 @@
     "group": "4",
     "collection": "special",
     "preview": "/images/cards/card_00003.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 54,
@@ -483,7 +562,9 @@
     "group": "2",
     "collection": "special",
     "preview": "/images/cards/card_00004.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.1,
+    "highestSalePrice": 0.1,
+    "saleCount": 1
   },
   {
     "id": 55,
@@ -492,7 +573,8 @@
     "group": "1",
     "collection": "special",
     "preview": "/images/cards/card_00005.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 56,
@@ -501,7 +583,8 @@
     "group": "3",
     "collection": "special",
     "preview": "/images/cards/card_00006.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 57,
@@ -510,7 +593,8 @@
     "group": "2",
     "collection": "special",
     "preview": "/images/cards/card_00007.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 58,
@@ -519,7 +603,8 @@
     "group": "2",
     "collection": "special",
     "preview": "/images/cards/card_00008.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 59,
@@ -528,7 +613,9 @@
     "group": "4",
     "collection": "special",
     "preview": "/images/cards/card_00009.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.1,
+    "highestSalePrice": 0.1,
+    "saleCount": 1
   },
   {
     "id": 60,
@@ -537,7 +624,8 @@
     "group": "1",
     "collection": "special",
     "preview": "/images/cards/card_00010.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 61,
@@ -546,7 +634,8 @@
     "group": "3",
     "collection": "special",
     "preview": "/images/cards/card_00011.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 62,
@@ -555,7 +644,9 @@
     "group": "2",
     "collection": "special",
     "preview": "/images/cards/card_00012.png",
-    "lastSalePrice": null
+    "lastSalePrice": 1.5,
+    "highestSalePrice": 1.5,
+    "saleCount": 1
   },
   {
     "id": 63,
@@ -564,7 +655,9 @@
     "group": "4",
     "collection": "special",
     "preview": "/images/cards/card_00013.png",
-    "lastSalePrice": null
+    "lastSalePrice": 0.1,
+    "highestSalePrice": 0.1,
+    "saleCount": 1
   },
   {
     "id": 64,
@@ -573,7 +666,8 @@
     "group": "4",
     "collection": "special",
     "preview": "/images/cards/card_00014.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 65,
@@ -582,7 +676,8 @@
     "group": "3",
     "collection": "special",
     "preview": "/images/cards/card_00015.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 66,
@@ -591,7 +686,8 @@
     "group": "1",
     "collection": "special",
     "preview": "/images/cards/card_00016.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 67,
@@ -600,7 +696,8 @@
     "group": "3",
     "collection": "special",
     "preview": "/images/cards/card_00017.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 68,
@@ -609,7 +706,8 @@
     "group": "2",
     "collection": "special",
     "preview": "/images/cards/card_00018.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   },
   {
     "id": 69,
@@ -618,6 +716,7 @@
     "group": "1",
     "collection": "special",
     "preview": "/images/cards/card_00019.png",
-    "lastSalePrice": null
+    "lastSalePrice": null,
+    "saleCount": 0
   }
 ]

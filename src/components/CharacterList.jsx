@@ -1,11 +1,11 @@
-import { useState, useMemo, useRef, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import characters from '../data/characters.json'
 import CharacterModal from './CharacterModal'
 import '../styles/CharacterList.css'
 
-const mainCast = characters.filter(c => c.collection === 'original' && c.id >= 1 && c.id <= 50)
+export const mainCast = characters.filter(c => c.collection === 'original' && c.id >= 1 && c.id <= 50)
 
-function computeStatuses(episodes, currentEpisodeId) {
+export function computeStatuses(episodes, currentEpisodeId) {
   const deadBefore = new Set()
   const diedThisEpisode = new Set()
   const reborn = new Set()
@@ -37,68 +37,39 @@ function computeStatuses(episodes, currentEpisodeId) {
   return { deadBefore, diedThisEpisode, reborn }
 }
 
-function getStatus(id, deadBefore, diedThisEpisode, reborn) {
+export function getStatus(id, deadBefore, diedThisEpisode, reborn) {
   if (reborn.has(id)) return 'reborn'
   if (diedThisEpisode.has(id)) return 'died-now'
   if (deadBefore.has(id)) return 'dead'
   return 'alive'
 }
 
+function getDiedNowIndex(id, diedThisEpisode) {
+  const idx = [...diedThisEpisode].indexOf(id)
+  return idx >= 0 ? idx : 0
+}
+
 export default function CharacterList({ currentEpisodeId, episodes, onCharacterClick }) {
   const [selectedChar, setSelectedChar] = useState(null)
-  const [revealed, setRevealed] = useState(false)
-  const prevEpisodeRef = useRef(currentEpisodeId)
 
   const { deadBefore, diedThisEpisode, reborn } = useMemo(
     () => computeStatuses(episodes || [], currentEpisodeId),
     [episodes, currentEpisodeId]
   )
 
-  const hasDiedNow = diedThisEpisode.size > 0
-
-  // Suspense reveal: when episode changes and there are new deaths, delay reveal
-  useEffect(() => {
-    if (prevEpisodeRef.current !== currentEpisodeId) {
-      prevEpisodeRef.current = currentEpisodeId
-      if (hasDiedNow) {
-        setRevealed(false)
-        const timer = setTimeout(() => setRevealed(true), 1800)
-        return () => clearTimeout(timer)
-      }
-    }
-    setRevealed(true)
-  }, [currentEpisodeId, hasDiedNow])
-
-  const grouped = useMemo(() => {
-    const alive = []
-    const diedNow = []
-    const dead = []
-    const rebornList = []
-
-    mainCast.forEach(c => {
-      const status = getStatus(c.id, deadBefore, diedThisEpisode, reborn)
-      if (status === 'alive') alive.push(c)
-      else if (status === 'died-now') diedNow.push(c)
-      else if (status === 'reborn') rebornList.push(c)
-      else dead.push(c)
-    })
-
-    const ethLost = diedNow.reduce((sum, c) => sum + (c.lastSalePrice || 0), 0)
-
-    return { alive, diedNow, dead, reborn: rebornList, ethLost }
-  }, [deadBefore, diedThisEpisode, reborn])
-
   const statusOf = (id) => getStatus(id, deadBefore, diedThisEpisode, reborn)
 
   const handleClick = (c) => {
-    if (onCharacterClick) {
-      onCharacterClick(c)
-    }
+    if (onCharacterClick) onCharacterClick(c)
     setSelectedChar(c)
   }
 
-  const renderChar = (c, status, index) => {
-    const isHidden = status === 'died-now' && !revealed
+  const renderChar = (c, status) => {
+    const shotDelay = status === 'died-now'
+      ? getDiedNowIndex(c.id, diedThisEpisode) * 0.25
+      : 0
+
+    const style = status === 'died-now' ? { '--shot-delay': `${shotDelay}s` } : {}
 
     return (
       <div
@@ -106,106 +77,25 @@ export default function CharacterList({ currentEpisodeId, episodes, onCharacterC
         className={
           'clist__char' +
           ` clist__char--${status}` +
-          (isHidden ? ' clist__char--hidden' : '') +
-          (status === 'died-now' && revealed ? ' clist__char--reveal' : '') +
-          (c.lastSalePrice == null ? ' clist__char--unclaimed' : '')
+          ((c.saleCount ?? 0) === 0 ? ' clist__char--unclaimed' : '')
         }
-        style={{ '--i': index }}
+        style={style}
         onClick={() => handleClick(c)}
-        title={c.lastSalePrice == null ? 'Unclaimed — never sold on-chain' : c.name}
+        title={(c.saleCount ?? 0) === 0 ? 'Never resold on secondary market' : c.name}
       >
-        <div className="clist__char-img-wrap">
-          <img src={c.preview} alt={c.name} className="clist__char-img" />
-          {c.lastSalePrice != null && <span className="clist__eth-mark">Ξ</span>}
-          {status === 'died-now' && revealed && <div className="clist__skull">&#10013;</div>}
-          {status === 'dead' && <div className="clist__skull clist__skull--faded">&#10013;</div>}
-          {status === 'reborn' && <div className="clist__reborn-flash" />}
-        </div>
-        <span className="clist__char-name">{c.name}</span>
-        <span className={
-          'clist__char-price' +
-          (c.lastSalePrice >= 1.0 ? ' clist__char-price--gold' :
-           c.lastSalePrice >= 0.5 ? ' clist__char-price--warm' : '')
-        }>
-          {c.lastSalePrice != null ? `Ξ ${c.lastSalePrice}` : '—'}
-        </span>
+        <img src={c.preview} alt={c.name} className="clist__char-img" />
+        {status === 'died-now' && <div className="clist__skull" />}
+        {status === 'dead' && <div className="clist__skull clist__skull--faded" />}
+        {status === 'reborn' && <div className="clist__reborn-flash" />}
       </div>
     )
   }
 
-  const total = mainCast.length
-
   return (
     <div className="clist" key={currentEpisodeId}>
-      <div className="clist__header">
-        <span className="clist__header-title">Elimination Board</span>
-        <span className="clist__header-count">
-          <span className="clist__alive-count">{grouped.alive.length}</span>
-          <span className="clist__alive-slash">/</span>
-          <span className="clist__total-count">{total}</span>
-          <span className="clist__alive-label">alive</span>
-        </span>
+      <div className="clist__grid">
+        {mainCast.map((c) => renderChar(c, statusOf(c.id)))}
       </div>
-
-      {grouped.diedNow.length > 0 && (
-        <div className="clist__section clist__section--died-now">
-          <div className="clist__section-head">
-            <span className="clist__section-icon">&#10013;</span>
-            <span className="clist__section-title">
-              {revealed ? 'R.I.P. This Episode' : 'Revealing...'}
-            </span>
-            <span className="clist__section-count">{revealed ? grouped.diedNow.length : '?'}</span>
-            {revealed && grouped.ethLost > 0 && (
-              <span className="clist__section-eth-lost">Ξ {grouped.ethLost} lost this episode</span>
-            )}
-          </div>
-          {!revealed && (
-            <div className="clist__suspense-bar">
-              <div className="clist__suspense-fill" />
-            </div>
-          )}
-          <div className="clist__grid clist__grid--died-now">
-            {grouped.diedNow.map((c, i) => renderChar(c, 'died-now', i))}
-          </div>
-        </div>
-      )}
-
-      {grouped.reborn.length > 0 && (
-        <div className="clist__section clist__section--reborn">
-          <div className="clist__section-head">
-            <span className="clist__section-icon">&#9734;</span>
-            <span className="clist__section-title">Reborn</span>
-            <span className="clist__section-count">{grouped.reborn.length}</span>
-          </div>
-          <div className="clist__grid clist__grid--reborn">
-            {grouped.reborn.map((c, i) => renderChar(c, 'reborn', i))}
-          </div>
-        </div>
-      )}
-
-      {grouped.alive.length > 0 && (
-        <div className="clist__section clist__section--alive">
-          <div className="clist__section-head">
-            <span className="clist__section-title">Alive</span>
-            <span className="clist__section-count">{grouped.alive.length}</span>
-          </div>
-          <div className="clist__grid">
-            {grouped.alive.map((c, i) => renderChar(c, 'alive', i))}
-          </div>
-        </div>
-      )}
-
-      {grouped.dead.length > 0 && (
-        <div className="clist__section clist__section--dead">
-          <div className="clist__section-head">
-            <span className="clist__section-title">Fallen</span>
-            <span className="clist__section-count">{grouped.dead.length}</span>
-          </div>
-          <div className="clist__grid clist__grid--dead">
-            {grouped.dead.map((c, i) => renderChar(c, 'dead', i))}
-          </div>
-        </div>
-      )}
 
       {selectedChar && (
         <CharacterModal

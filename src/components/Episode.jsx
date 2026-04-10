@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import YouTubeModal from './YouTubeModal'
-import CharacterList from './CharacterList'
+import CharacterList, { computeStatuses, mainCast } from './CharacterList'
+import EpisodeMedia from './EpisodeMedia'
 import characters from '../data/characters.json'
 import '../styles/Episode.css'
 import '../styles/Rip.css'
@@ -12,14 +13,6 @@ function getObits(path) {
   return key ? obitModules[key].default || obitModules[key] : null
 }
 
-function parseMedia(str) {
-  const parts = str.split(':')
-  if (parts[0] === 'youtube') return { type: 'youtube', id: parts[1], preview: parts.slice(2).join(':') }
-  if (parts[0] === 'coub') return { type: 'coub', id: parts[1], preview: parts.slice(2).join(':') }
-  if (parts[0] === 'image') return { type: 'image', src: parts.slice(1).join(':') }
-  return { type: 'image', src: str }
-}
-
 // Content comes from our own trusted JSON files (src/data/), not user input.
 // dangerouslySetInnerHTML is safe here — renders <span class="mention"> in episode text.
 
@@ -27,58 +20,34 @@ export default function Episode({
   episodeId, number, title, text, media, rip, path,
   comment, storyHeroIds, onOpenDrawer, episodeNav, episodes
 }) {
-  const [mediaIndex, setMediaIndex] = useState(0)
   const [librettoExpanded, setLibrettoExpanded] = useState(false)
   const [commentExpanded, setCommentExpanded] = useState(false)
   const [activeObit, setActiveObit] = useState(null)
   const [videoModal, setVideoModal] = useState(null)
 
   const obits = getObits(`${path}.json`)
-  const items = media ? media.map(parseMedia) : []
 
-  const ripCharacters = rip
-    ? rip.map(id => characters.find(c => c.id === id)).filter(Boolean)
-    : []
+  const { deadBefore, diedThisEpisode, reborn } = useMemo(
+    () => computeStatuses(episodes || [], episodeId),
+    [episodes, episodeId]
+  )
+  const aliveCount = mainCast.length - deadBefore.size - diedThisEpisode.size + reborn.size
+  const diedNowCount = diedThisEpisode.size
+  const rebornCount = reborn.size
 
   const isReborn = episodeId === 8
 
   useEffect(() => {
-    setMediaIndex(0)
     setLibrettoExpanded(false)
     setCommentExpanded(false)
     setActiveObit(null)
   }, [episodeId])
-
-  useEffect(() => {
-    function onKey(e) {
-      if (activeObit !== null || videoModal) return
-      if (e.key === 'ArrowRight' || e.key === ' ') {
-        e.preventDefault()
-        setMediaIndex(prev => prev < items.length - 1 ? prev + 1 : prev)
-      }
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault()
-        setMediaIndex(prev => prev > 0 ? prev - 1 : prev)
-      }
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [items.length, activeObit, videoModal])
-
-  const goMedia = useCallback((dir) => {
-    setMediaIndex(prev => {
-      const next = prev + dir
-      if (next < 0 || next >= items.length) return prev
-      return next
-    })
-  }, [items.length])
 
   function openObit(c) {
     const id = typeof c === 'object' ? c.id : c
     if (obits && obits[id]) setActiveObit(id)
   }
 
-  const currentItem = items[mediaIndex]
   const activeObitData = activeObit !== null && obits ? obits[activeObit] : null
   const activeChar = activeObit !== null
     ? characters.find(c => c.id === activeObit)
@@ -89,54 +58,19 @@ export default function Episode({
       <div className="ep-player__body">
       {/* Left column: media + text */}
       <div className="ep-player__left">
-        <div className="ep-player__media-block">
-          <div className="ep-player__media">
-            {currentItem && (
-              <div className="ep-player__media-inner" key={mediaIndex}>
-                {currentItem.type === 'image' && (
-                  <img className="ep-player__img" src={currentItem.src} alt="" />
-                )}
-                {currentItem.type === 'youtube' && (
-                  <div className="ep-player__video-preview" onClick={() => setVideoModal(currentItem.id)}>
-                    <img src={currentItem.preview} alt="" />
-                    <div className="ep-player__play-icon">&#9654;</div>
-                  </div>
-                )}
-                {currentItem.type === 'coub' && (
-                  <div className="ep-player__video-preview" onClick={() => setVideoModal({ coub: currentItem.id })}>
-                    <img src={currentItem.preview} alt="" />
-                    <div className="ep-player__play-icon">&#9654;</div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Title overlay */}
-            <div className="ep-player__media-overlay">
-              <span className="ep-player__number">{number}</span>
-              <h2 className="ep-player__title">{title}</h2>
-            </div>
-
-            {items.length > 1 && mediaIndex > 0 && (
-              <button className="ep-player__arrow ep-player__arrow--left" onClick={() => goMedia(-1)} />
-            )}
-            {items.length > 1 && mediaIndex < items.length - 1 && (
-              <button className="ep-player__arrow ep-player__arrow--right" onClick={() => goMedia(1)} />
-            )}
-          </div>
-
-          {items.length > 1 && (
-            <div className="ep-player__dots">
-              {items.map((_, i) => (
-                <button
-                  key={i}
-                  className={'ep-player__dot' + (i === mediaIndex ? ' ep-player__dot--active' : '')}
-                  onClick={() => setMediaIndex(i)}
-                />
-              ))}
-            </div>
-          )}
-        </div>
+        <EpisodeMedia
+          episodeId={episodeId}
+          number={number}
+          title={title}
+          media={media}
+          episodeNav={episodeNav}
+          onOpenDrawer={onOpenDrawer}
+          onOpenVideo={setVideoModal}
+          aliveCount={aliveCount}
+          diedNowCount={diedNowCount}
+          rebornCount={rebornCount}
+          keyboardEnabled={activeObit === null && !videoModal}
+        />
 
         <div className="ep-player__text-sections">
           {text && text.length > 0 && (
@@ -176,67 +110,6 @@ export default function Episode({
         )}
       </div>
       </div>{/* end ep-player__body */}
-
-      {/* Bottom episode navigation */}
-      {episodeNav && (
-        <div className="ep-nav">
-          {/* Previous episode */}
-          <button
-            className="ep-nav__side ep-nav__side--prev"
-            onClick={episodeNav.onPrev}
-            disabled={!episodeNav.prevEpisode}
-          >
-            {episodeNav.prevEpisode ? (
-              <>
-                <span className="ep-nav__arrow ep-nav__arrow--left" />
-                <span className="ep-nav__side-meta">
-                  <span className="ep-nav__side-label">Previous</span>
-                  <span className="ep-nav__side-title">{episodeNav.prevEpisode.title}</span>
-                </span>
-              </>
-            ) : <span />}
-          </button>
-
-          {/* Center — progress + all episodes */}
-          <button className="ep-nav__center" onClick={onOpenDrawer}>
-            <span className="ep-nav__progress-ring">
-              <svg viewBox="0 0 36 36" className="ep-nav__ring-svg">
-                <circle className="ep-nav__ring-bg" cx="18" cy="18" r="15.5" />
-                <circle
-                  className="ep-nav__ring-fill"
-                  cx="18" cy="18" r="15.5"
-                  strokeDasharray={`${((episodeNav.current + 1) / episodeNav.total) * 97.4} 97.4`}
-                />
-              </svg>
-              <span className="ep-nav__progress-text">
-                {episodeNav.current + 1}<span className="ep-nav__progress-sep">/</span>{episodeNav.total}
-              </span>
-            </span>
-            <span className="ep-nav__center-label">All Episodes</span>
-          </button>
-
-          {/* Next episode */}
-          <button
-            className="ep-nav__side ep-nav__side--next"
-            onClick={episodeNav.onNext}
-            disabled={!episodeNav.nextEpisode || episodeNav.nextEpisode.disabled}
-          >
-            {episodeNav.nextEpisode && !episodeNav.nextEpisode.disabled ? (
-              <>
-                <span className="ep-nav__side-meta">
-                  <span className="ep-nav__side-label">Next</span>
-                  <span className="ep-nav__side-title">{episodeNav.nextEpisode.title}</span>
-                </span>
-                <span className="ep-nav__arrow ep-nav__arrow--right" />
-              </>
-            ) : (
-              <span className="ep-nav__side-meta">
-                <span className="ep-nav__side-label ep-nav__side-label--dim">Finale</span>
-              </span>
-            )}
-          </button>
-        </div>
-      )}
 
       {/* Obit modal — trusted content from local JSON */}
       {activeObitData && activeChar && (

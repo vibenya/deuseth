@@ -44,14 +44,15 @@ export default function Cast() {
       .filter((c) => c.id >= 1 && c.id <= 50)
       .map((c) => ({ ...c, ep: heroEpisodes[c.id] || 0 }))
 
+    const bestPrice = (c) => c.highestSalePrice ?? c.lastSalePrice ?? -1
     if (sortBy === 'price') {
-      return cast.sort((a, b) => (b.lastSalePrice ?? -1) - (a.lastSalePrice ?? -1))
+      return cast.sort((a, b) => bestPrice(b) - bestPrice(a))
     }
     return cast.sort((a, b) => b.ep - a.ep)
   }, [heroEpisodes, sortBy])
 
-  const soldCount = mainCast.filter((c) => c.lastSalePrice != null).length
-  const totalVolume = mainCast.reduce((sum, c) => sum + (c.lastSalePrice || 0), 0)
+  const soldCount = mainCast.filter((c) => (c.saleCount ?? 0) > 0).length
+  const totalVolume = mainCast.reduce((sum, c) => sum + Math.max(0, c.highestSalePrice ?? c.lastSalePrice ?? 0), 0)
 
   return (
     <div className="cast">
@@ -59,7 +60,7 @@ export default function Cast() {
         <h1 className="cast__title">Cast</h1>
 
         <p className="cast__stat-bar">
-          {soldCount} sold &middot; Ξ {totalVolume.toFixed(1)} total volume
+          {soldCount} traded on secondary &middot; Ξ {totalVolume.toFixed(1)} peak total
         </p>
 
         <div className="cast__sort">
