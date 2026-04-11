@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from 'react'
-import YouTubeModal from './YouTubeModal'
 import CharacterList, { computeStatuses, mainCast } from './CharacterList'
 import EpisodeMedia from './EpisodeMedia'
 import characters from '../data/characters.json'
@@ -18,12 +17,12 @@ function getObits(path) {
 
 export default function Episode({
   episodeId, number, title, text, media, rip, path,
-  comment, storyHeroIds, onOpenDrawer, episodeNav, episodes
+  comment, storyHeroIds, onOpenDrawer, episodeNav, episodes, videoEvents
 }) {
   const [librettoExpanded, setLibrettoExpanded] = useState(false)
   const [commentExpanded, setCommentExpanded] = useState(false)
   const [activeObit, setActiveObit] = useState(null)
-  const [videoModal, setVideoModal] = useState(null)
+  const [currentVideoTime, setCurrentVideoTime] = useState(null)
 
   const obits = getObits(`${path}.json`)
 
@@ -43,6 +42,7 @@ export default function Episode({
     setLibrettoExpanded(false)
     setCommentExpanded(false)
     setActiveObit(null)
+    setCurrentVideoTime(null)
   }, [episodeId])
 
   function openObit(c) {
@@ -67,10 +67,10 @@ export default function Episode({
           media={media}
           episodeNav={episodeNav}
           onOpenDrawer={onOpenDrawer}
-          onOpenVideo={setVideoModal}
+          onTimeUpdate={setCurrentVideoTime}
           aliveCount={aliveCount}
           deadCount={deadCount}
-          keyboardEnabled={activeObit === null && !videoModal}
+          keyboardEnabled={activeObit === null}
         />
 
         <div className="ep-player__text-sections">
@@ -107,6 +107,8 @@ export default function Episode({
             currentEpisodeId={episodeId}
             episodes={episodes}
             onCharacterClick={openObit}
+            videoEvents={videoEvents}
+            currentVideoTime={currentVideoTime}
           />
         )}
       </div>
@@ -130,12 +132,6 @@ export default function Episode({
         </div>
       )}
 
-      {videoModal && typeof videoModal === 'string' && (
-        <YouTubeModal youtubeId={videoModal} onClose={() => setVideoModal(null)} />
-      )}
-      {videoModal && videoModal.coub && (
-        <YouTubeModal coubId={videoModal.coub} onClose={() => setVideoModal(null)} />
-      )}
     </div>
   )
 }

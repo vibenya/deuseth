@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import EpisodeStatCounter from './EpisodeStatCounter'
 
 function parseMedia(str) {
@@ -16,7 +16,7 @@ export default function EpisodeMedia({
   media,
   episodeNav,
   onOpenDrawer,
-  onOpenVideo,
+  onTimeUpdate,
   aliveCount,
   deadCount,
   keyboardEnabled = true,
@@ -24,14 +24,14 @@ export default function EpisodeMedia({
   const [mediaIndex, setMediaIndex] = useState(0)
   const items = useMemo(() => media ? media.map(parseMedia) : [], [media])
 
-  // `displayed` is the item currently painted on screen — decoupled from
-  // items[mediaIndex] so we can preload the next image and swap only when
-  // it's fully decoded (no collapsed/empty frame between slides or episodes).
   const [displayed, setDisplayed] = useState(() => (media ? parseMedia(media[0]) : null))
   const [fadeOut, setFadeOut] = useState(null)
+  const [videoEnded, setVideoEnded] = useState(false)
+  const iframeRef = useRef(null)
 
   useEffect(() => {
     setMediaIndex(0)
+    setVideoEnded(false)
   }, [episodeId])
 
   useEffect(() => {
@@ -60,11 +60,9 @@ export default function EpisodeMedia({
     preload.onload = finish
     preload.onerror = finish
     preload.src = newSrc
-    // If the image is already cached, some browsers set complete=true synchronously.
     if (preload.complete && preload.naturalWidth > 0) finish()
 
     return () => { cancelled = true }
-  // `displayed` intentionally omitted — adding it would re-trigger after setDisplayed, causing an infinite loop
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [episodeId, mediaIndex, items])
 
@@ -85,11 +83,46 @@ export default function EpisodeMedia({
   }, [items.length, keyboardEnabled])
 
   const isVideo = displayed && (displayed.type === 'youtube' || displayed.type === 'coub')
-  const handlePlay = () => {
-    if (!displayed) return
-    if (displayed.type === 'youtube') onOpenVideo?.(displayed.id)
-    else if (displayed.type === 'coub') onOpenVideo?.({ coub: displayed.id })
-  }
+  const isCoub = displayed?.type === 'coub'
+
+  // YouTube end detection + time updates via postMessage.
+  // YouTube only sends events after we send a 'listening' message first (done in handleIframeLoad).
+  useEffect(() => {
+    if (!isVideo || isCoub) return
+    function onMessage(e) {
+      try {
+        const data = JSON.parse(e.data)
+        if (data.event === 'onStateChange' && data.info === 0) {
+          setVideoEnded(true)
+        }
+        if (data.event === 'infoDelivery' && data.info?.currentTime != null) {
+          onTimeUpdate?.(data.info.currentTime)
+        }
+      } catch {}
+    }
+    window.addEventListener('message', onMessage)
+    return () => window.removeEventListener('message', onMessage)
+  }, [isVideo, isCoub, episodeId, onTimeUpdate])
+
+  const handleIframeLoad = useCallback(() => {
+    try {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: 'listening', id: 'ep-player', channel: 'widget' }),
+        '*'
+      )
+    } catch {}
+  }, [])
+
+  const videoSrc = displayed
+    ? displayed.type === 'youtube'
+      ? `https://www.youtube.com/embed/${displayed.id}?autoplay=1&rel=0&enablejsapi=1`
+      : `https://coub.com/embed/${displayed.id}?muted=false&autostart=true&originalSize=false&startWithHD=true`
+    : null
+
+  const hasNext = episodeNav?.nextEpisode && !episodeNav.nextEpisode.disabled
+  const isLastSlide = mediaIndex === items.length - 1
+  // Coub loops forever — show next right away; YouTube — after ended
+  const showNextEpBtn = hasNext && (isVideo ? (isCoub || videoEnded) : isLastSlide)
 
   return (
     <div className="ep-player__media-block">
@@ -99,9 +132,61 @@ export default function EpisodeMedia({
             {displayed.type === 'image' && (
               <img className="ep-player__img" src={displayed.src} alt="" />
             )}
-            {isVideo && (
-              <div className="ep-player__video-preview" onClick={handlePlay}>
-                <img src={displayed.preview} alt="" />
+            {isVideo && !videoEnded && (
+              <iframe
+                key={`${episodeId}-${mediaIndex}`}
+                ref={iframeRef}
+                className="ep-player__iframe"
+                src={videoSrc}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                onLoad={handleIframeLoad}
+              />
+            )}
+            {isVideo && videoEnded && (
+              <img
+                className="ep-player__img ep-player__video-cover"
+                src={displayed.preview}
+                alt=""
+              />
+            )}
+
+            {/* Carousel nav overlay — only for multi-image episodes */}
+            {!isVideo && items.length > 1 && (
+              <div className="ep-media__carousel-nav">
+                <button
+                  type="button"
+                  className="ep-media__carousel-btn ep-media__carousel-btn--prev"
+                  onClick={() => setMediaIndex(i => Math.max(0, i - 1))}
+                  disabled={mediaIndex === 0}
+                  aria-label="Previous slide"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                <div className="ep-media__carousel-dots">
+                  {items.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={'ep-media__carousel-dot' + (i === mediaIndex ? ' is-active' : '')}
+                      onClick={() => setMediaIndex(i)}
+                      aria-label={`Slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="ep-media__carousel-btn ep-media__carousel-btn--next"
+                  onClick={() => setMediaIndex(i => Math.min(items.length - 1, i + 1))}
+                  disabled={mediaIndex === items.length - 1}
+                  aria-label="Next slide"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             )}
           </div>
@@ -117,69 +202,31 @@ export default function EpisodeMedia({
         )}
       </div>
 
-      {/* Title + player-style controls — acts as main nav */}
+      {/* Title + player-style controls */}
       <div className="ep-player__media-overlay">
-        {/* Title block — left */}
+        {/* Left: title block */}
         <div className="ep-ctrl__title-block">
           <span className="ep-player__number">{episodeId === 0 ? 'Prologue' : number}</span>
           <h2 className="ep-player__title">{title}</h2>
         </div>
 
-        {/* Middle — content controls: play (video) or gallery dots */}
+        {/* Center: next episode button (appears on video end or last slide) */}
         <div className="ep-ctrl__gallery">
-          {isVideo && (
+          {showNextEpBtn && (
             <button
               type="button"
-              className="ep-ctrl__play"
-              onClick={handlePlay}
-              aria-label="Play media"
+              className="ep-ctrl__next-ep"
+              onClick={episodeNav.onNext}
             >
+              <span>Next Episode</span>
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span>Play media</span>
             </button>
-          )}
-          {!isVideo && items.length > 1 && (
-            <div className="ep-ctrl__gallery-nav">
-              <button
-                type="button"
-                className="ep-ctrl__gnav ep-ctrl__gnav--prev"
-                onClick={() => setMediaIndex(i => Math.max(0, i - 1))}
-                disabled={mediaIndex === 0}
-                aria-label="Previous slide"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <div className="ep-ctrl__dots">
-                {items.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className={'ep-ctrl__dot' + (i === mediaIndex ? ' is-active' : '')}
-                    onClick={() => setMediaIndex(i)}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-              <button
-                type="button"
-                className="ep-ctrl__gnav ep-ctrl__gnav--next"
-                onClick={() => setMediaIndex(i => Math.min(items.length - 1, i + 1))}
-                disabled={mediaIndex === items.length - 1}
-                aria-label="Next slide"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
           )}
         </div>
 
-        {/* Right — stats + episode navigation */}
+        {/* Right: stats + episode navigation */}
         <div className="ep-ctrl__right">
           <EpisodeStatCounter alive={aliveCount} dead={deadCount} />
 

@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
+import logoWhite from '../images/logo-white.svg'
 import '../styles/Adventures.css'
 
 export default function Adventures() {
@@ -79,6 +80,26 @@ export default function Adventures() {
         <div className="adventures__bg adventures__bg--fade-in" key={topBg} style={{ backgroundImage: `url(${topBg})` }} />
       )}
 
+      {/* Top bar */}
+      <div className="adventures__topbar">
+        <Link to="/" className="adventures__topbar-logo">
+          <img src={logoWhite} alt="DEUS ETH" />
+        </Link>
+        {activeEpisode && (
+          <span className="adventures__topbar-title">
+            {activeEpisode.number !== undefined && (
+              <span className="adventures__topbar-ep">Ep. {activeEpisode.number}</span>
+            )}
+            {activeEpisode.title}
+          </span>
+        )}
+        <nav className="adventures__topbar-nav">
+          <Link to="/" className="adventures__topbar-link">История</Link>
+          <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
+          <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
+        </nav>
+      </div>
+
       {/* Episode player */}
       {activeEpisode && (
         <Episode
@@ -91,6 +112,7 @@ export default function Adventures() {
           path={activeEpisode.path}
           comment={activeEpisode.comment}
           storyHeroIds={activeEpisode.storyHeroIds}
+          videoEvents={activeEpisode.videoEvents}
           episodes={episodes}
           onOpenDrawer={() => setDrawerOpen(true)}
           episodeNav={{

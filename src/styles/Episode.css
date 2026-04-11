@@ -1,6 +1,7 @@
 /* ===== Fullscreen Episode Player ===== */
 .ep-player {
   position: absolute; inset: 0;
+  padding-top: 28px;
   display: flex; flex-direction: column;
   color: #fff;
   z-index: 1;
@@ -33,6 +34,120 @@
 .ep-player__media-inner {
   width: 100%;
   line-height: 0;
+  position: relative;
+}
+
+/* Cover image shown after video ends */
+.ep-player__video-cover {
+  animation: epFadeIn 0.4s ease both;
+}
+
+/* Inline video iframe */
+.ep-player__iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
+/* Carousel nav overlay */
+.ep-media__carousel-nav {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.ep-media__carousel-btn {
+  pointer-events: all;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.42);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+.ep-media__carousel-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.ep-media__carousel-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.68);
+}
+.ep-media__carousel-btn:disabled {
+  opacity: 0.18;
+  cursor: default;
+}
+.ep-media__carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  pointer-events: all;
+}
+.ep-media__carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: background 0.2s ease, width 0.2s ease;
+}
+.ep-media__carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.ep-media__carousel-dot.is-active {
+  background: #fff;
+  width: 22px;
+}
+
+/* Next Episode button in center control bar */
+.ep-ctrl__next-ep {
+  height: var(--ep-row);
+  padding: 0 14px 0 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--ep-accent);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--al);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  transition: background 0.22s ease;
+  animation: epFadeIn 0.35s ease both;
+}
+.ep-ctrl__next-ep svg {
+  width: 11px;
+  height: 11px;
+  display: block;
+  transition: transform 0.22s ease;
+}
+.ep-ctrl__next-ep:hover {
+  background: #d96040;
+}
+.ep-ctrl__next-ep:hover svg {
+  transform: translateX(2px);
 }
 .ep-player__fadeout {
   position: absolute;

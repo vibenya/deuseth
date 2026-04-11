@@ -10,7 +10,9 @@
       "<span data-link='47' class='mention'>Nao convinces</span> the exhausted tokens not to fall into despair. Certain that the group is destined to find the lost City, he strives to find the answers they need to revive their  civilization. <span data-link='1' class='mention'>Mistrust is growing.</span>",
       "The fleet-footed <span data-link='5' class='mention'>Harold went searching</span> for gas, and <span data-link='3' class='mention'>still hasn’t returned.</span>"
     ],
-    "media": ["image:/images/episodes/prologue.jpg"],
+    "media": [
+      "image:/images/episodes/prologue.jpg"
+    ],
     "share_pic": "/images/episodes/prologue.jpg",
     "background": "/images/episodes/prologue_back.jpg",
     "map": "/images/episodes/prologue_map.png",
@@ -18,8 +20,8 @@
     "storytitle": "Stories",
     "slide": "/images/episodes/slides/cover-00.png",
     "homeslide": "/images/episodes/slides/home_cover-00.png",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 1,
@@ -38,12 +40,197 @@
     "share_pic": "/images/episodes/1/comics.png",
     "background": "/images/episodes/1/coming_soon_back_dark.jpg",
     "map": "",
-    "rip": [13, 44, 48],
+    "rip": [
+      13,
+      44,
+      48
+    ],
     "storytitle": "Stories",
     "slide": "/images/episodes/slides/cover-01.png",
     "homeslide": "/images/episodes/slides/home_cover-01.png",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": [
+      {
+        "time": 8,
+        "characterId": 5,
+        "event": "highlight"
+      },
+      {
+        "time": 20,
+        "characterId": 3,
+        "event": "highlight"
+      },
+      {
+        "time": 20,
+        "characterId": 10,
+        "event": "highlight"
+      },
+      {
+        "time": 20,
+        "characterId": 2,
+        "event": "highlight"
+      },
+      {
+        "time": 20,
+        "characterId": 15,
+        "event": "highlight"
+      },
+      {
+        "time": 20,
+        "characterId": 1,
+        "event": "highlight"
+      },
+      {
+        "time": 20,
+        "characterId": 27,
+        "event": "highlight"
+      },
+      {
+        "time": 25,
+        "characterId": 5,
+        "event": "highlight"
+      },
+      {
+        "time": 26,
+        "characterId": 3,
+        "event": "highlight"
+      },
+      {
+        "time": 26,
+        "characterId": 10,
+        "event": "highlight"
+      },
+      {
+        "time": 26,
+        "characterId": 2,
+        "event": "highlight"
+      },
+      {
+        "time": 26,
+        "characterId": 15,
+        "event": "highlight"
+      },
+      {
+        "time": 35,
+        "characterId": 27,
+        "event": "highlight"
+      },
+      {
+        "time": 35,
+        "characterId": 10,
+        "event": "highlight"
+      },
+      {
+        "time": 35,
+        "characterId": 15,
+        "event": "highlight"
+      },
+      {
+        "time": 41,
+        "characterId": 2,
+        "event": "highlight"
+      },
+      {
+        "time": 46,
+        "characterId": 44,
+        "event": "died-now"
+      },
+      {
+        "time": 47,
+        "characterId": 48,
+        "event": "died-now"
+      },
+      {
+        "time": 49,
+        "characterId": 38,
+        "event": "highlight"
+      },
+      {
+        "time": 49,
+        "characterId": 19,
+        "event": "highlight"
+      },
+      {
+        "time": 49,
+        "characterId": 37,
+        "event": "highlight"
+      },
+      {
+        "time": 51,
+        "characterId": 46,
+        "event": "highlight"
+      },
+      {
+        "time": 52,
+        "characterId": 7,
+        "event": "highlight"
+      },
+      {
+        "time": 53,
+        "characterId": 34,
+        "event": "highlight"
+      },
+      {
+        "time": 56,
+        "characterId": 1,
+        "event": "highlight"
+      },
+      {
+        "time": 64,
+        "characterId": 47,
+        "event": "highlight"
+      },
+      {
+        "time": 64,
+        "characterId": 2,
+        "event": "highlight"
+      },
+      {
+        "time": 64,
+        "characterId": 45,
+        "event": "highlight"
+      },
+      {
+        "time": 64,
+        "characterId": 50,
+        "event": "highlight"
+      },
+      {
+        "time": 66,
+        "characterId": 4,
+        "event": "highlight"
+      },
+      {
+        "time": 66,
+        "characterId": 3,
+        "event": "highlight"
+      },
+      {
+        "time": 66,
+        "characterId": 28,
+        "event": "highlight"
+      },
+      {
+        "time": 70,
+        "characterId": 43,
+        "event": "highlight"
+      },
+      {
+        "time": 70,
+        "characterId": 26,
+        "event": "highlight"
+      },
+      {
+        "time": 70,
+        "characterId": 8,
+        "event": "highlight"
+      },
+      {
+        "time": 80,
+        "characterId": 21,
+        "event": "highlight"
+      }
+    ]
   },
   {
     "id": 2,
@@ -73,10 +260,18 @@
     "homeslide": "/images/episodes/slides/home_cover-02.png",
     "share_pic": "/images/episodes/2/episode_2_9-09.png",
     "map": "",
-    "rip": [5, 41, 42, 45, 25, 27, 29],
+    "rip": [
+      5,
+      41,
+      42,
+      45,
+      25,
+      27,
+      29
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 3,
@@ -91,16 +286,24 @@
       "It turns out that Nao is among the heroes who are pinned down by stones. He is alive, but alone and unable to free himself from the wreckage, and his friends are already far away. Abandoned by everyone, staring death in the face, Nao meets a troll-hamster. A dispute develops between them.",
       "In the meantime, the survivors escape the cave. By now, the storm is over, and the heroes meet with the scouts, who have successfully navigated all the troubles."
     ],
-    "media": ["youtube:-tPtUMx6Vyo:/images/episodes/3/cover.png"],
+    "media": [
+      "youtube:-tPtUMx6Vyo:/images/episodes/3/cover.png"
+    ],
     "background": "/images/episodes/3/back.jpg",
     "slide": "/images/episodes/slides/cover-03.png",
     "homeslide": "/images/episodes/slides/home_cover-03.png",
     "share_pic": "/images/episodes/3/cover.png",
     "map": "",
-    "rip": [32, 37, 38, 6, 17],
+    "rip": [
+      32,
+      37,
+      38,
+      6,
+      17
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 4,
@@ -114,16 +317,20 @@
       "You have to work out for yourself who has left the show. Present your hypothesis in the character's storyline.",
       "Trust no one but the smart contract."
     ],
-    "media": ["image:/images/episodes/4/cover.png"],
+    "media": [
+      "image:/images/episodes/4/cover.png"
+    ],
     "background": "/images/episodes/4/back.jpg",
     "slide": "/images/episodes/slides/cover-04.jpg",
     "homeslide": "/images/episodes/slides/home_cover-04.png",
     "share_pic": "/images/episodes/4/cover.png",
     "map": "",
-    "rip": [-1],
+    "rip": [
+      -1
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 5,
@@ -135,16 +342,20 @@
       "In the morning, the tokens find Ben's lifeless body in the camp. There is not a single scratch on it, but Ben is dead. Our heroes decide to investigate this case to find out who the killer is. Theories are contradictory. The community of tokens divides into two large groups: one considers Temoto to be the killer, the other group accuses Jay.",
       "The tokens’ individual takes are reflected in their stories."
     ],
-    "media": ["coub:15jpqj:/images/episodes/5/cover.png"],
+    "media": [
+      "coub:15jpqj:/images/episodes/5/cover.png"
+    ],
     "background": "/images/episodes/5/back.jpg",
     "slide": "/images/episodes/slides/cover-05.jpg",
     "homeslide": "/images/episodes/slides/home_cover-05.png",
     "share_pic": "/images/episodes/5/cover.png",
     "map": "",
-    "rip": [4],
+    "rip": [
+      4
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 6,
@@ -168,10 +379,25 @@
     "homeslide": "/images/episodes/slides/home_cover-06.png",
     "share_pic": "/images/episodes/6/episode_et_2-01.png",
     "map": "",
-    "rip": [3, 36, 11, 12, 43, 15, 50, 19, 20, 21, 23, 28, 30, 31],
+    "rip": [
+      3,
+      36,
+      11,
+      12,
+      43,
+      15,
+      50,
+      19,
+      20,
+      21,
+      23,
+      28,
+      30,
+      31
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 7,
@@ -183,7 +409,9 @@
       "Genesis Block saved the tokens from the Etherbots. But, as the legend goes, no one has ever returned from there, dead or alive.",
       "The voice of the Creator approaches the tokens. It tells them that their lives are mistakes, because life only ends in death and destruction. The Creator tells them to give up their lives, forget their names and become immortal. Many agree to the suggestion of the sly Creator, but not everyone."
     ],
-    "media": ["youtube:vZ8hWlHLHkg:/images/episodes/7/cover.png"],
+    "media": [
+      "youtube:vZ8hWlHLHkg:/images/episodes/7/cover.png"
+    ],
     "background": "/images/episodes/7/back.jpg",
     "slide": "/images/episodes/slides/cover-07.png",
     "homeslide": "/images/episodes/slides/home_cover-07.png",
@@ -211,8 +439,8 @@
       26
     ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 8,
@@ -224,17 +452,69 @@
       "Kesh, who decided not to abandon his name, faces the Creator, who grants the hero three questions. Why three? Ask him, he will tell you. Maybe.",
       "Kesh accepts the Creator's proposal and gives him the number of the block: 5259019. A perceptive spectator could easily guess to which address this will bring Kesh."
     ],
-    "media": ["youtube:ODixVmlaevc:/images/episodes/8/cover.png"],
+    "media": [
+      "youtube:ODixVmlaevc:/images/episodes/8/cover.png"
+    ],
     "background": "/images/episodes/8/back.jpg",
     "slide": "/images/episodes/slides/cover-08.png",
     "homeslide": "/images/episodes/slides/home_cover-08.png",
     "share_pic": "/images/episodes/8/cover.png",
     "map": "",
     "reborn": true,
-    "rip": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,40,41,42,43,44,45,46,47,48,49,50],
+    "rip": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 9,
@@ -248,16 +528,64 @@
       "Corley draws his guns from his belt and starts shooting his comrades screaming: \"For the promised land!\" The slaughter begins. Tokens form alliances to survive. Some try to stop the madness, but they die. Tokens mercilessly exterminate each other until all the earth is covered with a mass of corpses. The battle seems to last forever.",
       "We shall find out in whose body life is still burning and who has left Deus ETH forever, as soon as the sun rises."
     ],
-    "media": ["youtube:sZui87oIafc:/images/episodes/9/cover.png"],
+    "media": [
+      "youtube:sZui87oIafc:/images/episodes/9/cover.png"
+    ],
     "background": "/images/episodes/9/back.jpg",
     "slide": "/images/episodes/slides/cover-09.png",
     "homeslide": "/images/episodes/slides/home_cover-09.png",
     "share_pic": "/images/episodes/9/cover.png",
     "map": "",
-    "rip": [1, 2, 3, 4, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+    "rip": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   },
   {
     "id": 10,
@@ -271,15 +599,16 @@
       "2. Have they found Tokenville?",
       "Check it out on <a href=\"https://tokenville.tv\">tokenville.tv</a>"
     ],
-    "media": ["youtube:QfRSz28wHaM:/images/episodes/10/cover.png"],
+    "media": [
+      "youtube:-ETErROeDyw:/images/episodes/10/cover.png"
+    ],
     "background": "/images/episodes/10/back.jpg",
     "slide": "/images/episodes/slides/cover-10.png",
     "homeslide": "/images/episodes/slides/home_cover-10.png",
     "share_pic": "/images/episodes/10/cover.png",
     "map": "",
     "storytitle": "Stories",
-    "comment":
-      "Explore the world of Deus ETH and highlight your character in personal stories."
+    "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
+    "videoEvents": []
   }
 ]
-
