@@ -32,9 +32,9 @@
  *   CharacterList.css — all card styles and keyframes
  */
 
-// ─── Video-sync config ────────────────────────────────────────────────────
-const HIGHLIGHT_DURATION_MS = 3000   // how long the highlight glow lasts
-const VIDEO_DEATH_SETTLE_MS  = 3200  // ms after died-now trigger before settling to dead style
+// ─── Sync config ─────────────────────────────────────────────────────────
+const HIGHLIGHT_DURATION_MS = 3000   // how long video highlight glow lasts (ms)
+const DEATH_SETTLE_MS       = 3200   // ms after any triggered death before settling to dead style
 // ─────────────────────────────────────────────────────────────────────────
 
 import { useState, useMemo, useEffect, useRef } from 'react'
@@ -101,6 +101,9 @@ export default function CharacterList({
   onCharacterClick,
   videoEvents,
   currentVideoTime,
+  slideEvents,
+  currentSlide,
+  draftIds,
 }) {
   const [selectedChar, setSelectedChar] = useState(null)
   const [displayEpisodeId, setDisplayEpisodeId] = useState(currentEpisodeId)
@@ -108,15 +111,21 @@ export default function CharacterList({
   const t2Ref = useRef(null)
 
   // ── Video-sync state ──────────────────────────────────────────────────────
-  const [videoHighlighted, setVideoHighlighted]       = useState(() => new Set())
-  const [videoTriggeredDeaths, setVideoTriggeredDeaths] = useState(() => new Set())
-  const [videoDeathSettled, setVideoDeathSettled]     = useState(() => new Set())
+  const [videoHighlighted, setVideoHighlighted]           = useState(() => new Set())
+  const [videoTriggeredDeaths, setVideoTriggeredDeaths]   = useState(() => new Set())
+  const [videoDeathSettled, setVideoDeathSettled]         = useState(() => new Set())
   const [videoTriggeredReborns, setVideoTriggeredReborns] = useState(() => new Set())
-  const firedRef         = useRef(new Set())   // event keys already fired
-  const highlightTimers  = useRef(new Map())   // characterId → timer
-  const deathSettleTimers = useRef(new Map())  // characterId → timer
+  const firedRef          = useRef(new Set())   // video event keys already fired
+  const highlightTimers   = useRef(new Map())   // key → timer
+  const deathSettleTimers = useRef(new Map())   // key → timer
 
-  // Reset all video state when episode changes
+  // ── Slide-sync state ──────────────────────────────────────────────────────
+  const [slideTriggeredDeaths, setSlideTriggeredDeaths] = useState(() => new Set())
+  const [slideDeathSettled, setSlideDeathSettled]       = useState(() => new Set())
+  const slideFiredRef         = useRef(new Set())   // slide event keys already fired
+  const slideSettleTimers     = useRef(new Map())   // key → timer
+
+  // Reset all sync state when episode changes
   useEffect(() => {
     firedRef.current = new Set()
     highlightTimers.current.forEach(clearTimeout)
@@ -127,6 +136,12 @@ export default function CharacterList({
     setVideoTriggeredDeaths(new Set())
     setVideoDeathSettled(new Set())
     setVideoTriggeredReborns(new Set())
+
+    slideFiredRef.current = new Set()
+    slideSettleTimers.current.forEach(clearTimeout)
+    slideSettleTimers.current.clear()
+    setSlideTriggeredDeaths(new Set())
+    setSlideDeathSettled(new Set())
   }, [currentEpisodeId])
 
   // Process video time updates
@@ -150,7 +165,7 @@ export default function CharacterList({
         setVideoTriggeredDeaths(prev => new Set([...prev, evt.characterId]))
         const timer = setTimeout(() => {
           setVideoDeathSettled(prev => new Set([...prev, evt.characterId]))
-        }, VIDEO_DEATH_SETTLE_MS)
+        }, DEATH_SETTLE_MS)
         deathSettleTimers.current.set(key, timer)
 
       } else if (evt.event === 'reborn') {
@@ -158,6 +173,45 @@ export default function CharacterList({
       }
     }
   }, [currentVideoTime, videoEvents])
+
+  // Process slide changes — highlights are derived inline, deaths need state
+  useEffect(() => {
+    if (!slideEvents?.length || currentSlide == null) return
+
+    for (const evt of slideEvents) {
+      if (evt.event !== 'died-now') continue
+      if (currentSlide < evt.slide) continue
+      const key = `slide-${evt.slide}-${evt.characterId}`
+      if (slideFiredRef.current.has(key)) continue
+      slideFiredRef.current.add(key)
+
+      setSlideTriggeredDeaths(prev => new Set([...prev, evt.characterId]))
+      const timer = setTimeout(() => {
+        setSlideDeathSettled(prev => new Set([...prev, evt.characterId]))
+      }, DEATH_SETTLE_MS)
+      slideSettleTimers.current.set(key, timer)
+    }
+    return () => {
+      slideSettleTimers.current.forEach(clearTimeout)
+      slideSettleTimers.current.clear()
+    }
+  }, [currentSlide, slideEvents])
+
+  // Slide highlights — active only while on that exact slide (derived, no state needed)
+  const slideHighlighted = useMemo(() => {
+    if (!slideEvents?.length || currentSlide == null) return new Set()
+    return new Set(
+      slideEvents
+        .filter(e => e.event === 'highlight' && e.slide === currentSlide)
+        .map(e => e.characterId)
+    )
+  }, [slideEvents, currentSlide])
+
+  // IDs whose death is slide-controlled (suppressed from episode-level animation)
+  const slideControlledDeaths = useMemo(() => {
+    if (!slideEvents?.length) return new Set()
+    return new Set(slideEvents.filter(e => e.event === 'died-now').map(e => e.characterId))
+  }, [slideEvents])
 
   // IDs whose death/reborn is video-controlled (suppressed until timestamp fires)
   const videoControlledDeaths = useMemo(() => {
@@ -178,8 +232,10 @@ export default function CharacterList({
       setDiedNowSettled(false)
 
       const { diedThisEpisode } = computeStatuses(eps, currentEpisodeId)
-      // exclude video-controlled deaths — they'll animate at their timestamp
-      const episodeLevelDeaths = [...diedThisEpisode].filter(id => !videoControlledDeaths.has(id))
+      // exclude sync-controlled deaths — they animate at their timestamp/slide
+      const episodeLevelDeaths = [...diedThisEpisode].filter(
+        id => !videoControlledDeaths.has(id) && !slideControlledDeaths.has(id)
+      )
       const maxShotDelay = Math.max(0, episodeLevelDeaths.length - 1) * 250
       const settledIn = maxShotDelay + 2200 + 1000
 
@@ -198,14 +254,16 @@ export default function CharacterList({
 
   const baseStatusOf = (id) => getStatus(id, deadBefore, diedThisEpisode, reborn)
 
-  // Effective status: video-triggered overrides episode-level
+  // Effective status: sync-triggered overrides episode-level
   const statusOf = (id) => {
     if (videoTriggeredReborns.has(id)) return 'reborn'
     if (videoTriggeredDeaths.has(id))  return 'died-now'
+    if (slideTriggeredDeaths.has(id))  return 'died-now'
     const base = baseStatusOf(id)
-    // Suppress episode-level animation for video-controlled chars not yet triggered
+    // Suppress episode-level animation for sync-controlled chars not yet triggered
     if (videoControlledDeaths.has(id)  && base === 'died-now') return 'alive'
     if (videoControlledReborns.has(id) && base === 'reborn')   return 'dead'
+    if (slideControlledDeaths.has(id)  && base === 'died-now') return 'alive'
     return base
   }
 
@@ -219,7 +277,8 @@ export default function CharacterList({
   const renderChar = (c) => {
     const status = statusOf(c.id)
     const isVideoTriggerDeath = videoTriggeredDeaths.has(c.id)
-    const isHighlighted = videoHighlighted.has(c.id)
+    const isSlideTriggerDeath = slideTriggeredDeaths.has(c.id)
+    const isHighlighted = videoHighlighted.has(c.id) || slideHighlighted.has(c.id)
 
     // Shot delay: staggered for episode-level deaths, instant for video-triggered
     const shotDelay = status === 'died-now'
@@ -229,7 +288,9 @@ export default function CharacterList({
     const rebornDelay = status === 'reborn' ? getRebornDelay(c.id) : 0
 
     const isSettled = status === 'died-now' && (
-      isVideoTriggerDeath ? videoDeathSettled.has(c.id) : diedNowSettled
+      isVideoTriggerDeath ? videoDeathSettled.has(c.id)
+        : isSlideTriggerDeath ? slideDeathSettled.has(c.id)
+        : diedNowSettled
     )
 
     const style = {
@@ -245,7 +306,8 @@ export default function CharacterList({
           ` clist__char--${status}` +
           (isSettled       ? ' clist__char--died-settled' : '') +
           (isHighlighted   ? ' clist__char--highlight'    : '') +
-          ((c.saleCount ?? 0) === 0 ? ' clist__char--unclaimed' : '')
+          ((c.saleCount ?? 0) === 0 ? ' clist__char--unclaimed' : '') +
+          (draftIds?.includes(c.id) ? ' clist__char--draft' : '')
         }
         style={style}
         onClick={() => handleClick(c)}

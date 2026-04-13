@@ -2,10 +2,22 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
+import Tokenville from '../components/Tokenville'
+import DraftScreen from '../components/DraftScreen'
 import logoWhite from '../images/logo-white.svg'
 import '../styles/Adventures.css'
 
 export default function Adventures() {
+  const [draftDone, setDraftDone] = useState(() => !!localStorage.getItem('deus_draft'))
+  const draftIds = JSON.parse(localStorage.getItem('deus_draft') || 'null')
+
+  if (!draftDone) {
+    return <DraftScreen onComplete={(ids) => {
+      localStorage.setItem('deus_draft', JSON.stringify(ids))
+      setDraftDone(true)
+    }} />
+  }
+
   const [episodes, setEpisodes] = useState([])
   const [activeId, setActiveId] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -70,64 +82,72 @@ export default function Adventures() {
     if (hasPrev) handleChangeEpisode(episodes[activeIdx - 1].id)
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
+  const isFinale = activeEpisode?.path === 'tokenville'
+
   return (
-    <div className="adventures adventures--fullscreen">
+    <div className={`adventures adventures--fullscreen${isFinale ? ' adventures--finale' : ''}`}>
       {/* Blurred background — crossfade between episodes */}
-      {bottomBg && (
+      {!isFinale && bottomBg && (
         <div className="adventures__bg" style={{ backgroundImage: `url(${bottomBg})` }} />
       )}
-      {topBg && (
+      {!isFinale && topBg && (
         <div className="adventures__bg adventures__bg--fade-in" key={topBg} style={{ backgroundImage: `url(${topBg})` }} />
       )}
 
       {/* Top bar */}
-      <div className="adventures__topbar">
-        <Link to="/" className="adventures__topbar-logo">
-          <img src={logoWhite} alt="DEUS ETH" />
-        </Link>
-        {activeEpisode && (
-          <span className="adventures__topbar-title">
-            {activeEpisode.number !== undefined && (
-              <span className="adventures__topbar-ep">Ep. {activeEpisode.number}</span>
-            )}
-            {activeEpisode.title}
-          </span>
-        )}
-        <nav className="adventures__topbar-nav">
-          <Link to="/" className="adventures__topbar-link">История</Link>
-          <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
-          <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
-        </nav>
-      </div>
+      {!isFinale && (
+        <div className="adventures__topbar">
+          <Link to="/" className="adventures__topbar-logo">
+            <img src={logoWhite} alt="DEUS ETH" />
+          </Link>
+          {activeEpisode && (
+            <span className="adventures__topbar-title">
+              {activeEpisode.number !== undefined && (
+                <span className="adventures__topbar-ep">Ep. {activeEpisode.number}</span>
+              )}
+              {activeEpisode.title}
+            </span>
+          )}
+          <nav className="adventures__topbar-nav">
+            <Link to="/" className="adventures__topbar-link">История</Link>
+            <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
+            <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
+          </nav>
+        </div>
+      )}
 
-      {/* Episode player */}
+      {/* Episode player or Tokenville finale */}
       {activeEpisode && (
-        <Episode
-          episodeId={activeEpisode.id}
-          number={activeEpisode.number}
-          title={activeEpisode.title}
-          text={activeEpisode.text}
-          media={activeEpisode.media}
-          rip={activeEpisode.rip}
-          path={activeEpisode.path}
-          comment={activeEpisode.comment}
-          storyHeroIds={activeEpisode.storyHeroIds}
-          videoEvents={activeEpisode.videoEvents}
-          episodes={episodes}
-          onOpenDrawer={() => setDrawerOpen(true)}
-          episodeNav={{
-            current: activeIdx,
-            total: episodes.length,
-            prevEpisode: hasPrev ? episodes[activeIdx - 1] : null,
-            nextEpisode: hasNext ? episodes[activeIdx + 1] : null,
-            onPrev: goPrev,
-            onNext: goNext,
-          }}
-        />
+        isFinale
+          ? <Tokenville />
+          : <Episode
+              episodeId={activeEpisode.id}
+              number={activeEpisode.number}
+              title={activeEpisode.title}
+              text={activeEpisode.text}
+              media={activeEpisode.media}
+              rip={activeEpisode.rip}
+              path={activeEpisode.path}
+              comment={activeEpisode.comment}
+              storyHeroIds={activeEpisode.storyHeroIds}
+              videoEvents={activeEpisode.videoEvents}
+              slideEvents={activeEpisode.slideEvents}
+              episodes={episodes}
+              draftIds={draftIds}
+              onOpenDrawer={() => setDrawerOpen(true)}
+              episodeNav={{
+                current: activeIdx,
+                total: episodes.length,
+                prevEpisode: hasPrev ? episodes[activeIdx - 1] : null,
+                nextEpisode: hasNext ? episodes[activeIdx + 1] : null,
+                onPrev: goPrev,
+                onNext: goNext,
+              }}
+            />
       )}
 
       {/* Bottom drawer */}
-      {drawerOpen && (
+      {!isFinale && drawerOpen && (
         <div className="adventures__drawer-overlay" onClick={() => setDrawerOpen(false)}>
           <div className="adventures__drawer" onClick={e => e.stopPropagation()}>
             <div className="adventures__drawer-handle" onClick={() => setDrawerOpen(false)} />

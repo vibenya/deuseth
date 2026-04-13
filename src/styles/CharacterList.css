@@ -354,3 +354,9 @@
 @media (max-width: 768px) {
   .clist__header-title { font-size: 13px; letter-spacing: 1.5px; }
 }
+
+/* ===== Draft highlight ===== */
+.clist__char--draft {
+  outline: 1.5px solid #d4a94a;
+  outline-offset: -1px;
+}

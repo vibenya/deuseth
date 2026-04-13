@@ -17,12 +17,13 @@ function getObits(path) {
 
 export default function Episode({
   episodeId, number, title, text, media, rip, path,
-  comment, storyHeroIds, onOpenDrawer, episodeNav, episodes, videoEvents
+  comment, storyHeroIds, onOpenDrawer, episodeNav, episodes, videoEvents, slideEvents, draftIds
 }) {
   const [librettoExpanded, setLibrettoExpanded] = useState(false)
   const [commentExpanded, setCommentExpanded] = useState(false)
   const [activeObit, setActiveObit] = useState(null)
   const [currentVideoTime, setCurrentVideoTime] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   const obits = getObits(`${path}.json`)
 
@@ -43,6 +44,7 @@ export default function Episode({
     setCommentExpanded(false)
     setActiveObit(null)
     setCurrentVideoTime(null)
+    setCurrentSlide(0)
   }, [episodeId])
 
   function openObit(c) {
@@ -68,6 +70,7 @@ export default function Episode({
           episodeNav={episodeNav}
           onOpenDrawer={onOpenDrawer}
           onTimeUpdate={setCurrentVideoTime}
+          onSlideChange={setCurrentSlide}
           aliveCount={aliveCount}
           deadCount={deadCount}
           keyboardEnabled={activeObit === null}
@@ -109,6 +112,9 @@ export default function Episode({
             onCharacterClick={openObit}
             videoEvents={videoEvents}
             currentVideoTime={currentVideoTime}
+            slideEvents={slideEvents}
+            currentSlide={currentSlide}
+            draftIds={draftIds}
           />
         )}
       </div>

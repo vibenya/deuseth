@@ -252,8 +252,7 @@
       "image:/images/episodes/2/episode_2_9-04.png",
       "image:/images/episodes/2/episode_2_9-05.png",
       "image:/images/episodes/2/episode_2_9-06.png",
-      "image:/images/episodes/2/episode_2_9-07.png",
-      "image:/images/episodes/2/episode_2_9-08.png"
+      "image:/images/episodes/2/episode_2_9-07.png"
     ],
     "background": "/images/episodes/2/back.png",
     "slide": "/images/episodes/slides/cover-02.png",
@@ -271,7 +270,84 @@
     ],
     "storytitle": "Stories",
     "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
-    "videoEvents": []
+    "videoEvents": [],
+    "slideEvents": [
+      {
+        "slide": 1,
+        "characterId": 2,
+        "event": "highlight"
+      },
+      {
+        "slide": 2,
+        "characterId": 29,
+        "event": "highlight"
+      },
+      {
+        "slide": 4,
+        "characterId": 41,
+        "event": "highlight"
+      },
+      {
+        "slide": 4,
+        "characterId": 47,
+        "event": "highlight"
+      },
+      {
+        "slide": 4,
+        "characterId": 27,
+        "event": "highlight"
+      },
+      {
+        "slide": 4,
+        "characterId": 5,
+        "event": "highlight"
+      },
+      {
+        "slide": 5,
+        "characterId": 42,
+        "event": "highlight"
+      },
+      {
+        "slide": 6,
+        "characterId": 27,
+        "event": "highlight"
+      },
+      {
+        "slide": 6,
+        "characterId": 42,
+        "event": "died-now"
+      },
+      {
+        "slide": 7,
+        "characterId": 27,
+        "event": "died-now"
+      },
+      {
+        "slide": 7,
+        "characterId": 5,
+        "event": "died-now"
+      },
+      {
+        "slide": 7,
+        "characterId": 29,
+        "event": "died-now"
+      },
+      {
+        "slide": 7,
+        "characterId": 25,
+        "event": "died-now"
+      },
+      {
+        "slide": 7,
+        "characterId": 41,
+        "event": "died-now"
+      },
+      {
+        "slide": 7,
+        "characterId": 45,
+        "event": "died-now"
+      }
+    ]
   },
   {
     "id": 3,

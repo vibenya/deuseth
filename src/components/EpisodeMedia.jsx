@@ -17,6 +17,7 @@ export default function EpisodeMedia({
   episodeNav,
   onOpenDrawer,
   onTimeUpdate,
+  onSlideChange,
   aliveCount,
   deadCount,
   keyboardEnabled = true,
@@ -32,6 +33,9 @@ export default function EpisodeMedia({
   useEffect(() => {
     setMediaIndex(0)
     setVideoEnded(false)
+    onSlideChange?.(0)
+  // onSlideChange is always a stable React setter (setCurrentSlide) — safe to omit
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [episodeId])
 
   useEffect(() => {
@@ -66,21 +70,28 @@ export default function EpisodeMedia({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [episodeId, mediaIndex, items])
 
+  const goToSlide = useCallback((idx) => {
+    setMediaIndex(idx)
+    onSlideChange?.(idx)
+  }, [onSlideChange])
+
   useEffect(() => {
     if (!keyboardEnabled) return
     function onKey(e) {
       if (e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault()
-        setMediaIndex(prev => prev < items.length - 1 ? prev + 1 : prev)
+        const next = Math.min(items.length - 1, mediaIndex + 1)
+        if (next !== mediaIndex) goToSlide(next)
       }
       if (e.key === 'ArrowLeft') {
         e.preventDefault()
-        setMediaIndex(prev => prev > 0 ? prev - 1 : prev)
+        const prev = Math.max(0, mediaIndex - 1)
+        if (prev !== mediaIndex) goToSlide(prev)
       }
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [items.length, keyboardEnabled])
+  }, [items.length, mediaIndex, keyboardEnabled, goToSlide])
 
   const isVideo = displayed && (displayed.type === 'youtube' || displayed.type === 'coub')
   const isCoub = displayed?.type === 'coub'
@@ -157,7 +168,7 @@ export default function EpisodeMedia({
                 <button
                   type="button"
                   className="ep-media__carousel-btn ep-media__carousel-btn--prev"
-                  onClick={() => setMediaIndex(i => Math.max(0, i - 1))}
+                  onClick={() => goToSlide(Math.max(0, mediaIndex - 1))}
                   disabled={mediaIndex === 0}
                   aria-label="Previous slide"
                 >
@@ -171,7 +182,7 @@ export default function EpisodeMedia({
                       key={i}
                       type="button"
                       className={'ep-media__carousel-dot' + (i === mediaIndex ? ' is-active' : '')}
-                      onClick={() => setMediaIndex(i)}
+                      onClick={() => goToSlide(i)}
                       aria-label={`Slide ${i + 1}`}
                     />
                   ))}
@@ -179,7 +190,7 @@ export default function EpisodeMedia({
                 <button
                   type="button"
                   className="ep-media__carousel-btn ep-media__carousel-btn--next"
-                  onClick={() => setMediaIndex(i => Math.min(items.length - 1, i + 1))}
+                  onClick={() => goToSlide(Math.min(items.length - 1, mediaIndex + 1))}
                   disabled={mediaIndex === items.length - 1}
                   aria-label="Next slide"
                 >
