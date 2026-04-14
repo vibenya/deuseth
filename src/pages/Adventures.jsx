@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
-import Tokenville from '../components/Tokenville'
 import DraftScreen from '../components/DraftScreen'
 import logoWhite from '../images/logo-white.svg'
 import '../styles/Adventures.css'
@@ -10,6 +9,13 @@ import '../styles/Adventures.css'
 export default function Adventures() {
   const [draftDone, setDraftDone] = useState(() => !!localStorage.getItem('deus_draft'))
   const draftIds = JSON.parse(localStorage.getItem('deus_draft') || 'null')
+  const [episodes, setEpisodes] = useState([])
+  const [activeId, setActiveId] = useState(0)
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [bottomBg, setBottomBg] = useState(null)
+  const [topBg, setTopBg] = useState(null)
+  const { episodePath } = useParams()
+  const navigate = useNavigate()
 
   if (!draftDone) {
     return <DraftScreen onComplete={(ids) => {
@@ -18,21 +24,13 @@ export default function Adventures() {
     }} />
   }
 
-  const [episodes, setEpisodes] = useState([])
-  const [activeId, setActiveId] = useState(0)
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [bottomBg, setBottomBg] = useState(null)
-  const [topBg, setTopBg] = useState(null)
-  const { episodeId } = useParams()
-  const navigate = useNavigate()
-
   useEffect(() => {
     fetch('/data/adventures.json')
       .then(r => r.json())
       .then(data => {
         setEpisodes(data)
-        if (episodeId !== undefined) {
-          const found = data.find(ep => ep.path === episodeId || String(ep.id) === episodeId)
+        if (episodePath !== undefined) {
+          const found = data.find(ep => ep.path === episodePath || String(ep.id) === episodePath)
           if (found) setActiveId(found.id)
         }
       })
@@ -40,11 +38,11 @@ export default function Adventures() {
 
   useEffect(() => {
     if (episodes.length === 0) return
-    if (episodeId !== undefined) {
-      const found = episodes.find(ep => ep.path === episodeId || String(ep.id) === episodeId)
+    if (episodePath !== undefined) {
+      const found = episodes.find(ep => ep.path === episodePath || String(ep.id) === episodePath)
       if (found) setActiveId(found.id)
     }
-  }, [episodeId, episodes])
+  }, [episodePath, episodes])
 
   const activeEpisode = episodes.find(ep => ep.id === activeId)
   const activeIdx = episodes.findIndex(ep => ep.id === activeId)
@@ -82,21 +80,18 @@ export default function Adventures() {
     if (hasPrev) handleChangeEpisode(episodes[activeIdx - 1].id)
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
-  const isFinale = activeEpisode?.path === 'tokenville'
-
   return (
-    <div className={`adventures adventures--fullscreen${isFinale ? ' adventures--finale' : ''}`}>
+    <div className="adventures adventures--fullscreen">
       {/* Blurred background — crossfade between episodes */}
-      {!isFinale && bottomBg && (
+      {bottomBg && (
         <div className="adventures__bg" style={{ backgroundImage: `url(${bottomBg})` }} />
       )}
-      {!isFinale && topBg && (
+      {topBg && (
         <div className="adventures__bg adventures__bg--fade-in" key={topBg} style={{ backgroundImage: `url(${topBg})` }} />
       )}
 
       {/* Top bar */}
-      {!isFinale && (
-        <div className="adventures__topbar">
+      <div className="adventures__topbar">
           <Link to="/" className="adventures__topbar-logo">
             <img src={logoWhite} alt="DEUS ETH" />
           </Link>
@@ -114,40 +109,37 @@ export default function Adventures() {
             <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
           </nav>
         </div>
-      )}
 
-      {/* Episode player or Tokenville finale */}
+      {/* Episode player */}
       {activeEpisode && (
-        isFinale
-          ? <Tokenville />
-          : <Episode
-              episodeId={activeEpisode.id}
-              number={activeEpisode.number}
-              title={activeEpisode.title}
-              text={activeEpisode.text}
-              media={activeEpisode.media}
-              rip={activeEpisode.rip}
-              path={activeEpisode.path}
-              comment={activeEpisode.comment}
-              storyHeroIds={activeEpisode.storyHeroIds}
-              videoEvents={activeEpisode.videoEvents}
-              slideEvents={activeEpisode.slideEvents}
-              episodes={episodes}
-              draftIds={draftIds}
-              onOpenDrawer={() => setDrawerOpen(true)}
-              episodeNav={{
-                current: activeIdx,
-                total: episodes.length,
-                prevEpisode: hasPrev ? episodes[activeIdx - 1] : null,
-                nextEpisode: hasNext ? episodes[activeIdx + 1] : null,
-                onPrev: goPrev,
-                onNext: goNext,
-              }}
-            />
+        <Episode
+          episodeId={activeEpisode.id}
+          number={activeEpisode.number}
+          title={activeEpisode.title}
+          text={activeEpisode.text}
+          media={activeEpisode.media}
+          rip={activeEpisode.rip}
+          path={activeEpisode.path}
+          comment={activeEpisode.comment}
+          storyHeroIds={activeEpisode.storyHeroIds}
+          videoEvents={activeEpisode.videoEvents}
+          slideEvents={activeEpisode.slideEvents}
+          episodes={episodes}
+          draftIds={draftIds}
+          onOpenDrawer={() => setDrawerOpen(true)}
+          episodeNav={{
+            current: activeIdx,
+            total: episodes.length,
+            prevEpisode: hasPrev ? episodes[activeIdx - 1] : null,
+            nextEpisode: hasNext ? episodes[activeIdx + 1] : null,
+            onPrev: goPrev,
+            onNext: goNext,
+          }}
+        />
       )}
 
       {/* Bottom drawer */}
-      {!isFinale && drawerOpen && (
+      {drawerOpen && (
         <div className="adventures__drawer-overlay" onClick={() => setDrawerOpen(false)}>
           <div className="adventures__drawer" onClick={e => e.stopPropagation()}>
             <div className="adventures__drawer-handle" onClick={() => setDrawerOpen(false)} />

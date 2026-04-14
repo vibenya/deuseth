@@ -1,7 +1,9 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import EpisodeStatCounter from './EpisodeStatCounter'
+import Tokenville from './Tokenville'
 
 function parseMedia(str) {
+  if (str === 'tokenville') return { type: 'tokenville' }
   const parts = str.split(':')
   if (parts[0] === 'youtube') return { type: 'youtube', id: parts[1], preview: parts.slice(2).join(':') }
   if (parts[0] === 'coub') return { type: 'coub', id: parts[1], preview: parts.slice(2).join(':') }
@@ -41,6 +43,13 @@ export default function EpisodeMedia({
   useEffect(() => {
     const ci = items[mediaIndex]
     if (!ci) return
+
+    // Types with no src (e.g. tokenville) — swap immediately
+    if (ci.type === 'tokenville') {
+      setDisplayed(ci)
+      return
+    }
+
     const newSrc = ci.type === 'image' ? ci.src : ci.preview
     if (!newSrc) return
 
@@ -93,6 +102,7 @@ export default function EpisodeMedia({
     return () => document.removeEventListener('keydown', onKey)
   }, [items.length, mediaIndex, keyboardEnabled, goToSlide])
 
+  const isTokenville = displayed?.type === 'tokenville'
   const isVideo = displayed && (displayed.type === 'youtube' || displayed.type === 'coub')
   const isCoub = displayed?.type === 'coub'
 
@@ -137,9 +147,10 @@ export default function EpisodeMedia({
 
   return (
     <div className="ep-player__media-block">
-      <div className="ep-player__media">
+      <div className={`ep-player__media${isTokenville ? ' ep-player__media--tokenville' : ''}`}>
         {displayed && (
           <div className="ep-player__media-inner">
+            {isTokenville && <Tokenville embedded onSlideChange={onSlideChange} />}
             {displayed.type === 'image' && (
               <img className="ep-player__img" src={displayed.src} alt="" />
             )}

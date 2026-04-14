@@ -666,7 +666,7 @@
   {
     "id": 10,
     "number": "Episode X",
-    "path": "tokenville",
+    "path": "episode-x",
     "title": "Tokenville",
     "subtitle": "",
     "text": [
@@ -676,7 +676,7 @@
       "Check it out on <a href=\"https://tokenville.tv\">tokenville.tv</a>"
     ],
     "media": [
-      "youtube:-ETErROeDyw:/images/episodes/10/cover.png"
+      "tokenville"
     ],
     "background": "/images/episodes/10/back.jpg",
     "slide": "/images/episodes/slides/cover-10.png",
@@ -685,6 +685,37 @@
     "map": "",
     "storytitle": "Stories",
     "comment": "Explore the world of Deus ETH and highlight your character in personal stories.",
-    "videoEvents": []
+    "videoEvents": [],
+    "rip": [
+      18,
+      36
+    ],
+    "slideEvents": [
+      {
+        "slide": 10,
+        "characterId": 36,
+        "event": "died-now"
+      },
+      {
+        "slide": 10,
+        "characterId": 18,
+        "event": "died-now"
+      },
+      {
+        "slide": 11,
+        "characterId": 5,
+        "event": "winner"
+      },
+      {
+        "slide": 11,
+        "characterId": 10,
+        "event": "winner"
+      },
+      {
+        "slide": 11,
+        "characterId": 11,
+        "event": "winner"
+      }
+    ]
   }
 ]

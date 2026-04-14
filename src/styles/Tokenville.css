@@ -1,0 +1,185 @@
+/* ===== Tokenville — Episode X finale ===== */
+
+.tokenville {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  z-index: 500;
+  min-height: 100dvh;
+}
+
+/* Embedded in media zone */
+.tokenville--embedded {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Stage with characters */
+.tokenville__stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2vw;
+  padding-bottom: 0;
+  width: 100%;
+  height: 45vh;
+}
+
+.tokenville--embedded .tokenville__stage {
+  height: 100%;
+  flex: 1;
+}
+
+.tokenville--embedded .tokenville__char img {
+  height: 65%;
+}
+
+/* Individual character wrapper */
+.tokenville__char {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tokenville__char-inner {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tokenville__char img {
+  height: 35vh;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.tokenville__char--dying {
+  animation: charDie 1.5s ease forwards;
+}
+
+@keyframes charDie {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Appear animation for initial entrance */
+@keyframes charAppear {
+  from { opacity: 0; }
+  to   { opacity: 0.45; }
+}
+
+.tokenville__char--appear {
+  animation: charAppear 1.5s ease-in forwards;
+}
+
+/* Speech bubble */
+.tokenville__bubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1.5px solid #1a1a2e;
+  border-radius: 12px;
+  padding: 10px 14px;
+  max-width: 200px;
+  font-family: var(--al, serif);
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  color: #1a1a2e;
+  z-index: 10;
+  animation: bubblePop 0.25s ease;
+  pointer-events: none;
+}
+
+.tokenville__bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+/* Inner pseudo for white triangle fill */
+.tokenville__bubble::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #fff;
+  z-index: 1;
+}
+
+@keyframes bubblePop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Credit text */
+.tokenville__credit {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--alsans, sans-serif);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #999;
+  text-transform: uppercase;
+  text-align: center;
+  animation: creditFade 1.5s ease;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes creditFade {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .tokenville__char img {
+    height: 25vh;
+  }
+
+  .tokenville__bubble {
+    max-width: calc(100vw - 32px);
+    font-size: 14px;
+  }
+}

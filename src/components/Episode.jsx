@@ -19,8 +19,6 @@ export default function Episode({
   episodeId, number, title, text, media, rip, path,
   comment, storyHeroIds, onOpenDrawer, episodeNav, episodes, videoEvents, slideEvents, draftIds
 }) {
-  const [librettoExpanded, setLibrettoExpanded] = useState(false)
-  const [commentExpanded, setCommentExpanded] = useState(false)
   const [activeObit, setActiveObit] = useState(null)
   const [currentVideoTime, setCurrentVideoTime] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -40,8 +38,6 @@ export default function Episode({
   const isReborn = episodeId === 8
 
   useEffect(() => {
-    setLibrettoExpanded(false)
-    setCommentExpanded(false)
     setActiveObit(null)
     setCurrentVideoTime(null)
     setCurrentSlide(0)
@@ -76,31 +72,6 @@ export default function Episode({
           keyboardEnabled={activeObit === null}
         />
 
-        <div className="ep-player__text-sections">
-          {text && text.length > 0 && (
-            <div
-              className={'ep-player__section' + (librettoExpanded ? ' ep-player__section--open' : '')}
-              onClick={() => setLibrettoExpanded(v => !v)}
-            >
-              <div className="ep-player__section-label">Libretto</div>
-              <div className="ep-player__section-text">
-                {text.map((para, i) => (
-                  <p key={i} dangerouslySetInnerHTML={{ __html: para }} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {comment && (
-            <div
-              className={'ep-player__section' + (commentExpanded ? ' ep-player__section--open' : '')}
-              onClick={() => setCommentExpanded(v => !v)}
-            >
-              <div className="ep-player__section-label">Director's Note</div>
-              <div className="ep-player__section-text">{comment}</div>
-            </div>
-          )}
-        </div>
       </div>
 
       {/* Right column: characters */}

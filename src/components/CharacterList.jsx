@@ -120,8 +120,9 @@ export default function CharacterList({
   const deathSettleTimers = useRef(new Map())   // key → timer
 
   // ── Slide-sync state ──────────────────────────────────────────────────────
-  const [slideTriggeredDeaths, setSlideTriggeredDeaths] = useState(() => new Set())
-  const [slideDeathSettled, setSlideDeathSettled]       = useState(() => new Set())
+  const [slideTriggeredDeaths,  setSlideTriggeredDeaths]  = useState(() => new Set())
+  const [slideDeathSettled,     setSlideDeathSettled]     = useState(() => new Set())
+  const [slideTriggeredWinners, setSlideTriggeredWinners] = useState(() => new Set())
   const slideFiredRef         = useRef(new Set())   // slide event keys already fired
   const slideSettleTimers     = useRef(new Map())   // key → timer
 
@@ -142,6 +143,7 @@ export default function CharacterList({
     slideSettleTimers.current.clear()
     setSlideTriggeredDeaths(new Set())
     setSlideDeathSettled(new Set())
+    setSlideTriggeredWinners(new Set())
   }, [currentEpisodeId])
 
   // Process video time updates
@@ -155,21 +157,21 @@ export default function CharacterList({
       firedRef.current.add(key)
 
       if (evt.event === 'highlight') {
-        setVideoHighlighted(prev => new Set([...prev, evt.characterId]))
+        setVideoHighlighted(prev => new Set(prev).add(evt.characterId))
         const timer = setTimeout(() => {
           setVideoHighlighted(prev => { const s = new Set(prev); s.delete(evt.characterId); return s })
         }, HIGHLIGHT_DURATION_MS)
         highlightTimers.current.set(key, timer)
 
       } else if (evt.event === 'died-now') {
-        setVideoTriggeredDeaths(prev => new Set([...prev, evt.characterId]))
+        setVideoTriggeredDeaths(prev => new Set(prev).add(evt.characterId))
         const timer = setTimeout(() => {
-          setVideoDeathSettled(prev => new Set([...prev, evt.characterId]))
+          setVideoDeathSettled(prev => new Set(prev).add(evt.characterId))
         }, DEATH_SETTLE_MS)
         deathSettleTimers.current.set(key, timer)
 
       } else if (evt.event === 'reborn') {
-        setVideoTriggeredReborns(prev => new Set([...prev, evt.characterId]))
+        setVideoTriggeredReborns(prev => new Set(prev).add(evt.characterId))
       }
     }
   }, [currentVideoTime, videoEvents])
@@ -179,17 +181,20 @@ export default function CharacterList({
     if (!slideEvents?.length || currentSlide == null) return
 
     for (const evt of slideEvents) {
-      if (evt.event !== 'died-now') continue
       if (currentSlide < evt.slide) continue
-      const key = `slide-${evt.slide}-${evt.characterId}`
+      const key = `slide-${evt.slide}-${evt.characterId}-${evt.event}`
       if (slideFiredRef.current.has(key)) continue
       slideFiredRef.current.add(key)
 
-      setSlideTriggeredDeaths(prev => new Set([...prev, evt.characterId]))
-      const timer = setTimeout(() => {
-        setSlideDeathSettled(prev => new Set([...prev, evt.characterId]))
-      }, DEATH_SETTLE_MS)
-      slideSettleTimers.current.set(key, timer)
+      if (evt.event === 'died-now') {
+        setSlideTriggeredDeaths(prev => new Set(prev).add(evt.characterId))
+        const timer = setTimeout(() => {
+          setSlideDeathSettled(prev => new Set(prev).add(evt.characterId))
+        }, DEATH_SETTLE_MS)
+        slideSettleTimers.current.set(key, timer)
+      } else if (evt.event === 'winner') {
+        setSlideTriggeredWinners(prev => new Set(prev).add(evt.characterId))
+      }
     }
     return () => {
       slideSettleTimers.current.forEach(clearTimeout)
@@ -318,6 +323,8 @@ export default function CharacterList({
         )}
         {status === 'reborn' && <div className="clist__reborn-flash" />}
         {isHighlighted && <div className="clist__highlight-glow" />}
+        {slideTriggeredWinners.has(c.id) && <div className="clist__trophy">🏆</div>}
+        {draftIds?.includes(c.id) && <div className="clist__owned-star">★</div>}
         <img src={c.preview} alt={c.name} className="clist__char-img" />
       </div>
     )

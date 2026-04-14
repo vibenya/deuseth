@@ -31,6 +31,9 @@
   border-radius: 12px 12px 0 0;
   background: #fff;
 }
+.ep-player__media--tokenville {
+  overflow: visible;
+}
 .ep-player__media-inner {
   width: 100%;
   line-height: 0;
@@ -165,6 +168,8 @@
 }
 .ep-player__img {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
 }
 .ep-player__video-preview {
@@ -659,29 +664,48 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  /* Compact single-row control bar: title left, nav right */
   .ep-player__media-overlay {
-    --ep-row: 32px;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 14px 16px;
+    --ep-row: 28px;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
+    padding: 8px 14px;
+    align-items: center;
   }
   .ep-ctrl__title-block {
     grid-column: 1;
-    justify-self: center;
-    align-items: center;
-    text-align: center;
+    justify-self: start;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
   }
-  .ep-ctrl__gallery { grid-column: 1; justify-self: center; }
+  .ep-player__media-overlay .ep-player__number { font-size: 8px; }
+  .ep-player__media-overlay .ep-player__title { font-size: 15px; }
+  /* Hide alive/dead counter label text on mobile — keep numbers only */
+  .ep-counter__label { display: none; }
+  .ep-counter { gap: 10px; }
+  .ep-counter__num { font-size: 17px; }
+  /* Gallery/next-ep button: second column */
+  .ep-ctrl__gallery {
+    grid-column: 2;
+    justify-self: center;
+    min-height: auto;
+  }
+  /* Stats + epnav: third column */
   .ep-ctrl__right {
-    grid-column: 1;
-    justify-self: center;
-    gap: 14px;
+    grid-column: 3;
+    justify-self: end;
+    gap: 8px;
+    min-height: auto;
   }
-  .ep-ctrl__meta { gap: 14px; }
-  .ep-ctrl__stat { align-items: center; }
-  .ep-ctrl__stat-num { font-size: 18px; }
-  .ep-ctrl__epnav { padding-left: 14px; }
-  .ep-ctrl__nav svg { width: 12px; height: 12px; }
+  .ep-ctrl__epnav { padding-left: 8px; gap: 4px; }
+  .ep-ctrl__nav { width: 26px; height: 26px; }
+  .ep-ctrl__nav svg { width: 11px; height: 11px; }
+  .ep-ctrl__progress { font-size: 11px; padding: 0 10px; }
+
+  /* Character grid: less padding so grid fills space */
+  .ep-player__right { padding: 8px 12px 16px; }
+
   .ep-player__info { padding: 12px 16px 80px; }
   .ep-player__title { font-size: 20px; }
   .ep-player__char { width: 38px; height: 38px; }
