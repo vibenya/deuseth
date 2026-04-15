@@ -85,13 +85,15 @@ export default function CharacterList({
 
   // Slide highlights: active only while on exact slide (derived)
   const slideHighlighted = useMemo(() => {
-    const slideEvents = episode?.events?.filter(e => e.action === 'highlight' && e.at?.slide != null) ?? []
-    if (!slideEvents.length || currentSlide == null) return new Set()
-    return new Set(
-      slideEvents
-        .filter(e => e.at.slide === currentSlide)
-        .flatMap(e => e.characters === 'all' ? mainCast.map(c => c.id) : e.characters)
-    )
+    if (currentSlide == null) return new Set()
+    const ids = []
+    for (const e of episode?.events ?? []) {
+      if (e.action === 'highlight' && e.at?.slide === currentSlide) {
+        if (e.characters === 'all') return new Set(mainCast.map(c => c.id))
+        ids.push(...e.characters)
+      }
+    }
+    return new Set(ids)
   }, [episode?.events, currentSlide])
 
   // Video highlights: fire once, fade after HIGHLIGHT_DURATION_MS
@@ -129,17 +131,18 @@ export default function CharacterList({
 
   // ── Winner state (slide-triggered) ───────────────────────────────────────
   const [winners, setWinners] = useState(() => new Set())
+  const winnerEventsRef = useRef([])
   const firedWinnersRef = useRef(new Set())
 
   useEffect(() => {
+    winnerEventsRef.current = episode?.events?.filter(e => e.action === 'winner' && e.at?.slide != null) ?? []
     firedWinnersRef.current = new Set()
     setWinners(new Set())
   }, [episode?.id])
 
   useEffect(() => {
     if (currentSlide == null) return
-    const winnerEvents = episode?.events?.filter(e => e.action === 'winner' && e.at?.slide != null) ?? []
-    for (const evt of winnerEvents) {
+    for (const evt of winnerEventsRef.current) {
       if (currentSlide < evt.at.slide) continue
       const ids = evt.characters === 'all' ? mainCast.map(c => c.id) : evt.characters
       for (const id of ids) {
@@ -150,7 +153,7 @@ export default function CharacterList({
         setWinners(prev => new Set(prev).add(id))
       }
     }
-  }, [currentSlide, episode?.events])
+  }, [currentSlide])
 
   // ── Render ────────────────────────────────────────────────────────────────
 

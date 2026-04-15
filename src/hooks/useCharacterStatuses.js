@@ -116,14 +116,24 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
     [episodes, episode?.id]
   )
 
-  // Which episode-level die/revive events apply (no `at`) — stable per episode
+  // Pre-computed sets for episode-level (no `at`) events — stable per episode
   const episodeLevelDied = useMemo(() => {
     const s = new Set()
     if (!episode) return s
     for (const evt of episode.events ?? []) {
-      if (evt.at || (evt.action !== 'die' && evt.action !== 'revive')) continue
-      const ids = resolveCharacters(evt.characters)
-      if (evt.action === 'die') ids.forEach(id => s.add(id))
+      if (evt.at || evt.action !== 'die') continue
+      resolveCharacters(evt.characters).forEach(id => s.add(id))
+    }
+    return s
+  }, [episode])
+
+  const episodeLevelRevived = useMemo(() => {
+    const s = new Set()
+    if (!episode) return s
+    for (const evt of episode.events ?? []) {
+      if (evt.at || evt.action !== 'revive') continue
+      if (evt.characters === 'all') return new Set(allCharIds)
+      resolveCharacters(evt.characters).forEach(id => s.add(id))
     }
     return s
   }, [episode])
@@ -225,17 +235,7 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
       return firedRevived.has(id) ? 'reviving' : 'dead'
     }
 
-    // Episode-level revive (e.g. Hard Fork: revive all on episode load)
-    const isEpisodeLevelRevived = (() => {
-      for (const evt of episode?.events ?? []) {
-        if (evt.action === 'revive' && !evt.at) {
-          if (evt.characters === 'all' || evt.characters.includes(id)) return true
-        }
-      }
-      return false
-    })()
-
-    if (isEpisodeLevelRevived) return wasDead ? 'reviving' : 'alive'
+    if (episodeLevelRevived.has(id)) return wasDead ? 'reviving' : 'alive'
 
     // Media-synced revive has fired (e.g. video revive event)
     if (firedRevived.has(id)) return 'reviving'
@@ -263,7 +263,7 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
     }
     return { aliveCount: allCharIds.length - dead, deadCount: dead }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deadBefore, firedDied, firedRevived, settledIds, episode?.id])
+  }, [deadBefore, firedDied, firedRevived, settledIds, episodeLevelRevived, episode?.id])
 
   // ── Dying metadata (for CharacterList animation staggering) ───────────────
 

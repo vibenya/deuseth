@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
 import DraftScreen from '../components/DraftScreen'
+import { fetchAllEpisodes } from '../utils/episodeData'
 import logo from '../images/logo.svg'
 import '../styles/Adventures.css'
 
@@ -16,20 +17,9 @@ export default function Adventures() {
   const { episodePath } = useParams()
   const navigate = useNavigate()
 
-  if (!draftDone) {
-    return <DraftScreen onComplete={(ids) => {
-      localStorage.setItem('deus_draft', JSON.stringify(ids))
-      setDraftDone(true)
-    }} />
-  }
-
   useEffect(() => {
-    const slugs = [
-      '00_prologue', '01_bloody_kitties', '02_wolf_party', '03_freedom_to_die',
-      '04_redrum', '05_murder', '06_the_final_battle', '07_scam',
-      '08_hard_fork', '09_tokencide', '10_episode-x',
-    ]
-    Promise.all(slugs.map(s => fetch(`/data/episodes/${s}.json`).then(r => r.json())))
+    if (!draftDone) return
+    fetchAllEpisodes()
       .then(data => {
         setEpisodes(data)
         if (episodePath !== undefined) {
@@ -71,6 +61,13 @@ export default function Adventures() {
   const goPrev = useCallback(() => {
     if (hasPrev) handleChangeEpisode(episodes[activeIdx - 1].id)
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
+
+  if (!draftDone) {
+    return <DraftScreen onComplete={(ids) => {
+      localStorage.setItem('deus_draft', JSON.stringify(ids))
+      setDraftDone(true)
+    }} />
+  }
 
   return (
     <div className={`adventures adventures--fullscreen${activeId === 0 ? ' adventures--intro' : ''}`}>
