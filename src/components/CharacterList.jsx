@@ -22,6 +22,7 @@ const HIGHLIGHT_DURATION_MS = 3000
 
 import { useState, useMemo, useEffect, useRef } from 'react'
 import characters from '../data/characters.json'
+import timelines from '../data/token_timelines.json'
 import CharacterModal from './CharacterModal'
 import { createPlayer } from '../utils/createPlayer'
 import '../styles/CharacterList.css'
@@ -36,10 +37,9 @@ export default function CharacterList({
   episode,
   statusOf,
   getDyingMeta,
-  onCharacterClick,
+  onModalOpenChange,
   currentVideoTime,
   currentSlide,
-  draftIds,
 }) {
   const deathPlayerRef  = useRef(null)
   const rebornPlayerRef = useRef(null)
@@ -139,8 +139,13 @@ export default function CharacterList({
   // ── Render ────────────────────────────────────────────────────────────────
 
   const handleClick = (c) => {
-    if (onCharacterClick) onCharacterClick(c)
     setSelectedChar(c)
+    onModalOpenChange?.(true)
+  }
+
+  const handleClose = () => {
+    setSelectedChar(null)
+    onModalOpenChange?.(false)
   }
 
   const renderChar = (c) => {
@@ -174,8 +179,7 @@ export default function CharacterList({
           ` clist__char--${cssStatus}` +
           (status === 'dying-settled'  ? ' clist__char--died-settled' : '') +
           (isHighlighted               ? ' clist__char--highlight'    : '') +
-          ((c.saleCount ?? 0) === 0   ? ' clist__char--unclaimed'    : '') +
-          (draftIds?.includes(c.id)   ? ' clist__char--draft'        : '')
+          ((c.saleCount ?? 0) === 0   ? ' clist__char--unclaimed'    : '')
         }
         style={style}
         onClick={() => handleClick(c)}
@@ -192,7 +196,6 @@ export default function CharacterList({
         {status === 'reviving' && <div className="clist__reborn-flash" onAnimationStart={() => playReborn()} />}
         {isHighlighted && <div className="clist__highlight-glow" />}
         {winners.has(c.id) && <div className="clist__trophy">🏆</div>}
-        {draftIds?.includes(c.id) && <div className="clist__owned-star">★</div>}
         <img src={c.preview} alt={c.name} className="clist__char-img" />
       </div>
     )
@@ -208,7 +211,8 @@ export default function CharacterList({
         <CharacterModal
           character={selectedChar}
           status={statusOf(selectedChar.id)}
-          onClose={() => setSelectedChar(null)}
+          episode={episode}
+          onClose={handleClose}
         />
       )}
     </div>

@@ -135,7 +135,7 @@
   "characterStories": {
     "1": {
       "image": "/images/episodes/7/stories/temoto.png",
-      "text": "This voice. How can I expel it from of my head? It drives me crazy... Show yourself! Where are you, you cheap magician? I'll cut you to pieces... Stop, where am I? What am I doing here? I... What's my name? I... I forgot the name... My name…"
+      "text": "This voice. How can I expel it from of my head? It drives me crazy... Show yourself! Where are you, you cheap magician? I'll cut you to pieces... Stop, where am I? What am I doing here? I... What's my name? I... I forgot the name... My name\u2026"
     },
     "2": {
       "image": "/images/episodes/7/stories/jay.png",
@@ -143,11 +143,11 @@
     },
     "7": {
       "image": "/images/episodes/7/stories/the_eye.png",
-      "text": "I have lost track of time... How long have we been here? A few minutes or several centuries? I have seen others abandon their names and vanish into obscurity. I'm tired of fighting... I renounce myself…"
+      "text": "I have lost track of time... How long have we been here? A few minutes or several centuries? I have seen others abandon their names and vanish into obscurity. I'm tired of fighting... I renounce myself\u2026"
     },
     "8": {
       "image": "/images/episodes/7/stories/dr._jonas_busch.png",
-      "text": "Am I dead or alive? Is it me at all? I do not recognize my body. These hands, feet…is this me? Or am I my thoughts? I'm a void…"
+      "text": "Am I dead or alive? Is it me at all? I do not recognize my body. These hands, feet\u2026is this me? Or am I my thoughts? I'm a void\u2026"
     },
     "9": {
       "image": "/images/episodes/7/stories/daedalus.png",
@@ -171,7 +171,7 @@
     },
     "22": {
       "image": "/images/episodes/7/stories/roosevelt.png",
-      "text": "What was all this about? So many of us are dead. Well, the damage is done, so I guess I’ll be leaving. What do I have to do to become immortal? Forget my name? Okay. Roose-who? I am nobody, and I have no name. I am ready..."
+      "text": "What was all this about? So many of us are dead. Well, the damage is done, so I guess I\u2019ll be leaving. What do I have to do to become immortal? Forget my name? Okay. Roose-who? I am nobody, and I have no name. I am ready..."
     },
     "24": {
       "image": "/images/episodes/7/stories/carlos.png",
@@ -179,19 +179,19 @@
     },
     "26": {
       "image": "/images/episodes/7/stories/narciss.png",
-      "text": "Even I couldn’t predict such an ending. It’s all so weird. The desert, Kitties, wolves, and… We have... I have… Wait a minute… Who am I? My name is… I have no name… I am nothing and everything. I am immortal..."
+      "text": "Even I couldn\u2019t predict such an ending. It\u2019s all so weird. The desert, Kitties, wolves, and\u2026 We have... I have\u2026 Wait a minute\u2026 Who am I? My name is\u2026 I have no name\u2026 I am nothing and everything. I am immortal..."
     },
     "33": {
       "image": "/images/episodes/7/stories/edmund_the_wise.png",
-      "text": "The world is dead, but that’s exactly what we needed to happen to open our eyes and break free. Listen! Listen to this soothing voice. It will bring us peace. It gives us hope. Do as we’re told. Obey the voice. Forget our names. What is a name? Who am I? What..."
+      "text": "The world is dead, but that\u2019s exactly what we needed to happen to open our eyes and break free. Listen! Listen to this soothing voice. It will bring us peace. It gives us hope. Do as we\u2019re told. Obey the voice. Forget our names. What is a name? Who am I? What..."
     },
     "34": {
       "image": "/images/episodes/7/stories/corley.png",
-      "text": "How could we be so stupid? It’s all so easy and… Easy…"
+      "text": "How could we be so stupid? It\u2019s all so easy and\u2026 Easy\u2026"
     },
     "35": {
       "image": "/images/episodes/7/stories/zergaldo.png",
-      "text": "I’m hearing voices call me. I’m hearing voices warn me. The tell me to drink this milk of amnesia. They tell me to leave everything behind and accept my fate. There's nothing, nothing to shout about. Nothing left anymore. I am not Zergaldo. I am nobody. Nothing..."
+      "text": "I\u2019m hearing voices call me. I\u2019m hearing voices warn me. The tell me to drink this milk of amnesia. They tell me to leave everything behind and accept my fate. There's nothing, nothing to shout about. Nothing left anymore. I am not Zergaldo. I am nobody. Nothing..."
     },
     "39": {
       "image": "/images/episodes/7/stories/kesh.png",
@@ -203,7 +203,7 @@
     },
     "46": {
       "image": "/images/episodes/7/stories/silence.png",
-      "text": "Mmmm… Mmmmmmm… Mmmmm..."
+      "text": "Mmmm\u2026 Mmmmmmm\u2026 Mmmmm..."
     },
     "47": {
       "image": "/images/episodes/7/stories/nao.png",
@@ -211,7 +211,129 @@
     },
     "49": {
       "image": "/images/episodes/7/stories/rad.png",
-      "text": "Wealth and prosperity… Are useless… We don’t need anything that exists in this world… We need to free ourselves from everything, even names. I have no name, therefore I will live forever… And ever… And ever..."
+      "text": "Wealth and prosperity\u2026 Are useless\u2026 We don\u2019t need anything that exists in this world\u2026 We need to free ourselves from everything, even names. I have no name, therefore I will live forever\u2026 And ever\u2026 And ever..."
     }
+  },
+  "blockchain": {
+    "first_block": 5374477,
+    "first_event": "2018-04-03T18:21:59Z",
+    "last_block": 5374480,
+    "last_event": "2018-04-03T18:22:52Z",
+    "deaths": [
+      {
+        "token_id": 9,
+        "block": 5374477,
+        "time": "2018-04-03T18:21:59Z",
+        "tx": "0x27e6bea5d42221ba14db909a37f2d111ea92135c7382bf4f8dec2ed19b33b1bc"
+      },
+      {
+        "token_id": 10,
+        "block": 5374477,
+        "time": "2018-04-03T18:21:59Z",
+        "tx": "0xd6ad930df146df24d6edd9a7a62818c661ce11f614217377cc17910314cacad3"
+      },
+      {
+        "token_id": 26,
+        "block": 5374477,
+        "time": "2018-04-03T18:21:59Z",
+        "tx": "0x39d6b20e0de9af51f4075120ca9956368236280f2d399276727a4db13f2faa64"
+      },
+      {
+        "token_id": 40,
+        "block": 5374477,
+        "time": "2018-04-03T18:21:59Z",
+        "tx": "0x41924ec73861bd52dffa2d010915149de58f1fdfeeaab9673181f926b38d0c1c"
+      },
+      {
+        "token_id": 46,
+        "block": 5374477,
+        "time": "2018-04-03T18:21:59Z",
+        "tx": "0x2a328065f68464c82da77124cd64aee79f477f2071104d7e8bb27fa7e0a4d5e4"
+      },
+      {
+        "token_id": 47,
+        "block": 5374477,
+        "time": "2018-04-03T18:21:59Z",
+        "tx": "0xa21b93143d6be76ea605fb46bf3a45eaf41a0fa4a2a0ed6de442287dd1c322c1"
+      },
+      {
+        "token_id": 7,
+        "block": 5374479,
+        "time": "2018-04-03T18:22:18Z",
+        "tx": "0xae81780b9b047fa70072d32a3aaae247d7ec6a07945acb66540c8c2808289591"
+      },
+      {
+        "token_id": 8,
+        "block": 5374479,
+        "time": "2018-04-03T18:22:18Z",
+        "tx": "0x1500d308bf133bf33123cc7ff5f978b98cea4d6f985f84a3ee6b507397e1e1b3"
+      },
+      {
+        "token_id": 14,
+        "block": 5374479,
+        "time": "2018-04-03T18:22:18Z",
+        "tx": "0xc561cdbee56871b01a2f952bd35c20d544848d9efb920ce9cdb6023fe20b3c51"
+      },
+      {
+        "token_id": 1,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xc282b4a6a17ef8b6cf52d0c28d958f7eaabfac5519144b5001685643331ac8e8"
+      },
+      {
+        "token_id": 2,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xfaeda866eb56e9a95c13ac62279f816171f6b7bbcaf230f1fac08718e56d055b"
+      },
+      {
+        "token_id": 16,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xaa77b9d5b65ed696c367b5d172e6647c54f2a6f9e857aed721c7b89f7608fdf9"
+      },
+      {
+        "token_id": 18,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0x5003a225793572f68e4194bbe70577a9065c211a7bcc761f84b8c2ac713fef95"
+      },
+      {
+        "token_id": 22,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xb456198c5afab4d95f69ff6f15debabf60625ac6da5cb528a1ad3f6fd9d3d16b"
+      },
+      {
+        "token_id": 24,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xe0e2d8dc2c23f3fa01d5631b19ef59fee7443cf870650bc0cdbf10f700cb2eaf"
+      },
+      {
+        "token_id": 33,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0x8ad9d40a14b1a104e0c62c642b7693e1d2730515d54a24468302eae8d456a543"
+      },
+      {
+        "token_id": 34,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0x6a553085504e3f238ada081015df85059c65ec4f5407df1a730cf9dd8540d97b"
+      },
+      {
+        "token_id": 35,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xe58ac093ba96192c06e2a92bb04b2e076d31dcfcb913113202878d13c02c123c"
+      },
+      {
+        "token_id": 49,
+        "block": 5374480,
+        "time": "2018-04-03T18:22:52Z",
+        "tx": "0xcd7377b5452e0c337c465296e7539cdcc73530c34d1d1ec972bfbe035d3db864"
+      }
+    ]
   }
 }

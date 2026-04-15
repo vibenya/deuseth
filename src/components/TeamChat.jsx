@@ -11,21 +11,34 @@ import '../styles/TeamChat.css'
 // type: 'end'    — конец
 
 const SCRIPT = [
+  { type: 'date',   text: '10 апреля 2018',                                                           pause_after_ms: 400  },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '23:47', lines: ['посчитал рандао для 9-го', 'в живых остаются:', 'Harold (5)', 'Gary (13)', 'Konstanz (41)', 'Beck (45)', 'Nao (47)'], pause_after_ms: 3500 },
+
   { type: 'date',   text: '11 апреля 2018',                                                           pause_after_ms: 400  },
-  { type: 'msg',    sender: 'Карен',  time: '10:03', lines: ['написала синопсис финала', '📎 синопсис_ep10_v1.docx'], pause_after_ms: 1800 },
-  { type: 'msg',    sender: 'Ваня',   time: '10:44', lines: ['карен это правда хорошо'],              pause_after_ms: 800  },
-  { type: 'msg',    sender: 'Ваня',   time: '10:45', lines: ['но нас смотрит 5 человек', 'и денег на съёмки нет'], pause_after_ms: 3000 },
-  { type: 'msg',    sender: 'Ваня',   time: '11:02', lines: ['слушайте', 'предлагаю просто объявить победителей', 'запустить контракт и написать пост'], pause_after_ms: 1000 },
-  { type: 'msg',    sender: 'Катя',   time: '11:04', lines: ['честно по крайней мере'],               pause_after_ms: 800  },
-  { type: 'msg',    sender: 'Карен',  time: '11:05', lines: ['это капитуляция'],                      pause_after_ms: 1000 },
-  { type: 'msg',    sender: 'Ваня',   time: '11:06', lines: ['карен', 'а мы вообще можем переиграть победителей?'], pause_after_ms: 1000 },
-  { type: 'msg',    sender: 'Кеша',   time: '11:07', lines: ['можем', 'но не будем', 'мы же честные'], pause_after_ms: 3500 },
+  { type: 'msg',    sender: 'Костя Дмитриев',      time: '02:51', lines: ['Панкс нот дед!'],          pause_after_ms: 4500 },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '12:09', lines: ['ребят, я неправильно посчитал рандао', 'другие смерти в этом эпизоде'], pause_after_ms: 1200 },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '12:09', lines: ['бля'],                     pause_after_ms: 800  },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '12:09', lines: ['в живых остаются:', 'Harold (5)', 'Danko (10)', 'Lucy (11)', 'Noir (18)', 'Kate (36)'], pause_after_ms: 1800 },
+  { type: 'msg',    sender: 'Ekaterina Komrakova', time: '12:10', lines: ['Кеша, тебе пизда после школы'], pause_after_ms: 800  },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '12:10', lines: ['сорри'],                   pause_after_ms: 1000 },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '12:10', lines: ['и как мы теперь можем тебе доверять?'], pause_after_ms: 4000 },
+
+  { type: 'date',   text: '12 апреля 2018',                                                           pause_after_ms: 400  },
+  { type: 'msg',    sender: 'Карен Тарзян',        time: '10:03', lines: ['написал сценарий финала', '📎 синопсис_ep10_v1.docx'], pause_after_ms: 1800 },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '10:44', lines: ['карен это правда хорошо'], pause_after_ms: 800  },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '10:45', lines: ['но нас смотрит 5 человек', 'и денег на съёмки нет'], pause_after_ms: 2500 },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '11:02', lines: ['слушайте', 'предлагаю просто объявить победителей', 'запустить контракт и написать пост'], pause_after_ms: 1000 },
+  { type: 'msg',    sender: 'Ekaterina Komrakova', time: '11:04', lines: ['честно по крайней мере'],  pause_after_ms: 800  },
+  { type: 'msg',    sender: 'Карен Тарзян',        time: '11:05', lines: ['это капитуляция'],         pause_after_ms: 1000 },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '11:06', lines: ['карен', 'а мы вообще можем переиграть победителей?'], pause_after_ms: 1000 },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '11:07', lines: ['можем', 'но не будем', 'мы же честные'], pause_after_ms: 3500 },
 
   { type: 'date',   text: '13 апреля 2018',                                                           pause_after_ms: 400  },
-  { type: 'msg',    sender: 'Кеша',   time: '16:03', lines: ['47 токенов погибли'],                   pause_after_ms: 3500 },
-  { type: 'msg',    sender: 'Кеша',   time: '16:17', lines: ['harold, danko, lucy — выжили'],          pause_after_ms: 1200 },
-  { type: 'msg',    sender: 'Ваня',   time: '16:18', lines: ['катя', 'пиши пост'],                    pause_after_ms: 1000 },
-  { type: 'msg',    sender: 'Катя',   time: '16:19', lines: ['уже пишу'],                             pause_after_ms: 4000 },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '15:12', lines: ['и так', 'барабанная дробь...'], pause_after_ms: 2800 },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '15:13', lines: ['в 10 эпизоде умирают', 'Noir и Kate'], pause_after_ms: 2500 },
+  { type: 'msg',    sender: 'Кеша Сейферт',        time: '15:14', lines: ['победители:', 'Harold (5)', 'Danko (10)', 'Lucy (11)'], pause_after_ms: 2500 },
+  { type: 'msg',    sender: 'Ivan Sokolov',        time: '15:16', lines: ['катя', 'пиши пост'],       pause_after_ms: 1000 },
+  { type: 'msg',    sender: 'Ekaterina Komrakova', time: '15:17', lines: ['уже пишу'],                pause_after_ms: 4000 },
 
   { type: 'system', text: 'Нет новых сообщений',                                                      pause_after_ms: 4000 },
   { type: 'end' },
@@ -33,15 +46,16 @@ const SCRIPT = [
 
 // ─── Цвета отправителей ────────────────────────────────────────────────────────
 const SENDER_COLORS = {
-  'Ваня':  '#5b8dee',
-  'Карен': '#e05c7a',
-  'Кеша':  '#4db87a',
-  'Катя':  '#e0a640',
-  'Валя':  '#9b7ae0',
+  'Ivan Sokolov':        '#5b8dee',
+  'Карен Тарзян':        '#e05c7a',
+  'Кеша Сейферт':        '#4db87a',
+  'Ekaterina Komrakova': '#e0a640',
+  'Костя Дмитриев':      '#20b2a0',
 }
 
-const TYPING_DELAY = 900   // сколько длится индикатор печатания
-const APPEAR_DELAY = 1200  // задержка перед стартом
+const TYPING_DELAY = 900         // сколько длится индикатор печатания
+const APPEAR_DELAY = 1200        // задержка перед стартом
+const MARK_DELAY_DEFAULT = 500   // пауза между появлением сообщения и onStepChange (для драматической засечки смертей/побед)
 
 export default function TeamChat({ onComplete, onStepChange, embedded = false }) {
   const [messages, setMessages] = useState([])
@@ -69,12 +83,18 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
 
   const stepRef    = useRef(0)
   const cancelRef  = useRef(null)
+  const markRef    = useRef(null)
   const scrollRef  = useRef(null)
 
   function schedule(fn, ms) {
     const t = setTimeout(fn, ms)
     cancelRef.current = t
     return t
+  }
+
+  function scheduleMark(index, ms) {
+    if (markRef.current) clearTimeout(markRef.current)
+    markRef.current = setTimeout(() => onStepChange?.(index), ms)
   }
 
   // Прокрутка вниз при добавлении сообщений
@@ -87,7 +107,6 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
   function runStep(index) {
     if (index >= SCRIPT.length) return
     const step = SCRIPT[index]
-    onStepChange?.(index)
 
     const next = () => {
       stepRef.current = index + 1
@@ -95,6 +114,7 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
     }
 
     if (step.type === 'end') {
+      onStepChange?.(index)
       setDone(true)
       schedule(() => {
         if (onComplete) onComplete()
@@ -105,12 +125,14 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
     if (step.type === 'date') {
       sound(() => playDateRef.current.play())
       setMessages(prev => [...prev, { id: Date.now(), type: 'date', text: step.text }])
+      onStepChange?.(index)
       schedule(next, step.pause_after_ms)
       return
     }
 
     if (step.type === 'system') {
       setMessages(prev => [...prev, { id: Date.now(), type: 'system', text: step.text }])
+      onStepChange?.(index)
       schedule(next, step.pause_after_ms)
       return
     }
@@ -129,6 +151,11 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
           time:   step.time,
           lines:  step.lines,
         }])
+        // Эмитим индекс шага не сразу, а после того как сообщение появилось
+        // и прошла драматическая пауза — чтобы смерти/победы подхватывались
+        // уже после того, как зритель прочитал реплику.
+        const markMs = step.mark_delay_ms ?? MARK_DELAY_DEFAULT
+        scheduleMark(index, markMs)
         schedule(next, step.pause_after_ms)
       }, TYPING_DELAY)
       return
@@ -140,6 +167,7 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
     return () => {
       clearTimeout(t)
       if (cancelRef.current) clearTimeout(cancelRef.current)
+      if (markRef.current) clearTimeout(markRef.current)
     }
   }, [])
 

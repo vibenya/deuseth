@@ -6,7 +6,7 @@
   "title": "Tokencide",
   "subtitle": "",
   "story": [
-    "And here we go again. Yes, that’s right. As the Creator promised, he returned Kesh to the very moment that Nao gave his iconic speech (see the <a href='/adventures/prologue' target='_blank'>Prologue</a>), which inspired everyone to go in search of the promised land.",
+    "And here we go again. Yes, that\u2019s right. As the Creator promised, he returned Kesh to the very moment that Nao gave his iconic speech (see the <a href='/adventures/prologue' target='_blank'>Prologue</a>), which inspired everyone to go in search of the promised land.",
     "But Kesh now knows that the search will lead to nothing but death. There is no escape. He tells his comrades what he saw in the future. He reveals to them the secret: the promised land is not a place that physically exists anywhere in this universe. It is merely the end of the show, which can only happen if just three tokens remain alive. Kesh suggests to stop looking for the promised land, to stop participating in this show, but nobody listens to him. This news excites the crowd. Some believe Kesh's words, others do not. The situation is heating up.",
     "Corley draws his guns from his belt and starts shooting his comrades screaming: \"For the promised land!\" The slaughter begins. Tokens form alliances to survive. Some try to stop the madness, but they die. Tokens mercilessly exterminate each other until all the earth is covered with a mass of corpses. The battle seems to last forever.",
     "We shall find out in whose body life is still burning and who has left Deus ETH forever, as soon as the sun rises."
@@ -85,7 +85,308 @@
   "obits": {
     "-1": {
       "image": "/images/episodes/9/obit.jpg",
-      "text": "When I had just started exploring the world of cinema, “Grave of the Fireflies” gave me a unique emotional experience. It helped me realize that peace and war should be examined from different points of view. It is necessary to understand the war not only through the eyes of the winners, but also through the eyes of the losers.\n\nIsao Takahata wasn’t as famous as Hayao Miyazaki was, but I truly believe that he was the only man who could challenge the Master as a peer, rival and friend. Isao Takahata died on the 5th of April, 2018 at the age of 82, leaving us with a priceless legacy of his films and influences.\n\nWith a light heart, the whole team of Deus ETH is here to tell him: “Arigatou gozaimasu”."
+      "text": "When I had just started exploring the world of cinema, \u201cGrave of the Fireflies\u201d gave me a unique emotional experience. It helped me realize that peace and war should be examined from different points of view. It is necessary to understand the war not only through the eyes of the winners, but also through the eyes of the losers.\n\nIsao Takahata wasn\u2019t as famous as Hayao Miyazaki was, but I truly believe that he was the only man who could challenge the Master as a peer, rival and friend. Isao Takahata died on the 5th of April, 2018 at the age of 82, leaving us with a priceless legacy of his films and influences.\n\nWith a light heart, the whole team of Deus ETH is here to tell him: \u201cArigatou gozaimasu\u201d."
     }
+  },
+  "blockchain": {
+    "first_block": 5422092,
+    "first_event": "2018-04-11T15:39:27Z",
+    "last_block": 5422106,
+    "last_event": "2018-04-11T15:42:42Z",
+    "deaths": [
+      {
+        "token_id": 1,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0x1b81af98dad5e7fe9c9aa980d4c90622ab5b7556d23507d402de6ae37138abb1"
+      },
+      {
+        "token_id": 2,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0x09ad4df99849ec34b5ba82a967e477e731174384c7447326dfa7b08189185388"
+      },
+      {
+        "token_id": 3,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0xfd483b7d1fb90be6c0d923b59d2f10c1d6d8296ec0037c6531b83358797f9b12"
+      },
+      {
+        "token_id": 4,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0xe286722f9d4b55483d6b0e0adacf20f403d00ce777898911d336d7fd5b781c6e"
+      },
+      {
+        "token_id": 6,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0x7f2e1eecd15b0666d368175b380b712fc80ba9f80d5ec5decb3d28f7789be7f8"
+      },
+      {
+        "token_id": 7,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0x52b85b94b8b60640f37af3857930f125e9bcf2ce3d897b0039a820066315e2c0"
+      },
+      {
+        "token_id": 13,
+        "block": 5422092,
+        "time": "2018-04-11T15:39:27Z",
+        "tx": "0x43ce1db50e0d15de9c2bb85b867d2f77d822cfc47b15086ef1badf7fa356eee7"
+      },
+      {
+        "token_id": 8,
+        "block": 5422093,
+        "time": "2018-04-11T15:39:34Z",
+        "tx": "0x74eb96aa2f02c8314279a435ba4265a14625e9cd540214513b969782965d9823"
+      },
+      {
+        "token_id": 9,
+        "block": 5422093,
+        "time": "2018-04-11T15:39:34Z",
+        "tx": "0x58b24f1b945f61cf64d0f955514e97450a1a4179cce151ec6bec54e5fa8188aa"
+      },
+      {
+        "token_id": 12,
+        "block": 5422094,
+        "time": "2018-04-11T15:39:40Z",
+        "tx": "0x844522e83dd3405cce6bf3ce4fd013ac76caffb33f41a1e0c0cd40bb0812d19e"
+      },
+      {
+        "token_id": 24,
+        "block": 5422094,
+        "time": "2018-04-11T15:39:40Z",
+        "tx": "0xd8346537da02990e8297edf9ac45530afafc169dcc8701b4c5d88a428c8b3f5d"
+      },
+      {
+        "token_id": 14,
+        "block": 5422096,
+        "time": "2018-04-11T15:40:23Z",
+        "tx": "0x20b4c5315e61b5dcec5a99a8f9a8614fc21ae23e5f98cb5b25ff82181937b37c"
+      },
+      {
+        "token_id": 15,
+        "block": 5422096,
+        "time": "2018-04-11T15:40:23Z",
+        "tx": "0x094ef03ab08a69f8d89aff7d5226dfcc6aa3b0fa3bb5660c0c2bfc97326070f8"
+      },
+      {
+        "token_id": 16,
+        "block": 5422096,
+        "time": "2018-04-11T15:40:23Z",
+        "tx": "0x1eef9803ca2607c5b0189bd4290cb61f11b926a4d56095a23c75f4f7edbd01d2"
+      },
+      {
+        "token_id": 17,
+        "block": 5422096,
+        "time": "2018-04-11T15:40:23Z",
+        "tx": "0x5cc40e162a4f6d82d0a406bdf88d4284dbc3235efff2f09f36f817dfd12a9283"
+      },
+      {
+        "token_id": 19,
+        "block": 5422096,
+        "time": "2018-04-11T15:40:23Z",
+        "tx": "0x2fef0727142faaf4e1ae2498ab14828bcd0f43401a195ff1776dfa2be6ba671e"
+      },
+      {
+        "token_id": 20,
+        "block": 5422098,
+        "time": "2018-04-11T15:40:41Z",
+        "tx": "0xd62b04e92d72988b15f6145074862c38ddd8bf6474300ae59ac2b2de9c9015f2"
+      },
+      {
+        "token_id": 21,
+        "block": 5422098,
+        "time": "2018-04-11T15:40:41Z",
+        "tx": "0x85fa3cd84c90ca286733ad062780428b090288903e00b332695fa42410a404c4"
+      },
+      {
+        "token_id": 22,
+        "block": 5422101,
+        "time": "2018-04-11T15:41:28Z",
+        "tx": "0xe234e72e5d16ad9577a09fed5a7211497e2973a0dd1b3f80ba31f5207ae867f7"
+      },
+      {
+        "token_id": 23,
+        "block": 5422101,
+        "time": "2018-04-11T15:41:28Z",
+        "tx": "0xee50b9b85c1b741df63ff12fc443b4402968b4c79524127673b5e4acc53623df"
+      },
+      {
+        "token_id": 25,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0x03f74a080e06655398efc88dac93f8023d8ce15618db746874d471af6e15b727"
+      },
+      {
+        "token_id": 26,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xdf06b11d2d516db00ec7cf6db88b0fb5097f5e8a8c0295c40565733a48726034"
+      },
+      {
+        "token_id": 27,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0x9dbc7cc6ee3dd26d505dc61c2f9c7fb3d0ad37cccea72922872222f8ffb6d989"
+      },
+      {
+        "token_id": 28,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0x665670ffc9b9646f8ceec89e8ab3621c0ef9c29922862b310f6e043ed60a52a1"
+      },
+      {
+        "token_id": 29,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xa0dbae5525df18af66aa664f740e01a131f76c14d9b5d7b6dbb67072b1ce9244"
+      },
+      {
+        "token_id": 30,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0x860a542b9d2a1604e64327e52e55f5252afff6c65698a9ba0761fb446a0c6aa9"
+      },
+      {
+        "token_id": 31,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xa920b3aa424a43067a0528750d0887f06782728f676c6b0636fa325272646bb0"
+      },
+      {
+        "token_id": 32,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xf0c34462f309512b4ef5379d503c95492f9b1eb9aa28491f32c0aedaaaf16c59"
+      },
+      {
+        "token_id": 33,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xc2a21ecad000e877ddfb79b6ba2643ff420664a256369fb66580053bc5933de0"
+      },
+      {
+        "token_id": 34,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xdf865df1aa9cfce1e7e271fbd3452ba328b2e3265bb33a121f9c5e476981e16c"
+      },
+      {
+        "token_id": 35,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0xc9bb0d47a5a69408f8f21e50dae19b062fc839098197f6b0dcb2acb6ba4c2506"
+      },
+      {
+        "token_id": 37,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0x6e26fe8c27ea129025b22fd3851ffdaa6c1eda5243e6f2b2406c266e2de91dd6"
+      },
+      {
+        "token_id": 45,
+        "block": 5422105,
+        "time": "2018-04-11T15:42:07Z",
+        "tx": "0x94093b040dcba58d4cbb09f252022024421305ac6436be81efc7d27c648bcd65"
+      },
+      {
+        "token_id": 38,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xbe5faaa3a9fa38288e775408efa80001daf5dac75eaf9e6892ce3be60e31d7c7"
+      },
+      {
+        "token_id": 39,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0x6bb199250209c1d4b7e83ec7894d59d8cc196dcb419d9d48519d6ea1709097c3"
+      },
+      {
+        "token_id": 40,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xd43a8897c1791fb0b34a4b3d3ac2f1fdce2f46332a459bf9d0d0743e89edef9a"
+      },
+      {
+        "token_id": 41,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0x145c7bc474a53f624d7f43323f4a721c116317999db4271da10233b5b2a36121"
+      },
+      {
+        "token_id": 42,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0x710f8c8d95cca80698420cb21c3cb4154c028e3473bf107d88d84491b8676ddc"
+      },
+      {
+        "token_id": 43,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xa5be1be3ca665a8d4ab7c43a1d676bbac4be288bb73d5402da2e65625b019f0c"
+      },
+      {
+        "token_id": 44,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xf1c0ed89f377e9b8ed246709fb77e53fc292cf67214d3bf50085c76b83cf2d96"
+      },
+      {
+        "token_id": 46,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0x1d49c63e2161bc98e8c2e3c7f5f15eb033f4b0dba5b03db7681f000e403ddd65"
+      },
+      {
+        "token_id": 47,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xfb585aac0ee2b5ed7c2d1cf5afaeeeec07a11a43396f1e112503057734f30928"
+      },
+      {
+        "token_id": 48,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xb7f70b3e1d0c165d6d9ac05ad8fa196fd3058192825b514763e0490bdfc24730"
+      },
+      {
+        "token_id": 49,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xfb03fc0a76156b7b5a89dcc61d590a71bffeecf5294a3884218c17d2293404f4"
+      },
+      {
+        "token_id": 50,
+        "block": 5422106,
+        "time": "2018-04-11T15:42:42Z",
+        "tx": "0xb42c81cdd799325fdccf287707268232dfbec3b1558699e857b99b0b9f001fa2"
+      }
+    ],
+    "finalists": [
+      {
+        "token_id": 5,
+        "name": "Harold"
+      },
+      {
+        "token_id": 10,
+        "name": "Danko"
+      },
+      {
+        "token_id": 11,
+        "name": "Lucy"
+      },
+      {
+        "token_id": 18,
+        "name": "Noir"
+      },
+      {
+        "token_id": 36,
+        "name": "Kate"
+      }
+    ],
+    "finalists_note": "Five tokens selected by the Randao-seeded PRNG to survive Tokencide. Two of them (Noir, Kate) are killed in the final episode."
   }
 }

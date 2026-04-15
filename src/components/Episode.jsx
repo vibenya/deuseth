@@ -2,25 +2,21 @@ import { useState, useEffect, useMemo } from 'react'
 import CharacterList from './CharacterList'
 import EpisodeMedia from './EpisodeMedia'
 import EpisodeFacts from './EpisodeFacts'
+import EpisodeBlockchain from './EpisodeBlockchain'
 import { useCharacterStatuses } from '../hooks/useCharacterStatuses'
-import characters from '../data/characters.json'
 import '../styles/Episode.css'
 import '../styles/Rip.css'
-
-// story[] paragraphs may contain <span class="mention"> tags from our own JSON files.
-// This is safe: content is authored by us, not user-generated.
 
 export default function Episode({
   episode,
   episodes,
-  draftIds,
   onOpenDrawer,
   episodeNav,
   topbarSlot,
   activeId,
   onChangeEpisode,
 }) {
-  const [activeObit, setActiveObit] = useState(null)
+  const [charModalOpen, setCharModalOpen] = useState(false)
   const [currentVideoTime, setCurrentVideoTime] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -43,7 +39,6 @@ export default function Episode({
   })
 
   const isPrologue = episode?.type === 'prologue'
-  const isReborn   = episode?.events?.some(e => e.action === 'revive' && !e.at) ?? false
 
   const [statsUnlocked, setStatsUnlocked] = useState(!isPrologue)
   useEffect(() => { setStatsUnlocked(!isPrologue) }, [episode?.id])
@@ -55,18 +50,9 @@ export default function Episode({
   }, [currentVideoTime, statsUnlocked, episode?.media?.statsUnlockAt])
 
   useEffect(() => {
-    setActiveObit(null)
     setCurrentVideoTime(null)
     setCurrentSlide(0)
   }, [episode?.id])
-
-  function openObit(c) {
-    const id = typeof c === 'object' ? c.id : c
-    if (episode?.obits?.[id]) setActiveObit(id)
-  }
-
-  const activeObitData = activeObit !== null ? episode?.obits?.[activeObit] : null
-  const activeChar = activeObit !== null ? characters.find(c => c.id === activeObit) : null
 
   if (!episode) return null
 
@@ -87,7 +73,7 @@ export default function Episode({
           onSlideChange={setCurrentSlide}
           aliveCount={aliveCount}
           deadCount={deadCount}
-          keyboardEnabled={activeObit === null}
+          keyboardEnabled={!charModalOpen}
           showStats={statsUnlocked}
         />
 
@@ -109,6 +95,7 @@ export default function Episode({
               ))}
             </div>
             <EpisodeFacts />
+            {episode.blockchain && <EpisodeBlockchain blockchain={episode.blockchain} />}
           </>
         )}
       </div>
@@ -120,36 +107,13 @@ export default function Episode({
             episode={displayEpisode}
             statusOf={statusOf}
             getDyingMeta={getDyingMeta}
-            onCharacterClick={openObit}
+            onModalOpenChange={setCharModalOpen}
             currentVideoTime={currentVideoTime}
             currentSlide={currentSlide}
-            draftIds={draftIds}
           />
         )}
       </div>
       </div>
-
-      {/* Obit modal — plain text content from local JSON */}
-      {activeObitData && activeChar && (
-        <div className="modal" onClick={() => setActiveObit(null)}>
-          <div className="modal__content" onClick={e => e.stopPropagation()}>
-            <button className="modal__close" onClick={() => setActiveObit(null)}>
-              <svg viewBox="0 0 20 20" fill="#fff"><path d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"/></svg>
-            </button>
-            <h3>{activeChar.name} &mdash; {isReborn ? 'Revived' : 'Obituary'}</h3>
-            {activeObitData.image && (
-              <img src={activeObitData.image} alt={activeChar.name} className="ep-player__obit-img" />
-            )}
-            <p>{activeObitData.text}</p>
-            <div className="ep-player__obit-token-info">
-              Token #{activeChar.id} — {activeChar.lastSalePrice != null
-                ? `Last sold for Ξ ${activeChar.lastSalePrice}`
-                : 'Never claimed'}
-            </div>
-          </div>
-        </div>
-      )}
-
     </div>
   )
 }

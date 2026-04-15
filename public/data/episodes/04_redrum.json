@@ -31,5 +31,8 @@
       "image": "/images/episodes/4/obits/who.gif",
       "text": "Redrum\n\nToday someone died again. Maybe it was your hero who had a truly bad day? Carry out your investigation, uncover all the details of the crime and guess who the murderer is."
     }
+  },
+  "blockchain": {
+    "note": "This episode has no separate on-chain event. The death revealed here (token 4, Ben) was recorded on-chain on 2018-03-26T14:27:24Z at block 5325705 \u2014 the same event published in Episode V Murder."
   }
 }

@@ -7,9 +7,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xac406aed96cce717641908ca98423be41d481e69d84e8375cbf667a53258599e"
+        "tx": "0xac406aed96cce717641908ca98423be41d481e69d84e8375cbf667a53258599e",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-31",
@@ -20,23 +22,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xf4e87afcee4cd813f9fe19d6d754ad65510e21633aa91c3e78da421fc0515e08"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0xf4e87afcee4cd813f9fe19d6d754ad65510e21633aa91c3e78da421fc0515e08"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xa72b1091a384be5ca3918da260d857d39ff4fd9d54a20bac3d836902499c79d1"
       },
       {
         "date": "2018-03-21",
@@ -46,11 +34,12 @@
         "tx": "0x981d1c12c5ad88cf0c1aeb8c4c9cfa2cdf22abae6eec6fc761402bb000d1d7f7"
       },
       {
-        "date": "2018-04-04",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x80348c2fdaafed8ff89c450bc5acfc29d3ea7d79e7bce7c909348a2995f928c4"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xc282b4a6a17ef8b6cf52d0c28d958f7eaabfac5519144b5001685643331ac8e8"
       },
       {
         "date": "2018-04-04",
@@ -59,18 +48,27 @@
         "tx": "0x80348c2fdaafed8ff89c450bc5acfc29d3ea7d79e7bce7c909348a2995f928c4"
       },
       {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391340,
+        "tx": "0xc7f570ae4e95f7bb24e9fa435d4ffe85f365273f0a731d631baa75782590c523"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0x1b81af98dad5e7fe9c9aa980d4c90622ab5b7556d23507d402de6ae37138abb1"
+      },
+      {
         "date": "2018-04-11",
         "type": "list",
         "version": "v2",
         "price": 0.6,
         "tx": "0x6f88d6db1db974632690a9ad4b1da6f10d4c65b0a18925450fa755876d588ace"
-      },
-      {
-        "date": "2018-04-11",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x37286f1d7c570ebcc1553be637f2287b64dd80b38f6459bfc8a5bf4e782d5a4e"
       },
       {
         "date": "2018-04-11",
@@ -93,7 +91,9 @@
         "price": 0.95,
         "buyer": "0xad3e6a65b34d55c6cb20382e35114570ba42ed2e",
         "seller": "0x41dbac356f125e9b6232d3e2e14b1bd2ee654530",
-        "tx": "0x9388797a2f0ac28a5d0165a59d18be09a0d3ceaf09c1c130b7c56bfa22a9119d"
+        "tx": "0x9388797a2f0ac28a5d0165a59d18be09a0d3ceaf09c1c130b7c56bfa22a9119d",
+        "eth_usd_rate": 2892.36,
+        "price_usd": 2747.74
       },
       {
         "date": "2022-06-30",
@@ -105,13 +105,20 @@
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 13,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.95,
       "lowest_sale": 0.95,
       "last_sale": 0.95,
-      "last_sale_date": "2021-08-06"
+      "last_sale_date": "2021-08-06",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2747.74,
+      "lowest_sale_usd": 2747.74,
+      "last_sale_usd": 2747.74,
+      "initial_price_usd": 319.12
     }
   },
   "2": {
@@ -122,9 +129,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xf89cd200ae9274dc5ca6b460402b65c3f1b2f4cc",
-        "tx": "0xdfc4435f15532b4ccaef228e279675de18f4ba377d22b04019c3169ad214f5fe"
+        "tx": "0xdfc4435f15532b4ccaef228e279675de18f4ba377d22b04019c3169ad214f5fe",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-03-16",
@@ -179,6 +188,30 @@
         "tx": "0x1442c50637d6eb437e7be43cfe6f91a1a305297f80ec250e4052ffcc8465c6fa"
       },
       {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xfaeda866eb56e9a95c13ac62279f816171f6b7bbcaf230f1fac08718e56d055b"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391341,
+        "tx": "0xd0df427eaa1f9e1fde52d9162b48632c96aa3c3a34664aafc3f493b29b3d54eb"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0x09ad4df99849ec34b5ba82a967e477e731174384c7447326dfa7b08189185388"
+      },
+      {
         "date": "2018-04-24",
         "type": "mint",
         "version": "v3",
@@ -193,17 +226,26 @@
         "price": 0.1,
         "buyer": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0x2aa6c531fdfb244bdb10be7336c5f22f189143ddabdb0a3cfa304151b07e4383"
+        "tx": "0x2aa6c531fdfb244bdb10be7336c5f22f189143ddabdb0a3cfa304151b07e4383",
+        "eth_usd_rate": 670.81,
+        "price_usd": 67.08
       }
     ],
     "stats": {
-      "total_events": 11,
+      "total_events": 14,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.1,
       "lowest_sale": 0.1,
       "last_sale": 0.1,
-      "last_sale_date": "2018-05-01"
+      "last_sale_date": "2018-05-01",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 67.08,
+      "lowest_sale_usd": 67.08,
+      "last_sale_usd": 67.08,
+      "initial_price_usd": 319.12
     }
   },
   "3": {
@@ -214,9 +256,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xf255752501ca3dc00dd599bbb9d05a6a24d74efe3111d8d02dfceff40dd1f7bd"
+        "tx": "0xf255752501ca3dc00dd599bbb9d05a6a24d74efe3111d8d02dfceff40dd1f7bd",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -224,13 +268,6 @@
         "version": "v1",
         "price": 10.0,
         "tx": "0xfbf1ce78a4f2f779cca256cff09838a122a1d6ac9fad6d2b1078b22a31cb34b6"
-      },
-      {
-        "date": "2018-02-20",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x514825aca3c13f9003933ead57fc683f6398c59900f882449e06816b62118066"
       },
       {
         "date": "2018-02-20",
@@ -247,13 +284,6 @@
       },
       {
         "date": "2018-02-23",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x690489a454d7354441bf4c7cd79cd431cc558529f77d3d3946f649060483c337"
-      },
-      {
-        "date": "2018-02-23",
         "type": "delist",
         "version": "v1",
         "tx": "0x690489a454d7354441bf4c7cd79cd431cc558529f77d3d3946f649060483c337"
@@ -267,23 +297,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x1e1ece4cefb5571dfd0326f4e05b81129e253295b6c5c2e13afb58a092f1b965"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x1e1ece4cefb5571dfd0326f4e05b81129e253295b6c5c2e13afb58a092f1b965"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x6c5003d04403b756d137f0b9a2f17fe47cea3ab6c7827a2fa6731e3d85cb1b0b"
       },
       {
         "date": "2018-03-16",
@@ -291,6 +307,30 @@
         "version": "v2",
         "price": 3.5,
         "tx": "0xbc31101d85c281a32d82d322b5bc3a1a8bd4bef92e6cef418a31d8be1c976ef9"
+      },
+      {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349864,
+        "tx": "0x9c4b93074d2e2bf3f1a717fc3671cefb8488459aff9221906fc6f8ab9291b716"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391342,
+        "tx": "0x0064b7dfe10f30dd57476ec73caad7e3f52d1c36a9871a8eec32f49611128bb0"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0xfd483b7d1fb90be6c0d923b59d2f10c1d6d8296ec0037c6531b83358797f9b12"
       },
       {
         "date": "2018-04-24",
@@ -307,7 +347,9 @@
         "price": 1.0,
         "buyer": "0x1998f627ad0f5904165b1796c4b111492365dad2",
         "seller": "0x47940f6992d9d0c9d96e412623a75033285c2683",
-        "tx": "0x70d7776bd3f3671fa8e55eb60280b24b3130808b20459553f3a9f8475f3fedcd"
+        "tx": "0x70d7776bd3f3671fa8e55eb60280b24b3130808b20459553f3a9f8475f3fedcd",
+        "eth_usd_rate": 2547.03,
+        "price_usd": 2547.03
       },
       {
         "date": "2022-02-01",
@@ -319,13 +361,20 @@
       }
     ],
     "stats": {
-      "total_events": 15,
+      "total_events": 14,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.0,
       "lowest_sale": 1.0,
       "last_sale": 1.0,
-      "last_sale_date": "2022-01-28"
+      "last_sale_date": "2022-01-28",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2547.03,
+      "lowest_sale_usd": 2547.03,
+      "last_sale_usd": 2547.03,
+      "initial_price_usd": 319.12
     }
   },
   "4": {
@@ -336,9 +385,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x72fe24e38d10a337f03d9b1318bdc1466dd1cc5823b8819e8eb2da58d829b33d"
+        "tx": "0x72fe24e38d10a337f03d9b1318bdc1466dd1cc5823b8819e8eb2da58d829b33d",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -346,13 +397,6 @@
         "version": "v1",
         "price": 9.0,
         "tx": "0x355ca5027e06965b7cf1934837dc2387b5e4dfee1511a4cb1a12f35254dc8ca4"
-      },
-      {
-        "date": "2018-02-20",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xbda8e30822586b50867c045649bdf4305fd91ad4865e4f8efbb0bbcbb68dcfbe"
       },
       {
         "date": "2018-02-20",
@@ -369,13 +413,6 @@
       },
       {
         "date": "2018-02-23",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x5dafe42afbb2140a63d031f93d1d1420cad4b257dea676aeef0b1e46fd0ea965"
-      },
-      {
-        "date": "2018-02-23",
         "type": "delist",
         "version": "v1",
         "tx": "0x5dafe42afbb2140a63d031f93d1d1420cad4b257dea676aeef0b1e46fd0ea965"
@@ -389,23 +426,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x7eb2cd318fa44be9a71e387226127e616be57596c78bd9bab7fda51435088f58"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x7eb2cd318fa44be9a71e387226127e616be57596c78bd9bab7fda51435088f58"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xe420cbbfca9a431a78d1ba6a417d41a08278a8582057ebd2c868ba9d25e2bd8a"
       },
       {
         "date": "2018-03-16",
@@ -413,6 +436,30 @@
         "version": "v2",
         "price": 11.111,
         "tx": "0x7bcb5d187898480fa4e09a23d11e355695f088090b65b046f791ed257301836e"
+      },
+      {
+        "date": "2018-03-26",
+        "type": "death",
+        "episode_id": 5,
+        "episode_title": "Murder",
+        "block": 5325705,
+        "tx": "0x5c8097bfa4495c0ce3c1d0eafc2a876ae7dbcfbe8677c5a822da48b9d073b094"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391342,
+        "tx": "0x5a56638b121e67e8aacbda7746c99fc30bed75b79d3fc689e86305fbcf000a4a"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0xe286722f9d4b55483d6b0e0adacf20f403d00ce777898911d336d7fd5b781c6e"
       },
       {
         "date": "2018-04-24",
@@ -429,17 +476,26 @@
         "price": 1.69,
         "buyer": "0x5ce9ad759e41bf1b3dfc1a41db940a90d7a43460",
         "seller": "0x79b9e3dc027df835ccd83a9de954826fb0e296a4",
-        "tx": "0xf865779212a9e0699c0373ed71cb1046d5285e8443bf3a114e7f8beaf90c94d6"
+        "tx": "0xf865779212a9e0699c0373ed71cb1046d5285e8443bf3a114e7f8beaf90c94d6",
+        "eth_usd_rate": 2892.36,
+        "price_usd": 4888.09
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 13,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.69,
       "lowest_sale": 1.69,
       "last_sale": 1.69,
-      "last_sale_date": "2021-08-06"
+      "last_sale_date": "2021-08-06",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 4888.09,
+      "lowest_sale_usd": 4888.09,
+      "last_sale_usd": 4888.09,
+      "initial_price_usd": 319.12
     }
   },
   "5": {
@@ -450,9 +506,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0x46231c52235503e234711e3037765bcf3403ae7698bcdabb0874374474a238d9"
+        "tx": "0x46231c52235503e234711e3037765bcf3403ae7698bcdabb0874374474a238d9",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -460,13 +518,6 @@
         "version": "v1",
         "price": 1.0,
         "tx": "0xce3736470ec3873a5abcf1cc8f3a6b727fbc84956c7408d1c1bcc29579c74df5"
-      },
-      {
-        "date": "2018-01-30",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0xbab459790a90c73ca360c17008617cb8bf115af69fc2fe5cb134e67243bd9a38"
       },
       {
         "date": "2018-01-30",
@@ -483,13 +534,6 @@
       },
       {
         "date": "2018-02-16",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0xdfee5414fe7455447fca3b5b0df2ae2ec8b63b6faf316b605f0859178fc23d08"
-      },
-      {
-        "date": "2018-02-16",
         "type": "delist",
         "version": "v1",
         "tx": "0xdfee5414fe7455447fca3b5b0df2ae2ec8b63b6faf316b605f0859178fc23d08"
@@ -500,13 +544,6 @@
         "version": "v1",
         "price": 66.8,
         "tx": "0xe9a459b80bf15be55cde5746d63e3fd5ab1c0fbb36facbf276358ad420d0ea9c"
-      },
-      {
-        "date": "2018-02-26",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0xb39169c8500a50a72782a37ac3abc9ce2353effff37ca67f311aaa52656953b0"
       },
       {
         "date": "2018-02-26",
@@ -523,23 +560,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0x1942c9f0ca1e05b43e3aa16e286a86b547d35f0f8ad723a9eda29071c27a1ded"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x1942c9f0ca1e05b43e3aa16e286a86b547d35f0f8ad723a9eda29071c27a1ded"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0x35cf4c5129a6ee4aebcb836a3f15d866f7a50910bc6118a7e8d78da6623d74d1"
       },
       {
         "date": "2018-03-16",
@@ -549,17 +572,37 @@
         "tx": "0xe185d31bc864622906b942810a93baa92b75f2f4b41cea02778033f9bee692c4"
       },
       {
-        "date": "2018-03-26",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
-        "tx": "0xee24023d5532306ddc59b797f252541a0baf00bf24140f905009fd5071e506b0"
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290611,
+        "tx": "0x3fdc5f35b70a0be9b89b4b9495e456bd7c14a44c3b3165c8da0f5c784746b7df"
       },
       {
         "date": "2018-03-26",
         "type": "delist",
         "version": "v2",
         "tx": "0xee24023d5532306ddc59b797f252541a0baf00bf24140f905009fd5071e506b0"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391342,
+        "tx": "0x28df1b5069ff7c655ef0d17c532801e91a8a775e0beb7203d6e8d345f5a5ff9a"
+      },
+      {
+        "date": "2018-04-15",
+        "type": "prize",
+        "amount": 4.119,
+        "eth_usd_rate": 534.15,
+        "amount_usd": 2200.16,
+        "source": "0x96288906f3a363e98b0595a9205f5c9e31e9a3c1",
+        "to": "0x1af57a1a7bf346389ff4a920d6ba6dad63586cf2",
+        "block": 5444555,
+        "tx": "0x65c0c28c92ed213792aeb59ffd573f285b2571e52423725887598800b8382657"
       },
       {
         "date": "2018-04-24",
@@ -570,13 +613,18 @@
       }
     ],
     "stats": {
-      "total_events": 18,
+      "total_events": 15,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "winner",
+      "final_status_note": "One of the three survivors at the end of the show",
+      "initial_price_usd": 319.12,
+      "prize_eth": 4.119,
+      "prize_usd": 2200.16
     }
   },
   "6": {
@@ -587,9 +635,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xf53f5fd5019ad34ab822784948c7da20e2296460ba995a68665b881a400f22b7"
+        "tx": "0xf53f5fd5019ad34ab822784948c7da20e2296460ba995a68665b881a400f22b7",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -597,13 +647,6 @@
         "version": "v1",
         "price": 10.0,
         "tx": "0x9377160d6e8a78d2e4c61f13ba219673ef51f7e89c2680541c4b5e738bfe1145"
-      },
-      {
-        "date": "2018-01-31",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x5f18b374560bd0267b18cd7412955bb142564a7edf9a8c93bf1484c40eff2471"
       },
       {
         "date": "2018-01-31",
@@ -620,13 +663,6 @@
       },
       {
         "date": "2018-02-02",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xf0bcada424e3a0625b467b08e31bcb0a5c79348b8a341facbec5d54d94bf7638"
-      },
-      {
-        "date": "2018-02-02",
         "type": "delist",
         "version": "v1",
         "tx": "0xf0bcada424e3a0625b467b08e31bcb0a5c79348b8a341facbec5d54d94bf7638"
@@ -637,13 +673,6 @@
         "version": "v1",
         "price": 2.0,
         "tx": "0x362fec53e9e15ea0f371dd0331f320a5db182038076f651435221d24679e143c"
-      },
-      {
-        "date": "2018-02-21",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x43995788e0c9cf3a8c6d7290cbd05e340c248b5a081dff8985461162ec14e263"
       },
       {
         "date": "2018-02-21",
@@ -660,13 +689,6 @@
       },
       {
         "date": "2018-03-06",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x357db42510cd59b112430e87f5c71d4975628ec361f4a95319bd8fedcb424775"
-      },
-      {
-        "date": "2018-03-06",
         "type": "delist",
         "version": "v1",
         "tx": "0x357db42510cd59b112430e87f5c71d4975628ec361f4a95319bd8fedcb424775"
@@ -680,23 +702,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xec2f25246c4686a29082e6cd0ed638ba9e40e11de8673d92971ab2860b6ce563"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xec2f25246c4686a29082e6cd0ed638ba9e40e11de8673d92971ab2860b6ce563"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x56cd2ee1ef1be1e5bd00ef279d6fe3caa105e76386d8ef2e1a79db5075c7a370"
       },
       {
         "date": "2018-03-18",
@@ -706,11 +714,12 @@
         "tx": "0xadbccfca4748602a354be2e876fcb19d7b1ee700953693a6585b9920ab9bddbf"
       },
       {
-        "date": "2018-03-25",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x1137d71cf606d1851cd563d74d0900bd0b40184cb6f087e58364862b43f09e85"
+        "date": "2018-03-23",
+        "type": "death",
+        "episode_id": 3,
+        "episode_title": "Freedom To Die",
+        "block": 5309077,
+        "tx": "0x74283f20bddf151cc13439f01c60d90f123142a3377353888dc026a587e09fdb"
       },
       {
         "date": "2018-03-25",
@@ -727,16 +736,25 @@
       },
       {
         "date": "2018-03-30",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x9ae1a85df4d9cad4801e6ffef02274a5769fc6ed46127c84aaa6e40fb06bbc6a"
-      },
-      {
-        "date": "2018-03-30",
         "type": "delist",
         "version": "v2",
         "tx": "0x9ae1a85df4d9cad4801e6ffef02274a5769fc6ed46127c84aaa6e40fb06bbc6a"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391342,
+        "tx": "0x29291670b8dbe83c2e230b76e8063114206b8d2d36cc01ff9926897f9e554f20"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0x7f2e1eecd15b0666d368175b380b712fc80ba9f80d5ec5decb3d28f7789be7f8"
       },
       {
         "date": "2018-04-24",
@@ -755,13 +773,17 @@
       }
     ],
     "stats": {
-      "total_events": 25,
+      "total_events": 20,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "7": {
@@ -772,9 +794,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xe73c9d26cd0020ada3df56fe145b593e31e67af5594e77282a4fe86bd88a52a4"
+        "tx": "0xe73c9d26cd0020ada3df56fe145b593e31e67af5594e77282a4fe86bd88a52a4",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -782,13 +806,6 @@
         "version": "v1",
         "price": 6.0,
         "tx": "0x5c9165d4f52fa412de9bca245add1168fe7fb1eba962e0464fb71276a83afd5d"
-      },
-      {
-        "date": "2018-02-20",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xfed4999f8747fdaf191e3ad1bd08e9bfbe3b685bbc77ea4d3561d7dc4ca32abd"
       },
       {
         "date": "2018-02-20",
@@ -805,23 +822,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x138ed7ef58bf28bf96aa5ae8eda236195c2af81f7fb03ecca23eea582593692b"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x138ed7ef58bf28bf96aa5ae8eda236195c2af81f7fb03ecca23eea582593692b"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x4388d857916a80096d1876f54c328c08862db19fdea14da109db94fa56d46e9f"
       },
       {
         "date": "2018-03-16",
@@ -829,6 +832,30 @@
         "version": "v2",
         "price": 249.0,
         "tx": "0x1fb3b7ac326fab67975db0e5b384f098dc6043d153e88bcab0049db92e6d216e"
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374479,
+        "tx": "0xae81780b9b047fa70072d32a3aaae247d7ec6a07945acb66540c8c2808289591"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391344,
+        "tx": "0x276872c11e9036942e1514506296af2e3cfd9f2ae0b88dff801cb0fa33e07264"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0x52b85b94b8b60640f37af3857930f125e9bcf2ce3d897b0039a820066315e2c0"
       },
       {
         "date": "2018-04-24",
@@ -857,11 +884,15 @@
     "stats": {
       "total_events": 12,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "8": {
@@ -872,9 +903,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xd258a392a91a355870e2c78b55cd5eb9b07a6577836b1e0d1995761079d08f4b"
+        "tx": "0xd258a392a91a355870e2c78b55cd5eb9b07a6577836b1e0d1995761079d08f4b",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-31",
@@ -885,23 +918,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xe9521cde6d935b5dcfcce1192d9bbf8eb475c5292e5d112b45bf3369fa5ef6fc"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xe9521cde6d935b5dcfcce1192d9bbf8eb475c5292e5d112b45bf3369fa5ef6fc"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xa445a5d94c1d170c06464691443b13c8f1aad11a89f0b98df5bd29a6929bdde9"
       },
       {
         "date": "2018-03-16",
@@ -909,13 +928,6 @@
         "version": "v2",
         "price": 1.5,
         "tx": "0x17e1de9fb3d9101ef0538241c76fd8facbfd6e30cc3e78987e976d71d0f10eac"
-      },
-      {
-        "date": "2018-03-22",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xdbae3f4d0a22d6e446d896f56bf8e355c3bd6ae0bda86a7e66fc76b837451ec4"
       },
       {
         "date": "2018-03-22",
@@ -932,16 +944,33 @@
       },
       {
         "date": "2018-03-30",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x4e7a0e2f5e235455173632a6cef439d67bc9e139b4edb68301da546ec17f8f61"
-      },
-      {
-        "date": "2018-03-30",
         "type": "delist",
         "version": "v2",
         "tx": "0x4e7a0e2f5e235455173632a6cef439d67bc9e139b4edb68301da546ec17f8f61"
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374479,
+        "tx": "0x1500d308bf133bf33123cc7ff5f978b98cea4d6f985f84a3ee6b507397e1e1b3"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391345,
+        "tx": "0x7856cde90f3faf59a8adf3bd43c762b4e75999464376863192e8b1a14cd67c66"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422093,
+        "tx": "0x74eb96aa2f02c8314279a435ba4265a14625e9cd540214513b969782965d9823"
       },
       {
         "date": "2018-04-24",
@@ -974,7 +1003,9 @@
         "price": 1.0,
         "buyer": "0x1998f627ad0f5904165b1796c4b111492365dad2",
         "seller": "0xfccb7af4323da719ddf623f789aca79c9143f0ff",
-        "tx": "0x4554ff59bf4c8365d696775a5f768f2ac45867a3a622eaa638599a9338b02237"
+        "tx": "0x4554ff59bf4c8365d696775a5f768f2ac45867a3a622eaa638599a9338b02237",
+        "eth_usd_rate": 2689.14,
+        "price_usd": 2689.14
       },
       {
         "date": "2022-02-01",
@@ -986,13 +1017,20 @@
       }
     ],
     "stats": {
-      "total_events": 16,
+      "total_events": 15,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.0,
       "lowest_sale": 1.0,
       "last_sale": 1.0,
-      "last_sale_date": "2022-01-31"
+      "last_sale_date": "2022-01-31",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2689.14,
+      "lowest_sale_usd": 2689.14,
+      "last_sale_usd": 2689.14,
+      "initial_price_usd": 319.12
     }
   },
   "9": {
@@ -1003,9 +1041,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x943897490b2e23ab4eb5a58490e311878304e08c39457fb36650157c828b084a"
+        "tx": "0x943897490b2e23ab4eb5a58490e311878304e08c39457fb36650157c828b084a",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-31",
@@ -1016,23 +1056,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xdd85ab1ec1c050ef4fc17509cc52f924437edff126a4d3d7bfca7aad590f1c9e"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0xdd85ab1ec1c050ef4fc17509cc52f924437edff126a4d3d7bfca7aad590f1c9e"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x076c400a3a80c927c6738661e6ad520efcef55bbb0868134d72bfddabf184622"
       },
       {
         "date": "2018-03-21",
@@ -1043,10 +1069,11 @@
       },
       {
         "date": "2018-04-03",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x13b983fa19769b36fc0978b73a398b1df04340cddf4102c8fe7f28c9ffd13595"
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374477,
+        "tx": "0x27e6bea5d42221ba14db909a37f2d111ea92135c7382bf4f8dec2ed19b33b1bc"
       },
       {
         "date": "2018-04-03",
@@ -1060,6 +1087,22 @@
         "version": "v2",
         "price": 0.9,
         "tx": "0x1b89fbd4c5307d9332da09311936ff13937bc831b90fe43bd02887c2064b48ee"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391345,
+        "tx": "0xf9e282d36d1942170e26fd3b5a64ee10b969818e7804a6f8f9539b180219622d"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422093,
+        "tx": "0x58b24f1b945f61cf64d0f955514e97450a1a4179cce151ec6bec54e5fa8188aa"
       },
       {
         "date": "2018-04-24",
@@ -1080,11 +1123,15 @@
     "stats": {
       "total_events": 11,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "10": {
@@ -1095,9 +1142,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x85e1a0e61be1358525895943e2d00484f86e36136c70e180ef21bf9050bd9432"
+        "tx": "0x85e1a0e61be1358525895943e2d00484f86e36136c70e180ef21bf9050bd9432",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -1111,7 +1160,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0x7b9db670763bc972ff2af41bbcf2431b9fafa388",
-        "tx": "0x54db3e3ac2057de9d336a1292e275d6778f31765351cc825a7343b5e8c052a5a"
+        "tx": "0x54db3e3ac2057de9d336a1292e275d6778f31765351cc825a7343b5e8c052a5a",
+        "from": "0xdb6312d70961cfbb964efcd335227a68b474f638"
       },
       {
         "date": "2018-01-30",
@@ -1119,14 +1169,38 @@
         "version": "v1",
         "price": 2.0,
         "venue": "StockExchange",
-        "tx": "0x54db3e3ac2057de9d336a1292e275d6778f31765351cc825a7343b5e8c052a5a"
+        "tx": "0x54db3e3ac2057de9d336a1292e275d6778f31765351cc825a7343b5e8c052a5a",
+        "buyer": "0x7b9db670763bc972ff2af41bbcf2431b9fafa388",
+        "seller": "0xdb6312d70961cfbb964efcd335227a68b474f638",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 2127.5
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374477,
+        "tx": "0xd6ad930df146df24d6edd9a7a62818c661ce11f614217377cc17910314cacad3"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391340,
+        "tx": "0x3731921b39fdebf3cdb19f67d705fdae2f513d0f5dc760a7dc59a161ff3fa615"
+      },
+      {
+        "date": "2018-04-14",
+        "type": "prize",
+        "amount": 4.119,
+        "eth_usd_rate": 502.79,
+        "amount_usd": 2070.99,
+        "source": "0x96288906f3a363e98b0595a9205f5c9e31e9a3c1",
         "to": "0x7b9db670763bc972ff2af41bbcf2431b9fafa388",
-        "tx": "0x228f17e2d87d9d4a65d5289ca4e77f0b55b6678bbc7a262ddd53129a2980799b"
+        "block": 5441664,
+        "tx": "0xfbfb1bdd026ae2651ac72af091293f7bf17c6fdc46806b384213d48600de450b"
       },
       {
         "date": "2018-04-24",
@@ -1137,13 +1211,21 @@
       }
     ],
     "stats": {
-      "total_events": 6,
+      "total_events": 8,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 2.0,
       "lowest_sale": 2.0,
       "last_sale": 2.0,
-      "last_sale_date": "2018-01-30"
+      "last_sale_date": "2018-01-30",
+      "final_status": "winner",
+      "final_status_note": "One of the three survivors at the end of the show",
+      "highest_sale_usd": 2127.5,
+      "lowest_sale_usd": 2127.5,
+      "last_sale_usd": 2127.5,
+      "initial_price_usd": 319.12,
+      "prize_eth": 4.119,
+      "prize_usd": 2070.99
     }
   },
   "11": {
@@ -1154,9 +1236,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
-        "tx": "0xdbbe4def3967506269fdd469e967737ff0b593d16c00d70de197ceac96a5758b"
+        "tx": "0xdbbe4def3967506269fdd469e967737ff0b593d16c00d70de197ceac96a5758b",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -1164,13 +1248,6 @@
         "version": "v1",
         "price": 3.0,
         "tx": "0xef6521402e0303a8887ee04f746f05c6394586d7e0540bc597baf2d98f551f5b"
-      },
-      {
-        "date": "2018-01-31",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
-        "tx": "0x8588976c4e4144cf9832cc9b0f7cd0969e5ece1ab594520bbed203f054228be6"
       },
       {
         "date": "2018-01-31",
@@ -1187,23 +1264,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
-        "tx": "0x0999f64970cb002d0004083df3049a1b5f0edc25b81600be226a4ef66e774927"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0x0999f64970cb002d0004083df3049a1b5f0edc25b81600be226a4ef66e774927"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
-        "tx": "0xf9374bc815f78889dcd1fb8598797ac055331ed970689c4d6bbfc296a9e3b7d0"
       },
       {
         "date": "2018-03-20",
@@ -1213,11 +1276,28 @@
         "tx": "0xde606ef2f7ded02398cfaa914ad043e59147fe2cde1937e58af4c296084b82ae"
       },
       {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349896,
+        "tx": "0x0fdc0841a7565e0417acc6e1f1de853dc72a9988811afa37128ed7492ba73de1"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391348,
+        "tx": "0x78a41654205c995c2c9d57db4cee0c2d0f377d7f5980323af330d5bf772dd4cb"
+      },
+      {
         "date": "2018-04-11",
         "type": "transfer",
         "version": "v2",
         "to": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
-        "tx": "0xe1784bc6641942c7be8d6aff79f882cacd048823782f824d442af68368ee9f9c"
+        "tx": "0xe1784bc6641942c7be8d6aff79f882cacd048823782f824d442af68368ee9f9c",
+        "from": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849"
       },
       {
         "date": "2018-04-11",
@@ -1225,7 +1305,11 @@
         "version": "v2",
         "price": 0.63,
         "venue": "StockExchange",
-        "tx": "0xe1784bc6641942c7be8d6aff79f882cacd048823782f824d442af68368ee9f9c"
+        "tx": "0xe1784bc6641942c7be8d6aff79f882cacd048823782f824d442af68368ee9f9c",
+        "buyer": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
+        "seller": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
+        "eth_usd_rate": 430.42,
+        "price_usd": 271.16
       },
       {
         "date": "2018-04-11",
@@ -1236,16 +1320,20 @@
       },
       {
         "date": "2018-04-13",
-        "type": "transfer",
+        "type": "delist",
         "version": "v2",
-        "to": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
         "tx": "0x95765432c71d9cd6ef86ece2ac5c2cd26d5c669b750bd6370ff44c7c71c2cd7f"
       },
       {
         "date": "2018-04-13",
-        "type": "delist",
-        "version": "v2",
-        "tx": "0x95765432c71d9cd6ef86ece2ac5c2cd26d5c669b750bd6370ff44c7c71c2cd7f"
+        "type": "prize",
+        "amount": 4.119,
+        "eth_usd_rate": 494.96,
+        "amount_usd": 2038.74,
+        "source": "0x96288906f3a363e98b0595a9205f5c9e31e9a3c1",
+        "to": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
+        "block": 5435234,
+        "tx": "0x0d48e60c76eaca1ed84dcb6fb6f8c6c630692704542641bb800dce462fdb82d4"
       },
       {
         "date": "2018-04-24",
@@ -1256,13 +1344,21 @@
       }
     ],
     "stats": {
-      "total_events": 15,
+      "total_events": 14,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.63,
       "lowest_sale": 0.63,
       "last_sale": 0.63,
-      "last_sale_date": "2018-04-11"
+      "last_sale_date": "2018-04-11",
+      "final_status": "winner",
+      "final_status_note": "One of the three survivors at the end of the show",
+      "highest_sale_usd": 271.16,
+      "lowest_sale_usd": 271.16,
+      "last_sale_usd": 271.16,
+      "initial_price_usd": 319.12,
+      "prize_eth": 4.119,
+      "prize_usd": 2038.74
     }
   },
   "12": {
@@ -1273,9 +1369,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x491e1dc28db5f58ff6b92b2b900238e9e7490b2191d9dba07b4b10c8d3671cfa"
+        "tx": "0x491e1dc28db5f58ff6b92b2b900238e9e7490b2191d9dba07b4b10c8d3671cfa",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-02-10",
@@ -1286,23 +1384,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x72a22fac162fd7116b80f97af3cba3495b94e9e279d702a874214ab0afef1435"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x72a22fac162fd7116b80f97af3cba3495b94e9e279d702a874214ab0afef1435"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xb15b76ae169b8fead705fcc66d2cdc76444fbfc2a954f457f344b0092dbf62c7"
       },
       {
         "date": "2018-03-16",
@@ -1310,6 +1394,30 @@
         "version": "v2",
         "price": 956.0,
         "tx": "0x6273024e10806a9b30f2e8cecb7b1403038f28193a1b15f6b3bf682c16c93d93"
+      },
+      {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349942,
+        "tx": "0x07a394423bcd35ed8b0d91e595c757583a4355b146a4ebc68c64d2983b1c8458"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391348,
+        "tx": "0x4af1b891f8da2500076b2c7d2c4f52e391f4d4a626bec7030c80c0fa0e97e537"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422094,
+        "tx": "0x844522e83dd3405cce6bf3ce4fd013ac76caffb33f41a1e0c0cd40bb0812d19e"
       },
       {
         "date": "2018-04-24",
@@ -1328,13 +1436,17 @@
       }
     ],
     "stats": {
-      "total_events": 8,
+      "total_events": 9,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "13": {
@@ -1345,9 +1457,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x3533dea2316b394761fd6a87ec9d6185c2915b0e4a5b8d147dcc68044f84445b"
+        "tx": "0x3533dea2316b394761fd6a87ec9d6185c2915b0e4a5b8d147dcc68044f84445b",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -1355,13 +1469,6 @@
         "version": "v1",
         "price": 4.0,
         "tx": "0xe79d2687e8d7e78f6c8473c2f9b2fa00172611ee299ca947295398ba6b6ade80"
-      },
-      {
-        "date": "2018-02-01",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x65b0d4346735246b58edddc9b4194ef4756a853001423477de2a1a1cff63a113"
       },
       {
         "date": "2018-02-01",
@@ -1374,7 +1481,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
-        "tx": "0x569a94d768d60017a00f6101979a06dfc49aeed9d935703481540eb215cc14b3"
+        "tx": "0x569a94d768d60017a00f6101979a06dfc49aeed9d935703481540eb215cc14b3",
+        "from": "0xdb6312d70961cfbb964efcd335227a68b474f638"
       },
       {
         "date": "2018-02-01",
@@ -1388,7 +1496,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0x3404f61f564dee8115d826662c9020698c260014",
-        "tx": "0xd916fa4023db907efdd545722d56d291f8074ffd5d53050ac4d63e95d65ea3d8"
+        "tx": "0xd916fa4023db907efdd545722d56d291f8074ffd5d53050ac4d63e95d65ea3d8",
+        "from": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849"
       },
       {
         "date": "2018-02-20",
@@ -1396,7 +1505,19 @@
         "version": "v1",
         "price": 0.8,
         "venue": "StockExchange",
-        "tx": "0xd916fa4023db907efdd545722d56d291f8074ffd5d53050ac4d63e95d65ea3d8"
+        "tx": "0xd916fa4023db907efdd545722d56d291f8074ffd5d53050ac4d63e95d65ea3d8",
+        "buyer": "0x3404f61f564dee8115d826662c9020698c260014",
+        "seller": "0xca278cb118eb29f97ba640ebf5d0e9e405c4f849",
+        "eth_usd_rate": 882.99,
+        "price_usd": 706.39
+      },
+      {
+        "date": "2018-03-16",
+        "type": "death",
+        "episode_id": 1,
+        "episode_title": "Bloody Kitties",
+        "block": 5266284,
+        "tx": "0x997358521e5c2a40dc089300c8be8175e16e9c5e9e0f1a05c6b4eb0ebe49118e"
       },
       {
         "date": "2018-03-16",
@@ -1410,6 +1531,22 @@
         "type": "delist",
         "version": "v2",
         "tx": "0x01c324aea7d09d20f427e025f3db7c24e30a2e3cae68e114d173ba779d841f2a"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391348,
+        "tx": "0x27295e6920a6e3ac8fb1464ce490047325afb6bd441b19f42538899f22f61fa7"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422092,
+        "tx": "0x43ce1db50e0d15de9c2bb85b867d2f77d822cfc47b15086ef1badf7fa356eee7"
       },
       {
         "date": "2018-04-24",
@@ -1426,7 +1563,9 @@
         "price": 0.1,
         "buyer": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0xfcabe07aa091a7b761760775b018cca86ca66982c0c6664f9835b9f3cdca4a01"
+        "tx": "0xfcabe07aa091a7b761760775b018cca86ca66982c0c6664f9835b9f3cdca4a01",
+        "eth_usd_rate": 670.81,
+        "price_usd": 67.08
       },
       {
         "date": "2021-08-30",
@@ -1436,7 +1575,9 @@
         "price": 2.0,
         "buyer": "0x8f2d8527c94a7aef846321fffa47f06fa7230456",
         "seller": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
-        "tx": "0xf8e9b4ea44acbeb9720d987b3eb398be50856a3bc75bfa630aa0c9c2cc10f42e"
+        "tx": "0xf8e9b4ea44acbeb9720d987b3eb398be50856a3bc75bfa630aa0c9c2cc10f42e",
+        "eth_usd_rate": 3229.64,
+        "price_usd": 6459.28
       },
       {
         "date": "2024-01-01",
@@ -1446,13 +1587,20 @@
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 16,
       "total_sales": 3,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 2.0,
       "lowest_sale": 0.1,
       "last_sale": 2.0,
-      "last_sale_date": "2021-08-30"
+      "last_sale_date": "2021-08-30",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 6459.28,
+      "lowest_sale_usd": 67.08,
+      "last_sale_usd": 6459.28,
+      "initial_price_usd": 319.12
     }
   },
   "14": {
@@ -1463,9 +1611,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x225de01237c4ce42255ef462e92023e1d8e4d357b260853a492ed67db53a7a4d"
+        "tx": "0x225de01237c4ce42255ef462e92023e1d8e4d357b260853a492ed67db53a7a4d",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-02-14",
@@ -1473,13 +1623,6 @@
         "version": "v1",
         "price": 1.5,
         "tx": "0xfa1d488c04759fc654e39f9f6bee64188c8da157813ed1480f34189a95403c27"
-      },
-      {
-        "date": "2018-03-06",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xf8c31ad1536f10c084959bac38032b975b2eb700daab6cb231bb3ff9b54b9148"
       },
       {
         "date": "2018-03-06",
@@ -1496,23 +1639,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x8b55fe98a40d45961c4307d5337cd59c527b4dcf072d6400f6984805b4363d36"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x8b55fe98a40d45961c4307d5337cd59c527b4dcf072d6400f6984805b4363d36"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x038ee2ed5b359750c81f90cd06e8d99bda78eaa95c01f79e3652ac28c8907b4c"
       },
       {
         "date": "2018-03-20",
@@ -1523,16 +1652,33 @@
       },
       {
         "date": "2018-03-31",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xa2c5525fc67ac4790736a811df56cc09fa7eb10f285228c4c9d5e9deb2481545"
-      },
-      {
-        "date": "2018-03-31",
         "type": "delist",
         "version": "v2",
         "tx": "0xa2c5525fc67ac4790736a811df56cc09fa7eb10f285228c4c9d5e9deb2481545"
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374479,
+        "tx": "0xc561cdbee56871b01a2f952bd35c20d544848d9efb920ce9cdb6023fe20b3c51"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0xd904129b162721c59f553e3fd8bacff66d2c1b4f4cafdeacdbe179c825f54d08"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422096,
+        "tx": "0x20b4c5315e61b5dcec5a99a8f9a8614fc21ae23e5f98cb5b25ff82181937b37c"
       },
       {
         "date": "2018-04-24",
@@ -1565,7 +1711,9 @@
         "price": 0.24375,
         "buyer": "0x527b5f4d7d3486094b2524b71d339c4dc84e0ac8",
         "seller": "0x21bc7fbf89b07e318dce55676bff0c3ff5edb948",
-        "tx": "0x2489958cb1741727166e19ff58bfcb3a6325152af8f2d9e4a61d80eb3bd629cf"
+        "tx": "0x2489958cb1741727166e19ff58bfcb3a6325152af8f2d9e4a61d80eb3bd629cf",
+        "eth_usd_rate": 2510.12,
+        "price_usd": 611.84
       },
       {
         "date": "2024-02-11",
@@ -1577,13 +1725,20 @@
       }
     ],
     "stats": {
-      "total_events": 16,
+      "total_events": 15,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.24375,
       "lowest_sale": 0.24375,
       "last_sale": 0.24375,
-      "last_sale_date": "2024-01-15"
+      "last_sale_date": "2024-01-15",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 611.84,
+      "lowest_sale_usd": 611.84,
+      "last_sale_usd": 611.84,
+      "initial_price_usd": 333.39
     }
   },
   "15": {
@@ -1594,9 +1749,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0xd99a76f31e877fa683dc213e26f863506417d94e4b45c0a978c4355396b4d5b1"
+        "tx": "0xd99a76f31e877fa683dc213e26f863506417d94e4b45c0a978c4355396b4d5b1",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -1604,13 +1761,6 @@
         "version": "v1",
         "price": 3.0,
         "tx": "0x00ecabd35fc1ba569250cd05090adfc997375d5b0fd93eb341801af9c55f38a2"
-      },
-      {
-        "date": "2018-01-30",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0x09439a5f989357814ff82026564ea8b77507f3dde4102728ede687143ca0bd2e"
       },
       {
         "date": "2018-01-30",
@@ -1637,7 +1787,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0x401e6f829cc02a4939bd56f3e6befb78531d3a4c",
-        "tx": "0x1ae8d232294bdc9f7332e674408da30dc7e00103e1cc8de79f932d4942052db9"
+        "tx": "0x1ae8d232294bdc9f7332e674408da30dc7e00103e1cc8de79f932d4942052db9",
+        "from": "0x9777daabf322d38af7a49a66dc55f3086127baea"
       },
       {
         "date": "2018-03-17",
@@ -1645,7 +1796,35 @@
         "version": "v2",
         "price": 0.21,
         "venue": "StockExchange",
-        "tx": "0x1ae8d232294bdc9f7332e674408da30dc7e00103e1cc8de79f932d4942052db9"
+        "tx": "0x1ae8d232294bdc9f7332e674408da30dc7e00103e1cc8de79f932d4942052db9",
+        "buyer": "0x401e6f829cc02a4939bd56f3e6befb78531d3a4c",
+        "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
+        "eth_usd_rate": 549.79,
+        "price_usd": 115.46
+      },
+      {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349855,
+        "tx": "0xbd5594caca4f9478d7d877f65b0e8e4ed606ce41514409e0697aabc2875be87a"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x55944944f268a202f637d1f94bdf12323b9561845d18b77a3370ec01e9fb7e4f"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422096,
+        "tx": "0x094ef03ab08a69f8d89aff7d5226dfcc6aa3b0fa3bb5660c0c2bfc97326070f8"
       },
       {
         "date": "2018-04-24",
@@ -1662,17 +1841,26 @@
         "price": 0.75,
         "buyer": "0xcf2ad5f86899b9b30387ec12327363e8ffb9a6d2",
         "seller": "0x401e6f829cc02a4939bd56f3e6befb78531d3a4c",
-        "tx": "0xd96a26a11935e5519ab7a1497b6ede2b49f71cb8bf10ea1d8e05eba12c111643"
+        "tx": "0xd96a26a11935e5519ab7a1497b6ede2b49f71cb8bf10ea1d8e05eba12c111643",
+        "eth_usd_rate": 1126.99,
+        "price_usd": 845.24
       }
     ],
     "stats": {
-      "total_events": 10,
+      "total_events": 12,
       "total_sales": 2,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.75,
       "lowest_sale": 0.21,
       "last_sale": 0.75,
-      "last_sale_date": "2022-06-20"
+      "last_sale_date": "2022-06-20",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 845.24,
+      "lowest_sale_usd": 115.46,
+      "last_sale_usd": 845.24,
+      "initial_price_usd": 319.12
     }
   },
   "16": {
@@ -1683,9 +1871,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xfadf9f4c755b2d2e5fef91bd7bc51eff30911a71f64ab61d52e1db14a65315e8"
+        "tx": "0xfadf9f4c755b2d2e5fef91bd7bc51eff30911a71f64ab61d52e1db14a65315e8",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -1696,23 +1886,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xaaab548dfb54fb05027cc58ce4f6da5bea839a609f5b5f148300f8a08d41355b"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xaaab548dfb54fb05027cc58ce4f6da5bea839a609f5b5f148300f8a08d41355b"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xe394e54f0211a396e003ac13828188259222e4beeebb3be13e9d51ca205f2195"
       },
       {
         "date": "2018-03-16",
@@ -1723,16 +1899,33 @@
       },
       {
         "date": "2018-03-30",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xc6657453a92796c6498829e43221cdb23a813af147aa8a5f8cc08debb9181f7c"
-      },
-      {
-        "date": "2018-03-30",
         "type": "delist",
         "version": "v2",
         "tx": "0xc6657453a92796c6498829e43221cdb23a813af147aa8a5f8cc08debb9181f7c"
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xaa77b9d5b65ed696c367b5d172e6647c54f2a6f9e857aed721c7b89f7608fdf9"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0xc57850eb7a3c9a6cf825c2dad92b208d81bae473110086fc23fe75dd20e8de6c"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422096,
+        "tx": "0x1eef9803ca2607c5b0189bd4290cb61f11b926a4d56095a23c75f4f7edbd01d2"
       },
       {
         "date": "2018-04-24",
@@ -1745,11 +1938,15 @@
     "stats": {
       "total_events": 9,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "17": {
@@ -1760,9 +1957,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0x811c2b740a1e975369fa855e78a97bede24ea0fb335d2bc3df2e04bb21ee2ae3"
+        "tx": "0x811c2b740a1e975369fa855e78a97bede24ea0fb335d2bc3df2e04bb21ee2ae3",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-01-31",
@@ -1792,6 +1991,30 @@
         "tx": "0xb7fbeb846d61da7554e4c03e664b8b4759fd008ac82dc33a8d1db9e299fdfc0d"
       },
       {
+        "date": "2018-03-23",
+        "type": "death",
+        "episode_id": 3,
+        "episode_title": "Freedom To Die",
+        "block": 5309080,
+        "tx": "0xb6d95a2d528c7959a58b2622878960e5bf5d48d29a970e560522b3a0ff90cfef"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x3a10509df9ec736afe3673e6036202ee2074a58e540ba8174a90307dbf0284b1"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422096,
+        "tx": "0x5cc40e162a4f6d82d0a406bdf88d4284dbc3235efff2f09f36f817dfd12a9283"
+      },
+      {
         "date": "2018-04-24",
         "type": "mint",
         "version": "v3",
@@ -1806,17 +2029,26 @@
         "price": 0.1,
         "buyer": "0xb35a5ff901765bb037051f6138cb038ad5327aee",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0xcbbe68a2fa976761df91146e13fbc17a6e3b59584db4be66dcde399fdb4f5548"
+        "tx": "0xcbbe68a2fa976761df91146e13fbc17a6e3b59584db4be66dcde399fdb4f5548",
+        "eth_usd_rate": 715.15,
+        "price_usd": 71.52
       }
     ],
     "stats": {
-      "total_events": 7,
+      "total_events": 10,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.1,
       "lowest_sale": 0.1,
       "last_sale": 0.1,
-      "last_sale_date": "2018-05-20"
+      "last_sale_date": "2018-05-20",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 71.52,
+      "lowest_sale_usd": 71.52,
+      "last_sale_usd": 71.52,
+      "initial_price_usd": 333.39
     }
   },
   "18": {
@@ -1827,9 +2059,11 @@
         "date": "2018-02-07",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x6ed8cd17ee5453e17eb731a6b2004af53ea1f26a",
-        "tx": "0xb6deffbe51dafdd7efaef643024b364e92ad470a903104c9f8533dd0aa8f4164"
+        "tx": "0xb6deffbe51dafdd7efaef643024b364e92ad470a903104c9f8533dd0aa8f4164",
+        "eth_usd_rate": 751.81,
+        "price_usd": 225.54
       },
       {
         "date": "2018-03-16",
@@ -1843,7 +2077,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0xbd2ca806448d51adfbcc9d3f34b9b0c80226bc60",
-        "tx": "0x158792196ea38d862e96fe85dbc348fbef8e33896dd2bffdcde491cd64137937"
+        "tx": "0x158792196ea38d862e96fe85dbc348fbef8e33896dd2bffdcde491cd64137937",
+        "from": "0x6ed8cd17ee5453e17eb731a6b2004af53ea1f26a"
       },
       {
         "date": "2018-03-16",
@@ -1851,7 +2086,35 @@
         "version": "v2",
         "price": 0.21,
         "venue": "StockExchange",
-        "tx": "0x158792196ea38d862e96fe85dbc348fbef8e33896dd2bffdcde491cd64137937"
+        "tx": "0x158792196ea38d862e96fe85dbc348fbef8e33896dd2bffdcde491cd64137937",
+        "buyer": "0xbd2ca806448d51adfbcc9d3f34b9b0c80226bc60",
+        "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
+        "eth_usd_rate": 600.53,
+        "price_usd": 126.11
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0x5003a225793572f68e4194bbe70577a9065c211a7bcc761f84b8c2ac713fef95"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x9c61da467a719b19364ab4dea338ee246a7264e6c64ae249a127d5260c689b36"
+      },
+      {
+        "date": "2018-04-13",
+        "type": "death",
+        "episode_id": 10,
+        "episode_title": "Tokenville",
+        "block": 5434017,
+        "tx": "0xf4c702ef9e072622fe80261a992ab9dab2d8c4491556ff0ed35be66e5117a9ab"
       },
       {
         "date": "2018-04-24",
@@ -1862,13 +2125,20 @@
       }
     ],
     "stats": {
-      "total_events": 5,
+      "total_events": 8,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.21,
       "lowest_sale": 0.21,
       "last_sale": 0.21,
-      "last_sale_date": "2018-03-16"
+      "last_sale_date": "2018-03-16",
+      "final_status": "dead",
+      "died_in_episode": 10,
+      "died_in_episode_title": "Tokenville",
+      "highest_sale_usd": 126.11,
+      "lowest_sale_usd": 126.11,
+      "last_sale_usd": 126.11,
+      "initial_price_usd": 225.54
     }
   },
   "19": {
@@ -1879,9 +2149,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x745df89dd8649c6a038ce70dec98474374752c4eaf8e66f8445cbe980e374825"
+        "tx": "0x745df89dd8649c6a038ce70dec98474374752c4eaf8e66f8445cbe980e374825",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -1889,13 +2161,6 @@
         "version": "v1",
         "price": 10.0,
         "tx": "0xfba4c60b0b98efc8281a94303dfa6cf9ef77c5593e260f8ac9048afc8b12c2d8"
-      },
-      {
-        "date": "2018-01-31",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xc93f625d358bd48b9c1745ffbee8e726fb87e679b2301149e17e55a9a4647b55"
       },
       {
         "date": "2018-01-31",
@@ -1912,23 +2177,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x41cece7ce7ed7d2e42b5786ce2525a1ac4521b0891f94a559251fdd84bca520f"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x41cece7ce7ed7d2e42b5786ce2525a1ac4521b0891f94a559251fdd84bca520f"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x070bf689bfe14c2bd56e741644d0da29a0c6943973fa88c60d02c727fb47957f"
       },
       {
         "date": "2018-03-20",
@@ -1938,17 +2189,34 @@
         "tx": "0x7879cf28d95af2e5fedee58c5a37c27a1e66b9d7a91c35fb7ec16503259e13de"
       },
       {
-        "date": "2018-03-31",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xb536cb21ed6ba174c467efc723f4dceb0fd44c3c61710aa0754bbb70ee1db685"
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349851,
+        "tx": "0x6bcfce6776478c70b7ca4d9bb16b36ece26bbaa253cc59ab467369e8c7721427"
       },
       {
         "date": "2018-03-31",
         "type": "delist",
         "version": "v2",
         "tx": "0xb536cb21ed6ba174c467efc723f4dceb0fd44c3c61710aa0754bbb70ee1db685"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0xe32a7cf63c660f9aeb50f1838d7babda9080e124275140793c3511a65fa667cb"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422096,
+        "tx": "0x2fef0727142faaf4e1ae2498ab14828bcd0f43401a195ff1776dfa2be6ba671e"
       },
       {
         "date": "2018-04-24",
@@ -1967,13 +2235,17 @@
       }
     ],
     "stats": {
-      "total_events": 13,
+      "total_events": 12,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "20": {
@@ -1984,16 +2256,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
-        "tx": "0xd825b618845571dda015ffc199faf29d2f3a98b2787603cb87144c3f57a5471c"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
-        "tx": "0x8fc411af5ea2e1fe09700819c719109d64788f73ab58217c9b45d44af12ce012"
+        "tx": "0xd825b618845571dda015ffc199faf29d2f3a98b2787603cb87144c3f57a5471c",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-03-27",
@@ -2003,17 +2270,34 @@
         "tx": "0xf6ed33e5f07d52d1a1b46a52103bda23b9ce4c79fb0fc6c1ee26a81da1bdc9e1"
       },
       {
-        "date": "2018-04-02",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
-        "tx": "0x5835636d495a8121a775706cb6b637595117615391584ed81b01d57dad14ebee"
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5350520,
+        "tx": "0xa713f3672c1f7342f23510c2ab6760f08cdc67ac1197d7ffc294a9d9367d089f"
       },
       {
         "date": "2018-04-02",
         "type": "delist",
         "version": "v2",
         "tx": "0x5835636d495a8121a775706cb6b637595117615391584ed81b01d57dad14ebee"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391347,
+        "tx": "0xec71bc1f619f669d028054d11187ac9c7eabd6a56fe511e171a1a1a93349e71a"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422098,
+        "tx": "0xd62b04e92d72988b15f6145074862c38ddd8bf6474300ae59ac2b2de9c9015f2"
       },
       {
         "date": "2018-04-24",
@@ -2030,17 +2314,26 @@
         "price": 1.7325,
         "buyer": "0x6237ee60573673ae278bd71d9c2ba24fe80f2031",
         "seller": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
-        "tx": "0x4d02c82b7c6423f9cac9934423e13e96e63c1fe312a3f6dbdcddb4448a9beec0"
+        "tx": "0x4d02c82b7c6423f9cac9934423e13e96e63c1fe312a3f6dbdcddb4448a9beec0",
+        "eth_usd_rate": 1605,
+        "price_usd": 2780.66
       }
     ],
     "stats": {
-      "total_events": 7,
+      "total_events": 8,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.7325,
       "lowest_sale": 1.7325,
       "last_sale": 1.7325,
-      "last_sale_date": "2023-02-28"
+      "last_sale_date": "2023-02-28",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2780.66,
+      "lowest_sale_usd": 2780.66,
+      "last_sale_usd": 2780.66,
+      "initial_price_usd": 281.41
     }
   },
   "21": {
@@ -2051,9 +2344,11 @@
         "date": "2018-02-02",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x927fcc58cb34a72bdaa0bf7e9afa373365fc2c78",
-        "tx": "0xa55f8da69c3f87a01e7eaf8fd9c89043c4612e35e1b277f9102f4ef8a0f615a8"
+        "tx": "0xa55f8da69c3f87a01e7eaf8fd9c89043c4612e35e1b277f9102f4ef8a0f615a8",
+        "eth_usd_rate": 917.47,
+        "price_usd": 275.24
       },
       {
         "date": "2018-02-02",
@@ -2064,23 +2359,9 @@
       },
       {
         "date": "2018-03-15",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x927fcc58cb34a72bdaa0bf7e9afa373365fc2c78",
-        "tx": "0xddb52c7fe3ccf0e0f8db185b2719941d8e475e3191f688bb47121717f9e3f1fe"
-      },
-      {
-        "date": "2018-03-15",
         "type": "delist",
         "version": "v1",
         "tx": "0xddb52c7fe3ccf0e0f8db185b2719941d8e475e3191f688bb47121717f9e3f1fe"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x927fcc58cb34a72bdaa0bf7e9afa373365fc2c78",
-        "tx": "0xec3e15ef278530903de2e340954c07f43a9b983edf49dd22f7f6cbe7aaab0630"
       },
       {
         "date": "2018-03-20",
@@ -2091,16 +2372,25 @@
       },
       {
         "date": "2018-03-30",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x927fcc58cb34a72bdaa0bf7e9afa373365fc2c78",
-        "tx": "0x348808ec6e2184be328b1b52c0e2927a61c3273e4cc783f8f8ac12f2968eaf7d"
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5350520,
+        "tx": "0xb35aaf0240f940f9eb3907d7c9e140f90c777e1b1bca5aee9be3409e7205c706"
       },
       {
         "date": "2018-03-30",
         "type": "delist",
         "version": "v2",
         "tx": "0x348808ec6e2184be328b1b52c0e2927a61c3273e4cc783f8f8ac12f2968eaf7d"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x2447268410c36aa364113a57c0c4be555aae6e54d0acd7630f1c716534e3b3e3"
       },
       {
         "date": "2018-04-06",
@@ -2111,16 +2401,17 @@
       },
       {
         "date": "2018-04-06",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x927fcc58cb34a72bdaa0bf7e9afa373365fc2c78",
-        "tx": "0xf33710d202ebe766f466472e64172ee6f21ba8ba01bc7e8b0ad44e41747b7713"
-      },
-      {
-        "date": "2018-04-06",
         "type": "delist",
         "version": "v2",
         "tx": "0xf33710d202ebe766f466472e64172ee6f21ba8ba01bc7e8b0ad44e41747b7713"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422098,
+        "tx": "0x85fa3cd84c90ca286733ad062780428b090288903e00b332695fa42410a404c4"
       },
       {
         "date": "2018-04-24",
@@ -2131,13 +2422,17 @@
       }
     ],
     "stats": {
-      "total_events": 12,
+      "total_events": 11,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 275.24
     }
   },
   "22": {
@@ -2148,9 +2443,11 @@
         "date": "2018-02-01",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x288294ba8a9979f98f1c6b3695a5670ab49d5b76",
-        "tx": "0x9b217b11dde6c341e28ac2c17d7f2ad33c96c075f7aa0344b771609112aa17a0"
+        "tx": "0x9b217b11dde6c341e28ac2c17d7f2ad33c96c075f7aa0344b771609112aa17a0",
+        "eth_usd_rate": 1026.19,
+        "price_usd": 307.86
       },
       {
         "date": "2018-02-01",
@@ -2158,13 +2455,6 @@
         "version": "v1",
         "price": 2.0,
         "tx": "0xea457346dc26d2cd502f7ea0d3a5221c55cb84492abb1e0ac13fc68349ef0cc8"
-      },
-      {
-        "date": "2018-03-14",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x288294ba8a9979f98f1c6b3695a5670ab49d5b76",
-        "tx": "0x16eefc565a281dcd78dea9aa75c0d4fb0442b6a5b291d93dae7ed3c9b2b0cc85"
       },
       {
         "date": "2018-03-14",
@@ -2184,7 +2474,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0x4d99d5c7698d69f02f2cac5532258cd80485b29f",
-        "tx": "0x22929017f28780c1c60c9fcc98c614b17d9b2cb8ca18bfc395fe5f69e4c3a933"
+        "tx": "0x22929017f28780c1c60c9fcc98c614b17d9b2cb8ca18bfc395fe5f69e4c3a933",
+        "from": "0x288294ba8a9979f98f1c6b3695a5670ab49d5b76"
       },
       {
         "date": "2018-03-17",
@@ -2192,7 +2483,35 @@
         "version": "v2",
         "price": 0.21,
         "venue": "StockExchange",
-        "tx": "0x22929017f28780c1c60c9fcc98c614b17d9b2cb8ca18bfc395fe5f69e4c3a933"
+        "tx": "0x22929017f28780c1c60c9fcc98c614b17d9b2cb8ca18bfc395fe5f69e4c3a933",
+        "buyer": "0x4d99d5c7698d69f02f2cac5532258cd80485b29f",
+        "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
+        "eth_usd_rate": 549.79,
+        "price_usd": 115.46
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xb456198c5afab4d95f69ff6f15debabf60625ac6da5cb528a1ad3f6fd9d3d16b"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x5e9eea1ea40b5d17e345090e94f483b94873d62db391fc4d4095932d9831bf72"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422101,
+        "tx": "0xe234e72e5d16ad9577a09fed5a7211497e2973a0dd1b3f80ba31f5207ae867f7"
       },
       {
         "date": "2018-04-24",
@@ -2203,13 +2522,20 @@
       }
     ],
     "stats": {
-      "total_events": 8,
+      "total_events": 10,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.21,
       "lowest_sale": 0.21,
       "last_sale": 0.21,
-      "last_sale_date": "2018-03-17"
+      "last_sale_date": "2018-03-17",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 115.46,
+      "lowest_sale_usd": 115.46,
+      "last_sale_usd": 115.46,
+      "initial_price_usd": 307.86
     }
   },
   "23": {
@@ -2220,9 +2546,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x4fd187715914d53b80fcf2b77bf1103cfab0860e",
-        "tx": "0x2a12b938554c803f1d6915406d3374171769d0b261d4fcaf42d33101327a72c7"
+        "tx": "0x2a12b938554c803f1d6915406d3374171769d0b261d4fcaf42d33101327a72c7",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-19",
@@ -2252,6 +2580,30 @@
         "tx": "0x4ccd06a6fa7311e278d095f86549cbbeba8845917cf9cc10920fcadb4da35636"
       },
       {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5350521,
+        "tx": "0xac43819a624bc8d9c9dcb6ba836f80c6117f8642513a6e9185f628ed44639579"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0xb7f647ca8dd0ed0faf7630e260631bfdac48074ab99f33d8e535f267c63c61e7"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422101,
+        "tx": "0xee50b9b85c1b741df63ff12fc443b4402968b4c79524127673b5e4acc53623df"
+      },
+      {
         "date": "2018-04-24",
         "type": "mint",
         "version": "v3",
@@ -2268,13 +2620,17 @@
       }
     ],
     "stats": {
-      "total_events": 7,
+      "total_events": 10,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 281.41
     }
   },
   "24": {
@@ -2285,9 +2641,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x9121bb21c92c9f1571881bdf5f50e40a740f6d4f",
-        "tx": "0xbb295c83fa215bf06a192581e8c6829644831a774ab035d0dfeec8b0866bf9e8"
+        "tx": "0xbb295c83fa215bf06a192581e8c6829644831a774ab035d0dfeec8b0866bf9e8",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-16",
@@ -2298,23 +2656,33 @@
       },
       {
         "date": "2018-03-15",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x9121bb21c92c9f1571881bdf5f50e40a740f6d4f",
-        "tx": "0x565bd704cb32a15737ca5d86a21353fc4cb2c9f3dc1c9eb5ef4f1341b95b9be6"
-      },
-      {
-        "date": "2018-03-15",
         "type": "delist",
         "version": "v1",
         "tx": "0x565bd704cb32a15737ca5d86a21353fc4cb2c9f3dc1c9eb5ef4f1341b95b9be6"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x9121bb21c92c9f1571881bdf5f50e40a740f6d4f",
-        "tx": "0x789699c2b02805fb01b53802f198c11ecc7a426ca344eeb3399adba858ce0a45"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xe0e2d8dc2c23f3fa01d5631b19ef59fee7443cf870650bc0cdbf10f700cb2eaf"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x258a39b72fda618bb6f9d63bac3b6615244f903114bca7a42f03629a44406be9"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422094,
+        "tx": "0xd8346537da02990e8297edf9ac45530afafc169dcc8701b4c5d88a428c8b3f5d"
       },
       {
         "date": "2018-04-24",
@@ -2325,13 +2693,17 @@
       }
     ],
     "stats": {
-      "total_events": 6,
+      "total_events": 7,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 281.41
     }
   },
   "25": {
@@ -2342,9 +2714,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xc6ee9e44fc5b2f2fc0627734ea06b4df46ca221e",
-        "tx": "0xa412dee8cb2ebf30e5efafc1d7d9a6d812e1d1adee139ee803f3d76ace11863f"
+        "tx": "0xa412dee8cb2ebf30e5efafc1d7d9a6d812e1d1adee139ee803f3d76ace11863f",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-16",
@@ -2352,13 +2726,6 @@
         "version": "v1",
         "price": 25.0,
         "tx": "0x918fb9916b680114b1f73173d70161d74c5040d90a04c44932807bf8b3a9b0ee"
-      },
-      {
-        "date": "2018-02-20",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xc6ee9e44fc5b2f2fc0627734ea06b4df46ca221e",
-        "tx": "0x0a5978ce7010f6a4dfe85bad60096a07a1478b48a09f996c7f4f6840d85e179d"
       },
       {
         "date": "2018-02-20",
@@ -2375,23 +2742,17 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xc6ee9e44fc5b2f2fc0627734ea06b4df46ca221e",
-        "tx": "0x8b13252d01a452923190237d55844aa902abc8a261f6205ac6b4039724c7c069"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x8b13252d01a452923190237d55844aa902abc8a261f6205ac6b4039724c7c069"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xc6ee9e44fc5b2f2fc0627734ea06b4df46ca221e",
-        "tx": "0x171432f77b6039cd2e287e782531b20ae4c12d80b9c091d8887c3035828c1a7b"
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290618,
+        "tx": "0xbbf6eb7374854880ac9249fcd1efca040b924d76004cf9a57c9343d7057eaf45"
       },
       {
         "date": "2018-03-20",
@@ -2399,13 +2760,6 @@
         "version": "v2",
         "price": 0.9,
         "tx": "0xb0ef2f673b1c0423d9eed8588064959be02a73d34a63a15afaaa71f34b02ef38"
-      },
-      {
-        "date": "2018-03-21",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xc6ee9e44fc5b2f2fc0627734ea06b4df46ca221e",
-        "tx": "0xcf51993ceb67b6fdbbab7a88e9801e00dba3dbe8a0dd3dcfa2a0ea75bb76f675"
       },
       {
         "date": "2018-03-21",
@@ -2422,13 +2776,6 @@
       },
       {
         "date": "2018-04-03",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xc6ee9e44fc5b2f2fc0627734ea06b4df46ca221e",
-        "tx": "0xf73c010230f76f3bfcc6d94162467cd64c6d02db42655dfad131855ccddbda32"
-      },
-      {
-        "date": "2018-04-03",
         "type": "delist",
         "version": "v2",
         "tx": "0xf73c010230f76f3bfcc6d94162467cd64c6d02db42655dfad131855ccddbda32"
@@ -2439,6 +2786,22 @@
         "version": "v2",
         "price": 0.4,
         "tx": "0x4d4f31d165c8a11e9a28288548bb75b07fc384849b6a33fda2c53f56c83e76d4"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391353,
+        "tx": "0x071c0e4c1bc5a8b6d7528dc5cb10a43135799d0416f0203829d9a7c30cf321e7"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0x03f74a080e06655398efc88dac93f8023d8ce15618db746874d471af6e15b727"
       },
       {
         "date": "2018-04-24",
@@ -2455,7 +2818,9 @@
         "price": 1.0,
         "buyer": "0x1998f627ad0f5904165b1796c4b111492365dad2",
         "seller": "0xe0f94903b58dfb0afb14109fac17e2c41ed78f47",
-        "tx": "0x13a2bed5fb011643a747130fbcca27488debd17b4568b75199bef3cca5da95d6"
+        "tx": "0x13a2bed5fb011643a747130fbcca27488debd17b4568b75199bef3cca5da95d6",
+        "eth_usd_rate": 2547.03,
+        "price_usd": 2547.03
       },
       {
         "date": "2022-02-01",
@@ -2467,13 +2832,20 @@
       }
     ],
     "stats": {
-      "total_events": 18,
+      "total_events": 16,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.0,
       "lowest_sale": 1.0,
       "last_sale": 1.0,
-      "last_sale_date": "2022-01-28"
+      "last_sale_date": "2022-01-28",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2547.03,
+      "lowest_sale_usd": 2547.03,
+      "last_sale_usd": 2547.03,
+      "initial_price_usd": 281.41
     }
   },
   "26": {
@@ -2484,9 +2856,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x346902128188c7ab7231e2fde72903333c1c3e1d",
-        "tx": "0x7eaaab7125bea5c3b9b445080b5383daf3a21a5d62b4755fda9901ce33d8a70a"
+        "tx": "0x7eaaab7125bea5c3b9b445080b5383daf3a21a5d62b4755fda9901ce33d8a70a",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-16",
@@ -2497,23 +2871,17 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x346902128188c7ab7231e2fde72903333c1c3e1d",
-        "tx": "0xeba2baabc70b3aaee6d03518890db172e9d3ccf4d3f274f74d621461d02020d2"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xeba2baabc70b3aaee6d03518890db172e9d3ccf4d3f274f74d621461d02020d2"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x346902128188c7ab7231e2fde72903333c1c3e1d",
-        "tx": "0xd90c13b32c6221fc604947c779b5449e093e05461fcb9157ee127c2bc5c878b0"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374477,
+        "tx": "0x39d6b20e0de9af51f4075120ca9956368236280f2d399276727a4db13f2faa64"
       },
       {
         "date": "2018-04-05",
@@ -2521,6 +2889,22 @@
         "version": "v2",
         "price": 1.0,
         "tx": "0x49e087553e09890db07214af3fbb6a68194392ea9d3371ee69ee1795b4dcb5a6"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391354,
+        "tx": "0x1c0e2da169c17b38a5326ad370212afc77d3b2ff0ccd6690a9f8c5cc13d9837d"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xdf06b11d2d516db00ec7cf6db88b0fb5097f5e8a8c0295c40565733a48726034"
       },
       {
         "date": "2018-04-24",
@@ -2531,13 +2915,17 @@
       }
     ],
     "stats": {
-      "total_events": 7,
+      "total_events": 8,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 281.41
     }
   },
   "27": {
@@ -2548,9 +2936,11 @@
         "date": "2018-02-15",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0x7e54010c6530fb682646e19fa1a47e9664c738c52bd0aa8dd64acfb050511180"
+        "tx": "0x7e54010c6530fb682646e19fa1a47e9664c738c52bd0aa8dd64acfb050511180",
+        "eth_usd_rate": 927.95,
+        "price_usd": 278.38
       },
       {
         "date": "2018-02-15",
@@ -2558,13 +2948,6 @@
         "version": "v1",
         "price": 3.0,
         "tx": "0xcd3330c915471f8117044acf41de8ccf755f1481ad49a858a6a057bff2781e26"
-      },
-      {
-        "date": "2018-02-23",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0xb5b4efbf3fe98882853c3709cf451c3ce193170f3f3b1ca751680539347feb3e"
       },
       {
         "date": "2018-02-23",
@@ -2581,23 +2964,33 @@
       },
       {
         "date": "2018-03-15",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0x2b6c5d435671441a1d63c04fcad010265b143467f9f14af6fb3668ce5881e94e"
-      },
-      {
-        "date": "2018-03-15",
         "type": "delist",
         "version": "v1",
         "tx": "0x2b6c5d435671441a1d63c04fcad010265b143467f9f14af6fb3668ce5881e94e"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0x317b913c07b79ddd90686de3d6040e5144c088ffd97384e516533a790b8aaf4c"
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290624,
+        "tx": "0xb7ecf12c138898297c492cf18b5b6b2db90f2665cd10484d83a771fd5d9839b9"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391354,
+        "tx": "0x6d73f544f57ada7772f2c391d636f7135b980b7fa047185353d6c0f5c38eb5b7"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0x9dbc7cc6ee3dd26d505dc61c2f9c7fb3d0ad37cccea72922872222f8ffb6d989"
       },
       {
         "date": "2018-04-24",
@@ -2610,11 +3003,15 @@
     "stats": {
       "total_events": 9,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 278.38
     }
   },
   "28": {
@@ -2625,9 +3022,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0xc62c75f41565eaf86297ce45d2b4cf742c507be832c6bd744b3f9add01f0998d"
+        "tx": "0xc62c75f41565eaf86297ce45d2b4cf742c507be832c6bd744b3f9add01f0998d",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-16",
@@ -2635,13 +3034,6 @@
         "version": "v1",
         "price": 1.0,
         "tx": "0xf961e638641f16652defa56f98ef5c3815a4f19d06bde0ca49ee08ef6c0a7813"
-      },
-      {
-        "date": "2018-02-16",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x1b28fa3df36241e09938c757ef99583ecf632507e098ef3d79223eea4c3a9997"
       },
       {
         "date": "2018-02-16",
@@ -2658,23 +3050,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0xb57c35689dedf6f2229911216c596d90da06a6f8f70a6151f99d4dce0562ec35"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xb57c35689dedf6f2229911216c596d90da06a6f8f70a6151f99d4dce0562ec35"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x1ad3e08a66449864b959ce5b5e7c45ee5c71fd5a3d94273863770675a8a5d415"
       },
       {
         "date": "2018-03-16",
@@ -2684,11 +3062,20 @@
         "tx": "0xdf7465f30543f1813983702a70c33123faeb39f0c9ed5d1c262067e0fb975012"
       },
       {
-        "date": "2018-04-10",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x7651c235ddbddf42e9150f832c328e80ea04562feee0478c6100ff8d0f694679"
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5350526,
+        "tx": "0x1292682dadb8482052ba14ac537a6effdc79714377d169c47018138f63ce3947"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391357,
+        "tx": "0x24613cea8c1bcd3bf8b2200c9c3f70553e6c60f6511ca0ab2f0954238dd170e3"
       },
       {
         "date": "2018-04-10",
@@ -2702,6 +3089,14 @@
         "version": "v2",
         "price": 3.99,
         "tx": "0x1bf351f1942174d4af63d5ae3f6d31ec27fab1bd283b4d520bbcc51acc728361"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0x665670ffc9b9646f8ceec89e8ab3621c0ef9c29922862b310f6e043ed60a52a1"
       },
       {
         "date": "2018-04-24",
@@ -2718,17 +3113,26 @@
         "price": 0.09,
         "buyer": "0x0c3195dee42772485f704d7b4e745d85250592f6",
         "seller": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x1b4a920622b17885fef985d2edacf4a2ff0b307723f150008de91a3d022dd1e0"
+        "tx": "0x1b4a920622b17885fef985d2edacf4a2ff0b307723f150008de91a3d022dd1e0",
+        "eth_usd_rate": 158.99,
+        "price_usd": 14.31
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 13,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.09,
       "lowest_sale": 0.09,
       "last_sale": 0.09,
-      "last_sale_date": "2019-02-23"
+      "last_sale_date": "2019-02-23",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 14.31,
+      "lowest_sale_usd": 14.31,
+      "last_sale_usd": 14.31,
+      "initial_price_usd": 281.41
     }
   },
   "29": {
@@ -2739,9 +3143,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0x90504b18e6f5f5d8be9394cbd498aa48dc8fc8586cef730eeeb56e94345374ef"
+        "tx": "0x90504b18e6f5f5d8be9394cbd498aa48dc8fc8586cef730eeeb56e94345374ef",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-01-31",
@@ -2749,13 +3155,6 @@
         "version": "v1",
         "price": 29.0,
         "tx": "0xf8e6f2bf366c164c08d6de10c298af62dee0ceaf86ec26ed996e621d717054f4"
-      },
-      {
-        "date": "2018-02-01",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0xa82253a892caeab80a120d04626d3b4e92413549e6b7428db0b5653a94a94444"
       },
       {
         "date": "2018-02-01",
@@ -2791,6 +3190,30 @@
         "tx": "0x1344b9ea2c35dfbf10c8650a7e3b2b50e299b564c2e2fdf057d6fb6e59557079"
       },
       {
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290624,
+        "tx": "0x7f871638fdb61e434d418220d68ef028d6a8ce4638cb4b30a5346e64f1b6732f"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391357,
+        "tx": "0x9d1f301c5e716e81a065297f1883aee2b79f607f8d5674d188ad5cb9771ab75c"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xa0dbae5525df18af66aa664f740e01a131f76c14d9b5d7b6dbb67072b1ce9244"
+      },
+      {
         "date": "2018-04-24",
         "type": "mint",
         "version": "v3",
@@ -2805,17 +3228,26 @@
         "price": 0.1,
         "buyer": "0x0c3195dee42772485f704d7b4e745d85250592f6",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0x9ecae5b72d97bbd5e2007752ea9d6dd2990efcad295e6c788da1259bd716cb55"
+        "tx": "0x9ecae5b72d97bbd5e2007752ea9d6dd2990efcad295e6c788da1259bd716cb55",
+        "eth_usd_rate": 158.99,
+        "price_usd": 15.9
       }
     ],
     "stats": {
-      "total_events": 10,
+      "total_events": 12,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.1,
       "lowest_sale": 0.1,
       "last_sale": 0.1,
-      "last_sale_date": "2019-02-23"
+      "last_sale_date": "2019-02-23",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 15.9,
+      "lowest_sale_usd": 15.9,
+      "last_sale_usd": 15.9,
+      "initial_price_usd": 333.39
     }
   },
   "30": {
@@ -2826,9 +3258,11 @@
         "date": "2018-02-01",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xb1cfb435721bdd8dd3f74b86a81f6f4a0e79ec5d",
-        "tx": "0xc4725f93b6427427035ad3f8fc60c8ff8f15e4be76cdda445c485bd698011961"
+        "tx": "0xc4725f93b6427427035ad3f8fc60c8ff8f15e4be76cdda445c485bd698011961",
+        "eth_usd_rate": 1026.19,
+        "price_usd": 307.86
       },
       {
         "date": "2018-03-16",
@@ -2842,7 +3276,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0x401e6f829cc02a4939bd56f3e6befb78531d3a4c",
-        "tx": "0x2f8b5a9833334c9a5f06374bc9cdc5e71dcdc96d20dbb845c9ce75054a2ad61d"
+        "tx": "0x2f8b5a9833334c9a5f06374bc9cdc5e71dcdc96d20dbb845c9ce75054a2ad61d",
+        "from": "0xb1cfb435721bdd8dd3f74b86a81f6f4a0e79ec5d"
       },
       {
         "date": "2018-03-17",
@@ -2850,7 +3285,35 @@
         "version": "v2",
         "price": 0.21,
         "venue": "StockExchange",
-        "tx": "0x2f8b5a9833334c9a5f06374bc9cdc5e71dcdc96d20dbb845c9ce75054a2ad61d"
+        "tx": "0x2f8b5a9833334c9a5f06374bc9cdc5e71dcdc96d20dbb845c9ce75054a2ad61d",
+        "buyer": "0x401e6f829cc02a4939bd56f3e6befb78531d3a4c",
+        "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
+        "eth_usd_rate": 549.79,
+        "price_usd": 115.46
+      },
+      {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5350537,
+        "tx": "0xc5882c59fd7b8d493af4dbfcf847b594a49411f1f42a274a1931a823fe3ea6ab"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391351,
+        "tx": "0x1e1a39ed3c14c24a07152c9342e97c515fd4f9aba3d4b079e4dda739fd2c0c76"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0x860a542b9d2a1604e64327e52e55f5252afff6c65698a9ba0761fb446a0c6aa9"
       },
       {
         "date": "2018-04-24",
@@ -2867,17 +3330,26 @@
         "price": 0.9500000000000001,
         "buyer": "0xfb7cc4982e6b341d072b98c50295da9cda16f56e",
         "seller": "0x401e6f829cc02a4939bd56f3e6befb78531d3a4c",
-        "tx": "0x75d02dacbc5d9b27a8c8b751e4d7997bd09ff3a99ba83e3ab3e9a62b78522d2e"
+        "tx": "0x75d02dacbc5d9b27a8c8b751e4d7997bd09ff3a99ba83e3ab3e9a62b78522d2e",
+        "eth_usd_rate": 1609.05,
+        "price_usd": 1528.6
       }
     ],
     "stats": {
-      "total_events": 6,
+      "total_events": 9,
       "total_sales": 2,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.9500000000000001,
       "lowest_sale": 0.21,
       "last_sale": 0.9500000000000001,
-      "last_sale_date": "2022-08-19"
+      "last_sale_date": "2022-08-19",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 1528.6,
+      "lowest_sale_usd": 115.46,
+      "last_sale_usd": 1528.6,
+      "initial_price_usd": 307.86
     }
   },
   "31": {
@@ -2888,9 +3360,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
-        "tx": "0xcc8ff4b2c4e9d2606e73ee7426aabe23302c2caf3f56d3d4f8d88c3a6c98dd03"
+        "tx": "0xcc8ff4b2c4e9d2606e73ee7426aabe23302c2caf3f56d3d4f8d88c3a6c98dd03",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-16",
@@ -2904,7 +3378,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0x2c56e75cfba1b0d7a9ef46bedb5c7b28f508b8d9",
-        "tx": "0x960d3e591027fad4bce6dcb0105b50da6d92e3a4eaf9bf982dde3ea8cb161a9b"
+        "tx": "0x960d3e591027fad4bce6dcb0105b50da6d92e3a4eaf9bf982dde3ea8cb161a9b",
+        "from": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3"
       },
       {
         "date": "2018-02-17",
@@ -2912,7 +3387,11 @@
         "version": "v1",
         "price": 0.73,
         "venue": "StockExchange",
-        "tx": "0x960d3e591027fad4bce6dcb0105b50da6d92e3a4eaf9bf982dde3ea8cb161a9b"
+        "tx": "0x960d3e591027fad4bce6dcb0105b50da6d92e3a4eaf9bf982dde3ea8cb161a9b",
+        "buyer": "0x2c56e75cfba1b0d7a9ef46bedb5c7b28f508b8d9",
+        "seller": "0x63a9dbce75413036b2b778e670aabd4493aaf9f3",
+        "eth_usd_rate": 974.77,
+        "price_usd": 711.58
       },
       {
         "date": "2018-02-19",
@@ -2926,7 +3405,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0xd1f56d8b8a0f9c812eafd0951c7263c828a45e8f",
-        "tx": "0xda8f1cbb574eae0ac8f4a364c3f4365bb802b7d9f656c9e33f3a2c45bf2dbfc3"
+        "tx": "0xda8f1cbb574eae0ac8f4a364c3f4365bb802b7d9f656c9e33f3a2c45bf2dbfc3",
+        "from": "0x2c56e75cfba1b0d7a9ef46bedb5c7b28f508b8d9"
       },
       {
         "date": "2018-02-19",
@@ -2934,7 +3414,11 @@
         "version": "v1",
         "price": 0.8,
         "venue": "StockExchange",
-        "tx": "0xda8f1cbb574eae0ac8f4a364c3f4365bb802b7d9f656c9e33f3a2c45bf2dbfc3"
+        "tx": "0xda8f1cbb574eae0ac8f4a364c3f4365bb802b7d9f656c9e33f3a2c45bf2dbfc3",
+        "buyer": "0xd1f56d8b8a0f9c812eafd0951c7263c828a45e8f",
+        "seller": "0x2c56e75cfba1b0d7a9ef46bedb5c7b28f508b8d9",
+        "eth_usd_rate": 939.79,
+        "price_usd": 751.83
       },
       {
         "date": "2018-02-20",
@@ -2945,23 +3429,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xd1f56d8b8a0f9c812eafd0951c7263c828a45e8f",
-        "tx": "0xbbde7503c9d2c7615cd90dfa27d03becaac5cffdbe5f4a4663be02497122c05c"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0xbbde7503c9d2c7615cd90dfa27d03becaac5cffdbe5f4a4663be02497122c05c"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xd1f56d8b8a0f9c812eafd0951c7263c828a45e8f",
-        "tx": "0x01ddc795935e9b0fee3f68819e303f99fe980400e5ddafe32657b2592eda3e8b"
       },
       {
         "date": "2018-03-23",
@@ -2969,6 +3439,30 @@
         "version": "v2",
         "price": 3.0,
         "tx": "0x0cf7ea820c17dd9e657c6e4f3f665ea4aa2ecd81f3095311f76bc0d6d2d54980"
+      },
+      {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349842,
+        "tx": "0x4c5a02049c01503ab43ca147ff59c629ae14730935be46254df3cae65d93cf66"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391359,
+        "tx": "0x6096ce6873929eb6b571e0ba9f590ca596387a12e3b6b544f5aaf8b170f63300"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xa920b3aa424a43067a0528750d0887f06782728f676c6b0636fa325272646bb0"
       },
       {
         "date": "2018-04-24",
@@ -2985,7 +3479,9 @@
         "price": 1.0,
         "buyer": "0xad3e6a65b34d55c6cb20382e35114570ba42ed2e",
         "seller": "0xd1f56d8b8a0f9c812eafd0951c7263c828a45e8f",
-        "tx": "0xfc41ba05b3eed937f32906b792623d80bc4a816509a4ce9be79d5af284d4b509"
+        "tx": "0xfc41ba05b3eed937f32906b792623d80bc4a816509a4ce9be79d5af284d4b509",
+        "eth_usd_rate": 2892.36,
+        "price_usd": 2892.36
       },
       {
         "date": "2022-06-30",
@@ -2997,13 +3493,20 @@
       }
     ],
     "stats": {
-      "total_events": 15,
+      "total_events": 16,
       "total_sales": 3,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.0,
       "lowest_sale": 0.73,
       "last_sale": 1.0,
-      "last_sale_date": "2021-08-06"
+      "last_sale_date": "2021-08-06",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2892.36,
+      "lowest_sale_usd": 711.58,
+      "last_sale_usd": 2892.36,
+      "initial_price_usd": 281.41
     }
   },
   "32": {
@@ -3014,9 +3517,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
-        "tx": "0x0b0da3658bf2c3cade39f5bdb1454d3e65841947b895d69b5d9b43a1f78216dd"
+        "tx": "0x0b0da3658bf2c3cade39f5bdb1454d3e65841947b895d69b5d9b43a1f78216dd",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-02-16",
@@ -3030,7 +3535,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0x24edb8be9916ffa2a5e052237175f0f8c9ad85ef",
-        "tx": "0x02f6cbc0ca15937c4ed4cc6336dfa058c09ef87508802cdf6b4cf2d09b736ac1"
+        "tx": "0x02f6cbc0ca15937c4ed4cc6336dfa058c09ef87508802cdf6b4cf2d09b736ac1",
+        "from": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187"
       },
       {
         "date": "2018-02-16",
@@ -3038,7 +3544,11 @@
         "version": "v1",
         "price": 0.7,
         "venue": "StockExchange",
-        "tx": "0x02f6cbc0ca15937c4ed4cc6336dfa058c09ef87508802cdf6b4cf2d09b736ac1"
+        "tx": "0x02f6cbc0ca15937c4ed4cc6336dfa058c09ef87508802cdf6b4cf2d09b736ac1",
+        "buyer": "0x24edb8be9916ffa2a5e052237175f0f8c9ad85ef",
+        "seller": "0xf8e2867d1ac32f02f2e42ee0f1602e34d6bc3187",
+        "eth_usd_rate": 938.02,
+        "price_usd": 656.61
       },
       {
         "date": "2018-02-16",
@@ -3046,13 +3556,6 @@
         "version": "v1",
         "price": 6.66,
         "tx": "0xef3b46e8ad044078f8dfd09f9cf5dcbc4ef7657c29d0627dacfa590fc342f972"
-      },
-      {
-        "date": "2018-02-17",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x24edb8be9916ffa2a5e052237175f0f8c9ad85ef",
-        "tx": "0x7fef52d232a9ff2d3487ddc52b97f62642918fafdc3ac15241396379676cf9d5"
       },
       {
         "date": "2018-02-17",
@@ -3069,23 +3572,33 @@
       },
       {
         "date": "2018-03-14",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x24edb8be9916ffa2a5e052237175f0f8c9ad85ef",
-        "tx": "0x13bae385726c0f0afce073267e7719e3a8e632c6233ab60f1e217600ae22383e"
-      },
-      {
-        "date": "2018-03-14",
         "type": "delist",
         "version": "v1",
         "tx": "0x13bae385726c0f0afce073267e7719e3a8e632c6233ab60f1e217600ae22383e"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x24edb8be9916ffa2a5e052237175f0f8c9ad85ef",
-        "tx": "0x5241a3e0525ae4242964fb6120b855c7f7642fc9f0ba8ce43ebfb5febd34d361"
+        "date": "2018-03-23",
+        "type": "death",
+        "episode_id": 3,
+        "episode_title": "Freedom To Die",
+        "block": 5309075,
+        "tx": "0xe6aaa45a56db900536babd18e9fc43bf5f9dca655e4815a31a11fb44a0215780"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391360,
+        "tx": "0xf9e0d82275d5eab5d8842548f2e6b0d4c3fc10c87155a563010d8692968cf0ed"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xf0c34462f309512b4ef5379d503c95492f9b1eb9aa28491f32c0aedaaaf16c59"
       },
       {
         "date": "2018-04-24",
@@ -3098,11 +3611,18 @@
     "stats": {
       "total_events": 12,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.7,
       "lowest_sale": 0.7,
       "last_sale": 0.7,
-      "last_sale_date": "2018-02-16"
+      "last_sale_date": "2018-02-16",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 656.61,
+      "lowest_sale_usd": 656.61,
+      "last_sale_usd": 656.61,
+      "initial_price_usd": 281.41
     }
   },
   "33": {
@@ -3113,16 +3633,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x48068875e3b64ad4a0167a631a57f36b49979ecd759be9c4093d848a866451cd"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0xb18773d443404e6245032aaf3d40a44e7053a5ff59eb720790aa5c7fd971e1e2"
+        "tx": "0x48068875e3b64ad4a0167a631a57f36b49979ecd759be9c4093d848a866451cd",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-03-16",
@@ -3130,13 +3645,6 @@
         "version": "v2",
         "price": 3.0,
         "tx": "0x6b43a5d3ceb66e85e98b466f571ccd03cc3a95af77a9041352e48a942cc890b8"
-      },
-      {
-        "date": "2018-03-31",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x45b3c4c47aee627f2b416209098604f0bb2dd869587b23aa697b8cba23996bff"
       },
       {
         "date": "2018-03-31",
@@ -3152,11 +3660,20 @@
         "tx": "0x35242be8fc43fee2ca3ee08783a8cf0c1f4f5293a0ce5054390feedf575feff3"
       },
       {
-        "date": "2018-04-10",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x53a7290d2c136107df770ba5f537cfd8080a8dcd75ccbfd5b1df9b83de5de40f"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0x8ad9d40a14b1a104e0c62c642b7693e1d2730515d54a24468302eae8d456a543"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391360,
+        "tx": "0x7fc629fcbe621f16f976b56f7050b9677c578ae90fee8f6452dd2030323da19e"
       },
       {
         "date": "2018-04-10",
@@ -3170,6 +3687,14 @@
         "version": "v2",
         "price": 4.0,
         "tx": "0xc834ba092fcb5761a6e552c00280e9518678f1b22cf8eda4c1c43a1645c0ac41"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xc2a21ecad000e877ddfb79b6ba2643ff420664a256369fb66580053bc5933de0"
       },
       {
         "date": "2018-04-24",
@@ -3186,17 +3711,26 @@
         "price": 0.09,
         "buyer": "0xc40cd464ad0895571bb396071a4faa81935353a5",
         "seller": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x528ed9f6a7bb27cedc7ac345fef2791bc65201edcaf2be55a033db3c4c3af3b1"
+        "tx": "0x528ed9f6a7bb27cedc7ac345fef2791bc65201edcaf2be55a033db3c4c3af3b1",
+        "eth_usd_rate": 208.39,
+        "price_usd": 18.76
       }
     ],
     "stats": {
       "total_events": 11,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.09,
       "lowest_sale": 0.09,
       "last_sale": 0.09,
-      "last_sale_date": "2018-09-18"
+      "last_sale_date": "2018-09-18",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 18.76,
+      "lowest_sale_usd": 18.76,
+      "last_sale_usd": 18.76,
+      "initial_price_usd": 281.41
     }
   },
   "34": {
@@ -3207,9 +3741,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xc4d711a4f1fc266e6d311af3846db22fa91355c860778e66d53efdf6ff39b44f"
+        "tx": "0xc4d711a4f1fc266e6d311af3846db22fa91355c860778e66d53efdf6ff39b44f",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-01-31",
@@ -3217,13 +3753,6 @@
         "version": "v1",
         "price": 4.5,
         "tx": "0xb70e6a64c8fdc82e2f14833db25a008c8237920e22a4e223416e52b1b825bcfe"
-      },
-      {
-        "date": "2018-02-02",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xe51e8f24273cdaa290815ab1dc1f8dff966cc70bd78e9e8fcd8d70e3a8898e0a"
       },
       {
         "date": "2018-02-02",
@@ -3240,23 +3769,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x252c6699b53a6c08c4d06dbfd54763d66783819332d1c47b3171cd24b6e17963"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x252c6699b53a6c08c4d06dbfd54763d66783819332d1c47b3171cd24b6e17963"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x74db37e5b39f8ee5d73a06b63d2772481fbc783b9856eb5f0ee712bd2162aab8"
       },
       {
         "date": "2018-03-19",
@@ -3267,16 +3782,33 @@
       },
       {
         "date": "2018-03-31",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x63c5bd0fc968f83613808393e5bb0f41ac525d0abd3ce2028eebdbdd4288629f"
-      },
-      {
-        "date": "2018-03-31",
         "type": "delist",
         "version": "v2",
         "tx": "0x63c5bd0fc968f83613808393e5bb0f41ac525d0abd3ce2028eebdbdd4288629f"
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0x6a553085504e3f238ada081015df85059c65ec4f5407df1a730cf9dd8540d97b"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391364,
+        "tx": "0x8f6bb09d826183b25df0def51237d2c644ada8de823da6269a36f074eaffd62a"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xdf865df1aa9cfce1e7e271fbd3452ba328b2e3265bb33a121f9c5e476981e16c"
       },
       {
         "date": "2018-04-24",
@@ -3303,13 +3835,17 @@
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 13,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 333.39
     }
   },
   "35": {
@@ -3320,9 +3856,11 @@
         "date": "2018-02-15",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xf1df86e8b7c68835f35bf215eb2a464ce0397c2e",
-        "tx": "0x7893db8544025f13d8beb0a745deeaec07e95407fe2de0e37a17af4b49a86399"
+        "tx": "0x7893db8544025f13d8beb0a745deeaec07e95407fe2de0e37a17af4b49a86399",
+        "eth_usd_rate": 927.95,
+        "price_usd": 278.38
       },
       {
         "date": "2018-02-15",
@@ -3333,37 +3871,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xf1df86e8b7c68835f35bf215eb2a464ce0397c2e",
-        "tx": "0xf0be9836f73f7ceb1b6c773431ab0dbc9c8806f4a1f2aaa025ceaa79e3e65581"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0xf0be9836f73f7ceb1b6c773431ab0dbc9c8806f4a1f2aaa025ceaa79e3e65581"
-      },
-      {
-        "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xf1df86e8b7c68835f35bf215eb2a464ce0397c2e",
-        "tx": "0xfd12bf79556adb02b564ae26da723529abd0f72d9b57456016455b79f873748c"
-      },
-      {
-        "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xf1df86e8b7c68835f35bf215eb2a464ce0397c2e",
-        "tx": "0x869d7f5a1884e7a1c4272f3d11d35e60dccc1e37ea0eb290cb7354a78d57ec0b"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xf1df86e8b7c68835f35bf215eb2a464ce0397c2e",
-        "tx": "0x086c42e4e7d2eb6eec0382a7bd73bb4b4f31036b3c578ded72e54e93bf5191d4"
       },
       {
         "date": "2018-03-28",
@@ -3371,6 +3881,30 @@
         "version": "v2",
         "price": 0.9,
         "tx": "0x55c48f3c4b98e977e50081ec7b36b0cd30f1797706391751d6a7e03e35d2a2d6"
+      },
+      {
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xe58ac093ba96192c06e2a92bb04b2e076d31dcfcb913113202878d13c02c123c"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391365,
+        "tx": "0x92c8de4d8f38b7bdaf936249065b7b5215cd39f7cd799ccf07b9652d1ac0bdd8"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0xc9bb0d47a5a69408f8f21e50dae19b062fc839098197f6b0dcb2acb6ba4c2506"
       },
       {
         "date": "2018-04-24",
@@ -3381,13 +3915,17 @@
       }
     ],
     "stats": {
-      "total_events": 9,
+      "total_events": 8,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 278.38
     }
   },
   "36": {
@@ -3398,9 +3936,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xe571b015a687f7bff5f1f6a22c0bcd42bd0001874f7ca57a1835cde18d90e84f"
+        "tx": "0xe571b015a687f7bff5f1f6a22c0bcd42bd0001874f7ca57a1835cde18d90e84f",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -3408,13 +3948,6 @@
         "version": "v1",
         "price": 10.0,
         "tx": "0x1a519ae162e79531883fe8293ea70d82da49a661e97dd5637e9b011783896dea"
-      },
-      {
-        "date": "2018-01-31",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x14736b6ef03b651b2b212ced6bd65d1c3844ff56ac133dfd63433ce966a57f53"
       },
       {
         "date": "2018-01-31",
@@ -3431,13 +3964,6 @@
       },
       {
         "date": "2018-01-31",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x723c4479688b1040df771cfaae544b89b928e2dd618df121de2906023cb9d532"
-      },
-      {
-        "date": "2018-01-31",
         "type": "delist",
         "version": "v1",
         "tx": "0x723c4479688b1040df771cfaae544b89b928e2dd618df121de2906023cb9d532"
@@ -3451,23 +3977,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xb9e1e012a7481f79725019ddaea5bc4161d1cc3277811c51306d2e72d9f63e1e"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xb9e1e012a7481f79725019ddaea5bc4161d1cc3277811c51306d2e72d9f63e1e"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x1617aae99b8d68ce2f67f37866feafb33372eb23765ff613d50110c77530162c"
       },
       {
         "date": "2018-03-20",
@@ -3477,17 +3989,34 @@
         "tx": "0x9b47f1356d660322b88d4818b4cc2f42ba69a1033e6d036e3ebf19c9083a9069"
       },
       {
-        "date": "2018-03-31",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xcc29213bcd6b533bcbce7256772ece2ee0adeebda47cb26f1265efab792030a8"
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349887,
+        "tx": "0x5f3f728f1a63b3012459f61c70286ce739255297026f22249784c7dcde56e5e8"
       },
       {
         "date": "2018-03-31",
         "type": "delist",
         "version": "v2",
         "tx": "0xcc29213bcd6b533bcbce7256772ece2ee0adeebda47cb26f1265efab792030a8"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391365,
+        "tx": "0x9e6ece23a88781cb6625a7f5e56437926f7e164d00df632bbddfd111d16ea859"
+      },
+      {
+        "date": "2018-04-13",
+        "type": "death",
+        "episode_id": 10,
+        "episode_title": "Tokenville",
+        "block": 5434021,
+        "tx": "0x8ccc343f59e7a46f57c21822c40ca1c45719432940860a582cd5c847a0f9e841"
       },
       {
         "date": "2018-04-24",
@@ -3514,13 +4043,17 @@
       }
     ],
     "stats": {
-      "total_events": 17,
+      "total_events": 15,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 10,
+      "died_in_episode_title": "Tokenville",
+      "initial_price_usd": 319.12
     }
   },
   "37": {
@@ -3531,9 +4064,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xd6b48a462ad11987ce5933d3d46e662cad588b7dbbe4c2a3aa1cf93ed20f732c"
+        "tx": "0xd6b48a462ad11987ce5933d3d46e662cad588b7dbbe4c2a3aa1cf93ed20f732c",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-02-14",
@@ -3544,23 +4079,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xa9077de6155cbdf9de2071acfe19e01c423b0dd7df709bcb701de872348e8ace"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0xa9077de6155cbdf9de2071acfe19e01c423b0dd7df709bcb701de872348e8ace"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0xe32ea94f32bd0be13882944e79c1e83ca11615f8f60f7d4c7162ec008d4b3a24"
       },
       {
         "date": "2018-03-20",
@@ -3570,17 +4091,34 @@
         "tx": "0x77d14b801c42383ed9a66171feb928ba0739fdc52d6dd127aed23bc090f141a5"
       },
       {
-        "date": "2018-03-31",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x3bd4532fd18f45ebb216e2ea82ebf93432688812",
-        "tx": "0x3301d666325ade28350212576cb34577572878b1551736c29b27f37e894383ec"
+        "date": "2018-03-23",
+        "type": "death",
+        "episode_id": 3,
+        "episode_title": "Freedom To Die",
+        "block": 5309077,
+        "tx": "0xe6e6cea9888f462b052ecd2d3d1db1a4742d6668c513c8e52285f8744e24be89"
       },
       {
         "date": "2018-03-31",
         "type": "delist",
         "version": "v2",
         "tx": "0x3301d666325ade28350212576cb34577572878b1551736c29b27f37e894383ec"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391366,
+        "tx": "0x19587c274e8346f6243d487933857a3df29e6736389c0fefc2ef0e54ba75a51f"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0x6e26fe8c27ea129025b22fd3851ffdaa6c1eda5243e6f2b2406c266e2de91dd6"
       },
       {
         "date": "2018-04-24",
@@ -3609,11 +4147,15 @@
     "stats": {
       "total_events": 11,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 333.39
     }
   },
   "38": {
@@ -3624,9 +4166,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xd93979368e63c8753ab6591c7471de0e47f213b1d93a94753dfd523e925c1785"
+        "tx": "0xd93979368e63c8753ab6591c7471de0e47f213b1d93a94753dfd523e925c1785",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-02-16",
@@ -3637,23 +4181,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x712d06dc3733c2e43ebed275558fda121fd8db302e56e179f2015cf834db5d4f"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0x712d06dc3733c2e43ebed275558fda121fd8db302e56e179f2015cf834db5d4f"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xd703f226ffb9109c72a2d5cc288a09b911ba47f0fa97724c8ee1c87525e52dce"
       },
       {
         "date": "2018-03-21",
@@ -3663,11 +4193,12 @@
         "tx": "0x6bf77cc63fce5d5b7c80c5558dd5bda069943fb5ab10d5cca6cc0dc9f873543b"
       },
       {
-        "date": "2018-04-03",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xad646ffe61ce4153c57a067a3f951512d87a15588a9d123effac1f517cf8c4a1"
+        "date": "2018-03-23",
+        "type": "death",
+        "episode_id": 3,
+        "episode_title": "Freedom To Die",
+        "block": 5309077,
+        "tx": "0x8cdd564b247b1f5de890ce39a116726b373e9d4af2186771443d99dc13c5874d"
       },
       {
         "date": "2018-04-03",
@@ -3684,16 +4215,25 @@
       },
       {
         "date": "2018-04-04",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xfc2d9181ad7537105f70b12c76d87c016a09cbb12511e0a60214866fa122a27f"
-      },
-      {
-        "date": "2018-04-04",
         "type": "delist",
         "version": "v2",
         "tx": "0xfc2d9181ad7537105f70b12c76d87c016a09cbb12511e0a60214866fa122a27f"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0xb2846ac8b13b3870abc9f8cec9c80afeeaa8e66f29d65494a4193cae37a44be0"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xbe5faaa3a9fa38288e775408efa80001daf5dac75eaf9e6892ce3be60e31d7c7"
       },
       {
         "date": "2018-04-24",
@@ -3704,13 +4244,17 @@
       }
     ],
     "stats": {
-      "total_events": 12,
+      "total_events": 11,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 333.39
     }
   },
   "39": {
@@ -3721,16 +4265,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x236a33a32023a584b3d866a730438653b08ddd541b45a036548c4ac4437d01f8"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xe7a36245c5663aeb8f16c39efb0195cd07eabf15bcab78189036494b69a7391b"
+        "tx": "0x236a33a32023a584b3d866a730438653b08ddd541b45a036548c4ac4437d01f8",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-03-21",
@@ -3738,13 +4277,6 @@
         "version": "v2",
         "price": 1.2,
         "tx": "0xb45e6d11fefe31878ed93e7d8a30cbb5b094ba5f848855786f423b2e0b226002"
-      },
-      {
-        "date": "2018-04-03",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x88dbab9bf3993396269ea051ee709a738128574253a467a21514fe057048d9ef"
       },
       {
         "date": "2018-04-03",
@@ -3761,13 +4293,6 @@
       },
       {
         "date": "2018-04-03",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x43a32cf3074bcfb1dee0cb73509a19ffe59b7b7df4c18e5f02d75b0947668828"
-      },
-      {
-        "date": "2018-04-03",
         "type": "delist",
         "version": "v2",
         "tx": "0x43a32cf3074bcfb1dee0cb73509a19ffe59b7b7df4c18e5f02d75b0947668828"
@@ -3778,13 +4303,6 @@
         "version": "v2",
         "price": 9.0,
         "tx": "0x44e37bb1022777bef0dfa06571869e8c6697846c27b9ab7cb9b10c5b1c422697"
-      },
-      {
-        "date": "2018-04-04",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x97c3f7d9763a63c1d6e3cfe49e4e873a6aef2e23e38eb9b92ceaf0f191ee5762"
       },
       {
         "date": "2018-04-04",
@@ -3801,13 +4319,6 @@
       },
       {
         "date": "2018-04-04",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x8192c737327b2683204f486f91b5b40e6179773da6cd1e17e34ac8d610cea664"
-      },
-      {
-        "date": "2018-04-04",
         "type": "delist",
         "version": "v2",
         "tx": "0x8192c737327b2683204f486f91b5b40e6179773da6cd1e17e34ac8d610cea664"
@@ -3821,10 +4332,11 @@
       },
       {
         "date": "2018-04-11",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x569177f8abd7965e2ad70404765dd4e0f92ac992aad473007d488f519b1e41a3"
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0x6bb199250209c1d4b7e83ec7894d59d8cc196dcb419d9d48519d6ea1709097c3"
       },
       {
         "date": "2018-04-11",
@@ -3848,13 +4360,19 @@
       }
     ],
     "stats": {
-      "total_events": 19,
+      "total_events": 14,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "sole_survivor_before_hard_fork": true,
+      "sole_survivor_note": "Only main-cast token that never died in episodes 1\u20136 (did not need to be revived in Hard Fork)",
+      "initial_price_usd": 333.39
     }
   },
   "40": {
@@ -3865,16 +4383,35 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x7b9db670763bc972ff2af41bbcf2431b9fafa388",
-        "tx": "0x65f16f01ad4b77920d33be856aba1afef0e7e270baa07407a94571195dd86280"
+        "tx": "0x65f16f01ad4b77920d33be856aba1afef0e7e270baa07407a94571195dd86280",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x7b9db670763bc972ff2af41bbcf2431b9fafa388",
-        "tx": "0x654441b81759c24ae937504e66afe05853052b63a66e83d70fa4f5e187f7ef8a"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374477,
+        "tx": "0x41924ec73861bd52dffa2d010915149de58f1fdfeeaab9673181f926b38d0c1c"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0x8a961f5efb66872d3001466a68616ffd233f76403bcb5b27fea17c3191e39405"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xd43a8897c1791fb0b34a4b3d3ac2f1fdce2f46332a459bf9d0d0743e89edef9a"
       },
       {
         "date": "2018-04-24",
@@ -3885,13 +4422,17 @@
       }
     ],
     "stats": {
-      "total_events": 3,
+      "total_events": 5,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "41": {
@@ -3902,16 +4443,19 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0xbbab93275839574d1e324c61b87e518707d822153dd11fbc839ff123e575e64e"
+        "tx": "0xbbab93275839574d1e324c61b87e518707d822153dd11fbc839ff123e575e64e",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x89e50a4bd6190fed449640100861187e6ef8c6c2a51aeb4632e5b3dcb4db2dc0"
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290614,
+        "tx": "0xc7357eb34de6c60cfd2c8477b7dac402bb98a907dc34aafad2e4d1080a98a004"
       },
       {
         "date": "2018-03-21",
@@ -3925,7 +4469,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0xf1254088256dc6e7bdc96e900f2fbe3e8565528e",
-        "tx": "0x9ef8d97e79703e985a4e32d66ea9655c97924d774caa6f9801b3f6934d6657ea"
+        "tx": "0x9ef8d97e79703e985a4e32d66ea9655c97924d774caa6f9801b3f6934d6657ea",
+        "from": "0xcab5068f0cc1278d29233d2175682082c3559f4e"
       },
       {
         "date": "2018-03-23",
@@ -3933,7 +4478,11 @@
         "version": "v2",
         "price": 0.07,
         "venue": "StockExchange",
-        "tx": "0x9ef8d97e79703e985a4e32d66ea9655c97924d774caa6f9801b3f6934d6657ea"
+        "tx": "0x9ef8d97e79703e985a4e32d66ea9655c97924d774caa6f9801b3f6934d6657ea",
+        "buyer": "0xf1254088256dc6e7bdc96e900f2fbe3e8565528e",
+        "seller": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
+        "eth_usd_rate": 543.83,
+        "price_usd": 38.07
       },
       {
         "date": "2018-03-23",
@@ -3941,13 +4490,6 @@
         "version": "v2",
         "price": 1.0,
         "tx": "0x2e9a4b60e6c5c0a631209f58514477bf4fcd55890e978efe27d5dcf0859759ff"
-      },
-      {
-        "date": "2018-03-30",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xf1254088256dc6e7bdc96e900f2fbe3e8565528e",
-        "tx": "0xcb99414fe1394b6521e6c569b952d83637beb9f8ab1e920cc0e993372cb62fb0"
       },
       {
         "date": "2018-03-30",
@@ -3963,11 +4505,12 @@
         "tx": "0xa78820c44c8d8e6eae74432f80fb0e128f98bb4f0df245d6de3d4a63e1ede881"
       },
       {
-        "date": "2018-04-07",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xf1254088256dc6e7bdc96e900f2fbe3e8565528e",
-        "tx": "0xe01d70fe6775cb393d4629cdc58b2cb3af0ab98612aaa543df5299858cfc79e6"
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391358,
+        "tx": "0x01f61af3c7a2df187bb43eb78b63d143d2d92e213f5803135de3a3475d2f6245"
       },
       {
         "date": "2018-04-07",
@@ -3983,6 +4526,14 @@
         "tx": "0xebef732a5c404cdf9e31303f5db7fb062b1bb9b1520d9f023fb1efacaaacfaaf"
       },
       {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0x145c7bc474a53f624d7f43323f4a721c116317999db4271da10233b5b2a36121"
+      },
+      {
         "date": "2018-04-24",
         "type": "mint",
         "version": "v3",
@@ -3993,11 +4544,18 @@
     "stats": {
       "total_events": 13,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.07,
       "lowest_sale": 0.07,
       "last_sale": 0.07,
-      "last_sale_date": "2018-03-23"
+      "last_sale_date": "2018-03-23",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 38.07,
+      "lowest_sale_usd": 38.07,
+      "last_sale_usd": 38.07,
+      "initial_price_usd": 333.39
     }
   },
   "42": {
@@ -4008,9 +4566,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xba40a7f965514b8bf7595f9e58d89f958e58f3a4",
-        "tx": "0xfd034e327cc6a81e044ee9cba22526bc6b76c663111d99f2e9bac96d082bf876"
+        "tx": "0xfd034e327cc6a81e044ee9cba22526bc6b76c663111d99f2e9bac96d082bf876",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-01-31",
@@ -4021,23 +4581,17 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xba40a7f965514b8bf7595f9e58d89f958e58f3a4",
-        "tx": "0xce5a0f5c25889a9511459ccc6ee980ccd166757b63179e37f71f6324702e203d"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0xce5a0f5c25889a9511459ccc6ee980ccd166757b63179e37f71f6324702e203d"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xba40a7f965514b8bf7595f9e58d89f958e58f3a4",
-        "tx": "0xb4552072d940787daf275f8fa30d693c907323ba03044e0186530e96de301951"
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290615,
+        "tx": "0xc38094c04e242d09dfc18c78bf9e4a263f0614b10a748ffb5ffc6de67f843f64"
       },
       {
         "date": "2018-03-26",
@@ -4045,6 +4599,22 @@
         "version": "v2",
         "price": 10.0,
         "tx": "0x945d122fabef874fcbbd4f5bfed9ce43220f5c5aeb3562d1c30fdec47b8528ea"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0x8787fa98df69c36fdeb81cabbe86505fbf02f02b8b938a777c674712c4d77582"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0x710f8c8d95cca80698420cb21c3cb4154c028e3473bf107d88d84491b8676ddc"
       },
       {
         "date": "2018-04-24",
@@ -4055,13 +4625,17 @@
       }
     ],
     "stats": {
-      "total_events": 7,
+      "total_events": 8,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 333.39
     }
   },
   "43": {
@@ -4072,9 +4646,11 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x4320a7df7d48a8962d0c4a1132231c2e68266b84d5febc5b64aa17f0d8a08830"
+        "tx": "0x4320a7df7d48a8962d0c4a1132231c2e68266b84d5febc5b64aa17f0d8a08830",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-03-05",
@@ -4088,7 +4664,8 @@
         "type": "transfer",
         "version": "v1",
         "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0xc420afb5250d2c1ae13858655e19ab1d7f6e228e43719c79d2bcfbcf1141c1b9"
+        "tx": "0xc420afb5250d2c1ae13858655e19ab1d7f6e228e43719c79d2bcfbcf1141c1b9",
+        "from": "0xcab5068f0cc1278d29233d2175682082c3559f4e"
       },
       {
         "date": "2018-03-05",
@@ -4096,7 +4673,11 @@
         "version": "v1",
         "price": 0.1,
         "venue": "StockExchange",
-        "tx": "0xc420afb5250d2c1ae13858655e19ab1d7f6e228e43719c79d2bcfbcf1141c1b9"
+        "tx": "0xc420afb5250d2c1ae13858655e19ab1d7f6e228e43719c79d2bcfbcf1141c1b9",
+        "buyer": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
+        "seller": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
+        "eth_usd_rate": 845.58,
+        "price_usd": 84.56
       },
       {
         "date": "2018-03-05",
@@ -4107,23 +4688,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x3b0f3a47e4bbe08c8f25c8ad85373f396b7fb963bc8b5221eeb8c807c3e79ef5"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x3b0f3a47e4bbe08c8f25c8ad85373f396b7fb963bc8b5221eeb8c807c3e79ef5"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x89949b3ed8ed24d01e7fd32a8ab340a8fce517aefb668162da2c9896eb09efc4"
       },
       {
         "date": "2018-03-16",
@@ -4134,10 +4701,11 @@
       },
       {
         "date": "2018-03-30",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x3d2bdab72539b835d0d578960357f9127bca228a7351f155864f223a7ce232e0"
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5350518,
+        "tx": "0x5bf46733919ad2e38e254089976c472f1084d27c718533ef8cfcf75bcd06a7bc"
       },
       {
         "date": "2018-03-30",
@@ -4153,11 +4721,12 @@
         "tx": "0xd81f40ee5f6949a8772fb0e74f22b1612c33c50744a710765d71e0b4cdfb20af"
       },
       {
-        "date": "2018-04-10",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x914bdc21fb5b07a6c547e8f8a10ee6bed90f8c1ae167ca6e180832ac38c4756d"
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0x0eb51efdee8b58e31aad969d0fdaf8363776cc57f7a597d625f91bc9e50a2408"
       },
       {
         "date": "2018-04-10",
@@ -4171,6 +4740,14 @@
         "version": "v2",
         "price": 3.89,
         "tx": "0x9186a66f9c28cb0cc037f593b33ce3d86a19e6f30446b90c131b250460fc49dd"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xa5be1be3ca665a8d4ab7c43a1d676bbac4be288bb73d5402da2e65625b019f0c"
       },
       {
         "date": "2018-04-24",
@@ -4187,17 +4764,26 @@
         "price": 0.09,
         "buyer": "0x0e8ef4810093bca816c69c3eb47faa0fc9411bf2",
         "seller": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x659696bf08b4bad5387fd0236b4172e48c4f024d3b06fc40c2a75c2f94b61286"
+        "tx": "0x659696bf08b4bad5387fd0236b4172e48c4f024d3b06fc40c2a75c2f94b61286",
+        "eth_usd_rate": 101.93,
+        "price_usd": 9.17
       }
     ],
     "stats": {
-      "total_events": 17,
+      "total_events": 16,
       "total_sales": 2,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.1,
       "lowest_sale": 0.09,
       "last_sale": 0.09,
-      "last_sale_date": "2018-12-18"
+      "last_sale_date": "2018-12-18",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 84.56,
+      "lowest_sale_usd": 9.17,
+      "last_sale_usd": 9.17,
+      "initial_price_usd": 281.41
     }
   },
   "44": {
@@ -4208,16 +4794,19 @@
         "date": "2018-02-16",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0xd64b3b22798c5ff661b4bd193c7511f3cff27d78b2119a636024ca7cd1893776"
+        "tx": "0xd64b3b22798c5ff661b4bd193c7511f3cff27d78b2119a636024ca7cd1893776",
+        "eth_usd_rate": 938.02,
+        "price_usd": 281.41
       },
       {
         "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x294c0e82d42262977ceaa4d29ec2f8a90e08e33d1bb79288fd0c1d318f75d0b8"
+        "type": "death",
+        "episode_id": 1,
+        "episode_title": "Bloody Kitties",
+        "block": 5266287,
+        "tx": "0xcd0911ac2c3add76881e4f534c2e642a350f44dbe90619e53a512c6a1b605c74"
       },
       {
         "date": "2018-03-16",
@@ -4228,10 +4817,11 @@
       },
       {
         "date": "2018-04-06",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x06a108465729f8eaf24c9b71b65acddbca767c9bec5f1d42c4b9b81d39c7200d"
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0xce7ab2d9648793301acf7b9a17a201c5a156414e9ec0b6ccf286351222d74dd9"
       },
       {
         "date": "2018-04-06",
@@ -4248,13 +4838,6 @@
       },
       {
         "date": "2018-04-10",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x2f3463c1d28e3c2f8488bda077355a7f1e9df618ed3ba4ea06101b234fc98f74"
-      },
-      {
-        "date": "2018-04-10",
         "type": "delist",
         "version": "v2",
         "tx": "0x2f3463c1d28e3c2f8488bda077355a7f1e9df618ed3ba4ea06101b234fc98f74"
@@ -4268,13 +4851,6 @@
       },
       {
         "date": "2018-04-10",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0x6accc33def1d7664fc3202dc95dfbce53ac0bd5be810089ca08a917eceef9949"
-      },
-      {
-        "date": "2018-04-10",
         "type": "delist",
         "version": "v2",
         "tx": "0x6accc33def1d7664fc3202dc95dfbce53ac0bd5be810089ca08a917eceef9949"
@@ -4285,6 +4861,14 @@
         "version": "v2",
         "price": 3.99,
         "tx": "0x1cb9c95780d28681635fa2093f3d0c87380d90353afaeaef99857f9a05532c62"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xf1c0ed89f377e9b8ed246709fb77e53fc292cf67214d3bf50085c76b83cf2d96"
       },
       {
         "date": "2018-04-24",
@@ -4301,17 +4885,26 @@
         "price": 0.09,
         "buyer": "0x0c3195dee42772485f704d7b4e745d85250592f6",
         "seller": "0xccef1314ac229a0a3680dc4f02ca7ba8838140bc",
-        "tx": "0xc865ecd77ef3499d4f03f8c8ed74cad222b1bca00d03332982ab70ab919942cc"
+        "tx": "0xc865ecd77ef3499d4f03f8c8ed74cad222b1bca00d03332982ab70ab919942cc",
+        "eth_usd_rate": 158.99,
+        "price_usd": 14.31
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 13,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.09,
       "lowest_sale": 0.09,
       "last_sale": 0.09,
-      "last_sale_date": "2019-02-23"
+      "last_sale_date": "2019-02-23",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 14.31,
+      "lowest_sale_usd": 14.31,
+      "last_sale_usd": 14.31,
+      "initial_price_usd": 281.41
     }
   },
   "45": {
@@ -4322,9 +4915,11 @@
         "date": "2018-02-01",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x288294ba8a9979f98f1c6b3695a5670ab49d5b76",
-        "tx": "0xc768f6d3a7c5b55e437b51f080a0e4e83ff14712587b181cfc7fad45fa483558"
+        "tx": "0xc768f6d3a7c5b55e437b51f080a0e4e83ff14712587b181cfc7fad45fa483558",
+        "eth_usd_rate": 1026.19,
+        "price_usd": 307.86
       },
       {
         "date": "2018-02-01",
@@ -4332,13 +4927,6 @@
         "version": "v1",
         "price": 2.1,
         "tx": "0x8faa0f3dd834d0722d5e84abb7342fbcad4c42e2af914584994fb50c24b0c05b"
-      },
-      {
-        "date": "2018-03-14",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0x288294ba8a9979f98f1c6b3695a5670ab49d5b76",
-        "tx": "0x6565a8939e28b18e4e9fbe424442fb4aa00a1a8581cd7b7f5c8f91357f281b97"
       },
       {
         "date": "2018-03-14",
@@ -4358,7 +4946,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0x131095a787ad24e1d29b0e2181c4a15fe133b2e902810a295b43985e34fb643e"
+        "tx": "0x131095a787ad24e1d29b0e2181c4a15fe133b2e902810a295b43985e34fb643e",
+        "from": "0x288294ba8a9979f98f1c6b3695a5670ab49d5b76"
       },
       {
         "date": "2018-03-19",
@@ -4366,7 +4955,19 @@
         "version": "v2",
         "price": 0.21,
         "venue": "StockExchange",
-        "tx": "0x131095a787ad24e1d29b0e2181c4a15fe133b2e902810a295b43985e34fb643e"
+        "tx": "0x131095a787ad24e1d29b0e2181c4a15fe133b2e902810a295b43985e34fb643e",
+        "buyer": "0x9777daabf322d38af7a49a66dc55f3086127baea",
+        "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
+        "eth_usd_rate": 555.55,
+        "price_usd": 116.67
+      },
+      {
+        "date": "2018-03-20",
+        "type": "death",
+        "episode_id": 2,
+        "episode_title": "Wolf Party",
+        "block": 5290615,
+        "tx": "0x38c7825d8d6eb7c87aaf259d8b54b5fd4239783c42c0c6dc9ca3f1c1857e60b9"
       },
       {
         "date": "2018-03-20",
@@ -4374,13 +4975,6 @@
         "version": "v2",
         "price": 0.9,
         "tx": "0xa1ef47c993ff957a3acaff947d9f57e1a8ebdb9a32a298113174a59a12135ebb"
-      },
-      {
-        "date": "2018-03-22",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x9777daabf322d38af7a49a66dc55f3086127baea",
-        "tx": "0xde459e52af9e60d84809a8eab94a48528c8c55c40da9fd2245243d2ea2a6452e"
       },
       {
         "date": "2018-03-22",
@@ -4400,7 +4994,8 @@
         "type": "transfer",
         "version": "v2",
         "to": "0x78d3eea08323290402ace8b626fe92fd173f622b",
-        "tx": "0xf2025e2385ac12a26a4f95bb8938eea3e0bf33f736b711f8de4c8c9977d63334"
+        "tx": "0xf2025e2385ac12a26a4f95bb8938eea3e0bf33f736b711f8de4c8c9977d63334",
+        "from": "0x9777daabf322d38af7a49a66dc55f3086127baea"
       },
       {
         "date": "2018-03-31",
@@ -4408,7 +5003,11 @@
         "version": "v2",
         "price": 0.21,
         "venue": "StockExchange",
-        "tx": "0xf2025e2385ac12a26a4f95bb8938eea3e0bf33f736b711f8de4c8c9977d63334"
+        "tx": "0xf2025e2385ac12a26a4f95bb8938eea3e0bf33f736b711f8de4c8c9977d63334",
+        "buyer": "0x78d3eea08323290402ace8b626fe92fd173f622b",
+        "seller": "0x9777daabf322d38af7a49a66dc55f3086127baea",
+        "eth_usd_rate": 394.07,
+        "price_usd": 82.75
       },
       {
         "date": "2018-03-31",
@@ -4416,6 +5015,22 @@
         "version": "v2",
         "price": 3.0,
         "tx": "0x64adf3d068d3c5da3a39f18a52e05dae3e08b0424dceef80abd9d9148a1e98ce"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0x197fb4c6c868c5d7233833e4850ba5c3789923c3eeb4393ffd9e1e4d909d5aad"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422105,
+        "tx": "0x94093b040dcba58d4cbb09f252022024421305ac6436be81efc7d27c648bcd65"
       },
       {
         "date": "2018-04-24",
@@ -4426,13 +5041,20 @@
       }
     ],
     "stats": {
-      "total_events": 15,
+      "total_events": 16,
       "total_sales": 2,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 0.21,
       "lowest_sale": 0.21,
       "last_sale": 0.21,
-      "last_sale_date": "2018-03-31"
+      "last_sale_date": "2018-03-31",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 116.67,
+      "lowest_sale_usd": 82.75,
+      "last_sale_usd": 82.75,
+      "initial_price_usd": 307.86
     }
   },
   "46": {
@@ -4443,9 +5065,11 @@
         "date": "2018-01-31",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x908b925920f0e235f19a7dbb72144c3d4ec3081462994094a4996b6acc316a3b"
+        "tx": "0x908b925920f0e235f19a7dbb72144c3d4ec3081462994094a4996b6acc316a3b",
+        "eth_usd_rate": 1111.31,
+        "price_usd": 333.39
       },
       {
         "date": "2018-03-04",
@@ -4456,23 +5080,9 @@
       },
       {
         "date": "2018-03-13",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x2346619f65a59c312d8f161a1683d2965d7945e11ac1e27b60c46e2a5da1f18f"
-      },
-      {
-        "date": "2018-03-13",
         "type": "delist",
         "version": "v1",
         "tx": "0x2346619f65a59c312d8f161a1683d2965d7945e11ac1e27b60c46e2a5da1f18f"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x0599c9832395c5aada9ea84702c81d6fee9022630fa2b5c18a51063fda1287d0"
       },
       {
         "date": "2018-03-21",
@@ -4483,16 +5093,33 @@
       },
       {
         "date": "2018-04-03",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xcab5068f0cc1278d29233d2175682082c3559f4e",
-        "tx": "0x1b17ab456fa7c7288fe0d4515da537107329ce72c615ab06c892263b40793973"
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374477,
+        "tx": "0x2a328065f68464c82da77124cd64aee79f477f2071104d7e8bb27fa7e0a4d5e4"
       },
       {
         "date": "2018-04-03",
         "type": "delist",
         "version": "v2",
         "tx": "0x1b17ab456fa7c7288fe0d4515da537107329ce72c615ab06c892263b40793973"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0x626c7333fa28e97025eac2ceea1d7f9b05b15073d501cbf6bae63121cb5bf632"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0x1d49c63e2161bc98e8c2e3c7f5f15eb033f4b0dba5b03db7681f000e403ddd65"
       },
       {
         "date": "2018-04-24",
@@ -4509,7 +5136,9 @@
         "price": 1.0,
         "buyer": "0x1998f627ad0f5904165b1796c4b111492365dad2",
         "seller": "0x1ce2304369d957fc1f0dd32c983f445e449f4c7a",
-        "tx": "0xf64ea2eb9bc244bbf81f699362155a6d843d38b3cd953656e4b2097338317d7d"
+        "tx": "0xf64ea2eb9bc244bbf81f699362155a6d843d38b3cd953656e4b2097338317d7d",
+        "eth_usd_rate": 2997.18,
+        "price_usd": 2997.18
       },
       {
         "date": "2022-02-05",
@@ -4523,11 +5152,18 @@
     "stats": {
       "total_events": 11,
       "total_sales": 1,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": 1.0,
       "lowest_sale": 1.0,
       "last_sale": 1.0,
-      "last_sale_date": "2022-02-04"
+      "last_sale_date": "2022-02-04",
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "highest_sale_usd": 2997.18,
+      "lowest_sale_usd": 2997.18,
+      "last_sale_usd": 2997.18,
+      "initial_price_usd": 333.39
     }
   },
   "47": {
@@ -4538,9 +5174,11 @@
         "date": "2018-02-15",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0xc5963f892d9bd014073e054a30ea727b77ceaffbf8706fd595db57f4e3c8e457"
+        "tx": "0xc5963f892d9bd014073e054a30ea727b77ceaffbf8706fd595db57f4e3c8e457",
+        "eth_usd_rate": 927.95,
+        "price_usd": 278.38
       },
       {
         "date": "2018-02-18",
@@ -4551,23 +5189,33 @@
       },
       {
         "date": "2018-03-15",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0xd57bd6c8a1bc68316f03f898bd19a7d678a26a332eb613404df9530558295763"
-      },
-      {
-        "date": "2018-03-15",
         "type": "delist",
         "version": "v1",
         "tx": "0xd57bd6c8a1bc68316f03f898bd19a7d678a26a332eb613404df9530558295763"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xeb35f4cb0faf877cb544a86be55bcdc0b3fea83b",
-        "tx": "0xcd931dfb65b58441ac89aff794ffc98bd73230c9b9ee3ecf78ec1d21d88bdd05"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374477,
+        "tx": "0xa21b93143d6be76ea605fb46bf3a45eaf41a0fa4a2a0ed6de442287dd1c322c1"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0xf472f3d7cfcfcad332222eac514cbbf818845483ede34e5c5e2fa1cdb56e04ba"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xfb585aac0ee2b5ed7c2d1cf5afaeeeec07a11a43396f1e112503057734f30928"
       },
       {
         "date": "2018-04-24",
@@ -4578,13 +5226,17 @@
       }
     ],
     "stats": {
-      "total_events": 6,
+      "total_events": 7,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 278.38
     }
   },
   "48": {
@@ -4595,16 +5247,35 @@
         "date": "2018-02-02",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x2f8afeb9553262c972ed48e43b8a06c8b5ce098d",
-        "tx": "0xa31d99134780266bc1b9399250fb5c0b39b679dd75173e1eafb848308f4277fc"
+        "tx": "0xa31d99134780266bc1b9399250fb5c0b39b679dd75173e1eafb848308f4277fc",
+        "eth_usd_rate": 917.47,
+        "price_usd": 275.24
       },
       {
         "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x2f8afeb9553262c972ed48e43b8a06c8b5ce098d",
-        "tx": "0xb3bc44f0eadf7ae922b6db008e0b22406540d65a225c922f06d7af9886dd488c"
+        "type": "death",
+        "episode_id": 1,
+        "episode_title": "Bloody Kitties",
+        "block": 5266289,
+        "tx": "0x1b39c15041d51158688c774b2b21753988e95af409a4d36ac95095711dd58d6b"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0xf7b0b400c55aed829118470e7f99b27ac64b30e39e0ceac26e2d0f72dc73239d"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xb7f70b3e1d0c165d6d9ac05ad8fa196fd3058192825b514763e0490bdfc24730"
       },
       {
         "date": "2018-04-24",
@@ -4615,13 +5286,17 @@
       }
     ],
     "stats": {
-      "total_events": 3,
+      "total_events": 5,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 275.24
     }
   },
   "49": {
@@ -4632,16 +5307,19 @@
         "date": "2018-02-02",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0x2f8afeb9553262c972ed48e43b8a06c8b5ce098d",
-        "tx": "0xe75580d7c064f249ae9ee0bd69ffcd7e9e341d7959653dd123246687bb70cc33"
+        "tx": "0xe75580d7c064f249ae9ee0bd69ffcd7e9e341d7959653dd123246687bb70cc33",
+        "eth_usd_rate": 917.47,
+        "price_usd": 275.24
       },
       {
         "date": "2018-02-06",
         "type": "transfer",
         "version": "v1",
         "to": "0x948458831d63390096b1cc767b2bbf10f4c257ab",
-        "tx": "0xf30a0875bf5ee5427087ee20126135e19f724dbfaf52d775bbc7b7361a9bdc51"
+        "tx": "0xf30a0875bf5ee5427087ee20126135e19f724dbfaf52d775bbc7b7361a9bdc51",
+        "from": "0x2f8afeb9553262c972ed48e43b8a06c8b5ce098d"
       },
       {
         "date": "2018-02-07",
@@ -4651,11 +5329,28 @@
         "tx": "0xd9990e6f5fb9187d71c1feeebca1a909acd113008a38e3b8cef3f9e32a36398e"
       },
       {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0x948458831d63390096b1cc767b2bbf10f4c257ab",
-        "tx": "0xae4103e35ccbfc5996483fb4c1f6f02e4cff2e8ba88ecbccca81e5a3898b44c7"
+        "date": "2018-04-03",
+        "type": "death",
+        "episode_id": 7,
+        "episode_title": "Scam",
+        "block": 5374480,
+        "tx": "0xcd7377b5452e0c337c465296e7539cdcc73530c34d1d1ec972bfbe035d3db864"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0x065f111a0723b87aba6c99f4534d111dc205b891fe4e2765b1119f99099d5e98"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xfb03fc0a76156b7b5a89dcc61d590a71bffeecf5294a3884218c17d2293404f4"
       },
       {
         "date": "2018-04-24",
@@ -4666,13 +5361,17 @@
       }
     ],
     "stats": {
-      "total_events": 5,
+      "total_events": 7,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 275.24
     }
   },
   "50": {
@@ -4683,9 +5382,11 @@
         "date": "2018-01-30",
         "type": "mint",
         "version": "v1",
-        "price": 1.0,
+        "price": 0.3,
         "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x72f874a97094e3c036821ca65b3f19a8bbb64f2608f834c3823e7bec473a901b"
+        "tx": "0x72f874a97094e3c036821ca65b3f19a8bbb64f2608f834c3823e7bec473a901b",
+        "eth_usd_rate": 1063.75,
+        "price_usd": 319.12
       },
       {
         "date": "2018-01-30",
@@ -4693,13 +5394,6 @@
         "version": "v1",
         "price": 5.0,
         "tx": "0x5274f35355f0def37dc122f0785b3c1fe74bd17d1a25b3b81884dbbd465953a9"
-      },
-      {
-        "date": "2018-02-20",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x11d8423c0fdd1f807d9f4a8e347a683cdfd5fc6d519a038d45f7a97296485065"
       },
       {
         "date": "2018-02-20",
@@ -4716,13 +5410,6 @@
       },
       {
         "date": "2018-02-23",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x4a1f517671a79d99e931f3ab7c740db20443efb3d9dbadcfea3990c183777055"
-      },
-      {
-        "date": "2018-02-23",
         "type": "delist",
         "version": "v1",
         "tx": "0x4a1f517671a79d99e931f3ab7c740db20443efb3d9dbadcfea3990c183777055"
@@ -4736,23 +5423,9 @@
       },
       {
         "date": "2018-03-12",
-        "type": "transfer",
-        "version": "v1",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0x361d11d561aac38a3c0c834b2eeb98b8d6cc6d099657f4ba05a1dc2198ac2c08"
-      },
-      {
-        "date": "2018-03-12",
         "type": "delist",
         "version": "v1",
         "tx": "0x361d11d561aac38a3c0c834b2eeb98b8d6cc6d099657f4ba05a1dc2198ac2c08"
-      },
-      {
-        "date": "2018-03-16",
-        "type": "transfer",
-        "version": "v2",
-        "to": "0xdb6312d70961cfbb964efcd335227a68b474f638",
-        "tx": "0xb2b2679990a38649a9eb34b557bd485d3d5bbc4b6e51a484a28f3fb503fbfa0d"
       },
       {
         "date": "2018-03-16",
@@ -4760,6 +5433,30 @@
         "version": "v2",
         "price": 99.9,
         "tx": "0xcea7a48780f40512d6964d3ef78e512dd7a3b99a616f0704d490213da8e797af"
+      },
+      {
+        "date": "2018-03-30",
+        "type": "death",
+        "episode_id": 6,
+        "episode_title": "The Final Battle",
+        "block": 5349847,
+        "tx": "0xafa42f26c6e0e6807de917339856665f5e02a5bc05b8792d032a183738638bea"
+      },
+      {
+        "date": "2018-04-06",
+        "type": "revival",
+        "episode_id": 8,
+        "episode_title": "Hard Fork",
+        "block": 5391367,
+        "tx": "0xacd98a47dd6930c99bf66c1b771b12174ea18655736922300d7a4146a9fc3ef3"
+      },
+      {
+        "date": "2018-04-11",
+        "type": "death",
+        "episode_id": 9,
+        "episode_title": "Tokencide",
+        "block": 5422106,
+        "tx": "0xb42c81cdd799325fdccf287707268232dfbec3b1558699e857b99b0b9f001fa2"
       },
       {
         "date": "2018-04-24",
@@ -4778,13 +5475,17 @@
       }
     ],
     "stats": {
-      "total_events": 14,
+      "total_events": 13,
       "total_sales": 0,
-      "initial_price": 1.0,
+      "initial_price": 0.3,
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "final_status": "dead",
+      "died_in_episode": 9,
+      "died_in_episode_title": "Tokencide",
+      "initial_price_usd": 319.12
     }
   },
   "51": {
@@ -4806,7 +5507,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "52": {
@@ -4836,7 +5538,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "53": {
@@ -4858,7 +5561,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "54": {
@@ -4880,7 +5584,9 @@
         "price": 0.1,
         "buyer": "0xb35a5ff901765bb037051f6138cb038ad5327aee",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0xddd36b8dec4728993cb7d633ab9f7efbac301d2e9feff61def6296ae23a75af7"
+        "tx": "0xddd36b8dec4728993cb7d633ab9f7efbac301d2e9feff61def6296ae23a75af7",
+        "eth_usd_rate": 715.15,
+        "price_usd": 71.52
       }
     ],
     "stats": {
@@ -4890,7 +5596,11 @@
       "highest_sale": 0.1,
       "lowest_sale": 0.1,
       "last_sale": 0.1,
-      "last_sale_date": "2018-05-20"
+      "last_sale_date": "2018-05-20",
+      "show_role": "special",
+      "highest_sale_usd": 71.52,
+      "lowest_sale_usd": 71.52,
+      "last_sale_usd": 71.52
     }
   },
   "55": {
@@ -4912,7 +5622,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "56": {
@@ -4942,7 +5653,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "57": {
@@ -4964,7 +5676,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "58": {
@@ -4986,7 +5699,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "59": {
@@ -5008,7 +5722,9 @@
         "price": 0.1,
         "buyer": "0x5240aa95dd7e00046b7d55084e19efb99369c4fc",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0x30232a52e3bbc30dffccbf137689cd5a14ac88c3753d9edd14b1b573345779b8"
+        "tx": "0x30232a52e3bbc30dffccbf137689cd5a14ac88c3753d9edd14b1b573345779b8",
+        "eth_usd_rate": 229.09,
+        "price_usd": 22.91
       }
     ],
     "stats": {
@@ -5018,7 +5734,11 @@
       "highest_sale": 0.1,
       "lowest_sale": 0.1,
       "last_sale": 0.1,
-      "last_sale_date": "2018-09-27"
+      "last_sale_date": "2018-09-27",
+      "show_role": "special",
+      "highest_sale_usd": 22.91,
+      "lowest_sale_usd": 22.91,
+      "last_sale_usd": 22.91
     }
   },
   "60": {
@@ -5048,7 +5768,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "61": {
@@ -5078,7 +5799,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "62": {
@@ -5108,7 +5830,9 @@
         "price": 1.5,
         "buyer": "0x431b5ddb0ace97ebc3d936403ea25831bad832b6",
         "seller": "0x3631a1b12dbf55bdd94bdee382926510855d44b6",
-        "tx": "0x151ebabf76b9046c582c1e5370861b31317de7043996a4b7df4dc14392695116"
+        "tx": "0x151ebabf76b9046c582c1e5370861b31317de7043996a4b7df4dc14392695116",
+        "eth_usd_rate": 1617.5,
+        "price_usd": 2426.25
       },
       {
         "date": "2022-10-05",
@@ -5126,7 +5850,11 @@
       "highest_sale": 1.5,
       "lowest_sale": 1.5,
       "last_sale": 1.5,
-      "last_sale_date": "2022-09-05"
+      "last_sale_date": "2022-09-05",
+      "show_role": "special",
+      "highest_sale_usd": 2426.25,
+      "lowest_sale_usd": 2426.25,
+      "last_sale_usd": 2426.25
     }
   },
   "63": {
@@ -5148,7 +5876,9 @@
         "price": 0.1,
         "buyer": "0x0c3195dee42772485f704d7b4e745d85250592f6",
         "seller": "0xb8579b19da2108249d4391d73430abba665515ca",
-        "tx": "0xd499241f268e6f42c1d9c65e2d086c6a6252f0ce660f534a716e7a23e13d36a0"
+        "tx": "0xd499241f268e6f42c1d9c65e2d086c6a6252f0ce660f534a716e7a23e13d36a0",
+        "eth_usd_rate": 158.99,
+        "price_usd": 15.9
       }
     ],
     "stats": {
@@ -5158,7 +5888,11 @@
       "highest_sale": 0.1,
       "lowest_sale": 0.1,
       "last_sale": 0.1,
-      "last_sale_date": "2019-02-23"
+      "last_sale_date": "2019-02-23",
+      "show_role": "special",
+      "highest_sale_usd": 15.9,
+      "lowest_sale_usd": 15.9,
+      "last_sale_usd": 15.9
     }
   },
   "64": {
@@ -5188,7 +5922,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "65": {
@@ -5218,7 +5953,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "66": {
@@ -5248,7 +5984,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "67": {
@@ -5278,7 +6015,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "68": {
@@ -5300,7 +6038,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   },
   "69": {
@@ -5330,7 +6069,8 @@
       "highest_sale": null,
       "lowest_sale": null,
       "last_sale": null,
-      "last_sale_date": null
+      "last_sale_date": null,
+      "show_role": "special"
     }
   }
 }

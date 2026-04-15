@@ -2,14 +2,11 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
-import DraftScreen from '../components/DraftScreen'
 import { fetchAllEpisodes } from '../utils/episodeData'
 import logo from '../images/logo.svg'
 import '../styles/Adventures.css'
 
 export default function Adventures() {
-  const [draftDone, setDraftDone] = useState(() => !!localStorage.getItem('deus_draft'))
-  const draftIds = JSON.parse(localStorage.getItem('deus_draft') || 'null')
   const [episodes, setEpisodes] = useState([])
   const [activeId, setActiveId] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -18,7 +15,6 @@ export default function Adventures() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!draftDone) return
     fetchAllEpisodes()
       .then(data => {
         setEpisodes(data)
@@ -62,13 +58,6 @@ export default function Adventures() {
     if (hasPrev) handleChangeEpisode(episodes[activeIdx - 1].id)
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
-  if (!draftDone) {
-    return <DraftScreen onComplete={(ids) => {
-      localStorage.setItem('deus_draft', JSON.stringify(ids))
-      setDraftDone(true)
-    }} />
-  }
-
   return (
     <div className={`adventures adventures--fullscreen${activeId === 0 ? ' adventures--intro' : ''}`}>
       {/* Top bar */}
@@ -104,7 +93,6 @@ export default function Adventures() {
         <Episode
           episode={activeEpisode}
           episodes={episodes}
-          draftIds={draftIds}
           onOpenDrawer={() => setDrawerOpen(true)}
           activeId={activeId}
           onChangeEpisode={handleChangeEpisode}

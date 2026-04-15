@@ -7,7 +7,7 @@
   "subtitle": "",
   "story": [
     "Traveling through the desert takes a lot of effort. After the battle with kitties, the wounded tokens continue to search for the promised land. Suddenly, they come across a luxurious but shabby yacht stuck in the sand. Surprisingly, it is inhabited by hospitable wolves, who kindly invite the tokens to refresh themselves and spend the night.",
-    "It is an unheard of luxury in the post-apocalyptic desert to share supplies! Most of the tokens believe that this is a trap, and continue on their journey. However, Konstanz, Vacio and Harold accept the wolves’ invitation.",
+    "It is an unheard of luxury in the post-apocalyptic desert to share supplies! Most of the tokens believe that this is a trap, and continue on their journey. However, Konstanz, Vacio and Harold accept the wolves\u2019 invitation.",
     "The result of this decision is prosaically predictable. The wolves ply the trusting tokens with booze, stuff them with all manner of dishes, fan our heroes to unthinkable sizes. The tokens turn into bubbles, and we all know what happens to bubbles sooner or later. They burst. Unfortunately, the tokens are met with the same fate.",
     "Meanwhile, the remaining tokens continue their journey in the desert. On the horizon, <span data-link='47' class='mention'>Nao notices an impending storm and suggests</span> that a group of volunteers go scouting to find shelter."
   ],
@@ -112,7 +112,7 @@
     },
     "25": {
       "image": "/images/episodes/2/obits/dead_arnold.gif",
-      "text": "His death was heroic. He sacrificed himself when he realized that the wolves’ yacht was a trap. Arnold decided to escort his comrades, to save them from the wolf attack in case of danger. But he could not help. He gorged on the food more ravenously than the others and fell victim to the trap of the cunning wolves."
+      "text": "His death was heroic. He sacrificed himself when he realized that the wolves\u2019 yacht was a trap. Arnold decided to escort his comrades, to save them from the wolf attack in case of danger. But he could not help. He gorged on the food more ravenously than the others and fell victim to the trap of the cunning wolves."
     },
     "27": {
       "image": "/images/episodes/2/obits/dead_teri.gif",
@@ -142,7 +142,7 @@
     },
     "31": {
       "image": null,
-      "text": "The wolves’ trap was too obvious. This is their business: feeding you with promises, and then eating you up. Those who decide to stay with the wolves will surely die. Such a fate is not for me. And we’ll see what happens next. My agility and business skills have saved me from all kinds of shit, even worse than these wolf traps."
+      "text": "The wolves\u2019 trap was too obvious. This is their business: feeding you with promises, and then eating you up. Those who decide to stay with the wolves will surely die. Such a fate is not for me. And we\u2019ll see what happens next. My agility and business skills have saved me from all kinds of shit, even worse than these wolf traps."
     },
     "33": {
       "image": "/images/episodes/2/stories/02_story_edmund.png",
@@ -154,7 +154,57 @@
     },
     "49": {
       "image": "/images/episodes/2/stories/02_story_rad.jpg",
-      "text": "I have found something: it's some kind of magical artifact. I’ve seen things like this before. They protect you from death. Some people need life, but I need money. Let's strike a deal. I'm only asking you for 0.6 ETH. Not a big deal if we're speaking about life, right?"
+      "text": "I have found something: it's some kind of magical artifact. I\u2019ve seen things like this before. They protect you from death. Some people need life, but I need money. Let's strike a deal. I'm only asking you for 0.6 ETH. Not a big deal if we're speaking about life, right?"
     }
+  },
+  "blockchain": {
+    "first_block": 5290611,
+    "first_event": "2018-03-20T18:16:40Z",
+    "last_block": 5290624,
+    "last_event": "2018-03-20T18:19:42Z",
+    "deaths": [
+      {
+        "token_id": 5,
+        "block": 5290611,
+        "time": "2018-03-20T18:16:40Z",
+        "tx": "0x3fdc5f35b70a0be9b89b4b9495e456bd7c14a44c3b3165c8da0f5c784746b7df"
+      },
+      {
+        "token_id": 41,
+        "block": 5290614,
+        "time": "2018-03-20T18:17:09Z",
+        "tx": "0xc7357eb34de6c60cfd2c8477b7dac402bb98a907dc34aafad2e4d1080a98a004"
+      },
+      {
+        "token_id": 42,
+        "block": 5290615,
+        "time": "2018-03-20T18:17:45Z",
+        "tx": "0xc38094c04e242d09dfc18c78bf9e4a263f0614b10a748ffb5ffc6de67f843f64"
+      },
+      {
+        "token_id": 45,
+        "block": 5290615,
+        "time": "2018-03-20T18:17:45Z",
+        "tx": "0x38c7825d8d6eb7c87aaf259d8b54b5fd4239783c42c0c6dc9ca3f1c1857e60b9"
+      },
+      {
+        "token_id": 25,
+        "block": 5290618,
+        "time": "2018-03-20T18:18:18Z",
+        "tx": "0xbbf6eb7374854880ac9249fcd1efca040b924d76004cf9a57c9343d7057eaf45"
+      },
+      {
+        "token_id": 27,
+        "block": 5290624,
+        "time": "2018-03-20T18:19:42Z",
+        "tx": "0xb7ecf12c138898297c492cf18b5b6b2db90f2665cd10484d83a771fd5d9839b9"
+      },
+      {
+        "token_id": 29,
+        "block": 5290624,
+        "time": "2018-03-20T18:19:42Z",
+        "tx": "0x7f871638fdb61e434d418220d68ef028d6a8ce4638cb4b30a5346e64f1b6732f"
+      }
+    ]
   }
 }

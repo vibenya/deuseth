@@ -71,7 +71,7 @@
     },
     "20": {
       "image": "/images/episodes/6/obits/ashley_mazel.gif",
-      "text": "Ashley Mazel\n\nYou have always been a trainwreck. Anything bad that could happen would always happen to you. We have no idea of how you managed to survive everything up to this point. Can a person get used to permanent and persistent problems? Perhaps your multiple failures made you stronger. We have no idea. But we really want to think that your failures will not follow you after death. We'll miss your forever unhappy face, kid. Punk’s not dead, right?"
+      "text": "Ashley Mazel\n\nYou have always been a trainwreck. Anything bad that could happen would always happen to you. We have no idea of how you managed to survive everything up to this point. Can a person get used to permanent and persistent problems? Perhaps your multiple failures made you stronger. We have no idea. But we really want to think that your failures will not follow you after death. We'll miss your forever unhappy face, kid. Punk\u2019s not dead, right?"
     },
     "21": {
       "image": "/images/episodes/6/obits/viceroy_vincent.gif",
@@ -135,5 +135,97 @@
       "image": "/images/episodes/6/stories/Nao.png",
       "text": "Nao\n\nIn the last few days I've learned a lot. I went beyond this world, I saw its boundaries as I looked death in the eye. Death is not that terrible, we have met more than once in the desert. I led my community to help them save themselves. I will take a shot and try to stop the Etherbots. All of you, stay behind the walls of the Genesis Block. Brothers, sisters, friends, goodbye. Try to survive!"
     }
+  },
+  "blockchain": {
+    "first_block": 5349842,
+    "first_event": "2018-03-30T16:20:05Z",
+    "last_block": 5350537,
+    "last_event": "2018-03-30T19:07:12Z",
+    "deaths": [
+      {
+        "token_id": 31,
+        "block": 5349842,
+        "time": "2018-03-30T16:20:05Z",
+        "tx": "0x4c5a02049c01503ab43ca147ff59c629ae14730935be46254df3cae65d93cf66"
+      },
+      {
+        "token_id": 50,
+        "block": 5349847,
+        "time": "2018-03-30T16:21:41Z",
+        "tx": "0xafa42f26c6e0e6807de917339856665f5e02a5bc05b8792d032a183738638bea"
+      },
+      {
+        "token_id": 19,
+        "block": 5349851,
+        "time": "2018-03-30T16:22:33Z",
+        "tx": "0x6bcfce6776478c70b7ca4d9bb16b36ece26bbaa253cc59ab467369e8c7721427"
+      },
+      {
+        "token_id": 15,
+        "block": 5349855,
+        "time": "2018-03-30T16:23:40Z",
+        "tx": "0xbd5594caca4f9478d7d877f65b0e8e4ed606ce41514409e0697aabc2875be87a"
+      },
+      {
+        "token_id": 3,
+        "block": 5349864,
+        "time": "2018-03-30T16:24:38Z",
+        "tx": "0x9c4b93074d2e2bf3f1a717fc3671cefb8488459aff9221906fc6f8ab9291b716"
+      },
+      {
+        "token_id": 36,
+        "block": 5349887,
+        "time": "2018-03-30T16:30:05Z",
+        "tx": "0x5f3f728f1a63b3012459f61c70286ce739255297026f22249784c7dcde56e5e8"
+      },
+      {
+        "token_id": 11,
+        "block": 5349896,
+        "time": "2018-03-30T16:32:16Z",
+        "tx": "0x0fdc0841a7565e0417acc6e1f1de853dc72a9988811afa37128ed7492ba73de1"
+      },
+      {
+        "token_id": 12,
+        "block": 5349942,
+        "time": "2018-03-30T16:42:24Z",
+        "tx": "0x07a394423bcd35ed8b0d91e595c757583a4355b146a4ebc68c64d2983b1c8458"
+      },
+      {
+        "token_id": 43,
+        "block": 5350518,
+        "time": "2018-03-30T19:02:53Z",
+        "tx": "0x5bf46733919ad2e38e254089976c472f1084d27c718533ef8cfcf75bcd06a7bc"
+      },
+      {
+        "token_id": 20,
+        "block": 5350520,
+        "time": "2018-03-30T19:03:11Z",
+        "tx": "0xa713f3672c1f7342f23510c2ab6760f08cdc67ac1197d7ffc294a9d9367d089f"
+      },
+      {
+        "token_id": 21,
+        "block": 5350520,
+        "time": "2018-03-30T19:03:11Z",
+        "tx": "0xb35aaf0240f940f9eb3907d7c9e140f90c777e1b1bca5aee9be3409e7205c706"
+      },
+      {
+        "token_id": 23,
+        "block": 5350521,
+        "time": "2018-03-30T19:04:06Z",
+        "tx": "0xac43819a624bc8d9c9dcb6ba836f80c6117f8642513a6e9185f628ed44639579"
+      },
+      {
+        "token_id": 28,
+        "block": 5350526,
+        "time": "2018-03-30T19:04:54Z",
+        "tx": "0x1292682dadb8482052ba14ac537a6effdc79714377d169c47018138f63ce3947"
+      },
+      {
+        "token_id": 30,
+        "block": 5350537,
+        "time": "2018-03-30T19:07:12Z",
+        "tx": "0xc5882c59fd7b8d493af4dbfcf847b594a49411f1f42a274a1931a823fe3ea6ab"
+      }
+    ]
   }
 }

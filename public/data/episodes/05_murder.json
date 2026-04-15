@@ -7,7 +7,7 @@
   "subtitle": "",
   "story": [
     "In the morning, the tokens find Ben's lifeless body in the camp. There is not a single scratch on it, but Ben is dead. Our heroes decide to investigate this case to find out who the killer is. Theories are contradictory. The community of tokens divides into two large groups: one considers Temoto to be the killer, the other group accuses Jay.",
-    "The tokens’ individual takes are reflected in their stories."
+    "The tokens\u2019 individual takes are reflected in their stories."
   ],
   "art": {
     "slide": "/images/episodes/slides/cover-05.jpg",
@@ -46,7 +46,7 @@
     },
     "3": {
       "image": "/images/episodes/5/stories/Tracey.png",
-      "text": "Dear Ben! After Harold's death, I have lost all meaning in my life. I remember how you raised us when we first met. We were still teenagers. Who could have killed you? But does it really matter? You are dead, and that ain’t gonna change... *sobs hysterically*"
+      "text": "Dear Ben! After Harold's death, I have lost all meaning in my life. I remember how you raised us when we first met. We were still teenagers. Who could have killed you? But does it really matter? You are dead, and that ain\u2019t gonna change... *sobs hysterically*"
     },
     "7": {
       "image": "/images/episodes/5/stories/The_Eye.png",
@@ -168,5 +168,19 @@
       "image": "/images/episodes/5/stories/Filthy_King.png",
       "text": "After Ruby's death, I can not sleep. I wake up in the middle of the night and go outside to look at the starry sky. I imagine that I'm speaking with Ruby, I tell her how I feel for her, and we talk, we talk... I do not care about Ben, nor about the one who killed him. I do not care if they accuse me. If they decide that it's me, then so be it. Good luck trying to catch me. I think I'll send a couple of tokens to hell."
     }
+  },
+  "blockchain": {
+    "first_block": 5325705,
+    "first_event": "2018-03-26T14:27:24Z",
+    "last_block": 5325705,
+    "last_event": "2018-03-26T14:27:24Z",
+    "deaths": [
+      {
+        "token_id": 4,
+        "block": 5325705,
+        "time": "2018-03-26T14:27:24Z",
+        "tx": "0x5c8097bfa4495c0ce3c1d0eafc2a876ae7dbcfbe8677c5a822da48b9d073b094"
+      }
+    ]
   }
 }

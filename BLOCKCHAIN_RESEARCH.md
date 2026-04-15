@@ -8,15 +8,29 @@ All deployed by `0xb8579b19da2108249d4391d73430abba665515ca` (the team deployer 
 
 | Role | Address | Deploy date | Deployer nonce |
 |---|---|---|---|
-| **DeusETH v1** (buggy, first release) | `0xe46b5f1f3551bd3c6b29c38babc662b03d985c48` | 2018-01-29 | 13 |
+| **FundsKeeper v0a** (first attempt, paired with v0a lottery) | `0x340c5a30af64ce1e7b6aab09bcc44d46d48c782d` | 2017-12-29 11:16 UTC | 0 |
+| **DeusETH v0a** (first attempt, buggy) | `0x3178abbc96938f3c19ce6e9f4aed5be03d985c48` | 2017-12-29 11:17 UTC | 1 |
+| **FundsKeeper v0b** (second attempt, same day) | `0x9db17b21ff0705afff7b6bb997f5bb387f52b3f0` | 2017-12-29 16:06 UTC | 6 |
+| **DeusETH v0b** (second attempt, fixed bug) | `0x3b2501c8830184a659cb65bd1f02a2733310bf00` | 2017-12-29 16:09 UTC | 7 |
+| **DeusETH v1** (publicly launched, later also bugged) | `0xe46b5f1f3551bd3c6b29c38babc662b03d985c48` | 2018-01-29 | 13 |
 | **Randao** (victim selection) | `0xfe7e9141d1ec8d30a37f9908cd93eadd7a2d9d9b` | 2018-02-22 | 26 |
 | **DeusETH v2** (show actually ran here) | `0x2c7411ecd2110b7760627880f1860646a265c5df` | 2018-03-14 | 40 |
 | **StockExchange v2** | `0x5a90405495da32569a208a992a574e59a75788a2` | 2018-03-14 | 42 |
+| **FundsKeeper v2** (prize bank) | `0x96288906f3a363e98b0595a9205f5c9e31e9a3c1` | 2018-03-14 | 39 |
 | **MigrateToNewLottery** (v1→v2) | `0x6d03c10006afaa6152193cbf8c0593686f2f08dd` | — | 57 |
 | **DeusToken v3** (post-show ERC-721 relaunch) | `0xb8d1cdcefe47834971067bb0b8249f45433b4157` | 2018-04-24 | — |
 | **DeusMarketplace v3** | `0x22b3f332e99d1405ea66d2285c299895faaa4974` | — | — |
 
-Deployer created 21 contracts in total (nonces 0–69). Dec 2017 nonces 1 and 7 appear to be abandoned test deployments.
+Deployer created 21 contracts in total (nonces 0–69). The two v0 pairs (nonces 0–2 and 6–8) were pre-launch internal tests that never went public — both deployed on the same day, Dec 29 2017, with the second pair fixing a bug found in the first within ~5 hours.
+
+### v0 pre-history (Dec 29, 2017)
+
+Both v0 pairs were created on the same calendar day. v0a was the initial attempt; a bug was found, and v0b was deployed ~5 hours later with the fix. Neither pair was ever made public — all 50 v1 token purchases started on Jan 30, 2018.
+
+- v0a nonce chain: FundsKeeper (`nonce 0`) → DeusETH (`nonce 1`) → `setLottery()` link call (`nonce 2`)
+- v0b nonce chain: FundsKeeper (`nonce 6`) → DeusETH (`nonce 7`) → `setLottery()` link call (`nonce 8`)
+- Nonces 3–5 between the pairs: ENS auction bids (unrelated to the game contracts)
+- Nonces 9–12 (early 2018): ENS setup and test campaigns before v1 launch
 
 ## Token ID mapping (canonical)
 
@@ -53,23 +67,31 @@ Same contract design as v1. The entire show history lives on this contract as `T
 
 Cross-referenced with the narrative in `public/data/adventures.json`. Clusters identified by grouping death events into blocks < 1000 blocks apart.
 
-| Chain ep | Date (UTC) | Deaths (count) | ids | Museum ep |
-|---|---|---|---|---|
-| 1 | 2018-03-16 15:37 | 3 | 13, 44, 48 | ep1 Bloody Kitties |
-| 2 | 2018-03-20 18:16 | 7 | 5, 25, 27, 29, 41, 42, 45 | ep2 Wolf Party |
-| 3 | 2018-03-23 20:03 | 5 | 6, 17, 32, 37, 38 | ep3 Freedom To Die |
-| 4 | 2018-03-26 14:27 | 1 | 4 | ep5 Murder |
-| 5 | 2018-03-30 16:20 | 14 | 3, 11, 12, 15, 19, 20, 21, 23, 28, 30, 31, 36, 43, 50 | ep6 The Final Battle |
-| 6 | 2018-04-03 18:21 | 19 | 1, 2, 7, 8, 9, 10, 14, 16, 18, 22, 24, 26, 33, 34, 35, 40, 46, 47, 49 | ep7 Scam |
-| — revive all — | 2018-04-06 13:30 | (50 revives) | — | ep8 Hard Fork (reborn) |
-| 7 | 2018-04-11 15:39 | 45 | all except [5, 10, 11, 18, 36] | ep9 Tokencide |
-| 8 | 2018-04-13 16:03 | 2 | 18, 36 | (not in museum) |
+| Chain ep | First block | First event (UTC) | Last block | Deaths (count) | ids | Museum ep |
+|---|---|---|---|---|---|---|
+| 1 | 5266284 | 2018-03-16 15:37:22 | 5266289 | 3 | 13, 44, 48 | ep1 Bloody Kitties |
+| 2 | 5290611 | 2018-03-20 18:16:40 | 5290624 | 7 | 5, 25, 27, 29, 41, 42, 45 | ep2 Wolf Party |
+| 3 | 5309075 | 2018-03-23 20:03:30 | 5309080 | 5 | 6, 17, 32, 37, 38 | ep3 Freedom To Die |
+| 4 | 5325705 | 2018-03-26 14:27:24 | 5325705 | 1 | 4 | ep5 Murder |
+| 5 | 5349842 | 2018-03-30 16:20:05 | 5350537 | 14 | 3, 11, 12, 15, 19, 20, 21, 23, 28, 30, 31, 36, 43, 50 | ep6 The Final Battle |
+| 6 | 5374477 | 2018-04-03 18:21:59 | 5374480 | 19 | 1, 2, 7, 8, 9, 10, 14, 16, 18, 22, 24, 26, 33, 34, 35, 40, 46, 47, 49 | ep7 Scam |
+| — revive 49 — | 5391340 | 2018-04-06 13:30:50 | 5391367 | (49 revivals) | all except Kesh (39) | ep8 Hard Fork (reborn) |
+| 7 | 5422092 | 2018-04-11 15:39:27 | 5422106 | 45 | all except [5, 10, 11, 18, 36] | ep9 Tokencide |
+| 8 | 5434017 | 2018-04-13 16:03:14 | 5434021 | 2 | 18, 36 | ep10 Tokenville |
+
+Note on ep5 (The Final Battle): deaths occurred in **two separate sessions** — session 1 (16:20–16:42, blocks 5349842–5349942, tokens [3,11,12,15,19,31,36,50]) and session 2 (19:02–19:07, blocks 5350518–5350537, tokens [20,21,23,28,30,43]). The ~2.5 hour gap between sessions is visible on-chain.
+
+Full per-token death tx hashes are in [`src/data/token_timelines.json`](src/data/token_timelines.json) (each death/revival event includes `block` and `tx` fields). Episode JSON files in [`public/data/episodes/`](public/data/episodes/) also contain per-episode `blockchain` objects with the same data.
 
 **Final on-chain alive set: `[5, 10, 11]`** = Harold, Danko, Lucy.
 
 Note: Kesha's Apr 10 19:17 pre-episode prediction list said `[5, 13, 41, 45, 47]` would survive — that was a human guess before the Randao-seeded PRNG ran. The actual outcome was different.
 
-Totals: 96 `TokenState(_, 0)` deaths, 99 `TokenState(_, 1)` revives. First batch of 50 revives = initial `buyTokens` calls on March 16. Second batch = Hard Fork mass-reborn on April 6.
+### Kesh (token 39) — sole survivor before the Hard Fork
+
+Cross-referencing all death events across eps 1–6 reveals that exactly **one token never died** before the Hard Fork mass-revival: **token 39 (Kesh)**. All other 49 tokens were killed in at least one episode before April 6. As a result, Kesh is the only token with no revival event in the Hard Fork batch — it was already alive and needed no state change. This also means the Hard Fork `TokenState(_, 1)` batch contains **49 revivals** (not 50), which reconciles with the on-chain totals: 50 initial v2 activations + 49 Hard Fork revivals = 99 total `TokenState(_, 1)` events. Kesh then died in Tokencide along with 44 others, never making it to the final three.
+
+Totals: 96 `TokenState(_, 0)` deaths, 99 `TokenState(_, 1)` revives. First batch of 50 revives = initial v2 activation calls on March 16 (migration + buyTokens). Second batch = Hard Fork mass-reborn on April 6 = **49 revivals** (not 50 — Kesh was already alive, see note below).
 
 ## v1 → v2 migration
 
@@ -164,7 +186,7 @@ Kesha's comment on 17 Mar 12:44 ("всего троих купили") matches t
 | 20 | Ashley Mazel | 2023-02-28 | Seaport 1.1 | (not parsed) |
 | 14 | Dustin | 2024-01-15 | Seaport 1.5 | (not parsed) |
 
-Gary (token 13) is the project's sale-price champion: sold for **0.1 ETH on the custom marketplace in 2018, then 2.0 ETH on OpenSea in 2021** — a 20× appreciation across the NFT boom.
+Gary (token 13) is the project's sale-price champion: minted for **0.3 ETH**, sold for **0.1 ETH on the custom marketplace in 2018** (below mint price, distressed sale), then **2.0 ETH on OpenSea in 2021** — a 6.7× return on mint price. Danko (token 10) holds the fastest flip: bought at mint for **0.3 ETH**, immediately listed and sold on v1 StockExchange for **2.0 ETH the same day** (Jan 30, 2018) — 6.7× in hours.
 
 The "direct p2p" transfers (33 of the 50 external) went straight to the v3 contract (`safeTransferFrom` called directly, no marketplace intermediary) — gifts, wallet migrations, or OTC moves.
 
@@ -185,7 +207,7 @@ Of all 69 v3 tokens, exactly one is at the burn address `0x000000000000000000000
 
 Full per-token resale timeline is saved in [`src/data/token_timelines.json`](src/data/token_timelines.json) (also raw form in `token_timelines_raw.json`). 935 events total across 6 venues: v1 StockExchange, v2 StockExchange, v2 Migration contract, v3 DeusMarketplace, OpenSea Wyvern v1/v2, OpenSea Seaport 1.1–1.6.
 
-Initial sale of every main-cast token (`buyTokens` on v1) was at **1.0 ETH** — the `rate` hardcoded in the v1 contract.
+Initial sale of every main-cast token (`buyTokens` on v1) was at **0.3 ETH** — verified against all 50 mint transaction values on-chain. (The v1 contract's `rate` variable was misread as 1 ETH in earlier analysis; the actual tx `value` is 0.3 ETH for every single purchase.)
 
 ### v1 StockExchange (`0x8ab65829fb...`) — Jan 29 – Mar 6 2018
 
@@ -258,6 +280,38 @@ Gary was also flagged as one of the two "team-custody" tokens after the v2 migra
 ## Randao
 
 `0xfe7e9141d1ec8d30a37f9908cd93eadd7a2d9d9b` (deployer nonce 26) — matches the address in the original Medium article describing how victims were picked. Confirmed via CREATE-address derivation from deployer + nonce. Commit/reveal before block 5133039 (2018-02-21 23:57 UTC), seed fed into Park-Miller PRNG to deterministically select death ids.
+
+## The Winners
+
+The show has **three canonical winners** — the only three tokens `state=1` on v2 after Tokenville:
+
+| Token | Name | v3 current holder | First bought on v1 |
+|---|---|---|---|
+| 5  | Harold | `0x1af57a1a7bf346389f87ee2c9ff6bf93823ea4d0` | 2018-01-30 |
+| 10 | Danko  | `0x7b9db670763bc972ff2af41bbcf2431b9fafa388` | 2018-01-30 (bought on StockExchange same day for 2.0 ETH) |
+| 11 | Lucy   | `0x63a9dbce75413036b2ba7da6a4a9a8e1f25c8ee3` | 2018-01-30 |
+
+None of the winner tokens have ever been transferred off their post-2018 holders — verified by cross-checking `ownerOf(id)` on v3 against the last known `v3_transfer` event. Harold, Danko and Lucy have all sat at the same address since April 24, 2018.
+
+### Prize distribution
+
+Prize pool lived in **FundsKeeper v2** (`0x96288906f3a363e98b0595a9205f5c9e31e9a3c1`, nonce 41), a pull-payment contract linked to DeusETH v2. Each winner owner called `getGain(tokenId)` to self-claim their share — the contract validated `state=1` on the lottery and sent ETH via low-level `.send()`.
+
+| Winner | Owner | Date | Block | Tx | Amount |
+|---|---|---|---|---|---|
+| Lucy (11)   | `0x63a9dbce...` (natealex.eth) | 2018-04-13 21:07 UTC | 5435234 | `0x0d48e60c...` | **4.119 ETH** (≈$2,039) |
+| Danko (10)  | `0x7b9db670...`                | 2018-04-14 23:06 UTC | 5441664 | `0xfbfb1bdd...` | **4.119 ETH** (≈$2,071) |
+| Harold (5)  | `0x1af57a1a...`                | 2018-04-15 10:42 UTC | 5444555 | `0x65c0c28c...` | **4.119 ETH** (≈$2,200) |
+
+**Equal thirds**, no performance weighting. Total winners' pot: **12.357 ETH**.
+
+Additional outflows from FundsKeeper:
+- 2018-04-13 block 5434876 — **1.373 ETH** team/operator salary to deployer `0xb8579b19...` (call to `getTeamSalary()`, ~10% of pool)
+- Contract fully drained: current balance 0 ETH
+
+Verified on-chain by diffing owner-wallet ETH balances across the claim block: each owner's balance increased by exactly ~4.1189 ETH (minus gas) in the block of their `getGain` call. Notable: Lucy claimed within hours of Tokenville ending; Danko 26 hours later; Harold 38 hours after the show ended.
+
+Additional survivor milestone: **Kesh (token 39)** was the sole token never killed before the Hard Fork (see Kesh note above). It eventually died in Tokencide, but is honored on-chain by its absence from the Hard Fork revival batch (49 revivals, not 50).
 
 ## Final current holdings on v2
 

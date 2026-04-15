@@ -94,5 +94,43 @@
       "image": null,
       "text": "Holy ETH! A sandstorm, and then this dark cave! I never thought I'd say this, but I'm so grateful to the voices in my head. If it weren't for them I'd be buried in there forever and ever. My time to die is yet to come, and I will do my best to survive and help my friends get to the promised land safe and sound."
     }
+  },
+  "blockchain": {
+    "first_block": 5309075,
+    "first_event": "2018-03-23T20:03:30Z",
+    "last_block": 5309080,
+    "last_event": "2018-03-23T20:04:47Z",
+    "deaths": [
+      {
+        "token_id": 32,
+        "block": 5309075,
+        "time": "2018-03-23T20:03:30Z",
+        "tx": "0xe6aaa45a56db900536babd18e9fc43bf5f9dca655e4815a31a11fb44a0215780"
+      },
+      {
+        "token_id": 6,
+        "block": 5309077,
+        "time": "2018-03-23T20:03:41Z",
+        "tx": "0x74283f20bddf151cc13439f01c60d90f123142a3377353888dc026a587e09fdb"
+      },
+      {
+        "token_id": 37,
+        "block": 5309077,
+        "time": "2018-03-23T20:03:41Z",
+        "tx": "0xe6e6cea9888f462b052ecd2d3d1db1a4742d6668c513c8e52285f8744e24be89"
+      },
+      {
+        "token_id": 38,
+        "block": 5309077,
+        "time": "2018-03-23T20:03:41Z",
+        "tx": "0x8cdd564b247b1f5de890ce39a116726b373e9d4af2186771443d99dc13c5874d"
+      },
+      {
+        "token_id": 17,
+        "block": 5309080,
+        "time": "2018-03-23T20:04:47Z",
+        "tx": "0xb6d95a2d528c7959a58b2622878960e5bf5d48d29a970e560522b3a0ff90cfef"
+      }
+    ]
   }
 }
