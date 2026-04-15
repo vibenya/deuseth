@@ -1,0 +1,61 @@
+{
+  "id": 0,
+  "slug": "prologue",
+  "type": "prologue",
+  "number": "Prologue",
+  "title": "Intro",
+  "subtitle": "There were 50 of them",
+  "story": [
+    "After years of fighting, the Resistance army is completely defeated. A group of survivors find themselves lost in spiritless orphant lands, where the first awakened tokens were born.",
+    "<span data-link='47' class='mention'>Nao convinces</span> the exhausted tokens not to fall into despair. Certain that the group is destined to find the lost City, he strives to find the answers they need to revive their  civilization. <span data-link='1' class='mention'>Mistrust is growing.</span>",
+    "The fleet-footed <span data-link='5' class='mention'>Harold went searching</span> for gas, and <span data-link='3' class='mention'>still hasn’t returned.</span>"
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-00.png",
+    "homeSlide": "/images/episodes/slides/home_cover-00.png",
+    "background": "/images/episodes/prologue_back.jpg",
+    "sharePic": "/images/episodes/prologue.jpg",
+    "map": "/images/episodes/prologue_map.png"
+  },
+  "media": {
+    "type": "video",
+    "src": "/videos/episode_about.mp4",
+    "cover": "/images/episodes/prologue.jpg",
+    "statsUnlockAt": 26
+  },
+  "events": [
+    {
+      "characters": "all",
+      "action": "revive",
+      "at": {
+        "videoTime": 25
+      }
+    }
+  ],
+  "characterStories": {
+    "1": {
+      "image": null,
+      "text": "How to seize the power:\n\nWeave conspiracies behind Nao’s back to set everyone up against him.\n\nFind Nao’s weakness and disgrace him publicly.\n\nGain the trust of all tokens by chatting with them heart to heart, and then become popular in the group and continue to secretly brainwash everyone.\n\nDo something sensational to surprise the tokens and make them respect me (Set eblygas on Ashley and save her? Need to think it over).\n\nEnlist the support of strong tokens.\n\nUnite those who do not like Nao.\n\nChoose the right moment or organize a meeting.\n\nCome up with a beautiful speech, so that everyone supports me.\n\nDrum up all of the tokens, overthrow Nao and seize power (ha-ha!)."
+    },
+    "3": {
+      "image": null,
+      "text": "I'm so worried about my brother Harold! He left at dawn, and now it's already dark, but he's still not back. I hope nothing bad happened to my little brother. I’ll slay anyone who hurt him."
+    },
+    "5": {
+      "image": null,
+      "text": "I volunteered to go scouting to find the source of gas and a safe place for the camp. I had to scour for a long time, but I noticed a small oasis and literally ran to it with all my might.\n\nLucky me! A large presence of gas in a quiet place, hidden from the evil eyes. We can make a stop here…"
+    },
+    "20": {
+      "image": null,
+      "text": "There's no such thing as luck; there is only statistics.\n\nSome of the other tokens think I'm a weakling. Some say I'm slowing down and hurting the group. I'm one of the last 50, just like them. I have the same chance of getting out of here alive as anyone else, assuming we don't all die first. I'm not afraid to die, so at least I have that going for me.\n\nSome tokens are natural born followers. They think that Nao can save them. Perhaps I could be the leader if I gave a shit enough about what the others thought. I don't. Temoto isn't any better. I don't appreciate his know-it-all attitude. Shut up, kid.\n\nPerhaps I'll try to form alliances with some of the other outcasts. I wouldn't mind sharing a glass of gas with Danko or Daedalus. I guess it doesn't matter since we'll probably all die anyway.\n\nThere's no such thing as luck."
+    },
+    "30": {
+      "image": "/images/episodes/prologue_boozy.jpg",
+      "text": "I got so drunk again yesterday. More than drunk, I was wasted. I even thought Layla was flirting with me. I'm just going nuts, I guess. She’s so persistent. And my tentacles still need caressing, what a shame.\n\nHigh time for me to leave. I do not believe all this nonsense about the lost City. So stupid.\n\nTwo bottles of gas will be enough to keep me going for a couple of days. I’ve always done things my own way. Fuck the Resistance! It’s easier for me to survive alone. Or die alone. Whatever.\n\nI’ve got to get out of the camp while I’m still drunk, as I guess I'll regret it when I sober up. So, really, I have no choice but to stay drunk forever.\n\nNo fear! Bye, losers!"
+    },
+    "47": {
+      "image": null,
+      "text": "We have spent days walking through this desert and yet we haven’t seen a single sign of gas anywhere. Ashley tripped on her way and fell down from exhaustion. Tensions were running high, and Temoto raised his voice and spoke impatiently. He called me a liar, he said that I am leading us to death.\n\nI reminded everyone of the Great War, and that we are the only survivors left in these damned lands. Even if we don’t find this City, we can’t just hug each other in the middle of this desert and die. We have nothing left but to keep walking to meet our destiny. Who are we? Where are we from? What is our mission? I don’t know. And no other token does.\n\nThe crowd started to make a racket, and I saw a deadly eblyga crawling up the rock looking to bite me with its sharp, poisonous teeth. I smashed its head with my heel and went on with my speech. The crowd was impressed.\n\nAgain, I reminded my flock that we had to try and find the lost City, and I promised that we’d revive our civilization there and find peace when we cross the desert. I looked at the silent crowd, boring into the eyes of every token, trying to give them a piece of the hope that is almost dead in my own heart.\n\nI said I saw a source of gas a little bit ahead. “We can make a halt, spend the night and replenish our supplies there”, — I told them, and their faces lit up with hope. Right now they are following me, and I hope I’m lucky enough to actually find gas ahead."
+    }
+  }
+}

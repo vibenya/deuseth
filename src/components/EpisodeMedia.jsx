@@ -2,13 +2,28 @@ import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import EpisodeStatCounter from './EpisodeStatCounter'
 import Tokenville from './Tokenville'
 
-function parseMedia(str) {
-  if (str === 'tokenville') return { type: 'tokenville' }
-  const parts = str.split(':')
-  if (parts[0] === 'youtube') return { type: 'youtube', id: parts[1], preview: parts.slice(2).join(':') }
-  if (parts[0] === 'coub') return { type: 'coub', id: parts[1], preview: parts.slice(2).join(':') }
-  if (parts[0] === 'image') return { type: 'image', src: parts.slice(1).join(':') }
-  return { type: 'image', src: str }
+/**
+ * Normalize the structured media object into a flat list of slide items
+ * so the rest of the component can treat them uniformly.
+ *
+ * media object shapes (from episode JSON):
+ *   { type: 'video',      src, cover, subtitles?, statsUnlockAt? }
+ *   { type: 'gallery',    slides: [url, ...], cover }
+ *   { type: 'image',      src }
+ *   { type: 'tokenville' }
+ *   { type: 'youtube',    id, cover }
+ *   { type: 'coub',       id, cover }
+ */
+function mediaToItems(media) {
+  if (!media) return []
+  if (media.type === 'gallery') {
+    return media.slides.map(src => ({ type: 'image', src }))
+  }
+  // video, image, tokenville, youtube, coub → single item
+  // normalise 'cover' field to 'preview' for internal use
+  const item = { ...media }
+  if (item.cover) { item.preview = item.cover; delete item.cover }
+  return [item]
 }
 
 export default function EpisodeMedia({
@@ -23,11 +38,13 @@ export default function EpisodeMedia({
   aliveCount,
   deadCount,
   keyboardEnabled = true,
+  showStats = true,
 }) {
   const [mediaIndex, setMediaIndex] = useState(0)
-  const items = useMemo(() => media ? media.map(parseMedia) : [], [media])
+  const items = useMemo(() => mediaToItems(media), [media])
+  const subtitles = media?.subtitles ?? []
 
-  const [displayed, setDisplayed] = useState(() => (media ? parseMedia(media[0]) : null))
+  const [displayed, setDisplayed] = useState(() => items[0] ?? null)
   const [fadeOut, setFadeOut] = useState(null)
   const [videoEnded, setVideoEnded] = useState(false)
   const iframeRef = useRef(null)
@@ -50,11 +67,11 @@ export default function EpisodeMedia({
       return
     }
 
-    const newSrc = ci.type === 'image' ? ci.src : ci.preview
+    const newSrc = ci.type === 'image' ? ci.src : (ci.type === 'video' ? ci.src : ci.preview)
     if (!newSrc) return
 
     const currentSrc = displayed
-      ? (displayed.type === 'image' ? displayed.src : displayed.preview)
+      ? (displayed.type === 'image' ? displayed.src : displayed.type === 'video' ? displayed.src : displayed.preview)
       : null
     if (currentSrc === newSrc) return
 
@@ -104,6 +121,7 @@ export default function EpisodeMedia({
 
   const isTokenville = displayed?.type === 'tokenville'
   const isVideo = displayed && (displayed.type === 'youtube' || displayed.type === 'coub')
+  const isLocalVideo = displayed?.type === 'video'
   const isCoub = displayed?.type === 'coub'
 
   // YouTube end detection + time updates via postMessage.
@@ -142,8 +160,20 @@ export default function EpisodeMedia({
 
   const hasNext = episodeNav?.nextEpisode && !episodeNav.nextEpisode.disabled
   const isLastSlide = mediaIndex === items.length - 1
-  // Coub loops forever — show next right away; YouTube — after ended
-  const showNextEpBtn = hasNext && (isVideo ? (isCoub || videoEnded) : isLastSlide)
+  const isMultiSlide = !isVideo && !isLocalVideo && !isTokenville && items.length > 1
+
+  // Single unified advance: slide → next slide, last slide/video/coub → next episode
+  // For video: "SKIP" goes straight to next episode (no forced wait)
+  const canAdvanceSlide = isMultiSlide && !isLastSlide
+  const canAdvanceEp = hasNext && !canAdvanceSlide
+
+  function handleAdvance() {
+    if (canAdvanceSlide) goToSlide(mediaIndex + 1)
+    else if (canAdvanceEp) episodeNav.onNext()
+  }
+
+  const advanceDisabled = !canAdvanceSlide && !canAdvanceEp
+  const advanceLabel = ((isVideo && !isCoub) || isLocalVideo) && !videoEnded ? 'Skip' : 'Next'
 
   return (
     <div className="ep-player__media-block">
@@ -153,6 +183,24 @@ export default function EpisodeMedia({
             {isTokenville && <Tokenville embedded onSlideChange={onSlideChange} />}
             {displayed.type === 'image' && (
               <img className="ep-player__img" src={displayed.src} alt="" />
+            )}
+            {isLocalVideo && (
+              <>
+                <video
+                  key={`${episodeId}-${mediaIndex}`}
+                  className="ep-player__iframe"
+                  src={displayed.src}
+                  autoPlay
+                  playsInline
+                  controls
+                  onEnded={() => { setVideoEnded(true); onTimeUpdate?.(null) }}
+                  onTimeUpdate={(e) => onTimeUpdate?.(e.target.currentTime)}
+                >
+                  {subtitles?.map(({ lang, label, src }) => (
+                    <track key={lang} kind="subtitles" src={src} srcLang={lang} label={label} default={lang === 'en'} />
+                  ))}
+                </video>
+              </>
             )}
             {isVideo && !videoEnded && (
               <iframe
@@ -173,8 +221,8 @@ export default function EpisodeMedia({
               />
             )}
 
-            {/* Carousel nav overlay — only for multi-image episodes */}
-            {!isVideo && items.length > 1 && (
+            {/* Carousel overlay: only prev arrow */}
+            {isMultiSlide && (
               <div className="ep-media__carousel-nav">
                 <button
                   type="button"
@@ -185,28 +233,6 @@ export default function EpisodeMedia({
                 >
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-                <div className="ep-media__carousel-dots">
-                  {items.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      className={'ep-media__carousel-dot' + (i === mediaIndex ? ' is-active' : '')}
-                      onClick={() => goToSlide(i)}
-                      aria-label={`Slide ${i + 1}`}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  className="ep-media__carousel-btn ep-media__carousel-btn--next"
-                  onClick={() => goToSlide(Math.min(items.length - 1, mediaIndex + 1))}
-                  disabled={mediaIndex === items.length - 1}
-                  aria-label="Next slide"
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
               </div>
@@ -224,33 +250,30 @@ export default function EpisodeMedia({
         )}
       </div>
 
-      {/* Title + player-style controls */}
+      {/* Title + controls */}
       <div className="ep-player__media-overlay">
-        {/* Left: title block */}
-        <div className="ep-ctrl__title-block">
-          <span className="ep-player__number">{episodeId === 0 ? 'Prologue' : number}</span>
-          <h2 className="ep-player__title">{title}</h2>
-        </div>
+        {/* Left: title block — click opens episode drawer */}
+        <button
+          type="button"
+          className="ep-ctrl__title-block ep-cell"
+          onClick={onOpenDrawer}
+          title="All episodes"
+        >
+          <span className="ep-cell__label">
+            {episodeId === 0
+              ? 'Prologue'
+              : `Episode ${episodeNav?.current}`}
+            {episodeNav && episodeId !== 0 && <span className="ep-ctrl__title-total"> of {episodeNav.total - 1}</span>}
+            <svg className="ep-ctrl__title-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+          <h2 className="ep-cell__value">{title}</h2>
+        </button>
 
-        {/* Center: next episode button (appears on video end or last slide) */}
-        <div className="ep-ctrl__gallery">
-          {showNextEpBtn && (
-            <button
-              type="button"
-              className="ep-ctrl__next-ep"
-              onClick={episodeNav.onNext}
-            >
-              <span>Next Episode</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          )}
-        </div>
-
-        {/* Right: stats + episode navigation */}
+        {/* Right: stats + prev + advance */}
         <div className="ep-ctrl__right">
-          <EpisodeStatCounter alive={aliveCount} dead={deadCount} />
+          {showStats && <EpisodeStatCounter alive={aliveCount} dead={deadCount} />}
 
           <div className="ep-ctrl__epnav">
             <button
@@ -266,28 +289,37 @@ export default function EpisodeMedia({
               </svg>
             </button>
 
-            {episodeNav && (
-              <button
-                type="button"
-                className="ep-ctrl__progress"
-                onClick={onOpenDrawer}
-                title="All episodes"
-              >
-                {episodeNav.current}<span className="ep-ctrl__progress-sep">/</span>{episodeNav.total - 1}
-              </button>
-            )}
-
             <button
               type="button"
-              className="ep-ctrl__nav ep-ctrl__nav--next"
-              onClick={episodeNav?.onNext}
-              disabled={!episodeNav?.nextEpisode || episodeNav.nextEpisode.disabled}
-              title={episodeNav?.nextEpisode && !episodeNav.nextEpisode.disabled ? `Next: ${episodeNav.nextEpisode.title}` : ''}
-              aria-label="Next episode"
+              className={`ep-ctrl__advance${advanceDisabled ? ' ep-ctrl__advance--disabled' : canAdvanceSlide ? ' ep-ctrl__advance--slide' : advanceLabel === 'Skip' ? ' ep-ctrl__advance--skip' : ' ep-ctrl__advance--active'}`}
+              onClick={handleAdvance}
+              disabled={advanceDisabled}
+              title={canAdvanceSlide ? `Slide ${mediaIndex + 2} of ${items.length}` : episodeNav?.nextEpisode ? `Next: ${episodeNav.nextEpisode.title}` : ''}
+              aria-label={canAdvanceSlide ? 'Next slide' : 'Next episode'}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M6 6l8.5 6L6 18V6zm10 0h2v12h-2V6z" fill="currentColor"/>
-              </svg>
+              <span className="ep-ctrl__advance-content">
+                {canAdvanceSlide ? (
+                  <span className="ep-ctrl__advance-dots" aria-hidden="true">
+                    {items.map((_, i) => (
+                      <span key={i} className={'ep-ctrl__advance-dot' + (i === mediaIndex ? ' is-active' : '')} />
+                    ))}
+                  </span>
+                ) : (
+                  <span className="ep-ctrl__advance-label">{advanceLabel}</span>
+                )}
+              </span>
+              {/* Arrow: episode nav = ▶| (mirror of prev), slide nav = filled chevron */}
+              <span className="ep-ctrl__advance-arrow" aria-hidden="true">
+                {canAdvanceSlide ? (
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 6l10 6-10 6z"/>
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.5 12L6 6v12zm1.5-6h2v12h-2z"/>
+                  </svg>
+                )}
+              </span>
             </button>
           </div>
         </div>

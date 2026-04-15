@@ -1,0 +1,98 @@
+{
+  "id": 3,
+  "slug": "freedom_to_die",
+  "type": "episode",
+  "number": "Episode III",
+  "title": "Freedom To Die",
+  "subtitle": "",
+  "story": [
+    "Continuing their search for a new home, the tokens are caught in the strongest sandstorm. Panting and stumbling, they wander in the desert, having already reconciled with the idea that here is where they will meet their fate.",
+    "Nao notices a cave in which everyone can hide.",
+    "Inside the cave, our heroes find salvation but, alas, not for long. The vaults of the cave collapse, blocking the exit and burying several heroes underneath. Once inside, the tokens are forced to look for another way out of the cave.",
+    "It turns out that Nao is among the heroes who are pinned down by stones. He is alive, but alone and unable to free himself from the wreckage, and his friends are already far away. Abandoned by everyone, staring death in the face, Nao meets a troll-hamster. A dispute develops between them.",
+    "In the meantime, the survivors escape the cave. By now, the storm is over, and the heroes meet with the scouts, who have successfully navigated all the troubles."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-03.png",
+    "homeSlide": "/images/episodes/slides/home_cover-03.png",
+    "background": "/images/episodes/3/back.jpg",
+    "sharePic": "/images/episodes/3/cover.png",
+    "map": null
+  },
+  "media": {
+    "type": "video",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_3.mp4",
+    "cover": "/images/episodes/3/cover.png",
+    "subtitles": [
+      {
+        "lang": "en",
+        "label": "EN",
+        "src": "/subtitles/episode_3.en.vtt"
+      }
+    ]
+  },
+  "events": [
+    {
+      "characters": [
+        32,
+        37,
+        38,
+        6,
+        17
+      ],
+      "action": "die"
+    }
+  ],
+  "obits": {
+    "6": {
+      "image": "/images/episodes/3/obits/dead_lee.gif",
+      "text": "You were not a very talkative guy. We went through a lot together, but we did not really have the chance to get to know you better. However, we knew for sure that you could be relied on. Without demanding much in return you were always there to help, and then you quietly stepped aside when your help was not needed anymore. We saw what you were like when you were angry, how dangerous you became, so we tried to avoid you. Perhaps you lacked friendship, and you were very lonely. It's all our fault. We will miss you, mysterious Lee."
+    },
+    "17": {
+      "image": "/images/episodes/3/obits/dead_ruby.gif",
+      "text": "How can this be true... Why you? There's so much scum around me, and I myself am such a bastard. It would have been better if we had all died and you stayed alive. My beloved Ruby, I never told you the most important words. I was afraid to look weak and odd. Damn me, what kind of fool am I? Everything has lost its meaning. I cannot stand it. Seeing all these freaks alive, when you are buried under the rocks in that cave, covered in blood, just like a piece of meat. It's scary to think about it, but I cannot stop. The last thing you saw was darkness. Darkness is the most terrible thing to see before death. My poor Ruby. I love you, my sweet thief. Your Filthy King, left without his Queen."
+    },
+    "32": {
+      "image": "/images/episodes/3/obits/dead_rick.gif",
+      "text": "Oh, Rick. How tired we were of your anarchic crap. You should be happy now, because you died when there was nothing left in the world except for anarchy. But are you satisfied with this world? A world in which there are no skyscrapers, stock exchanges, brothels, sports cars, yachts, corrupt politicians, and now no anarchists? If we had to choose between all this and you, it's hard to say what we would decide to get back. Of course, it's a shame that you died, but we are used to death. Congratulations, you eternal rebel, Rick. You won this game."
+    },
+    "37": {
+      "image": "/images/episodes/3/obits/dead_johannes.gif",
+      "text": "We all learned something from each other. Johannes, you taught us to accept ourselves as we are. To trust life and accept destiny means to become free in life and in death. Not everyone needs it, but for some of us it was essential. Without your peaceful voice and calm speeches some of us would have gone mad. Of course, most tokens simply fell asleep under your murmur, but sleep is also important in our troubled times. We believe that you have found peace. Sleep tight, brother."
+    },
+    "38": {
+      "image": "/images/episodes/3/obits/dead_layla.gif",
+      "text": "Bright, cheerful, talented, responsible, but picky. We will remember her like that. Laila's biography is the story of a good girl who always tried to be fair and protect the weak. During her life she had seen a lot, but she did not have a mendacious bone in her body, and she was very open, supportive and harmonious. Laila's life was cut off too early and too tragically, so it is not easy for us to reconcile with this. We will remember you forever, girl."
+    }
+  },
+  "characterStories": {
+    "9": {
+      "image": "/images/episodes/3/stories/daedalus.png",
+      "text": "Look at our bodies, how weak they are. Our spirits are broken and our fate is unknown. We seek salvation in a cave, just like wild animals, and as soon as we hear the clatter of stones, we run away. We are pitiful and insignificant. I will teach you how to subdue the fear within yourself, for fear is the destiny of beasts. I will teach you how to defeat your body, which commits you to die. To overcome the body means to overcome death. I will teach you the power that can conquer weakness and the weak. We were born to live in this Universe, not to flee from it. You just need to step over the abyss of compassion."
+    },
+    "10": {
+      "image": "/images/episodes/3/stories/danko.png",
+      "text": "Many heroes hide their faces with a mask so that their affairs become more important than their personality. I hide under a hood, and I must say that a mask is much more practical in the sand storm. But in the sun and in the rain a hood is more convenient. Take, for example, a cloak, like the one Black Hat wears. Such a useless thing! It can be pinned to the ground by a stone, or it can be grabbed by the enemy in battle. A hood is another matter. It protects from bad weather, does not constrain movement during the battle, can easily be repaired, hides weapons and disguises the hero. So many advantages! You may consider this tedious, but heroism is a dangerous business: you have to be prepared for it."
+    },
+    "12": {
+      "image": "/images/episodes/3/stories/rock.png",
+      "text": "If I could choose between being buried alive in a cave and suffocating in a sandstorm, then I would definitely choose the latter. A lot of my brothers disappeared in the mines, finding resources for the rich. I  have not been through so much only to die under the stony rubble like they did. This cave will not be my grave. And another thing, my eyes are naturally protected from wind and dust, so death in a sandstorm would not be so bad."
+    },
+    "16": {
+      "image": "/images/episodes/3/stories/black_hat.png",
+      "text": "I am so jealous! Why did it have to be Rad who found the little magic golden protective thing? I need it. Oh well, I can protect myself, and I am going to. But it's so shiny. And, most importantly, it is not MINE! I can't get this wonderful, pretty thing out of my head. I can't wait to nick it from Rad, I just need to wait for the perfect moment..."
+    },
+    "19": {
+      "image": "/images/episodes/3/stories/mega.png",
+      "text": "Hmm. Do I have to say something? I'm so tired of all this... I'm alive, but others have died. I don't know where we're going anymore, and why? Why do some have to die while others survive? What's the point? I do not know anything anymore... I just don't understand. Maybe we'll wake up tomorrow and it'll all be just a bad dream. I would like that to be so. Yes, perhaps, I'd like to start over. It's a pity it's impossible. Excuse me... I'm... I'm sorry."
+    },
+    "28": {
+      "image": "/images/episodes/3/stories/emma.png",
+      "text": "Let's stop for a second and look back. What are we doing? We seek refuge, only to perish. We are the last pieces of civilization, and we give our lives for nothing. But why does this happen? Who brought us here? Wise Nao? Where is he? Maybe he is the source of all our problems. Let's compare the facts. The farther he leads us to salvation, the fewer tokens are left to be saved. This is something to think about. We must always hold accountable those who make decisions for the whole community. He must bear responsibility for his mistakes."
+    },
+    "35": {
+      "image": null,
+      "text": "Holy ETH! A sandstorm, and then this dark cave! I never thought I'd say this, but I'm so grateful to the voices in my head. If it weren't for them I'd be buried in there forever and ever. My time to die is yet to come, and I will do my best to survive and help my friends get to the promised land safe and sound."
+    }
+  }
+}

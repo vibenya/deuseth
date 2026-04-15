@@ -1,0 +1,160 @@
+{
+  "id": 2,
+  "slug": "wolf_party",
+  "type": "episode",
+  "number": "Episode II",
+  "title": "Wolf Party",
+  "subtitle": "",
+  "story": [
+    "Traveling through the desert takes a lot of effort. After the battle with kitties, the wounded tokens continue to search for the promised land. Suddenly, they come across a luxurious but shabby yacht stuck in the sand. Surprisingly, it is inhabited by hospitable wolves, who kindly invite the tokens to refresh themselves and spend the night.",
+    "It is an unheard of luxury in the post-apocalyptic desert to share supplies! Most of the tokens believe that this is a trap, and continue on their journey. However, Konstanz, Vacio and Harold accept the wolves’ invitation.",
+    "The result of this decision is prosaically predictable. The wolves ply the trusting tokens with booze, stuff them with all manner of dishes, fan our heroes to unthinkable sizes. The tokens turn into bubbles, and we all know what happens to bubbles sooner or later. They burst. Unfortunately, the tokens are met with the same fate.",
+    "Meanwhile, the remaining tokens continue their journey in the desert. On the horizon, <span data-link='47' class='mention'>Nao notices an impending storm and suggests</span> that a group of volunteers go scouting to find shelter."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-02.png",
+    "homeSlide": "/images/episodes/slides/home_cover-02.png",
+    "background": "/images/episodes/2/back.png",
+    "sharePic": "/images/episodes/2/episode_2_9-09.png",
+    "map": null
+  },
+  "media": {
+    "type": "gallery",
+    "slides": [
+      "/images/episodes/2/episode_2_9-09.png",
+      "/images/episodes/2/episode_2_9-01.png",
+      "/images/episodes/2/episode_2_9-02.png",
+      "/images/episodes/2/episode_2_9-03.png",
+      "/images/episodes/2/episode_2_9-04.png",
+      "/images/episodes/2/episode_2_9-05.png",
+      "/images/episodes/2/episode_2_9-06.png",
+      "/images/episodes/2/episode_2_9-07.png"
+    ],
+    "cover": "/images/episodes/2/episode_2_9-09.png"
+  },
+  "events": [
+    {
+      "characters": [
+        42
+      ],
+      "action": "die",
+      "at": {
+        "slide": 6
+      }
+    },
+    {
+      "characters": [
+        27,
+        5,
+        29,
+        25,
+        41,
+        45
+      ],
+      "action": "die",
+      "at": {
+        "slide": 7
+      }
+    },
+    {
+      "characters": [
+        2
+      ],
+      "action": "highlight",
+      "at": {
+        "slide": 1
+      }
+    },
+    {
+      "characters": [
+        29
+      ],
+      "action": "highlight",
+      "at": {
+        "slide": 2
+      }
+    },
+    {
+      "characters": [
+        41,
+        47,
+        27,
+        5
+      ],
+      "action": "highlight",
+      "at": {
+        "slide": 4
+      }
+    },
+    {
+      "characters": [
+        42
+      ],
+      "action": "highlight",
+      "at": {
+        "slide": 5
+      }
+    },
+    {
+      "characters": [
+        27
+      ],
+      "action": "highlight",
+      "at": {
+        "slide": 6
+      }
+    }
+  ],
+  "obits": {
+    "5": {
+      "image": "/images/episodes/2/obits/dead_harold.gif",
+      "text": "Harold was a brave and friendly token. His fate was full of drama, but he was able to preserve his lust for life and his faith even in this cursed land. If there any good resided here, it was in Harold. He died, but his death was not in vain. Blessed be he, our friend and hero!"
+    },
+    "25": {
+      "image": "/images/episodes/2/obits/dead_arnold.gif",
+      "text": "His death was heroic. He sacrificed himself when he realized that the wolves’ yacht was a trap. Arnold decided to escort his comrades, to save them from the wolf attack in case of danger. But he could not help. He gorged on the food more ravenously than the others and fell victim to the trap of the cunning wolves."
+    },
+    "27": {
+      "image": "/images/episodes/2/obits/dead_teri.gif",
+      "text": "Teri lost his flock, but he did not lose his faith in God. We mocked him, but were secretly envious that he had a hope that we did not have. For some, his decision to indulge in sin in the clutches of death was an opportunity for caustic jokes, for others, it was a revelation. But we all lost a friend who was a symbol of tranquility and confidence in his righteousness. We thought that he would give up his life, but that he would never give up his faith. Well, he died and did not even remember his God. Let's hope that there is no God at all, otherwise Teri might have angered him greatly."
+    },
+    "29": {
+      "image": "/images/episodes/2/obits/dead_vacio.gif",
+      "text": "Vacio was like a defenseless child to us. She said that she saw the future, but no one really believed her. And now we know for sure that she was just crazy. After all, you don't have to be an oracle to predict the fate that awaits you on a yacht with wolves. Vacio was the weakest of us all. In our world, it is very difficult to be weak. Rest in peace, Vacio, a girl who saw the future, but saw it badly."
+    },
+    "41": {
+      "image": "/images/episodes/2/obits/dead_konstanz.gif",
+      "text": "This guy was not good at anything. But he knew how to stay calm even in the most difficult situations. He could fall asleep during battle. It was hard to imagine what might knock him off balance. Obviously, cozy sofas, nice music and a lot of treats on the yacht threw his vigilance. Or he just decided to get a good night's sleep before he died. In any case, we will miss your calmness, indifference and jokes."
+    },
+    "42": {
+      "image": "/images/episodes/2/obits/dead_stacy.gif",
+      "text": "The world was enthralled by her beauty and voice. Even in a deadly desert where there is no place for beauty, her appearance always adorned our dreary existence. To us, Stacey was a symbol of the beautiful and happy life that we have lost. She refused to change, even though the world around her had changed completely. And even though she was an arrogant bitch, right next to her we all felt the hope that the world could return to normal. Now there is no hope for us."
+    },
+    "45": {
+      "image": "/images/episodes/2/obits/dead_beck.gif",
+      "text": "Beck experienced the most cheerful of deaths. Apparently. Everyone knew that he was running out of stuff, and his last joint was to be smoked on the yacht. He just wanted to eat, drink and have fun. When we looked into his eyes, we understood that. Without the next joint he wouldn't have reconciled with this world. Perhaps he succumbed to the most enjoyable of all possible deaths here."
+    }
+  },
+  "characterStories": {
+    "18": {
+      "image": "/images/episodes/2/stories/02_story_noir.png",
+      "text": "I had a revelation last night. I saw a desert full of hatred and death. I saw the end, but did not see the beginning, like a snake that bites its tail. I saw things that smelled of death. It was a sign. And then I saw evil, which captivated the hearts of my friends in real life. I wanted to save them, but evil is a fog for the mind: once you inhale it, there's no way back. They became victims of their pain and their sins. I know that not everyone can be saved, but why not try?"
+    },
+    "31": {
+      "image": null,
+      "text": "The wolves’ trap was too obvious. This is their business: feeding you with promises, and then eating you up. Those who decide to stay with the wolves will surely die. Such a fate is not for me. And we’ll see what happens next. My agility and business skills have saved me from all kinds of shit, even worse than these wolf traps."
+    },
+    "33": {
+      "image": "/images/episodes/2/stories/02_story_edmund.png",
+      "text": "I like to blow everything up. That is my passion. But most of all, I like to blow up parties. I like to party hard. All the chicks love me. My moves are sick. Although the wolves are known for how boring their parties are, they always supply great booze and food. But we decided to refuse it. I do not know what's wrong with those guys, maybe they're still partying, or maybe they're dead. And honestly, I do not know which of these options is better."
+    },
+    "47": {
+      "image": "/images/episodes/2/stories/02_story_nao.png",
+      "text": "Son, you can become a hero and help the tokens be saved. There is a sand storm coming. Go forward and find a shelter for all of us!\n\nDo not miss this opportunity and remember that heroes survive. Well, almost always."
+    },
+    "49": {
+      "image": "/images/episodes/2/stories/02_story_rad.jpg",
+      "text": "I have found something: it's some kind of magical artifact. I’ve seen things like this before. They protect you from death. Some people need life, but I need money. Let's strike a deal. I'm only asking you for 0.6 ETH. Not a big deal if we're speaking about life, right?"
+    }
+  }
+}

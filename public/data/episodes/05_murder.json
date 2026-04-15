@@ -1,0 +1,172 @@
+{
+  "id": 5,
+  "slug": "murder",
+  "type": "episode",
+  "number": "Episode V",
+  "title": "Murder",
+  "subtitle": "",
+  "story": [
+    "In the morning, the tokens find Ben's lifeless body in the camp. There is not a single scratch on it, but Ben is dead. Our heroes decide to investigate this case to find out who the killer is. Theories are contradictory. The community of tokens divides into two large groups: one considers Temoto to be the killer, the other group accuses Jay.",
+    "The tokens’ individual takes are reflected in their stories."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-05.jpg",
+    "homeSlide": "/images/episodes/slides/home_cover-05.png",
+    "background": "/images/episodes/5/back.jpg",
+    "sharePic": "/images/episodes/5/cover.png",
+    "map": null
+  },
+  "media": {
+    "type": "video",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_5.mp4",
+    "cover": "/images/episodes/5/cover.png"
+  },
+  "events": [
+    {
+      "characters": [
+        4
+      ],
+      "action": "die"
+    }
+  ],
+  "obits": {
+    "4": {
+      "image": "/images/episodes/5/obits/ben.gif",
+      "text": "Dear Ben, your death was a shock to us. We barely had time to mourn our friends who died in the cave, and then we immediately lost you. This murder is cruel and ruthless. Ben, you died from the hand of one of us. From now on, it's every man for himself. Anyone and everyone could be killed on a cold night, in the circle of former friends. There is no more trust, there is no hope, there is no more unity between us. Your death is the end. No one will get out of here alive.\n\nFive to one, baby\nOne in five  \nNo one here gets out alive, now \nYou get yours, baby  \nI'll get mine  \nGonna make it, baby  \nIf we try"
+    }
+  },
+  "characterStories": {
+    "1": {
+      "image": "/images/episodes/5/stories/Temoto.png",
+      "text": "Of course, you all accuse me of this murder. Yes, yesterday I threatened Ben. But you know me. I was the first to go into battle with the CryptoKitties when you needed protection. My goal is to make sure all of you survive. If I had wanted to kill Ben, I would have summoned him to the battle and defeated him right before your eyes. Killing at night is not my style. I'm a warrior, not a murderer."
+    },
+    "2": {
+      "image": "/images/episodes/5/stories/Jay.png",
+      "text": "Ben was like a father to me. He taught me everything I know, he protected me and took care of me. I owe him my life. And now someone has killed him out of spite. I'm sure it was Temoto. Yesterday they were quarrelling about Nao and the others who had died in the desert. Temoto threatened Ben, and everyone heard it. Temoto wants to lead the group. A bloody butcher."
+    },
+    "3": {
+      "image": "/images/episodes/5/stories/Tracey.png",
+      "text": "Dear Ben! After Harold's death, I have lost all meaning in my life. I remember how you raised us when we first met. We were still teenagers. Who could have killed you? But does it really matter? You are dead, and that ain’t gonna change... *sobs hysterically*"
+    },
+    "7": {
+      "image": "/images/episodes/5/stories/The_Eye.png",
+      "text": "It's no secret that I fully support Temoto. He is closer to me in spirit than Nao. Temoto would not allow such a large number of deaths to happen in the desert! But I'm sure that Ben was not killed by Jay. Jay was his apprentice, and they got along very well. We need an investigation!"
+    },
+    "8": {
+      "image": "/images/episodes/5/stories/Dr._Jonas_Busch.png",
+      "text": "I agree with Noir. It doesn't look like a murder. There were a lot of dead tokens on my operating table. Their bodies were deformed, and there is not even a scratch on Ben's body. Something is wrong here. And this resurrection thing... Well, it's just a bedtime story Daedalus has made up to attract some attention."
+    },
+    "9": {
+      "image": "/images/episodes/5/stories/Daedalus.png",
+      "text": "There's only one chance to survive: we need to learn how to resurrect each other. We can make ourselves strong and immortal. We will become supreme creatures. I want to resurrect Ben. He will be the first of the legion of super-tokens."
+    },
+    "10": {
+      "image": "/images/episodes/5/stories/Danko.png",
+      "text": "The new world needs new tokens. Strong, immortal. We need great writers and courageous scientists. Fate itself gives us a chance to prove ourselves and take a step forward. Ben's resurrection could be a breakthrough. We can all live forever. Would not that be a miracle?"
+    },
+    "11": {
+      "image": "/images/episodes/5/stories/Lucy.png",
+      "text": "I do not give a damn who was killed and how, but I had so much fun watching this lesbian couple break up in front of everyone! It was awesome. It's funny to watch how the death of one token reveals the hidden thoughts of everyone else."
+    },
+    "12": {
+      "image": "/images/episodes/5/stories/Rock.png",
+      "text": "I literally do not care about anything, but my own survival. I have to take care of myself. May the others find the killer. Let something seems to be strange to me. It's this half-cyborg Dustin. He's a killing machine. He moves noiselessly, sees in the dark, makes decisions rationally. He even checked the traces around the camp, while everyone was arguing. And no one even noticed this."
+    },
+    "14": {
+      "image": "/images/episodes/5/stories/Dustin.png",
+      "text": "While everyone was arguing, I checked the tracks around the camp. I can say for sure that no one came by at night. Ben was killed by one of us."
+    },
+    "15": {
+      "image": "/images/episodes/5/stories/Anthony.png",
+      "text": "Temoto rules! I like him a lot, he is brave and courageous. Everyone should be like him! He did not kill Ben. But I'm not so sure about Black Hat. He seeks to avenge everyone regardless of the law. Maybe Ben upset him over something?"
+    },
+    "16": {
+      "image": "/images/episodes/5/stories/Black_Hat.png",
+      "text": "Temoto is a desperate warrior. Like any other warrior, he wants to have an army. Previously, he was held back by Nao. Now, Temoto has flown off the handle. We must stop him, otherwise we will live in tyranny. I propose to put his fate to the vote: execution or exile."
+    },
+    "18": {
+      "image": "/images/episodes/5/stories/Noir.png",
+      "text": "Brothers and sisters! Stop blaming each other. Look at Ben's body. Do you see any wounds on it? He could not have been killed by a mortal. This is a divine providence. No one is to be blamed for this. Ben's resurrection is impossible, we will only make the gods even more fierce."
+    },
+    "19": {
+      "image": "/images/episodes/5/stories/Mega.png",
+      "text": "Corley said it was Boozy. I don't like Boozy, he drinks too much. If he's the one to blame for Ben's death, I wouldn't be surprised."
+    },
+    "20": {
+      "image": "/images/episodes/5/stories/Ashley_Mazel.png",
+      "text": "Silence mumbles without stopping. I've never seen him like this. And why is he pointing at the billboard of some weird creature?"
+    },
+    "21": {
+      "image": "/images/episodes/5/stories/Viceroy_Vincent.png",
+      "text": "It is very likely, gentlemen, that it was Boozy who killed Ben. After all, Boozy was away for so long that we considered him dead. Maybe he went mad, wandering in the desert alone?"
+    },
+    "22": {
+      "image": "/images/episodes/5/stories/Roosevelt.png",
+      "text": "Say whaaaat? I was so excited when my old buddy Boozy came back, that we started drinking right away, and we didn't stop drinking until we both passed out. Boozy was with me and a bottle of gas this whole time! He didn't do it."
+    },
+    "23": {
+      "image": "/images/episodes/5/stories/Claudia.png",
+      "text": "Listen up, everyone! I must tell the truth. Emma, I'm so sorry. I was hiding this from you, but Jay and I are dating. He was in my tent all night and did not leave it. It was our secret, but now you all know. Emma, I'm sorry I did not tell you. But now we know for sure that Jay could not have killed Ben."
+    },
+    "24": {
+      "image": "/images/episodes/5/stories/Carlos.png",
+      "text": "You know, and I'm on the side of Temoto. He is a good guy. A little quick-tempered, of course, but there are no saints in our group. If you asked me, I'd say that Temoto would be a great strong leader, and if he was to take Nao's place, I would not be upset."
+    },
+    "26": {
+      "image": "/images/episodes/5/stories/Narciss.png",
+      "text": "My head is spinning. I have no idea who might have killed Ben. Seems to me that his death was beneficial to some tokens. The balance of power is broken, and now anyone can become the leader of our gradually dying community."
+    },
+    "28": {
+      "image": "/images/episodes/5/stories/Emma.png",
+      "text": "What the fuck?! Claudia, you betrayed me and disgraced me right in front of everyone. What a shame. Although, wait... Maybe this is a diversionary tactic? Jay benefits from Ben's murder and the accusation of Temoto, because that's how he can become our leader. Maybe this is all a cunning plan? Is Claudia only here to give an alibi? Or am I just trying too hard to justify her betrayal?"
+    },
+    "30": {
+      "image": "/images/episodes/5/stories/Boozy.png",
+      "text": "What happened last night? I can't feel my face. Oh my ETH, I'm still drunk. Hmm, Roosevelt's here. Good. It means, I've been drinking with him. Why do my tentacles hurt so much? I need to find another bottle of gas. I hate being sober here in the desert."
+    },
+    "31": {
+      "image": "/images/episodes/5/stories/Shannon.png",
+      "text": "Jay set an example to me, just like Ben did. I grew up in the streets, and I had to steal to survive. But I saw another way, the way Jay showed me. This gave me hope. Jay was not capable of killing his mentor, of that I am sure. I'd say it was Temoto."
+    },
+    "33": {
+      "image": "/images/episodes/5/stories/Edmund_the_Wise.png",
+      "text": "In a case like this, it's better not to express your opinion. The Scales of Justice can tip in any direction, so I'd rather step aside. My life is very precious, and I don't want to lose it."
+    },
+    "34": {
+      "image": "/images/episodes/5/stories/Corley.png",
+      "text": "Viceroy is right! It must have been Boozy. This drunkard is out of his mind. I wouldn't be surprised if he killed Ben."
+    },
+    "35": {
+      "image": "/images/episodes/5/stories/Zergaldo.png",
+      "text": "The Voices speak to me. Again. I... Um... They say: \"The killer sees his victim, and the silent one, sees the killer.\""
+    },
+    "36": {
+      "image": "/images/episodes/5/stories/Kate.png",
+      "text": "Oh my! I feel so sorry for Ben. Too bad he was destined to be murdered. But by whom? There are many former criminals and murderers among us. They must be our prime suspects. Have you seen Filthy King? His behaviour is very suspicious."
+    },
+    "39": {
+      "image": "/images/episodes/5/stories/Kesh.png",
+      "text": "A thief differs from an ordinary person. A thief always sleeps with one eye half-open. Last night I saw that Filthy King woke up and left the camp. I do not know where he went in the middle of the night, but this, of course, is suspicious."
+    },
+    "40": {
+      "image": "/images/episodes/5/stories/Valentine.png",
+      "text": "Why is Tracy so upset about Ben's death? She used to show no love for anyone but her brother. I think I smell a rat.  I do not trust Tracey, she must be hiding something."
+    },
+    "43": {
+      "image": "/images/episodes/5/stories/Mrs._Strict.png",
+      "text": "It was so long ago, it could have been a past life. Ben and I were close when we were, you know, young. I often recall those times. He was dreaming of great things, and I was an ordinary city girl. Our paths have parted. Now Ben is dead. He was killed. I do not believe that it was Jay, because Ben could not have raised such a bastard."
+    },
+    "46": {
+      "image": "/images/episodes/5/stories/Silence.png",
+      "text": "Mmmm-mm-mmm! Mmmm-mm-mmmm-mm... Mm-mm-mm. Mmm."
+    },
+    "49": {
+      "image": "/images/episodes/5/stories/Rad.png",
+      "text": "I have known Filthy King for a long time. He was the leader of an underground city. He has zero interest in competing for leadership here, among the poor tokens. But I've never seen him so depressed. The death of this girl broke him. He thinks that no one notices it, but I've known him since childhood, and although we have not become close friends, we know each other pretty well. I do not think he cares about anything at all in his condition."
+    },
+    "50": {
+      "image": "/images/episodes/5/stories/Filthy_King.png",
+      "text": "After Ruby's death, I can not sleep. I wake up in the middle of the night and go outside to look at the starry sky. I imagine that I'm speaking with Ruby, I tell her how I feel for her, and we talk, we talk... I do not care about Ben, nor about the one who killed him. I do not care if they accuse me. If they decide that it's me, then so be it. Good luck trying to catch me. I think I'll send a couple of tokens to hell."
+    }
+  }
+}

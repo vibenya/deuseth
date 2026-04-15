@@ -15,24 +15,32 @@ export default function Cast() {
   const [sortBy, setSortBy] = useState('episodes')
 
   useEffect(() => {
-    fetch('/data/adventures.json')
-      .then((r) => r.json())
-      .then((adventures) => {
+    const slugs = [
+      '00_prologue', '01_bloody_kitties', '02_wolf_party', '03_freedom_to_die',
+      '04_redrum', '05_murder', '06_the_final_battle', '07_scam',
+      '08_hard_fork', '09_tokencide', '10_episode-x',
+    ]
+    Promise.all(slugs.map(s => fetch(`/data/episodes/${s}.json`).then(r => r.json())))
+      .then((episodes) => {
         const epCount = {}
-        // Initialize all characters with 0
         characters.forEach((c) => { epCount[c.id] = 0 })
 
-        // For each episode (skip prologue at index 0), if a hero is NOT in rip, they survived
-        const episodes = adventures.filter((a) => a.id > 0)
+        // Compute cumulative dead set across episodes (skip prologue)
         const cumulativeDead = new Set()
-        episodes.forEach((ep) => {
-          if (ep.rip) ep.rip.forEach(id => cumulativeDead.add(id))
+        for (const ep of episodes) {
+          if (ep.type === 'prologue') continue
+          for (const evt of ep.events ?? []) {
+            if (evt.action !== 'die' && evt.action !== 'revive') continue
+            const ids = evt.characters === 'all'
+              ? Array.from({ length: 50 }, (_, i) => i + 1)
+              : evt.characters
+            if (evt.action === 'die') ids.forEach(id => cumulativeDead.add(id))
+            else ids.forEach(id => cumulativeDead.delete(id))
+          }
           characters.forEach((c) => {
-            if (!cumulativeDead.has(c.id)) {
-              epCount[c.id] = (epCount[c.id] || 0) + 1
-            }
+            if (!cumulativeDead.has(c.id)) epCount[c.id] = (epCount[c.id] || 0) + 1
           })
-        })
+        }
 
         setHeroEpisodes(epCount)
       })

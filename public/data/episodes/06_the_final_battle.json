@@ -1,0 +1,139 @@
+{
+  "id": 6,
+  "slug": "the_final_battle",
+  "type": "episode",
+  "number": "Episode VI",
+  "title": "The Final Battle",
+  "subtitle": "",
+  "story": [
+    "Without having identified the killer, the tokens go further on their journey. The road leads them to the Genesis Block. Noir claims that you can meet the Creator there. However, etherbots come from afar. A battle is inevitable. The enemy's forces far exceed the strength of the tokens.",
+    "Just as confusion and panic are rife, Nao appears on the horizon. He managed to get out of the cave, and now he is ready to sacrifice himself and hold up the etherbots while the rest flee to escape to the Genesis Block.",
+    "Temoto and Jay stay with Nao. The tokens will lose the battle, and everyone understands this, but it will be a glorious defeat."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-06.png",
+    "homeSlide": "/images/episodes/slides/home_cover-06.png",
+    "background": "/images/episodes/6/back.jpg",
+    "sharePic": "/images/episodes/6/episode_et_2-01.png",
+    "map": null
+  },
+  "media": {
+    "type": "gallery",
+    "slides": [
+      "/images/episodes/6/episode_et_2-01.png",
+      "/images/episodes/6/episode_et_2-02.png",
+      "/images/episodes/6/episode_et_2-03.png",
+      "/images/episodes/6/episode_et_2-04.png"
+    ],
+    "cover": "/images/episodes/6/episode_et_2-01.png"
+  },
+  "events": [
+    {
+      "characters": [
+        3,
+        36,
+        11,
+        12,
+        43,
+        15,
+        50,
+        19,
+        20,
+        21,
+        23,
+        28,
+        30,
+        31
+      ],
+      "action": "die"
+    }
+  ],
+  "obits": {
+    "3": {
+      "image": "/images/episodes/6/obits/tracey.gif",
+      "text": "Tracey\n\nTracey, you've always been a vicious, passive-aggressive little bitch. You never loved anyone except your brother Harold and your mentor Ben. You fought every battle like a lioness, protecting your loved ones. But they are dead, and now you are too. Join them, girl, and finally find peace and happiness."
+    },
+    "11": {
+      "image": "/images/episodes/6/obits/lucy.gif",
+      "text": "Lucy\n\nOh, Lucy, you cute little psycho. They say looks can be deceiving. You had the appearance of an angel and the temper of a real fighter. You never let anyone offend you, and you never needed someone else's care and protection. Alas, your bat couldn't save you from etherbots. We want to believe that in the place you dwell in your death, you are allowed to drop acid and dance under the light of stroboscopes. Nothing's gonna hurt you now, baby."
+    },
+    "12": {
+      "image": "/images/episodes/6/obits/rock.gif",
+      "text": "Rock\n\nOh, fucking Rock. We try hard to write good obituaries, and no one really reads them. Nobody gives a shit about how you died, Rock, believe us. Nobody cares. You're just a stereotype of a whole army of Chinese miners. \"Ready Player One\" is out, and there are Easter eggs everywhere. So, here we'll hide an Easter egg too. At the end of \"Ready Player One\", one of the heroes reveals the difference between reality and all other worlds. Do not thank us. Enjoy watching."
+    },
+    "15": {
+      "image": "/images/episodes/6/obits/anthony.gif",
+      "text": "Anthony\n\nThe difference between a hero and a superhero is that superheroes always win. And you didn't. Perhaps, being a superhero means being ready to sacrifice yourself for the sake of saving others? We cannot know this for sure, but we do know that you're dead. And this is all we need to know to not say anything bad about you. After all, that is what obituaries are for, aren't they? So, rest in peace, our (super)hero."
+    },
+    "19": {
+      "image": "/images/episodes/6/obits/mega.gif",
+      "text": "Mega\n\nHmm. It's amazing how you survived for so long. A mountain of muscles and the intelligence of a kitten in one body. You thought that when we were approaching the mountain, it was really growing in size, literally getting bigger. Or, for example, you liked to walk backwards to remember your way back. Once you tried to dig a tunnel in a sandstone dune. And you almost succeeded. Now you're dead. And, perhaps, it's for the best."
+    },
+    "20": {
+      "image": "/images/episodes/6/obits/ashley_mazel.gif",
+      "text": "Ashley Mazel\n\nYou have always been a trainwreck. Anything bad that could happen would always happen to you. We have no idea of how you managed to survive everything up to this point. Can a person get used to permanent and persistent problems? Perhaps your multiple failures made you stronger. We have no idea. But we really want to think that your failures will not follow you after death. We'll miss your forever unhappy face, kid. Punk’s not dead, right?"
+    },
+    "21": {
+      "image": "/images/episodes/6/obits/viceroy_vincent.gif",
+      "text": "Viceroy Vincent\n\nYou were ready to sell our whole community for a cup of Earl Gray, but we still loved you, even though you were an arrogant bastard. We all remember how you tried to iron your shirt with stones, while others used these stones to smash each other's heads. You were a real gentleman. You kept your dignity until the very end. But, perhaps, at least you will not be such a whiner in death."
+    },
+    "23": {
+      "image": "/images/episodes/6/obits/claudia.gif",
+      "text": "Claudia\n\nClaudia, our little star! We will miss you and your music so much! In the evenings, when we all gathered around the fire, you took out your shabby violin and started playing for us. Your tender melodies under the starry sky gave us hope that tomorrow will be better than yesterday. You staunchly endured all the trials of destiny, but you died anyway. We are very sorry, our dear musician. We hope that your talent will be appreciated in the place where you go after death."
+    },
+    "28": {
+      "image": "/images/episodes/6/obits/emma.gif",
+      "text": "Emma\n\nOh, you sneaky little cunt. You've always been too interested in literally everything. You always poked your nose where you should not have. You wanted to find out everything, investigate and reveal all the mysteries. No self-care, no caution. Well, that's it. You got what you deserved. You shouldn't have climbed so close to that etherbot. Stupid girl! Is there life after death? Go figure."
+    },
+    "30": {
+      "image": "/images/episodes/6/obits/boozy.gif",
+      "text": "Boozy\n\nThe fate of the hero! Got drunk, got lost, came back and died almost immediately. Damn you, Boozy! We have fewer problems without you, motherfucker."
+    },
+    "31": {
+      "image": "/images/episodes/6/obits/shannon.gif",
+      "text": "Shannon\n\nWe had 99 problems, and this bitch was 1. This tricky kid has always been everywhere and nowhere at the same time. The elusive little deceiver. Next to her, you always had to check your pockets more often. Well, now at least we can be sure that our things will cease to disappear. The truth is: no person - no problem."
+    },
+    "36": {
+      "image": "/images/episodes/6/obits/kate.gif",
+      "text": "Kate\n\nNot everyone has such an inquisitive mind as you! You were smart, brave and inventive. We will all miss your optimism. I do not know how far we can go without your support, Kate. Thank you for everything you did for our group, especially for your short shorts that inspired us to follow you. And thank you so much for saving us all from that dreadful cave. Rest in peace, our sweet darling. Baby, you were fire!"
+    },
+    "43": {
+      "image": "/images/episodes/6/obits/mrs._strict.gif",
+      "text": "Mrs. Strict\n\nYou kinda replaced our mothers. You were, well, strict with us, but never unfair. You shared your wisdom, you gave us care and love. And we adored your cooking! We had never tried such delicious CryptoKitties before. Thank you, ma... Mrs. Strict. Rest in peace."
+    },
+    "50": {
+      "image": "/images/episodes/6/obits/fking.gif",
+      "text": "Filthy King\n\nYou could not move past the death of a little girl, and still you fought as a true warrior. But her death broke your spirit, and you just could not take it anymore. What's the point of fighting when all you want is to reunite with your beloved? She made you weak, and still you managed to protect us in a fight with etherbots. You died like a hero. We hope that Ruby and you are now together and happy."
+    }
+  },
+  "characterStories": {
+    "1": {
+      "image": "/images/episodes/6/stories/Temoto.png",
+      "text": "Temoto\n\nIt's amazing that Nao survived! And he wants to attack the etherbots to save everyone else. There were disagreements between us, but this old man is damn strong in spirit. It will be an honor for me to die shoulder to shoulder with Nao. Let this battle bring us happiness!"
+    },
+    "2": {
+      "image": "/images/episodes/6/stories/Jay.png",
+      "text": "Jay\n\nI saw that Temoto joined Nao fighting against the whole army. I could have run further away, but I decided to fight shoulder to shoulder with my brothers. In our relationship with Temoto, there have been many difficulties, but I must admit that he is a great warrior. I'd rather fight next to him than against him. Especially since Nao is with us again."
+    },
+    "9": {
+      "image": "/images/episodes/6/stories/Daedalus.png",
+      "text": "Daedalus\n\nHave you seen these titans of death? These colossi of war? They are works of engineering art, the creation of a truly murderous god. They will trample us, as if we are the dust of history. Perfect. Just wonderful. And yet, I'm not ready to die. I have so much to construct. It's crazy, of course, that there are fewer and fewer of us left. But I offered to teach everyone to resurrect tokens, and they didn't let me. Well, die, idiots."
+    },
+    "24": {
+      "image": "/images/episodes/6/stories/Carlos.png",
+      "text": "Carlos\n\nHave you ever seen this shit?! A fucking huge robohorse! Oh, I would have put a lasso on its neck. I would go for such a ride. I would... It's only a pity that this robohorse has trampled our girls. I'm especially sorry for Kate. I liked her shorts. Eh... I wish I knew what awaits us ahead..."
+    },
+    "34": {
+      "image": "/images/episodes/6/stories/Corley.png",
+      "text": "Corley\n\nDifferent legends tell different stories about the Genesis Block. They say that no one has returned from there. The Devil knows what's better, dying under the feet of the etherbots or going insane in a giant magical thing."
+    },
+    "46": {
+      "image": "/images/episodes/6/stories/Silence.png",
+      "text": "Silence\n\nM! Mmmm-mm-mm. Mmmm-mm-mmmm. Mm, mmmm-mm. Mm..."
+    },
+    "47": {
+      "image": "/images/episodes/6/stories/Nao.png",
+      "text": "Nao\n\nIn the last few days I've learned a lot. I went beyond this world, I saw its boundaries as I looked death in the eye. Death is not that terrible, we have met more than once in the desert. I led my community to help them save themselves. I will take a shot and try to stop the Etherbots. All of you, stay behind the walls of the Genesis Block. Brothers, sisters, friends, goodbye. Try to survive!"
+    }
+  }
+}

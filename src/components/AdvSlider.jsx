@@ -43,7 +43,7 @@ export default function AdvSlider({ data, episodeActive, onChangeEpisode }) {
               }
               onClick={() => !ep.disabled && onChangeEpisode(ep.id)}
             >
-              <img className="adventures__slide-img" src={ep.slide} alt={ep.title} />
+              <img className="adventures__slide-img" src={ep.art?.slide} alt={ep.title} />
               <div className="adventures__slide-label">{ep.number}</div>
             </div>
           </div>

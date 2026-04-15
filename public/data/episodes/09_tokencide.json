@@ -1,0 +1,91 @@
+{
+  "id": 9,
+  "slug": "tokencide",
+  "type": "episode",
+  "number": "Episode IX",
+  "title": "Tokencide",
+  "subtitle": "",
+  "story": [
+    "And here we go again. Yes, that’s right. As the Creator promised, he returned Kesh to the very moment that Nao gave his iconic speech (see the <a href='/adventures/prologue' target='_blank'>Prologue</a>), which inspired everyone to go in search of the promised land.",
+    "But Kesh now knows that the search will lead to nothing but death. There is no escape. He tells his comrades what he saw in the future. He reveals to them the secret: the promised land is not a place that physically exists anywhere in this universe. It is merely the end of the show, which can only happen if just three tokens remain alive. Kesh suggests to stop looking for the promised land, to stop participating in this show, but nobody listens to him. This news excites the crowd. Some believe Kesh's words, others do not. The situation is heating up.",
+    "Corley draws his guns from his belt and starts shooting his comrades screaming: \"For the promised land!\" The slaughter begins. Tokens form alliances to survive. Some try to stop the madness, but they die. Tokens mercilessly exterminate each other until all the earth is covered with a mass of corpses. The battle seems to last forever.",
+    "We shall find out in whose body life is still burning and who has left Deus ETH forever, as soon as the sun rises."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-09.png",
+    "homeSlide": "/images/episodes/slides/home_cover-09.png",
+    "background": "/images/episodes/9/back.jpg",
+    "sharePic": "/images/episodes/9/cover.png",
+    "map": null
+  },
+  "media": {
+    "type": "video",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_9.mp4",
+    "cover": "/images/episodes/9/cover.png",
+    "subtitles": [
+      {
+        "lang": "en",
+        "label": "EN",
+        "src": "/subtitles/episode_9.en.vtt"
+      }
+    ]
+  },
+  "events": [
+    {
+      "characters": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "action": "die"
+    }
+  ],
+  "obits": {
+    "-1": {
+      "image": "/images/episodes/9/obit.jpg",
+      "text": "When I had just started exploring the world of cinema, “Grave of the Fireflies” gave me a unique emotional experience. It helped me realize that peace and war should be examined from different points of view. It is necessary to understand the war not only through the eyes of the winners, but also through the eyes of the losers.\n\nIsao Takahata wasn’t as famous as Hayao Miyazaki was, but I truly believe that he was the only man who could challenge the Master as a peer, rival and friend. Isao Takahata died on the 5th of April, 2018 at the age of 82, leaving us with a priceless legacy of his films and influences.\n\nWith a light heart, the whole team of Deus ETH is here to tell him: “Arigatou gozaimasu”."
+    }
+  }
+}

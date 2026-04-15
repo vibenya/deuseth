@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Volume2, VolumeX } from 'lucide-react'
+import { createPlayer } from '../utils/createPlayer'
 import '../styles/TeamChat.css'
 
 // ─── Сценарий ─────────────────────────────────────────────────────────────────
@@ -42,9 +44,28 @@ const TYPING_DELAY = 900   // сколько длится индикатор п�
 const APPEAR_DELAY = 1200  // задержка перед стартом
 
 export default function TeamChat({ onComplete, onStepChange, embedded = false }) {
-  const [messages, setMessages] = useState([])   // накопленные сообщения
-  const [typing, setTyping]     = useState(null) // имя кто печатает, или null
+  const [messages, setMessages] = useState([])
+  const [typing, setTyping]     = useState(null)
   const [done, setDone]         = useState(false)
+  const [muted, setMuted]       = useState(false)
+  const mutedRef                = useRef(false)
+
+  const playMsgRef    = useRef(null)
+  const playTypingRef = useRef(null)
+  const playDateRef   = useRef(null)
+  if (!playMsgRef.current)    playMsgRef.current    = createPlayer('/sounds/cool-click.wav', 0.5)
+  if (!playTypingRef.current) playTypingRef.current = createPlayer('/sounds/message-pop.mp3', 0.3)
+  if (!playDateRef.current)   playDateRef.current   = createPlayer('/sounds/light-button.wav', 0.25)
+
+  function toggleMute() {
+    const next = !mutedRef.current
+    mutedRef.current = next
+    setMuted(next)
+  }
+
+  function sound(fn) {
+    if (!mutedRef.current) fn()
+  }
 
   const stepRef    = useRef(0)
   const cancelRef  = useRef(null)
@@ -82,6 +103,7 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
     }
 
     if (step.type === 'date') {
+      sound(() => playDateRef.current.play())
       setMessages(prev => [...prev, { id: Date.now(), type: 'date', text: step.text }])
       schedule(next, step.pause_after_ms)
       return
@@ -96,8 +118,10 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
     if (step.type === 'msg') {
       // Показываем "печатает…"
       setTyping(step.sender)
+      sound(() => playTypingRef.current.play())
       schedule(() => {
         setTyping(null)
+        sound(() => playMsgRef.current.play())
         setMessages(prev => [...prev, {
           id:     Date.now() + Math.random(),
           type:   'msg',
@@ -179,6 +203,9 @@ export default function TeamChat({ onComplete, onStepChange, embedded = false })
           </div>
         )}
       </div>
+      <button className="teamchat__mute-btn" onClick={toggleMute} title={muted ? 'Включить звук' : 'Выключить звук'}>
+        {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+      </button>
     </div>
   )
 }

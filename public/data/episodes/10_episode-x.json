@@ -1,0 +1,47 @@
+{
+  "id": 10,
+  "slug": "episode-x",
+  "type": "finale",
+  "number": "Episode X",
+  "title": "Tokenville",
+  "subtitle": "",
+  "story": [
+    "Deus ETH is finally over.  There are only two questions to be answered",
+    "1. Who are the winners?",
+    "2. Have they found Tokenville?",
+    "Check it out on <a href=\"https://tokenville.tv\">tokenville.tv</a>"
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-10.png",
+    "homeSlide": "/images/episodes/slides/home_cover-10.png",
+    "background": "/images/episodes/10/back.jpg",
+    "sharePic": "/images/episodes/10/cover.png",
+    "map": null
+  },
+  "media": {
+    "type": "tokenville"
+  },
+  "events": [
+    {
+      "characters": [
+        36,
+        18
+      ],
+      "action": "die",
+      "at": {
+        "slide": 10
+      }
+    },
+    {
+      "characters": [
+        5,
+        10,
+        11
+      ],
+      "action": "winner",
+      "at": {
+        "slide": 11
+      }
+    }
+  ]
+}

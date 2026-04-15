@@ -1,0 +1,35 @@
+{
+  "id": 4,
+  "slug": "redrum",
+  "type": "episode",
+  "number": "Episode IV",
+  "title": "Redrum",
+  "subtitle": "",
+  "story": [
+    "The heroes got out of the cave; they were joined by a group of scouts, who had discovered a safe haven but they could not tell the others about it because of the storm. While they were preparing for the night, another token came to their camp. It was Boozy, who left the group a while ago and was considered dead.",
+    "After the rest that they needed so much, the heroes woke up to yet another death. One of the fellow tokens had been killed in the morning.",
+    "You have to work out for yourself who has left the show. Present your hypothesis in the character's storyline.",
+    "Trust no one but the smart contract."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-04.jpg",
+    "homeSlide": "/images/episodes/slides/home_cover-04.png",
+    "background": "/images/episodes/4/back.jpg",
+    "sharePic": "/images/episodes/4/cover.png",
+    "map": null
+  },
+  "media": {
+    "type": "gallery",
+    "slides": [
+      "/images/episodes/4/cover.png"
+    ],
+    "cover": "/images/episodes/4/cover.png"
+  },
+  "events": [],
+  "obits": {
+    "-1": {
+      "image": "/images/episodes/4/obits/who.gif",
+      "text": "Redrum\n\nToday someone died again. Maybe it was your hero who had a truly bad day? Carry out your investigation, uncover all the details of the crime and guess who the murderer is."
+    }
+  }
+}

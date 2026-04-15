@@ -1,0 +1,217 @@
+{
+  "id": 7,
+  "slug": "scam",
+  "type": "episode",
+  "number": "Episode VII",
+  "title": "Scam",
+  "subtitle": "",
+  "story": [
+    "Genesis Block saved the tokens from the Etherbots. But, as the legend goes, no one has ever returned from there, dead or alive.",
+    "The voice of the Creator approaches the tokens. It tells them that their lives are mistakes, because life only ends in death and destruction. The Creator tells them to give up their lives, forget their names and become immortal. Many agree to the suggestion of the sly Creator, but not everyone."
+  ],
+  "art": {
+    "slide": "/images/episodes/slides/cover-07.png",
+    "homeSlide": "/images/episodes/slides/home_cover-07.png",
+    "background": "/images/episodes/7/back.jpg",
+    "sharePic": "/images/episodes/7/cover.png",
+    "map": null
+  },
+  "media": {
+    "type": "video",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_7.mp4",
+    "cover": "/images/episodes/7/cover.png",
+    "subtitles": [
+      {
+        "lang": "en",
+        "label": "EN",
+        "src": "/subtitles/episode_7.en.vtt"
+      }
+    ]
+  },
+  "events": [
+    {
+      "characters": [
+        1,
+        2,
+        35,
+        34,
+        33,
+        7,
+        8,
+        40,
+        10,
+        9,
+        46,
+        47,
+        14,
+        16,
+        18,
+        49,
+        22,
+        24,
+        26
+      ],
+      "action": "die"
+    }
+  ],
+  "obits": {
+    "1": {
+      "image": "/images/episodes/7/obits/temoto.gif",
+      "text": "Temoto\n\nYou searched for glory, but you found death. You were our protector who bravely rushed into the battle to save the rest of the tokens. You defeated CryptoKitties and Etherboths. You've done so much for us. Thank you, brother, for your courage and self-sacrifice. We will remember your deeds forever."
+    },
+    "2": {
+      "image": "/images/episodes/7/obits/jay.gif",
+      "text": "Jay\n\nYou went through a lot. You've lost everyone you loved. Now you're dead too. You were a good guy, Jay. You never betrayed your friends, and you were fair with your enemies. Ben taught you not only the art of fighting, but also the art of healing hearts and souls. We'll really miss you, brother. Rest in peace."
+    },
+    "7": {
+      "image": "/images/episodes/7/obits/the_eye.gif",
+      "text": "The Eye\n\nYour main mission was to protect every token of the community, and it worked very well for you. You spent so much time in the desert to find your main purpose in life. Now you're dead. Maybe this is how it was supposed to end, or maybe it's just a stupid coincidence. Who knows?"
+    },
+    "8": {
+      "image": "/images/episodes/7/obits/dr._jonas_busch.gif",
+      "text": "Dr. Jonas Busch\n\nMad genius. That's who you were. Dangerous, tactical and very, very evil. You were not the doctor you wanted to go to for help. You were the doctor who wanted to resurrect the dead. Now you yourself are dead, and we certainly will not try to get you back to life. You've done enough for this world."
+    },
+    "9": {
+      "image": "/images/episodes/7/obits/daedalus.gif",
+      "text": "Daedalus\n\nWe admired your sharp mind, you were truly a mad genius. We would not have survived in the desert without your crazy inventions. You drew inspiration from the war and showed us that engineering is an art. We all will remember you forever. Especially Dustin, the cyborg you created."
+    },
+    "10": {
+      "image": "/images/episodes/7/obits/danko.gif",
+      "text": "Danko\n\nYou were such a bore! Your speech about hoodies being better than cloaks could lull anyone! For this we hated you. But this, of course, was not your main quality. We admired your belief in victory, we liked that you always found a way out of any dead end. You burned like a torch, and we walked hand in hand with you. Rest in peace, brother."
+    },
+    "14": {
+      "image": "/images/episodes/7/obits/dustin.gif",
+      "text": "Dustin\n\nFuck, not all of us even realized that Dustin was a damn cyborg. A cyborg! Did he have any feelings at all? Did he love anyone? For as long as we remember, he was cold, practical and very secretive. He died on the same day as his creator. There is something poetic about this, not that Dustin could appreciate its beauty. He's not even 100% a token."
+    },
+    "16": {
+      "image": "/images/episodes/7/obits/black_hat.gif",
+      "text": "Black Hat\n\nYou had rather big problems with your head, man. You wanted to get rid of all the criminals the world, but you yourself were a criminal. See the irony? You did, however, almost make it. You're dead, and there's one less criminal in the world."
+    },
+    "18": {
+      "image": "/images/episodes/7/obits/noir.gif",
+      "text": "Noir\n\nYou believed in God and divine salvation, but God did not care about you. Or maybe you have met him in death. Maybe you have become friends, and now watch those who wander through the desert together. You did not want to be a savior, but no one gave you the right to choose. Wherever you are in death, we hope that you have found peace."
+    },
+    "22": {
+      "image": "/images/episodes/7/obits/roosevelt.gif",
+      "text": "Roosevelt\n\nA rude, lying bastard. You were absolutely crazy. We were scared of you because we never knew what to expect from you. You were a real psychopath. But you defended us from enemies, because in battle you had no equal. Thanks and bye, Roosevelt."
+    },
+    "24": {
+      "image": "/images/episodes/7/obits/carlos.gif",
+      "text": "Carlos\n\nYou were the only one who liked the desert. All the wandering through the sand, the poisonous eblygas that crawled under our feet. You said that the best part was that we were still alive, and that we could move our feet. Your optimism corrupted us, and we continued walking, inspired by your speeches. You often talked about some horse. We do not know what a \"horse\" is, but we hope that you have found it in death."
+    },
+    "26": {
+      "image": "/images/episodes/7/obits/narciss.gif",
+      "text": "Narciss\n\nYou were always smart, too smart for us. Your tediousness knew no bounds. At last, there will be no moral guidelines anymore. At last, we can do everything as we want, and not the way you think is right. You were smart, but now you are dead. So how smart could you really have been?"
+    },
+    "33": {
+      "image": "/images/episodes/7/obits/edmund_the_wise.gif",
+      "text": "Edmund the Wise\n\nThe world is dead, and now so are you. Edmund, you were a romantic and a womanizer, even though you were an aggressive son of a bitch who enjoyed spilling enemy blood. Maybe you died to find Kate in death and stare at her short shorts again."
+    },
+    "34": {
+      "image": "/images/episodes/7/obits/corley.gif",
+      "text": "Corley\n\nOh, Corley! You were a desperate bastard! You loved your guns so much that you even slept hugging them. But your guns could not save you from death. Well, now that you're dead there are fewer psychopathic maniacs in the world."
+    },
+    "35": {
+      "image": "/images/episodes/7/obits/zergaldo.gif",
+      "text": "Zergaldo\n\nYou heard voices. Why did they not warn you about the danger? Why did not they give you a chance to save your life? We've lost a brave warrior who saw many glorious battles. Perhaps in death you will find out whose voices were in your head."
+    },
+    "40": {
+      "image": "/images/episodes/7/obits/valentine.gif",
+      "text": "Valentine\n\nDaddy loved you so much that you grew up a total sociopath. Yes, a sociopath with a sense of justice, but still a sociopath. Therefore, we both loved and feared you at the same time. You must have been a good girl, but we will never know. You hated communicating with anyone, except for your imaginary friend. That's okay. Now, in death, you have surely reunited with your daddy and started building your own empire."
+    },
+    "46": {
+      "image": "/images/episodes/7/obits/silence.gif",
+      "text": "Silence\n\nThe only thing you ever said was \"M-mmm-mm\". We never understood why you had a sealed mouth. We were always wondering if Silence was your real name. Is that a name at all? The Devil only knows."
+    },
+    "47": {
+      "image": "/images/episodes/7/obits/nao.gif",
+      "text": "Nao\n\nYour wisdom knew no bounds, and you led us to freedom. You were a fighter for truth and justice. Old man, we are so grateful to you. We could not have wished for a better leader. You motivated us, and without your impassioned speeches our hearts would have hardened long ago. Nao, we will miss you and your kindness. Rest in peace, friend."
+    },
+    "49": {
+      "image": "/images/episodes/7/obits/rad.gif",
+      "text": "Rad\n\nYou wanted to buy your life from Death so much. But you could not offer Her anything in return. You cannot deceive Death, even if you are a very famous merchant. Thank you for teaching us to buy cheap and sell expensive. We hope that in death you receive all the money in the world."
+    }
+  },
+  "characterStories": {
+    "1": {
+      "image": "/images/episodes/7/stories/temoto.png",
+      "text": "This voice. How can I expel it from of my head? It drives me crazy... Show yourself! Where are you, you cheap magician? I'll cut you to pieces... Stop, where am I? What am I doing here? I... What's my name? I... I forgot the name... My name…"
+    },
+    "2": {
+      "image": "/images/episodes/7/stories/jay.png",
+      "text": "Our path ends here. We are already dead. There's nothing to lose. We fought for something and went somewhere, but now everything has become clear. There is no sense in movement nor heroism."
+    },
+    "7": {
+      "image": "/images/episodes/7/stories/the_eye.png",
+      "text": "I have lost track of time... How long have we been here? A few minutes or several centuries? I have seen others abandon their names and vanish into obscurity. I'm tired of fighting... I renounce myself…"
+    },
+    "8": {
+      "image": "/images/episodes/7/stories/dr._jonas_busch.png",
+      "text": "Am I dead or alive? Is it me at all? I do not recognize my body. These hands, feet…is this me? Or am I my thoughts? I'm a void…"
+    },
+    "9": {
+      "image": "/images/episodes/7/stories/daedalus.png",
+      "text": "The great comeback and a never-ending abyss... If you need to renounce the body to become free, you should do so. I am nobody, I have no name, I am emptiness and silence."
+    },
+    "10": {
+      "image": "/images/episodes/7/stories/danko.png",
+      "text": "Time is like a river flowing in both directions. We were saving ourselves from death when all we had to do is escape life. Nothing, take me, make me nameless and nobody."
+    },
+    "14": {
+      "image": "/images/episodes/7/stories/dustin.png",
+      "text": "Only emptiness has no boundaries, everything else is finite. I have seen death with my own eyes, so I want to become immortal."
+    },
+    "16": {
+      "image": "/images/episodes/7/stories/black_hat.png",
+      "text": "God?! The Creator?! Whoever you are! I agree to everything! Show me a new world.\n\nYou will be immortal.\nI am not giving you away.\nYou are my legion.\nYou have no name.\nObey the standards."
+    },
+    "18": {
+      "image": "/images/episodes/7/stories/noir.png",
+      "text": "God speaks to me. His voice is beautiful and pure, like silence in the darkness of the night. I am an empty pocket into which God folds non-existence. I am a vessel for his emptiness. I am a nameless shadow in the darkness."
+    },
+    "22": {
+      "image": "/images/episodes/7/stories/roosevelt.png",
+      "text": "What was all this about? So many of us are dead. Well, the damage is done, so I guess I’ll be leaving. What do I have to do to become immortal? Forget my name? Okay. Roose-who? I am nobody, and I have no name. I am ready..."
+    },
+    "24": {
+      "image": "/images/episodes/7/stories/carlos.png",
+      "text": "I will be immortal. I am your legion. I have no name. I obey the standards.\nI will be immortal. I am your legion. I have no name. I obey the standards."
+    },
+    "26": {
+      "image": "/images/episodes/7/stories/narciss.png",
+      "text": "Even I couldn’t predict such an ending. It’s all so weird. The desert, Kitties, wolves, and… We have... I have… Wait a minute… Who am I? My name is… I have no name… I am nothing and everything. I am immortal..."
+    },
+    "33": {
+      "image": "/images/episodes/7/stories/edmund_the_wise.png",
+      "text": "The world is dead, but that’s exactly what we needed to happen to open our eyes and break free. Listen! Listen to this soothing voice. It will bring us peace. It gives us hope. Do as we’re told. Obey the voice. Forget our names. What is a name? Who am I? What..."
+    },
+    "34": {
+      "image": "/images/episodes/7/stories/corley.png",
+      "text": "How could we be so stupid? It’s all so easy and… Easy…"
+    },
+    "35": {
+      "image": "/images/episodes/7/stories/zergaldo.png",
+      "text": "I’m hearing voices call me. I’m hearing voices warn me. The tell me to drink this milk of amnesia. They tell me to leave everything behind and accept my fate. There's nothing, nothing to shout about. Nothing left anymore. I am not Zergaldo. I am nobody. Nothing..."
+    },
+    "39": {
+      "image": "/images/episodes/7/stories/kesh.png",
+      "text": "Do not listen to him. He's a scammer. We were born with names. Each of us has a story. We have endured great pain. Thousands of lives ago we were born to become who we are! If you succumb to the temptation to forget, everything will be in vain. Our life, as well as our death, belongs to us.\n\nWe're tokens. My name is Kesh. My name is Nao. My name is every single one of you. My name is Odysseus, I plowed the sea and fought with the gods. My name is Ivanhoe, and I challenged everyone to rescue my love. My name is Moses, and I led my people in search of the promised land. I seized countries and defended the oppressed, I was lost and found, I was sung about and betrayed, I was a prophet and a thief, I was a hero. We were all born to become heroes. But by forgetting our names we will never become heroes, we will all be consigned to oblivion."
+    },
+    "40": {
+      "image": "/images/episodes/7/stories/valentine.png",
+      "text": "I want to be immortal. Where do I sign up? I have to depersonalize myself? Easy..."
+    },
+    "46": {
+      "image": "/images/episodes/7/stories/silence.png",
+      "text": "Mmmm… Mmmmmmm… Mmmmm..."
+    },
+    "47": {
+      "image": "/images/episodes/7/stories/nao.png",
+      "text": "I know what you want. You want to erase us from history as if we never existed. Are you a god or a demon? It doesn't matter anymore. I'm tired, I want to leave. I have no name. I want to become immortal and lifeless."
+    },
+    "49": {
+      "image": "/images/episodes/7/stories/rad.png",
+      "text": "Wealth and prosperity… Are useless… We don’t need anything that exists in this world… We need to free ourselves from everything, even names. I have no name, therefore I will live forever… And ever… And ever..."
+    }
+  }
+}

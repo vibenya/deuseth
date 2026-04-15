@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
 import DraftScreen from '../components/DraftScreen'
-import logoWhite from '../images/logo-white.svg'
+import logo from '../images/logo.svg'
 import '../styles/Adventures.css'
 
 export default function Adventures() {
@@ -12,8 +12,7 @@ export default function Adventures() {
   const [episodes, setEpisodes] = useState([])
   const [activeId, setActiveId] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
-  const [bottomBg, setBottomBg] = useState(null)
-  const [topBg, setTopBg] = useState(null)
+  const [navOpen, setNavOpen] = useState(false)
   const { episodePath } = useParams()
   const navigate = useNavigate()
 
@@ -25,12 +24,16 @@ export default function Adventures() {
   }
 
   useEffect(() => {
-    fetch('/data/adventures.json')
-      .then(r => r.json())
+    const slugs = [
+      '00_prologue', '01_bloody_kitties', '02_wolf_party', '03_freedom_to_die',
+      '04_redrum', '05_murder', '06_the_final_battle', '07_scam',
+      '08_hard_fork', '09_tokencide', '10_episode-x',
+    ]
+    Promise.all(slugs.map(s => fetch(`/data/episodes/${s}.json`).then(r => r.json())))
       .then(data => {
         setEpisodes(data)
         if (episodePath !== undefined) {
-          const found = data.find(ep => ep.path === episodePath || String(ep.id) === episodePath)
+          const found = data.find(ep => ep.slug === episodePath || String(ep.id) === episodePath)
           if (found) setActiveId(found.id)
         }
       })
@@ -39,7 +42,7 @@ export default function Adventures() {
   useEffect(() => {
     if (episodes.length === 0) return
     if (episodePath !== undefined) {
-      const found = episodes.find(ep => ep.path === episodePath || String(ep.id) === episodePath)
+      const found = episodes.find(ep => ep.slug === episodePath || String(ep.id) === episodePath)
       if (found) setActiveId(found.id)
     }
   }, [episodePath, episodes])
@@ -49,23 +52,12 @@ export default function Adventures() {
   const hasNext = activeIdx < episodes.length - 1
   const hasPrev = activeIdx > 0
 
-  useEffect(() => {
-    const bg = activeEpisode?.background
-    if (!bg) return
-    setTopBg(bg)
-    const t = setTimeout(() => {
-      setBottomBg(bg)
-      setTopBg(null)
-    }, 800)
-    return () => clearTimeout(t)
-  }, [activeEpisode?.background])
-
   const handleChangeEpisode = useCallback((id) => {
     const ep = episodes.find(e => e.id === id)
     if (ep) {
       setActiveId(id)
       setDrawerOpen(false)
-      navigate(`/adventures/${ep.path}`)
+      navigate(`/adventures/${ep.slug}`)
     }
   }, [episodes, navigate])
 
@@ -81,19 +73,11 @@ export default function Adventures() {
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
   return (
-    <div className="adventures adventures--fullscreen">
-      {/* Blurred background — crossfade between episodes */}
-      {bottomBg && (
-        <div className="adventures__bg" style={{ backgroundImage: `url(${bottomBg})` }} />
-      )}
-      {topBg && (
-        <div className="adventures__bg adventures__bg--fade-in" key={topBg} style={{ backgroundImage: `url(${topBg})` }} />
-      )}
-
+    <div className={`adventures adventures--fullscreen${activeId === 0 ? ' adventures--intro' : ''}`}>
       {/* Top bar */}
-      <div className="adventures__topbar">
+      <div className={`adventures__topbar${activeId === 0 ? ' adventures__topbar--intro' : ''}`}>
           <Link to="/" className="adventures__topbar-logo">
-            <img src={logoWhite} alt="DEUS ETH" />
+            <img src={logo} alt="DEUS ETH" />
           </Link>
           {activeEpisode && (
             <span className="adventures__topbar-title">
@@ -103,30 +87,42 @@ export default function Adventures() {
               {activeEpisode.title}
             </span>
           )}
-          <nav className="adventures__topbar-nav">
+          <nav className={`adventures__topbar-nav${navOpen ? ' is-open' : ''}`}>
             <Link to="/" className="adventures__topbar-link">История</Link>
             <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
             <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
           </nav>
+          <button
+            type="button"
+            className={`adventures__burger${navOpen ? ' is-open' : ''}`}
+            onClick={() => setNavOpen(v => !v)}
+            aria-label="Menu"
+          >
+            <span /><span /><span />
+          </button>
         </div>
 
       {/* Episode player */}
       {activeEpisode && (
         <Episode
-          episodeId={activeEpisode.id}
-          number={activeEpisode.number}
-          title={activeEpisode.title}
-          text={activeEpisode.text}
-          media={activeEpisode.media}
-          rip={activeEpisode.rip}
-          path={activeEpisode.path}
-          comment={activeEpisode.comment}
-          storyHeroIds={activeEpisode.storyHeroIds}
-          videoEvents={activeEpisode.videoEvents}
-          slideEvents={activeEpisode.slideEvents}
+          episode={activeEpisode}
           episodes={episodes}
           draftIds={draftIds}
           onOpenDrawer={() => setDrawerOpen(true)}
+          activeId={activeId}
+          onChangeEpisode={handleChangeEpisode}
+          topbarSlot={
+            <div className="adventures__topbar-desktop">
+              <Link to="/" className="adventures__topbar-logo">
+                <img src={logo} alt="DEUS ETH" />
+              </Link>
+              <nav className="adventures__topbar-nav adventures__topbar-nav--desktop">
+                <Link to="/" className="adventures__topbar-link">История</Link>
+                <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
+                <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
+              </nav>
+            </div>
+          }
           episodeNav={{
             current: activeIdx,
             total: episodes.length,
