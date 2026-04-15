@@ -2,7 +2,7 @@
  * CHARACTER LIST
  * ==============
  * Renders a 5×10 grid of character cards.
- * Status computation is delegated to useCharacterStatuses hook.
+ * statusOf / getDyingMeta are passed from Episode (which owns the hook + 550ms delay).
  *
  * Visual states:
  *   alive          — normal card
@@ -16,8 +16,6 @@
  *   winner         — trophy overlay
  *
  * Cards use key={c.id} — never remounted across episode changes.
- * A 550ms delay on displayEpisodeId lets the media crossfade settle
- * before episode-level death animations start.
  */
 
 const HIGHLIGHT_DURATION_MS = 3000
@@ -25,7 +23,6 @@ const HIGHLIGHT_DURATION_MS = 3000
 import { useState, useMemo, useEffect, useRef } from 'react'
 import characters from '../data/characters.json'
 import CharacterModal from './CharacterModal'
-import { useCharacterStatuses } from '../hooks/useCharacterStatuses'
 import { createPlayer } from '../utils/createPlayer'
 import '../styles/CharacterList.css'
 
@@ -37,7 +34,8 @@ function getRebornDelay(id) {
 
 export default function CharacterList({
   episode,
-  episodes,
+  statusOf,
+  getDyingMeta,
   onCharacterClick,
   currentVideoTime,
   currentSlide,
@@ -54,23 +52,6 @@ export default function CharacterList({
   const playWinner = ()  => winnerPlayerRef.current.play()
 
   const [selectedChar, setSelectedChar] = useState(null)
-
-  // Delay episode display by 550ms so media crossfade settles first
-  const [displayEpisodeId, setDisplayEpisodeId] = useState(episode?.id)
-  useEffect(() => {
-    const t = setTimeout(() => setDisplayEpisodeId(episode?.id), 550)
-    return () => clearTimeout(t)
-  }, [episode?.id])
-
-  // Use the episode for the delayed display epoch (for animations)
-  const displayEpisode = episodes?.find(ep => ep.id === displayEpisodeId) ?? episode
-
-  const { statusOf, getDyingMeta } = useCharacterStatuses({
-    episode: displayEpisode,
-    episodes: episodes ?? [],
-    currentVideoTime,
-    currentSlide,
-  })
 
   // Reset sound players on episode change
   useEffect(() => {

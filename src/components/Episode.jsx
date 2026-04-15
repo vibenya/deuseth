@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import CharacterList from './CharacterList'
 import EpisodeMedia from './EpisodeMedia'
 import EpisodeFacts from './EpisodeFacts'
@@ -24,8 +24,19 @@ export default function Episode({
   const [currentVideoTime, setCurrentVideoTime] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const { aliveCount, deadCount } = useCharacterStatuses({
-    episode,
+  // 550ms delay so media crossfade settles before episode-level animations start
+  const [displayEpisodeId, setDisplayEpisodeId] = useState(episode?.id)
+  useEffect(() => {
+    const t = setTimeout(() => setDisplayEpisodeId(episode?.id), 550)
+    return () => clearTimeout(t)
+  }, [episode?.id])
+  const displayEpisode = useMemo(
+    () => (episodes ?? []).find(ep => ep.id === displayEpisodeId) ?? episode,
+    [episodes, displayEpisodeId, episode]
+  )
+
+  const { statusOf, getDyingMeta, aliveCount, deadCount } = useCharacterStatuses({
+    episode: displayEpisode,
     episodes: episodes ?? [],
     currentVideoTime,
     currentSlide,
@@ -106,8 +117,9 @@ export default function Episode({
       <div className="ep-player__right">
         {episodes?.length > 0 && (
           <CharacterList
-            episode={episode}
-            episodes={episodes}
+            episode={displayEpisode}
+            statusOf={statusOf}
+            getDyingMeta={getDyingMeta}
             onCharacterClick={openObit}
             currentVideoTime={currentVideoTime}
             currentSlide={currentSlide}
