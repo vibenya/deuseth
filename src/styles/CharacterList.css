@@ -142,7 +142,7 @@
   justify-content: flex-end;
   cursor: pointer;
   padding: 6px 2px 2px;
-  transition: background 0.2s;
+  transition: none;
   position: relative;
   min-width: 0;
   min-height: 0;
@@ -202,17 +202,35 @@
   color: rgba(255,255,255,0.5);
 }
 
-/* ===== STATUS: ALIVE ===== */
-.clist__char--alive {
-  background: transparent;
+/* ===== Spotlight pseudo-element ===== */
+/* alive and died-now share the same spotlight; it fades on died-settled/dead */
+.clist__char::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 50% -10%,
+    rgba(255, 245, 200, 0.28) 0%,
+    rgba(255, 220, 140, 0.12) 40%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+  z-index: 0;
 }
+.clist__char--alive::before,
+.clist__char--died-now:not(.clist__char--died-settled)::before {
+  opacity: 1;
+}
+/* died-settled and dead: opacity stays at 0 (default), so transitions smoothly out */
+
+/* ===== STATUS: ALIVE ===== */
 .clist__char--alive .clist__char-img {
   opacity: 1;
 }
 
 /* ===== STATUS: DIED THIS EPISODE ===== */
 /* Characters stay visible, then after a pause animate getting shot */
-
 .clist__char--died-now .clist__char-img {
   opacity: 1;
 }
@@ -244,11 +262,14 @@
 .clist__skull::before { transform: rotate(45deg); }
 .clist__skull::after  { transform: rotate(-45deg); }
 
+/* died-settled: spotlight fades via ::before opacity transition (no extra rules needed) */
+
 /* ===== STATUS: DEAD (before this episode) ===== */
 .clist__skull--faded {
   animation: clistXFadeOut 1s ease forwards;
   transform: scale(1.0) rotate(0deg);
 }
+
 .clist__char--dead .clist__char-img {
   filter: grayscale(1) brightness(0.2);
   opacity: 1;
@@ -260,6 +281,16 @@
   opacity: 0.3;
   text-decoration: line-through;
   text-decoration-color: rgba(255,255,255,0.12);
+}
+
+/* ===== STATUS: DORMANT (intro only — no skull, just dimmed) ===== */
+.clist__char--dormant .clist__char-img {
+  filter: grayscale(1) brightness(0.35);
+  opacity: 0.7;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+.clist__char--dormant:hover .clist__char-img {
+  filter: grayscale(0.7) brightness(0.5);
 }
 
 /* ===== STATUS: REBORN ===== */
@@ -357,15 +388,19 @@
   .clist__header { margin-bottom: 6px; padding-bottom: 6px; }
   .clist__section { margin-bottom: 10px; }
   .clist__section-head { margin-bottom: 6px; }
+  .clist__grid { border-radius: 0; border: none; }
+  .clist__grid .clist__char:nth-last-child(-n+5) { border-bottom: none; }
+
+  .clist__char { padding: 2px 0 0; }
 }
 
 /* ===== Winner trophy ===== */
 .clist__trophy {
   position: absolute;
-  top: 2px;
+  top: 4px;
   left: 4px;
   z-index: 4;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1;
   pointer-events: none;
   animation: trophyAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
@@ -382,7 +417,7 @@
 /* ===== Owned star ===== */
 .clist__owned-star {
   position: absolute;
-  top: 2px;
+  top: 4px;
   right: 4px;
   z-index: 3;
   font-size: 11px;

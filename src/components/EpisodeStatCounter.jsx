@@ -64,13 +64,13 @@ export default function EpisodeStatCounter({ alive, dead }) {
 
   return (
     <div className="ep-counter">
-      <div className="ep-counter__item ep-counter__item--alive">
-        <span className="ep-counter__label">alive</span>
-        <span className="ep-counter__num" key={`a-${dispAlive}`}>{dispAlive}</span>
+      <div className="ep-cell">
+        <span className="ep-cell__label">alive</span>
+        <span className="ep-cell__value ep-cell__value--alive" key={`a-${dispAlive}`}>{dispAlive}</span>
       </div>
-      <div className="ep-counter__item ep-counter__item--dead">
-        <span className="ep-counter__label">dead</span>
-        <span className="ep-counter__num" key={`d-${dispDead}`}>{dispDead}</span>
+      <div className="ep-cell">
+        <span className="ep-cell__label">dead</span>
+        <span className="ep-cell__value ep-cell__value--dead" key={`d-${dispDead}`}>{dispDead}</span>
       </div>
     </div>
   )

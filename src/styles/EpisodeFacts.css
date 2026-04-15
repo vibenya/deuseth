@@ -1,0 +1,102 @@
+.ep-facts {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ep-facts {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+
+  /* Animated content area */
+  .ep-facts__content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+  .ep-facts__content--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .ep-facts__content--out {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  /* Left: big number + label */
+  .ep-facts__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    gap: 2px;
+  }
+  .ep-facts__num {
+    font-family: var(--al);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .ep-facts__label {
+    font-family: var(--alsans);
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #ee8060;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Body text */
+  .ep-facts__body {
+    font-size: 16px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 16px;
+  }
+
+  /* Prev / next arrows */
+  .ep-facts__nav {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .ep-facts__arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .ep-facts__arrow svg {
+    width: 12px;
+    height: 12px;
+    display: block;
+  }
+  .ep-facts__arrow:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}

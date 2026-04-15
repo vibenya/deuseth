@@ -161,9 +161,21 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
   }, [episode])
 
   // ── Current episode: which events have fired at this moment? ──────────────
+  // When video ends it reports null — treat that as "very far into the future"
+  // so all previously-fired events stay fired (no resetting deaths on video end).
+  const lastKnownVideoTime = useRef(null)
+  useEffect(() => {
+    if (currentVideoTime != null) lastKnownVideoTime.current = currentVideoTime
+  }, [currentVideoTime])
+  // Reset when episode changes
+  useEffect(() => { lastKnownVideoTime.current = null }, [episode?.id])
+
+  const effectiveVideoTime = currentVideoTime ?? lastKnownVideoTime.current
+
   const { died: firedDied, revived: firedRevived } = useMemo(
-    () => computeCurrentEpisodeFiredEvents(episode, currentVideoTime, currentSlide),
-    [episode, currentVideoTime, currentSlide]
+    () => computeCurrentEpisodeFiredEvents(episode, effectiveVideoTime, currentSlide),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [episode, effectiveVideoTime, currentSlide]
   )
 
   // ── Settle timers: dying → dying-settled ──────────────────────────────────
@@ -208,7 +220,12 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
   const statusOf = (id) => {
     const wasDead = deadBefore.has(id)
 
-    // Episode-level revive (e.g. Hard Fork: revive all on load)
+    // Prologue: all chars start dead; they only come alive when the revive event fires
+    if (episode?.type === 'prologue') {
+      return firedRevived.has(id) ? 'reviving' : 'dead'
+    }
+
+    // Episode-level revive (e.g. Hard Fork: revive all on episode load)
     const isEpisodeLevelRevived = (() => {
       for (const evt of episode?.events ?? []) {
         if (evt.action === 'revive' && !evt.at) {
@@ -220,7 +237,8 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
 
     if (isEpisodeLevelRevived) return wasDead ? 'reviving' : 'alive'
 
-    if (firedRevived.has(id)) return 'alive'  // media-synced revive has fired
+    // Media-synced revive has fired (e.g. video revive event)
+    if (firedRevived.has(id)) return 'reviving'
 
     if (firedDied.has(id)) {
       return settledIds.has(id) ? 'dying-settled' : 'dying'
