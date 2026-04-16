@@ -208,11 +208,28 @@
   background: #d96040;
 }
 .ep-ctrl__advance-label {
-  font-size: 10px;
+  font-family: var(--al);
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   line-height: 1;
+}
+
+/* ── Idle nudge for START & NEXT ── */
+@keyframes epArrowPoke {
+  0%, 70%, 100% { transform: translateX(0); }
+  80%           { transform: translateX(5px); }
+  90%           { transform: translateX(0); }
+}
+
+.ep-ctrl__advance--active .ep-ctrl__advance-arrow svg,
+.ep-ctrl__advance--start .ep-ctrl__advance-arrow svg {
+  animation: epArrowPoke 3s ease-out infinite;
+}
+.ep-ctrl__advance--active:hover .ep-ctrl__advance-arrow svg,
+.ep-ctrl__advance--start:hover .ep-ctrl__advance-arrow svg {
+  animation: none;
 }
 /* Slide-mode dots inside advance button */
 .ep-ctrl__advance--slide {
@@ -405,6 +422,7 @@
   font: inherit;
   outline: none;
   -webkit-appearance: none;
+  appearance: none;
   transition: opacity 0.18s ease;
 }
 .ep-ctrl__stats-btn--static {
@@ -597,6 +615,7 @@
   opacity: 0.75;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: all 0.3s;
@@ -610,6 +629,7 @@
 }
 .ep-player__section--open .ep-player__section-text {
   -webkit-line-clamp: unset;
+  line-clamp: unset;
   overflow: visible;
 }
 
@@ -638,9 +658,7 @@
 .ep-player__char img {
   width: 100%; height: auto; object-fit: contain; display: block;
 }
-.ep-player__char--dead { }
 .ep-player__char--dead img { filter: grayscale(0.4); }
-.ep-player__char--reborn { }
 
 /* Desktop — horizontal layout */
 @media (min-width: 1024px) {
@@ -868,7 +886,6 @@
 
 /* Legacy classes kept for other pages */
 .episode { color: #fff; padding: 40px 0; }
-.episode--adventures { }
 .episode__header { text-align: center; margin-bottom: 30px; }
 .episode__chapter {
   font-size: 14px; text-transform: uppercase; letter-spacing: 2px;

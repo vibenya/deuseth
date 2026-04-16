@@ -13,10 +13,6 @@ import { useEffect, useRef, useState } from 'react'
  *   - 250 ms per tick      (matches the per-character shot stagger)
  *   - capped at ~3 s total so episodes with many deaths (or the
  *     reborn hard-fork) don't crawl forever.
- *
- * Uses a ref as the source of truth for displayed values plus a
- * forced re-render on each tick, so effect cleanup can cancel
- * in-flight animations cleanly when the user navigates quickly.
  */
 
 const START_DELAY = 550
@@ -24,18 +20,19 @@ const TICK_MS = 250
 const MAX_DURATION_MS = 3000
 
 export default function EpisodeStatCounter({ alive, dead }) {
-  const [, forceRender] = useState(0)
-  const displayedRef = useRef({ alive, dead })
+  const [displayed, setDisplayed] = useState({ alive, dead })
   const firstRunRef = useRef(true)
+  const prevRef = useRef({ alive, dead })
 
   useEffect(() => {
     if (firstRunRef.current) {
       firstRunRef.current = false
-      displayedRef.current = { alive, dead }
+      prevRef.current = { alive, dead }
+      setDisplayed({ alive, dead }) // eslint-disable-line react-hooks/set-state-in-effect
       return
     }
 
-    const from = displayedRef.current
+    const from = prevRef.current
     if (from.alive === alive && from.dead === dead) return
 
     const steps = Math.max(
@@ -52,25 +49,24 @@ export default function EpisodeStatCounter({ alive, dead }) {
       const nextAlive = Math.round(from.alive + (alive - from.alive) * progress)
       const nextDead  = Math.round(from.dead  + (dead  - from.dead ) * progress)
       timeouts.push(setTimeout(() => {
-        displayedRef.current = { alive: nextAlive, dead: nextDead }
-        forceRender(x => x + 1)
+        const val = { alive: nextAlive, dead: nextDead }
+        prevRef.current = val
+        setDisplayed(val)
       }, START_DELAY + i * tick))
     }
 
     return () => timeouts.forEach(clearTimeout)
   }, [alive, dead])
 
-  const { alive: dispAlive, dead: dispDead } = displayedRef.current
-
   return (
     <div className="ep-counter">
       <div className="ep-cell">
         <span className="ep-cell__label">alive</span>
-        <span className="ep-cell__value ep-cell__value--alive" key={`a-${dispAlive}`}>{dispAlive}</span>
+        <span className="ep-cell__value ep-cell__value--alive" key={`a-${displayed.alive}`}>{displayed.alive}</span>
       </div>
       <div className="ep-cell">
         <span className="ep-cell__label">dead</span>
-        <span className="ep-cell__value ep-cell__value--dead" key={`d-${dispDead}`}>{dispDead}</span>
+        <span className="ep-cell__value ep-cell__value--dead" key={`d-${displayed.dead}`}>{displayed.dead}</span>
       </div>
     </div>
   )

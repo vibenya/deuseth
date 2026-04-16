@@ -1,12 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import '../styles/StoryWindow.css'
 
 export default function StoryWindow({ children, onClose }) {
-  const elRef = useRef(document.createElement('div'))
+  const [el] = useState(() => document.createElement('div'))
 
   useEffect(() => {
-    const el = elRef.current
     const modalRoot = document.getElementById('modal-root')
     modalRoot.appendChild(el)
     document.body.style.overflow = 'hidden'
@@ -19,7 +18,7 @@ export default function StoryWindow({ children, onClose }) {
       document.body.style.overflow = 'auto'
       document.removeEventListener('keydown', handleKey)
     }
-  }, [onClose])
+  }, [onClose, el])
 
-  return createPortal(children, elRef.current)
+  return createPortal(children, el)
 }

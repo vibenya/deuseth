@@ -2,7 +2,7 @@ import characters from '../data/characters.json'
 import BlockRenderer from './BlockRenderer'
 import '../styles/StoryWindow.css'
 
-export default function StoryWindowInner({ heroId, content, path, title, dark, onClose }) {
+export default function StoryWindowInner({ heroId, content, title, dark, onClose }) {
   const hero = characters.find((c) => c.id === heroId)
 
   const handleOverlayClick = (e) => {

@@ -2,7 +2,7 @@ import characters from '../data/characters.json'
 import BlockRenderer from './BlockRenderer'
 import '../styles/StoryWindow.css'
 
-export default function AllStoriesWindowInner({ stories, path, title, onClose }) {
+export default function AllStoriesWindowInner({ stories, title, onClose }) {
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) onClose()
   }

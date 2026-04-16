@@ -155,8 +155,9 @@ export default function CharacterModal({ character, status, episode, onClose }) 
   const episodeKind = obit ? 'obituary' : (story ? 'story' : null)
 
   // Default to episode tab if this episode has something for the character
+  // Reset tab when character/episode changes
   useEffect(() => {
-    setTab(episodeContent ? 'episode' : 'identity')
+    setTab(episodeContent ? 'episode' : 'identity') // eslint-disable-line react-hooks/set-state-in-effect
   }, [character?.id, episode?.id, episodeContent])
 
   if (!character) return null

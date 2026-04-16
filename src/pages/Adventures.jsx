@@ -11,6 +11,7 @@ export default function Adventures() {
   const [activeId, setActiveId] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const { episodePath } = useParams()
+  const [showStarted, setShowStarted] = useState(!!episodePath)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function Adventures() {
     if (episodes.length === 0) return
     if (episodePath !== undefined) {
       const found = episodes.find(ep => ep.slug === episodePath || String(ep.id) === episodePath)
-      if (found) setActiveId(found.id)
+      if (found) setActiveId(found.id) // eslint-disable-line react-hooks/set-state-in-effect
     }
   }, [episodePath, episodes])
 
@@ -53,11 +54,11 @@ export default function Adventures() {
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
   return (
-    <div className={`adventures adventures--fullscreen${activeId === 0 ? ' adventures--intro' : ''}`}>
+    <div className={`adventures adventures--fullscreen${activeId === 0 && showStarted ? ' adventures--intro' : ''}`}>
       {/* Mobile top bar */}
       <div className="adventures__topbar-mobile">
         <Header
-          variant={activeId === 0 ? 'intro' : undefined}
+          variant={activeId === 0 && showStarted ? 'intro' : undefined}
           episode={activeEpisode}
         />
       </div>
@@ -70,10 +71,15 @@ export default function Adventures() {
           onOpenDrawer={() => setDrawerOpen(true)}
           activeId={activeId}
           onChangeEpisode={handleChangeEpisode}
+          showStarted={showStarted}
+          onStart={() => {
+            setShowStarted(true)
+            if (activeEpisode) navigate(`/adventures/${activeEpisode.slug}`)
+          }}
           topbarSlot={
             <Header
               inline
-              variant={activeId === 0 ? 'intro' : undefined}
+              variant={activeId === 0 && showStarted ? 'intro' : undefined}
             />
           }
           episodeNav={{

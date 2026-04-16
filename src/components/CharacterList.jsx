@@ -22,12 +22,11 @@ const HIGHLIGHT_DURATION_MS = 3000
 
 import { useState, useMemo, useEffect, useRef } from 'react'
 import characters from '../data/characters.json'
-import timelines from '../data/token_timelines.json'
 import CharacterModal from './CharacterModal'
 import { createPlayer } from '../utils/createPlayer'
 import '../styles/CharacterList.css'
 
-export const mainCast = characters.filter(c => c.collection === 'original' && c.id >= 1 && c.id <= 50)
+const mainCast = characters.filter(c => c.collection === 'original' && c.id >= 1 && c.id <= 50)
 
 function getRebornDelay(id) {
   return ((id * 137 + 31) % 17) * 0.1
@@ -44,9 +43,9 @@ export default function CharacterList({
   const deathPlayerRef  = useRef(null)
   const rebornPlayerRef = useRef(null)
   const winnerPlayerRef = useRef(null)
-  if (!deathPlayerRef.current)  deathPlayerRef.current  = createPlayer('/sounds/buzzer.wav', 0.08)
-  if (!rebornPlayerRef.current) rebornPlayerRef.current = createPlayer('/sounds/reborn.wav', 0.25, { debounce: 1000 })
-  if (!winnerPlayerRef.current) winnerPlayerRef.current = createPlayer('/sounds/winner.wav', 0.6)
+  if (deathPlayerRef.current == null)  deathPlayerRef.current  = createPlayer('/sounds/buzzer.wav', 0.08)
+  if (rebornPlayerRef.current == null) rebornPlayerRef.current = createPlayer('/sounds/reborn.wav', 0.25, { debounce: 1000 })
+  if (winnerPlayerRef.current == null) winnerPlayerRef.current = createPlayer('/sounds/winner.wav', 0.6)
   const playDeath  = (d) => deathPlayerRef.current.play(d)
   const playReborn = ()  => rebornPlayerRef.current.play()
   const playWinner = ()  => winnerPlayerRef.current.play()
@@ -81,6 +80,7 @@ export default function CharacterList({
   const videoHighlightEventsRef = useRef([])
   const firedHighlightsRef = useRef(new Set())
 
+  /* eslint-disable react-hooks/exhaustive-deps -- reset on episode change, events accessed via ref */
   useEffect(() => {
     videoHighlightEventsRef.current = episode?.events?.filter(
       e => e.action === 'highlight' && e.at?.videoTime != null
@@ -90,6 +90,7 @@ export default function CharacterList({
     highlightTimers.current.clear()
     setHighlighted(new Set())
   }, [episode?.id])
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   useEffect(() => {
     if (currentVideoTime == null) return
@@ -115,11 +116,13 @@ export default function CharacterList({
   const winnerEventsRef = useRef([])
   const firedWinnersRef = useRef(new Set())
 
+  /* eslint-disable react-hooks/exhaustive-deps -- reset on episode change, events accessed via ref */
   useEffect(() => {
     winnerEventsRef.current = episode?.events?.filter(e => e.action === 'winner' && e.at?.slide != null) ?? []
     firedWinnersRef.current = new Set()
     setWinners(new Set())
   }, [episode?.id])
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   useEffect(() => {
     if (currentSlide == null) return

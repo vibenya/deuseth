@@ -8,7 +8,7 @@ function parseVTT(text) {
     const lines = block.trim().split('\n')
     const timingIdx = lines.findIndex(l => l.includes('-->'))
     if (timingIdx === -1) continue
-    const m = lines[timingIdx].match(/([\d:\.]+)\s*-->\s*([\d:\.]+)/)
+    const m = lines[timingIdx].match(/([\d:.]+)\s*-->\s*([\d:.]+)/)
     if (!m) continue
     const start = timeToSec(m[1])
     const end = timeToSec(m[2])

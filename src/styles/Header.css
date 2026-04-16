@@ -7,6 +7,7 @@
   height: 48px;
   background: #fff;
   color: #0e0e10;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Desktop inline variant (inside ep-player__left) */
@@ -36,7 +37,7 @@
   opacity: 0.9;
   transition: opacity 0.2s;
 }
-.header__logo img { display: block; height: 22px; width: auto; }
+.header__logo img { display: block; height: 22px; width: auto; transition: filter 0.4s ease; }
 .header__logo:hover { opacity: 1; }
 .header--inline .header__logo img { height: 20px; }
 
@@ -72,6 +73,7 @@
 /* Vertical dividers between buttons */
 .header__dash-btn + .header__dash-btn {
   border-left: 1px solid rgba(14, 14, 16, 0.12);
+  transition: border-color 0.4s ease;
 }
 
 /* ── Nav buttons — horizontal, no fill ── */
@@ -87,7 +89,7 @@
   text-decoration: none;
   color: #0e0e10;
   cursor: pointer;
-  transition: color 0.18s ease;
+  transition: color 0.4s ease;
 }
 
 .header__dash-btn:hover {
@@ -130,7 +132,7 @@
   height: 1.5px;
   background: rgba(14,14,16,0.7);
   border-radius: 2px;
-  transition: transform 0.22s ease, opacity 0.22s ease;
+  transition: transform 0.22s ease, opacity 0.22s ease, background 0.4s ease;
   transform-origin: center;
 }
 .header__burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }

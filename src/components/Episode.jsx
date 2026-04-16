@@ -14,6 +14,8 @@ export default function Episode({
   topbarSlot,
   activeId,
   onChangeEpisode,
+  showStarted,
+  onStart,
 }) {
   const [charModalOpen, setCharModalOpen] = useState(false)
   const [currentVideoTime, setCurrentVideoTime] = useState(null)
@@ -40,18 +42,20 @@ export default function Episode({
   const isPrologue = episode?.type === 'intro'
 
   const [statsUnlocked, setStatsUnlocked] = useState(!isPrologue)
-  useEffect(() => { setStatsUnlocked(!isPrologue) }, [episode?.id])
+  useEffect(() => { setStatsUnlocked(!isPrologue) }, [episode?.id, isPrologue]) // eslint-disable-line react-hooks/set-state-in-effect
   useEffect(() => {
     const unlockAt = episode?.media?.statsUnlockAt
     if (!statsUnlocked && unlockAt != null && currentVideoTime != null && currentVideoTime >= unlockAt) {
-      setStatsUnlocked(true)
+      setStatsUnlocked(true) // eslint-disable-line react-hooks/set-state-in-effect -- unlock triggered by video time
     }
   }, [currentVideoTime, statsUnlocked, episode?.media?.statsUnlockAt])
 
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional reset on episode change */
   useEffect(() => {
     setCurrentVideoTime(null)
     setCurrentSlide(0)
   }, [episode?.id])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (!episode) return null
 
@@ -75,6 +79,8 @@ export default function Episode({
           keyboardEnabled={!charModalOpen}
           showStats={statsUnlocked}
           blockchain={episode.blockchain}
+          showStarted={showStarted}
+          onStart={onStart}
         />
 
         {episodes?.length > 0 && onChangeEpisode && (

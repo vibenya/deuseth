@@ -129,21 +129,23 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
   }
 
   // Expose skip to parent
-  if (skipRef) {
-    skipRef.current = () => {
-      if (scene === 'video') goToScene('chat')
-      else if (scene === 'chat') {
-        // Report final slide index so all slide-triggered events (deaths, winners) fire
-        const lastIndex = (teamChat?.script?.length ?? 1) - 1
-        onSlideChange?.(lastIndex)
-        goToScene('stage')
+  useEffect(() => {
+    if (skipRef) {
+      skipRef.current = () => {
+        if (scene === 'video') goToScene('chat')
+        else if (scene === 'chat') {
+          // Report final slide index so all slide-triggered events (deaths, winners) fire
+          const lastIndex = (teamChat?.script?.length ?? 1) - 1
+          onSlideChange?.(lastIndex)
+          goToScene('stage')
+        }
       }
     }
-  }
+  })
 
   const [characters, setCharacters] = useState(DEFAULT_CHARACTERS)
-  const [aliveIds, setAliveIds] = useState(new Set([5, 10, 11]))
-  const [dyingIds, setDyingIds] = useState(new Set())
+  const [aliveIds] = useState(new Set([5, 10, 11]))
+  const [dyingIds] = useState(new Set())
   // Active speaker id (or null)
   const [activeSpeaker, setActiveSpeaker] = useState(null)
   // Current bubble text
@@ -217,6 +219,7 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
       clearTimeout(t)
       if (cancelRef.current) clearTimeout(cancelRef.current)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- runStep is called once when scene becomes 'stage'
   }, [scene])
 
   const visibleChars = characters.filter(c => aliveIds.has(c.id))

@@ -31,7 +31,6 @@ function mediaToItems(media) {
 
 export default function EpisodeMedia({
   episodeId,
-  number,
   title,
   media,
   episodeNav,
@@ -43,6 +42,8 @@ export default function EpisodeMedia({
   keyboardEnabled = true,
   showStats = true,
   blockchain,
+  showStarted = true,
+  onStart,
 }) {
   const [mediaIndex, setMediaIndex] = useState(0)
   const [chainOpen, setChainOpen] = useState(false)
@@ -161,7 +162,7 @@ export default function EpisodeMedia({
         if (data.event === 'infoDelivery' && data.info?.currentTime != null) {
           onTimeUpdate?.(data.info.currentTime)
         }
-      } catch {}
+      } catch { /* ignore malformed postMessage data */ }
     }
     window.addEventListener('message', onMessage)
     return () => window.removeEventListener('message', onMessage)
@@ -173,7 +174,7 @@ export default function EpisodeMedia({
         JSON.stringify({ event: 'listening', id: 'ep-player', channel: 'widget' }),
         '*'
       )
-    } catch {}
+    } catch { /* ignore cross-origin errors */ }
   }, [])
 
   const videoSrc = displayed
@@ -201,6 +202,47 @@ export default function EpisodeMedia({
 
   const advanceDisabled = !canSkipVideo && !canAdvanceSlide && !canAdvanceEp && !canSkipTokenville
   const advanceLabel = (canSkipVideo || canSkipTokenville) ? 'Skip' : 'Next'
+
+  if (!showStarted) {
+    return (
+      <div className="ep-player__media-block">
+        <div className="ep-player__media">
+          <div className="ep-player__media-inner">
+            <img className="ep-player__img" src="/images/share.jpg" alt="DEUS ETH" />
+          </div>
+        </div>
+        <div className="ep-player__media-overlay">
+          <button
+            type="button"
+            className="ep-ctrl__title-block ep-cell"
+            onClick={onOpenDrawer}
+            title="All episodes"
+          >
+            <span className="ep-cell__label">DEUS ETH</span>
+            <h2 className="ep-cell__value">Reality Show</h2>
+          </button>
+          <div className="ep-ctrl__right">
+            <div className="ep-ctrl__epnav">
+              <button
+                type="button"
+                className="ep-ctrl__advance ep-ctrl__advance--active ep-ctrl__advance--start"
+                onClick={onStart}
+              >
+                <span className="ep-ctrl__advance-content">
+                  <span className="ep-ctrl__advance-label">Start</span>
+                </span>
+                <span className="ep-ctrl__advance-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="ep-player__media-block">

@@ -17,9 +17,9 @@ export default function TeamChat({ script, senderColors, header, onComplete, onS
   const playMsgRef    = useRef(null)
   const playTypingRef = useRef(null)
   const playDateRef   = useRef(null)
-  if (!playMsgRef.current)    playMsgRef.current    = createPlayer('/sounds/cool-click.wav', 0.5)
-  if (!playTypingRef.current) playTypingRef.current = createPlayer('/sounds/message-pop.mp3', 0.3)
-  if (!playDateRef.current)   playDateRef.current   = createPlayer('/sounds/light-button.wav', 0.25)
+  if (playMsgRef.current == null)    playMsgRef.current    = createPlayer('/sounds/cool-click.wav', 0.5)
+  if (playTypingRef.current == null) playTypingRef.current = createPlayer('/sounds/message-pop.mp3', 0.3)
+  if (playDateRef.current == null)   playDateRef.current   = createPlayer('/sounds/light-button.wav', 0.25)
 
   function toggleMute() {
     const next = !mutedRef.current
@@ -119,6 +119,7 @@ export default function TeamChat({ script, senderColors, header, onComplete, onS
       if (cancelRef.current) clearTimeout(cancelRef.current)
       if (markRef.current) clearTimeout(markRef.current)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- runStep is intentionally called once on mount
   }, [])
 
   return (

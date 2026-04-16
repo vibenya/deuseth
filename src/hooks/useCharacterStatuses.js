@@ -184,7 +184,6 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
 
   const { died: firedDied, revived: firedRevived } = useMemo(
     () => computeCurrentEpisodeFiredEvents(episode, effectiveVideoTime, currentSlide),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [episode, effectiveVideoTime, currentSlide]
   )
 
