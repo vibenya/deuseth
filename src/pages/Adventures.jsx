@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
 import { fetchAllEpisodes } from '../utils/episodeData'
@@ -13,6 +13,9 @@ export default function Adventures() {
   const [navOpen, setNavOpen] = useState(false)
   const { episodePath } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
+  const bgLocation = location.state?.backgroundLocation || location
+  const modalState = { backgroundLocation: bgLocation }
 
   useEffect(() => {
     fetchAllEpisodes()
@@ -74,9 +77,8 @@ export default function Adventures() {
             </span>
           )}
           <nav className={`adventures__topbar-nav${navOpen ? ' is-open' : ''}`}>
-            <Link to="/" className="adventures__topbar-link">История</Link>
-            <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
-            <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
+            <Link to="/statement" state={modalState} className="adventures__topbar-link">Statement</Link>
+            <Link to="/history" state={modalState} className="adventures__topbar-link">History</Link>
           </nav>
           <button
             type="button"
@@ -102,9 +104,8 @@ export default function Adventures() {
                 <img src={logo} alt="DEUS ETH" />
               </Link>
               <nav className="adventures__topbar-nav adventures__topbar-nav--desktop">
-                <Link to="/" className="adventures__topbar-link">История</Link>
-                <Link to="/cast" className="adventures__topbar-link">Создатели</Link>
-                <Link to="/faq" className="adventures__topbar-link">Что это?</Link>
+                <Link to="/statement" state={modalState} className="adventures__topbar-link">Statement</Link>
+                <Link to="/history" state={modalState} className="adventures__topbar-link">History</Link>
               </nav>
             </div>
           }

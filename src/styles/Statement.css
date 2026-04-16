@@ -1,0 +1,276 @@
+/* =========================================================
+   Statement — museum wall text.
+   Bone-ivory page, ink serif. Printed paper, not stage.
+   ========================================================= */
+
+.stmt {
+  --ink: #1b1a17;
+  --bone: #f2ecdf;
+  --bone-2: #e8e0cf;
+  --bone-3: #d9d0bc;
+  --vermillion: #c43a20;
+  --warm-gray: #6a655b;
+
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--al);
+  overflow-y: auto;
+  overflow-x: hidden;
+  animation: stmtFadeIn 320ms ease;
+}
+
+@keyframes stmtFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* close button */
+.stmt__close {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(27,26,23,0.25);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease, transform 200ms ease;
+}
+.stmt__close:hover {
+  border-color: var(--ink);
+  background: rgba(27,26,23,0.04);
+}
+.stmt__close:active { transform: scale(0.96); }
+.stmt__close svg { display: block; }
+
+@media (max-width: 720px) {
+  .stmt__close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* subtle printed-paper grain */
+.stmt::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.85'/></svg>");
+}
+
+.stmt__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 120px 32px 120px;
+}
+
+/* ---------- Tombstone block ---------- */
+
+.stmt__tombstone {
+  margin-bottom: 140px;
+  animation: stmtUp 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.stmt__eyebrow {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-family: var(--alsans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--bone-2);
+  margin-bottom: 42px;
+}
+
+.stmt__title {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: clamp(64px, 10vw, 128px);
+  line-height: 0.9;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.stmt__subtitle {
+  font-family: var(--al);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 56px;
+}
+
+.stmt__meta {
+  font-family: var(--alsans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ---------- Sections ---------- */
+
+.stmt__section {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 8px 32px;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: stmtUp 900ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+.stmt__section--1 { animation-delay: 120ms; }
+.stmt__section--2 { animation-delay: 260ms; }
+.stmt__section--3 { animation-delay: 400ms; }
+
+.stmt__numeral {
+  font-family: var(--al);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--vermillion);
+  padding-top: 6px;
+  user-select: none;
+}
+
+.stmt__section-title {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.stmt__section-body {
+  grid-column: 2;
+  font-family: var(--al);
+  font-weight: 400;
+  font-size: clamp(19px, 1.35vw, 22px);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.stmt__section-body em {
+  font-style: italic;
+}
+
+.stmt__section-body code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--bone-2);
+  padding: 1px 6px;
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+/* ---------- Coda + signature ---------- */
+
+.stmt__divider {
+  height: 1px;
+  background: var(--bone-2);
+  margin: 0 auto 56px;
+  max-width: 120px;
+  opacity: 0;
+  animation: stmtUp 900ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 540ms;
+}
+
+.stmt__coda {
+  font-family: var(--al);
+  font-style: italic;
+  font-size: clamp(17px, 1.25vw, 20px);
+  line-height: 1.65;
+  color: var(--warm-gray);
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 96px;
+  opacity: 0;
+  animation: stmtUp 900ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 620ms;
+}
+
+.stmt__signature {
+  font-family: var(--alsans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.8;
+  opacity: 0;
+  animation: stmtUp 900ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 720ms;
+}
+.stmt__signature-year {
+  color: var(--warm-gray);
+  letter-spacing: 0.24em;
+  margin-top: 6px;
+  display: block;
+}
+
+@keyframes stmtUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  .stmt__inner {
+    padding: 80px 24px 80px;
+  }
+  .stmt__tombstone {
+    margin-bottom: 100px;
+  }
+  .stmt__subtitle {
+    margin-bottom: 40px;
+  }
+  .stmt__section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 72px;
+  }
+  .stmt__numeral {
+    font-size: 40px;
+    padding-top: 0;
+  }
+  .stmt__section-body {
+    grid-column: 1;
+  }
+  .stmt__eyebrow {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

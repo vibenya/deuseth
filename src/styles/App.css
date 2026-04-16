@@ -3,6 +3,7 @@
 :root {
   --alsans: 'Alegreya Sans', sans-serif;
   --al: 'Alegreya', serif;
+  --mono: ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

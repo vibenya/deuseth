@@ -1,27 +1,44 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
-import Home from './pages/Home.jsx'
 import Adventures from './pages/Adventures.jsx'
-import FAQ from './pages/FAQ.jsx'
-import Cast from './pages/Cast.jsx'
+import Statement from './pages/Statement.jsx'
+import History from './pages/History.jsx'
+
+const MODAL_PATHS = ['/statement', '/history']
 
 function App() {
+  const location = useLocation()
+  const backgroundLocation = location.state?.backgroundLocation
+  const isModalRoute = MODAL_PATHS.includes(location.pathname)
+
+  // Background stays visible under modals. Preference order:
+  // 1. explicit backgroundLocation from Link state (keeps whatever page user came from)
+  // 2. Adventures as default backdrop for direct URL loads
+  // 3. actual location otherwise
+  const routingLocation = backgroundLocation
+    || (isModalRoute ? { ...location, pathname: '/adventures' } : location)
+
   return (
     <div className="app">
       <ScrollToTop />
       <Header />
       <main className="app__content">
-        <Routes>
-          <Route path="/" element={<Home />} />
+        <Routes location={routingLocation}>
+          <Route path="/" element={<Navigate to="/adventures" replace />} />
           <Route path="/adventures" element={<Adventures />} />
           <Route path="/adventures/:episodePath" element={<Adventures />} />
           <Route path="/adventures/:episodePath/story/:heroId" element={<Adventures />} />
           <Route path="/adventures/:episodePath/obit/:heroId" element={<Adventures />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/cast" element={<Cast />} />
         </Routes>
+
+        {isModalRoute && (
+          <Routes>
+            <Route path="/statement" element={<Statement />} />
+            <Route path="/history" element={<History />} />
+          </Routes>
+        )}
       </main>
       <Footer />
     </div>

@@ -1,0 +1,56 @@
+.tnode {
+  position: absolute;
+  left: 80px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 3;
+}
+.tnode__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ee8060;
+  box-shadow: 0 0 0 3px #07070a;
+  flex-shrink: 0;
+  transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 400ms ease;
+}
+.tnode--pulse .tnode__dot {
+  animation: tnodePulse 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+@keyframes tnodePulse {
+  0%   { transform: scale(1);   background: #ee8060; }
+  45%  { transform: scale(1.35); background: #ffb8a0; }
+  100% { transform: scale(1);   background: #ee8060; }
+}
+.tnode__label {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232,228,216,0.45);
+  line-height: 1.35;
+  white-space: nowrap;
+  transition: color 500ms ease;
+}
+.tnode--pulse .tnode__label {
+  color: rgba(232,228,216,0.85);
+}
+.tnode__label-date {
+  display: block;
+  color: inherit;
+}
+.tnode__label-block {
+  display: block;
+  color: rgba(232,228,216,0.3);
+}
+.tnode--pulse .tnode__label-block {
+  color: rgba(232,228,216,0.55);
+}

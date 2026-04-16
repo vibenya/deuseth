@@ -1,6 +1,0 @@
-.intro { padding: 80px 20px; text-align: center; background: #fff; }
-.intro__inner { max-width: 960px; margin: 0 auto; }
-.intro__title { font-family: var(--al); font-size: 36px; margin-bottom: 20px; }
-.intro__para { font-size: 18px; line-height: 1.6; color: #666; margin-bottom: 40px; }
-.intro__features { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
-.intro__btn { margin-top: 20px; }

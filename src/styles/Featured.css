@@ -1,5 +1,0 @@
-.featured { padding: 60px 20px; text-align: center; background: #fff; }
-.featured__title { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 30px; }
-.featured__inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
-.featured__link img { height: 30px; opacity: 0.5; transition: opacity 0.2s; }
-.featured__link:hover img { opacity: 1; }

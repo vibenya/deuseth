@@ -1,0 +1,660 @@
+/* =========================================================
+   History — forensic archaeology.
+   Near-black terminal meets museum archive.
+   ========================================================= */
+
+.hist {
+  --hist-bg: #07070a;
+  --hist-bg-raised: #0f0f15;
+  --hist-bg-deep: #050508;
+  --hist-fg: #e8e4d8;
+  --hist-fg-dim: rgba(232,228,216,0.55);
+  --hist-fg-faint: rgba(232,228,216,0.18);
+  --hist-fg-whisper: rgba(232,228,216,0.08);
+  --hist-coral: #ee8060;
+  --hist-verified: #7bb36a;
+
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--hist-bg);
+  color: var(--hist-fg);
+  font-family: var(--al);
+  overflow-y: auto;
+  overflow-x: hidden;
+  animation: histFadeIn 320ms ease;
+}
+
+@keyframes histFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* close button */
+.hist__close {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7,7,10,0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(232,228,216,0.25);
+  color: var(--hist-fg);
+  cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease, transform 200ms ease;
+}
+.hist__close:hover {
+  border-color: var(--hist-coral);
+  color: var(--hist-coral);
+}
+.hist__close:active { transform: scale(0.96); }
+.hist__close svg { display: block; }
+
+@media (max-width: 720px) {
+  .hist__close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* grain overlay */
+.hist::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.85'/></svg>");
+}
+
+/* ---------- Article container with timeline rail ---------- */
+
+.hist__article {
+  position: relative;
+  z-index: 2;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 32px 160px;
+}
+
+.hist__rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(32px + 80px);
+  width: 2px;
+  background: var(--hist-fg-faint);
+  pointer-events: none;
+}
+
+/* ---------- Hero ---------- */
+
+.hist__hero {
+  position: relative;
+  z-index: 2;
+  padding: 120px 32px 40px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.hist__hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hist-fg-faint);
+  margin-bottom: 42px;
+}
+.hist__hero-eyebrow-divider {
+  color: var(--hist-fg-faint);
+}
+
+.hist__hero-body {
+  margin: 0;
+}
+.hist__hero-title {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: clamp(44px, 6.8vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--hist-fg);
+  margin-bottom: 20px;
+  max-width: 920px;
+}
+.hist__hero-subtitle {
+  font-family: var(--al);
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.5;
+  color: var(--hist-fg-dim);
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+.hist__hero-fieldnote {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hist-fg-faint);
+}
+.hist__hero-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hist__hero-field-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+}
+.hist__hero-field-value {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--hist-fg);
+}
+
+/* ---------- Section ---------- */
+
+.hist__section {
+  position: relative;
+  padding: 120px 0 0;
+  max-width: 760px;
+  margin: 0 0 0 calc(80px + 64px); /* rail + gap */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.hist__section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hist__section-marker {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--hist-coral);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hist__section-title {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  color: var(--hist-fg);
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+
+.hist__section-body {
+  font-family: var(--al);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--hist-fg);
+}
+.hist__section-body p {
+  margin-bottom: 22px;
+}
+.hist__section-body p:last-child {
+  margin-bottom: 0;
+}
+.hist__section-body em {
+  font-style: italic;
+}
+.hist__section-body strong {
+  font-weight: 700;
+  color: var(--hist-fg);
+}
+.hist__section-body a {
+  color: var(--hist-coral);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(238,128,96,0.35);
+  transition: border-color 200ms ease;
+}
+.hist__section-body a:hover {
+  border-bottom-color: var(--hist-coral);
+}
+
+/* inline monospace tokens — addresses, block numbers, tx */
+.hist-mono {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--hist-coral);
+  letter-spacing: 0;
+  word-break: break-all;
+}
+.hist-mono-dim {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--hist-fg-dim);
+}
+
+/* ---------- Card stack — rows of ContractCards ---------- */
+
+.hist__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin: 28px 0 32px;
+}
+
+.hist__cards--narrow {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+}
+
+/* ---------- Episode table ---------- */
+
+.hist__table-wrap {
+  margin: 40px 0;
+  overflow-x: auto;
+  border-top: 1px solid var(--hist-fg-faint);
+  border-bottom: 1px solid var(--hist-fg-faint);
+}
+.hist__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--hist-fg);
+}
+.hist__table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--hist-fg-faint);
+  white-space: nowrap;
+}
+.hist__table td {
+  padding: 16px 12px;
+  vertical-align: top;
+  line-height: 1.45;
+}
+.hist__table tbody tr:nth-child(even) {
+  background: rgba(232,228,216,0.025);
+}
+.hist__table-ep {
+  font-family: var(--al);
+  font-style: italic;
+  color: var(--hist-fg);
+}
+.hist__table-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 280px;
+}
+.hist__chip {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid rgba(238,128,96,0.4);
+  color: var(--hist-coral);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.hist__chip--dim {
+  border-color: var(--hist-fg-faint);
+  color: var(--hist-fg-dim);
+}
+
+/* ---------- Exhibit image (user messages) ---------- */
+
+.exhibit {
+  margin: 36px 0;
+  display: block;
+}
+.exhibit__meta {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+  margin-bottom: 12px;
+}
+.exhibit__frame {
+  border: 1px solid var(--hist-fg-faint);
+  background: var(--hist-bg-deep);
+  transition: border-color 250ms ease;
+}
+.exhibit:hover .exhibit__frame {
+  border-color: var(--hist-fg-dim);
+}
+.exhibit__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.exhibit__placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--hist-fg-faint);
+  margin: 1px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+  text-align: center;
+  padding: 24px;
+}
+.exhibit__caption {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--al);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--hist-fg-dim);
+}
+
+.hist__exhibits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px 32px;
+  margin: 32px 0;
+}
+
+/* ---------- Gary's arc ladder ---------- */
+
+.ev-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .ev-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+.ev-grid__narrative {
+  font-family: var(--al);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--hist-fg);
+}
+.ev-grid__narrative p { margin-bottom: 18px; }
+
+.gary-ladder {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+.gary-ladder li {
+  position: relative;
+  padding: 14px 0 14px 56px;
+  border-top: 1px solid var(--hist-fg-faint);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--hist-fg);
+  counter-increment: step;
+}
+.gary-ladder li:last-child {
+  border-bottom: 1px solid var(--hist-fg-faint);
+}
+.gary-ladder li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--hist-fg-dim);
+}
+.gary-ladder__date {
+  display: inline-block;
+  width: 100px;
+  color: var(--hist-coral);
+  flex-shrink: 0;
+}
+.gary-ladder__event {
+  color: var(--hist-fg);
+}
+.gary-ladder__final {
+  padding: 24px 0 24px 56px;
+  border-top: 1px solid rgba(238,128,96,0.5);
+  border-bottom: none !important;
+}
+.gary-ladder__final::before {
+  color: var(--hist-coral) !important;
+}
+.gary-ladder__final-line {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--hist-coral);
+  margin-bottom: 10px;
+}
+.gary-ladder__final-addr {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--hist-coral);
+  word-break: break-all;
+}
+
+/* ---------- Survivors ---------- */
+
+.survivors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .survivors-grid { grid-template-columns: 1fr; }
+}
+.survivor {
+  padding: 28px 24px;
+  background: var(--hist-bg);
+  border: 1px solid var(--hist-fg-faint);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.survivor__id {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+}
+.survivor__name {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--hist-fg);
+}
+.survivor__row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--hist-fg-faint);
+}
+.survivor__row-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+}
+.survivor__row-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--hist-coral);
+  word-break: break-all;
+}
+.survivor__prize {
+  font-family: var(--al);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--hist-fg);
+  line-height: 1;
+  margin-top: 8px;
+}
+.survivor__prize-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hist-fg-dim);
+}
+
+/* ---------- Sidenote callout (inline, e.g. Kesh) ---------- */
+
+.sidenote {
+  margin: 28px 0;
+  padding: 20px 24px;
+  border-left: 2px solid var(--hist-coral);
+  background: rgba(15,15,21,0.6);
+  font-family: var(--al);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--hist-fg-dim);
+}
+.sidenote strong { color: var(--hist-fg); }
+.sidenote__label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--hist-coral);
+  margin-bottom: 10px;
+}
+
+/* ---------- Coda ---------- */
+
+.hist__coda {
+  max-width: 600px;
+  margin: 160px auto 0;
+  padding: 0 32px;
+  text-align: center;
+  font-family: var(--al);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--hist-fg-dim);
+}
+
+/* ---------- Appendix ---------- */
+
+.hist__appendix {
+  margin-top: 140px;
+  padding: 72px calc(50vw - 520px);
+  background: var(--hist-bg-deep);
+  border-top: 1px solid var(--hist-fg-faint);
+}
+@media (max-width: 1040px) {
+  .hist__appendix {
+    padding: 72px 32px;
+  }
+}
+.hist__appendix-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--hist-coral);
+  margin-bottom: 32px;
+}
+.hist__appendix-body {
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.75;
+  color: var(--hist-fg-dim);
+  max-width: 720px;
+}
+.hist__appendix-body p { margin-bottom: 14px; }
+.hist__appendix-body code {
+  color: var(--hist-fg);
+  word-break: break-all;
+}
+
+/* ---------- Mobile: collapse rail ---------- */
+
+@media (max-width: 900px) {
+  .hist__rail,
+  .tnode {
+    display: none;
+  }
+  .hist__section {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .hist__section-meta-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--hist-fg-dim);
+    margin-bottom: 12px;
+  }
+}
+.hist__section-meta-mobile {
+  display: none;
+}
+@media (max-width: 900px) {
+  .hist__section-meta-mobile {
+    display: flex;
+  }
+  .hist__article {
+    padding: 0 24px 120px;
+  }
+  .hist__hero {
+    padding: 80px 24px 32px;
+  }
+  .hist__hero-eyebrow {
+    gap: 10px 18px;
+    margin-bottom: 32px;
+  }
+}

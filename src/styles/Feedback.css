@@ -1,9 +1,0 @@
-.feedback { padding: 80px 20px; background: #fff; }
-.feedback__inner { max-width: 900px; margin: 0 auto; text-align: center; }
-.feedback__top { margin-bottom: 40px; }
-.feedback__cite { font-family: var(--al); font-size: 24px; font-style: italic; line-height: 1.4; }
-.feedback__cite span { color: #ee8060; font-size: 36px; }
-.feedback__cite p { display: inline; }
-.feedback__name { font-size: 14px; color: #999; margin-top: 12px; }
-.feedback__guys { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
-.feedback__guy { flex: 1; min-width: 220px; max-width: 300px; }

@@ -1,20 +1,22 @@
 import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import logoDefault from '../images/logo.svg'
-import logoWhite from '../images/logo-white.svg'
 import '../styles/Header.css'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { pathname } = useLocation()
-  const isHome = pathname === '/'
-  const variant = isHome ? 'header--default' : 'header--light'
+  const location = useLocation()
+  const variant = 'header--light'
+
+  // Preserve original background when jumping between modal routes
+  const bgLocation = location.state?.backgroundLocation || location
+  const modalState = { backgroundLocation: bgLocation }
 
   return (
     <header className={`header ${variant}`}>
       <div className="header__inner">
         <NavLink to="/" className="header__logo" onClick={() => setMenuOpen(false)}>
-          <img src={isHome ? logoWhite : logoDefault} alt="DEUS ETH" />
+          <img src={logoDefault} alt="DEUS ETH" />
         </NavLink>
 
         <button
@@ -36,18 +38,20 @@ export default function Header() {
             Episodes
           </NavLink>
           <NavLink
-            to="/cast"
+            to="/statement"
+            state={modalState}
             className={({ isActive }) => `header__link ${isActive ? 'header__link--active' : ''}`}
             onClick={() => setMenuOpen(false)}
           >
-            Cast
+            Statement
           </NavLink>
           <NavLink
-            to="/faq"
+            to="/history"
+            state={modalState}
             className={({ isActive }) => `header__link ${isActive ? 'header__link--active' : ''}`}
             onClick={() => setMenuOpen(false)}
           >
-            FAQ
+            History
           </NavLink>
         </nav>
 

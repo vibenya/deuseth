@@ -1,7 +1,0 @@
-.lineup { padding: 80px 20px; text-align: center; background: #f5f0e8; }
-.lineup__inner { max-width: 900px; margin: 0 auto; }
-.lineup__title { font-family: var(--al); font-size: 36px; margin-bottom: 16px; }
-.lineup__para { font-size: 16px; line-height: 1.6; color: #666; max-width: 600px; margin: 0 auto 30px; }
-.lineup__people { margin-bottom: 30px; }
-.lineup__people img { max-width: 100%; border-radius: 8px; }
-.lineup__btn { margin-top: 20px; }
