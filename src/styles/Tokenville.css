@@ -22,7 +22,7 @@
   aspect-ratio: 16 / 9;
   height: auto;
   min-height: 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* Video scene */
@@ -78,6 +78,14 @@
   display: block;
 }
 
+.tokenville__char-img--smaller {
+  max-height: 24vh !important;
+}
+
+.tokenville--embedded .tokenville__char-img--smaller {
+  max-height: 20vw !important;
+}
+
 .tokenville__char--dying {
   animation: charDie 1.5s ease forwards;
 }
@@ -113,11 +121,11 @@
   border: 1.5px solid #1a1a2e;
   border-radius: 12px;
   padding: 10px 14px;
-  max-width: 200px;
+  max-width: 60vw;
   font-family: var(--al, serif);
   font-size: 15px;
   line-height: 1.4;
-  white-space: pre-wrap;
+  white-space: nowrap;
   color: #1a1a2e;
   z-index: 10;
   animation: bubblePop 0.25s ease;
@@ -148,25 +156,13 @@
 
 /* Shift bubbles for edge characters so they don't overflow */
 .tokenville__char:first-child .tokenville__bubble {
-  left: 0;
-  transform: none;
-}
-.tokenville__char:first-child .tokenville__bubble::after,
-.tokenville__char:first-child .tokenville__bubble::before {
-  left: 24px;
-  transform: none;
+  left: 50%;
+  transform: translateX(-30%);
 }
 
 .tokenville__char:last-child .tokenville__bubble {
-  left: auto;
-  right: 0;
-  transform: none;
-}
-.tokenville__char:last-child .tokenville__bubble::after,
-.tokenville__char:last-child .tokenville__bubble::before {
-  left: auto;
-  right: 24px;
-  transform: none;
+  left: 50%;
+  transform: translateX(-60%);
 }
 
 @keyframes bubblePop {
@@ -181,9 +177,11 @@
     max-height: 35vw;
   }
 
+  .tokenville--embedded .tokenville__char-img--smaller {
+    max-height: 28vw !important;
+  }
+
   .tokenville__bubble {
-    max-width: 70vw;
-    white-space: nowrap;
     font-size: 13px;
     padding: 8px 12px;
   }

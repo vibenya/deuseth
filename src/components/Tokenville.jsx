@@ -3,32 +3,9 @@ import '../styles/Tokenville.css'
 import TeamChat from './TeamChat'
 
 const DANKO_DEFAULT_IMAGE = '/images/characters/full/full_danko.png'
-const DANKO_REVEALED_IMAGE = '/images/cards/card_00007.png'
+const DANKO_REVEALED_IMAGE = '/images/characters/full/full_danko_no_hood.png'
 
 const SCRIPT = [
-  // — The Hood —
-  { speaker: 5,    text: "Danko.",                                           pause_after_ms: 1500 },
-  { speaker: 10,   text: "What?",                                           pause_after_ms: 1500 },
-  { speaker: 5,    text: "Take off the hood.",                               pause_after_ms: 1500 },
-  { speaker: 10,   text: "No.",                                              pause_after_ms: 1500 },
-  { speaker: 11,   text: "Come on. We're done fighting.",                    pause_after_ms: 1500 },
-  { speaker: 10,   text: "It's none of your business.",                      pause_after_ms: 2000 },
-  { speaker: 5,    text: "We've been through everything together.",          pause_after_ms: 1500 },
-  { speaker: 10,   text: "Fine.",                                            pause_after_ms: 2000, action: { setImage: { id: 10, src: DANKO_REVEALED_IMAGE } } },
-  { speaker: 5,    text: "...",                                              pause_after_ms: 2500 },
-  { speaker: 11,   text: "You're a... girl?",                               pause_after_ms: 2000 },
-  { speaker: 10,   text: "Half token, half crypto-kitty. Got a problem?",    pause_after_ms: 2500 },
-  { speaker: 5,    text: "No. You're kind of cute actually.",                pause_after_ms: 2000 },
-  { speaker: 10,   text: "Don't push it.",                                   pause_after_ms: 2000 },
-  { speaker: 11,   text: "Wait, this whole time...?",                        pause_after_ms: 1500 },
-  { speaker: 10,   text: "This whole time.",                                 pause_after_ms: 2000 },
-  { speaker: 5,    text: "Why the hood?",                                    pause_after_ms: 1500 },
-  { speaker: 10,   text: "Try being pink in a blockchain war.",              pause_after_ms: 2500 },
-  { speaker: 11,   text: "Fair.",                                            pause_after_ms: 1500 },
-  { speaker: 10,   text: "Okay. Enough staring.",                           pause_after_ms: 2000, action: { setImage: { id: 10, src: DANKO_DEFAULT_IMAGE } } },
-  { speaker: 5,    text: "Hood's back.",                                     pause_after_ms: 1500 },
-  { speaker: 10,   text: "Hood's back.",                                     pause_after_ms: 3000 },
-
   // — Silence —
   { speaker: 5,    text: "Quiet.",                                           pause_after_ms: 1500 },
   { speaker: 10,   text: "Yes.",                                             pause_after_ms: 1500 },
@@ -56,6 +33,29 @@ const SCRIPT = [
   { speaker: 11,   text: "About being alive.",                               pause_after_ms: 2000 },
   { speaker: 10,   text: "So?",                                              pause_after_ms: 1500 },
   { speaker: 11,   text: "Nothing. Just alive.",                             pause_after_ms: 3000 },
+
+  // — The Hood —
+  { speaker: 5,    text: "Danko.",                                           pause_after_ms: 1500 },
+  { speaker: 10,   text: "What?",                                           pause_after_ms: 1500 },
+  { speaker: 5,    text: "Take off the hood.",                               pause_after_ms: 1500 },
+  { speaker: 10,   text: "No.",                                              pause_after_ms: 1500 },
+  { speaker: 11,   text: "Come on. We're done fighting.",                    pause_after_ms: 1500 },
+  { speaker: 10,   text: "It's none of your business.",                      pause_after_ms: 2000 },
+  { speaker: 5,    text: "We've been through everything together.",          pause_after_ms: 1500 },
+  { speaker: 10,   text: "Fine.",                                            pause_after_ms: 2000, action: { setImage: { id: 10, src: DANKO_REVEALED_IMAGE } } },
+  { speaker: 5,    text: "...",                                              pause_after_ms: 2500 },
+  { speaker: 11,   text: "You're a... girl?",                               pause_after_ms: 2000 },
+  { speaker: 10,   text: "Half token, half crypto-kitty. Got a problem?",    pause_after_ms: 2500 },
+  { speaker: 5,    text: "No. You're kind of cute actually.",                pause_after_ms: 2000 },
+  { speaker: 10,   text: "Don't push it.",                                   pause_after_ms: 2000 },
+  { speaker: 11,   text: "Wait, this whole time...?",                        pause_after_ms: 1500 },
+  { speaker: 10,   text: "This whole time.",                                 pause_after_ms: 2000 },
+  { speaker: 5,    text: "Why the hood?",                                    pause_after_ms: 1500 },
+  { speaker: 10,   text: "Try being pink in a blockchain war.",              pause_after_ms: 2500 },
+  { speaker: 11,   text: "Fair.",                                            pause_after_ms: 1500 },
+  { speaker: 10,   text: "Okay. Enough staring.",                           pause_after_ms: 2000, action: { setImage: { id: 10, src: DANKO_DEFAULT_IMAGE } } },
+  { speaker: 5,    text: "Hood's back.",                                     pause_after_ms: 1500 },
+  { speaker: 10,   text: "Hood's back.",                                     pause_after_ms: 3000 },
 
   // — Gazes —
   { speaker: 5,    text: "I think someone's watching us.",                   pause_after_ms: 1500 },
@@ -109,8 +109,8 @@ const LOOP_START_INDEX = 72
 
 const DEFAULT_CHARACTERS = [
   { id: 5,  name: 'Harold', image: '/images/characters/full/full_harold.png' },
-  { id: 10, name: 'Danko',  image: DANKO_DEFAULT_IMAGE },
-  { id: 11, name: 'Lucy',   image: '/images/characters/full/full_lucy.png' },
+  { id: 10, name: 'Danko',  image: DANKO_DEFAULT_IMAGE, smaller: true },
+  { id: 11, name: 'Lucy',   image: '/images/characters/full/full_lucy.png', smaller: true },
 ]
 
 function readingTime(text) {
@@ -270,7 +270,7 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
                     {bubble}
                   </div>
                 )}
-                <img src={char.image} alt={char.name} />
+                <img src={char.image} alt={char.name} className={char.smaller ? 'tokenville__char-img--smaller' : undefined} />
               </div>
             </div>
           )
