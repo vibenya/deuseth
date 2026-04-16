@@ -85,13 +85,13 @@
   background: none;
   border: none;
   text-decoration: none;
-  color: rgba(14, 14, 16, 0.42);
+  color: #0e0e10;
   cursor: pointer;
   transition: color 0.18s ease;
 }
 
 .header__dash-btn:hover {
-  color: #0e0e10;
+  color: #ee8060;
 }
 
 .header__dash-icon {
@@ -101,11 +101,11 @@
 }
 
 .header__dash-label {
-  font-family: var(--alsans);
+  font-family: var(--al);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.22em;
   line-height: 1;
 }
 
@@ -182,10 +182,10 @@
 .header--intro .header__ep { color: rgba(255,255,255,0.3); }
 .header--intro .header__burger span { background: #fff; }
 .header--intro .header__dash-btn {
-  color: rgba(255,255,255,0.42);
+  color: #fff;
 }
 .header--intro .header__dash-btn:hover {
-  color: #fff;
+  color: #ee8060;
 }
 .header--intro .header__dash-btn + .header__dash-btn {
   border-left-color: rgba(255,255,255,0.12);
