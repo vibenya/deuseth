@@ -359,7 +359,8 @@
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
   text-align: left;
   color: inherit;
 }
@@ -374,7 +375,7 @@
 .ep-ctrl__title-chevron {
   width: 10px;
   height: 10px;
-  display: inline-block;
+  display: none;
   vertical-align: middle;
   margin-left: 3px;
   opacity: 0.5;
@@ -763,6 +764,11 @@
     justify-self: start;
     justify-content: center;
     padding: 0;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  .ep-ctrl__title-chevron {
+    display: inline-block;
   }
   .ep-cell__label { font-size: 8px; }
   .ep-cell__value { font-size: 15px; }

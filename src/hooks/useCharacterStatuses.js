@@ -171,16 +171,16 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
   }, [episode])
 
   // ── Current episode: which events have fired at this moment? ──────────────
-  // When video ends it reports null — treat that as "very far into the future"
-  // so all previously-fired events stay fired (no resetting deaths on video end).
-  const lastKnownVideoTime = useRef(null)
+  // When video ends (or is skipped) it reports null. Treat that as Infinity
+  // so all video-timed events fire (the video is complete).
+  const hadVideo = useRef(false)
   useEffect(() => {
-    if (currentVideoTime != null) lastKnownVideoTime.current = currentVideoTime
+    if (currentVideoTime != null) hadVideo.current = true
   }, [currentVideoTime])
   // Reset when episode changes
-  useEffect(() => { lastKnownVideoTime.current = null }, [episode?.id])
+  useEffect(() => { hadVideo.current = false }, [episode?.id])
 
-  const effectiveVideoTime = currentVideoTime ?? lastKnownVideoTime.current
+  const effectiveVideoTime = currentVideoTime ?? (hadVideo.current ? Infinity : null)
 
   const { died: firedDied, revived: firedRevived } = useMemo(
     () => computeCurrentEpisodeFiredEvents(episode, effectiveVideoTime, currentSlide),

@@ -12,6 +12,12 @@
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .ep-facts:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 
   /* Animated content area */
@@ -38,7 +44,7 @@
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    width: 48px;
+    width: 56px;
     gap: 2px;
   }
   .ep-facts__num {

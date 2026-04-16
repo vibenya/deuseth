@@ -23,6 +23,7 @@
     height: 48px;
     flex-shrink: 0;
     border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid rgba(14, 14, 16, 0.08);
   }
   /* Hide the mobile version on desktop */
   .header:not(.header--inline) {
@@ -178,6 +179,9 @@
 .header--intro {
   background: #000;
   color: #fff;
+}
+.header--intro.header--inline {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 .header--intro .header__logo img { filter: invert(1); }
 .header--intro .header__title { color: rgba(255,255,255,0.45); }

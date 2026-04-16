@@ -218,8 +218,8 @@ export default function EpisodeMedia({
             onClick={onOpenDrawer}
             title="All episodes"
           >
-            <span className="ep-cell__label">DEUS ETH</span>
-            <h2 className="ep-cell__value">Reality Show</h2>
+            <span className="ep-cell__label">2018-2026</span>
+            <h2 className="ep-cell__value">A Retrospective Exhibition</h2>
           </button>
           <div className="ep-ctrl__right">
             <div className="ep-ctrl__epnav">

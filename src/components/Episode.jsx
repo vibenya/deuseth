@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from 'react'
 import CharacterList from './CharacterList'
 import EpisodeMedia from './EpisodeMedia'
-import EpisodeFacts from './EpisodeFacts'
+import EpisodeList from './EpisodeList'
+import ProjectFacts from './ProjectFacts'
 import { useCharacterStatuses } from '../hooks/useCharacterStatuses'
 import '../styles/Episode.css'
 import '../styles/Rip.css'
@@ -85,22 +86,8 @@ export default function Episode({
 
         {episodes?.length > 0 && onChangeEpisode && (
           <>
-            <div className="ep-player__episode-list">
-              {episodes.map(ep => (
-                <div
-                  key={ep.id}
-                  className={
-                    'ep-ep-item' +
-                    (ep.id === activeId ? ' ep-ep-item--active' : '') +
-                    (ep.disabled ? ' ep-ep-item--disabled' : '')
-                  }
-                  onClick={() => !ep.disabled && onChangeEpisode(ep.id)}
-                >
-                  <img src={ep.art?.slide} alt={ep.title} />
-                </div>
-              ))}
-            </div>
-            <EpisodeFacts />
+            <EpisodeList episodes={episodes} activeId={activeId} onChangeEpisode={onChangeEpisode} />
+            <ProjectFacts />
           </>
         )}
       </div>
