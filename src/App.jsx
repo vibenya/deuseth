@@ -5,6 +5,7 @@ import Adventures from './pages/Adventures.jsx'
 import Statement from './pages/Statement.jsx'
 import History from './pages/History.jsx'
 import Lore from './pages/Lore.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 const MODAL_PATHS = ['/statement', '/history', '/lore']
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/adventures/:episodePath" element={<Adventures />} />
           <Route path="/adventures/:episodePath/story/:heroId" element={<Adventures />} />
           <Route path="/adventures/:episodePath/obit/:heroId" element={<Adventures />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         {isModalRoute && (
