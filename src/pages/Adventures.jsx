@@ -15,13 +15,8 @@ export default function Adventures() {
 
   useEffect(() => {
     fetchAllEpisodes()
-      .then(data => {
-        setEpisodes(data)
-        if (episodePath !== undefined) {
-          const found = data.find(ep => ep.slug === episodePath || String(ep.id) === episodePath)
-          if (found) setActiveId(found.id)
-        }
-      })
+      .then(data => setEpisodes(data))
+      .catch(err => console.error('Failed to load episodes:', err))
   }, [])
 
   useEffect(() => {

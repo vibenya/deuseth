@@ -15,11 +15,11 @@
     "homeSlide": "/images/episodes/slides/home_cover-00.png",
     "background": "/images/episodes/prologue_back.jpg",
     "sharePic": "/images/episodes/prologue.jpg",
-    "map": "/images/episodes/prologue_map.png"
+    "map": "/images/episodes/prologue_map.webp"
   },
   "media": {
     "type": "video",
-    "src": "/videos/episode_about.mp4",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_about.mp4",
     "cover": "/images/episodes/1/coming_soon.png",
     "statsUnlockAt": 26
   },

@@ -11,11 +11,11 @@
       "The fleet-footed <span data-link='5' class='mention'>Harold went searching</span> for gas, and <span data-link='3' class='mention'>still hasn’t returned.</span>"
     ],
     "media": [
-      "video:/videos/episode_about.mp4:/images/episodes/prologue.jpg"
+      "video:https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_about.mp4:/images/episodes/prologue.jpg"
     ],
     "share_pic": "/images/episodes/prologue.jpg",
     "background": "/images/episodes/prologue_back.jpg",
-    "map": "/images/episodes/prologue_map.png",
+    "map": "/images/episodes/prologue_map.webp",
     "rip": [
       1,
       2,
@@ -555,9 +555,9 @@
       "image:/images/episodes/2/episode_2_9-04.png",
       "image:/images/episodes/2/episode_2_9-05.png",
       "image:/images/episodes/2/episode_2_9-06.png",
-      "image:/images/episodes/2/episode_2_9-07.png"
+      "image:/images/episodes/2/episode_2_9-07.webp"
     ],
-    "background": "/images/episodes/2/back.png",
+    "background": "/images/episodes/2/back.webp",
     "slide": "/images/episodes/slides/cover-02.png",
     "homeslide": "/images/episodes/slides/home_cover-02.png",
     "share_pic": "/images/episodes/2/episode_2_9-09.png",

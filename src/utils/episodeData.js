@@ -6,6 +6,9 @@ const EPISODE_SLUGS = [
 
 export function fetchAllEpisodes() {
   return Promise.all(
-    EPISODE_SLUGS.map(s => fetch(`/data/episodes/${s}.json`).then(r => r.json()))
+    EPISODE_SLUGS.map(s =>
+      fetch(`/data/episodes/${s}.json`)
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
+    )
   )
 }

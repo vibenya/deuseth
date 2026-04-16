@@ -79,8 +79,8 @@ function EpisodeTable() {
           </tr>
         </thead>
         <tbody>
-          {EPISODES.map((e, i) => (
-            <tr key={i}>
+          {EPISODES.map((e) => (
+            <tr key={e.block}>
               <td style={{ color: 'var(--hist-coral)' }}>{e.ep}</td>
               <td>{e.block}</td>
               <td>{e.date}</td>

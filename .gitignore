@@ -13,14 +13,15 @@ dist-ssr
 *.local
 
 # Large media files (served via CDN or locally only)
-public/videos/*.mp4
-public/videos/.wrangler/
+public/videos/
+.wrangler/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+**/.DS_Store
 *.suo
 *.ntvs*
 *.njsproj

@@ -11,22 +11,27 @@ const FACTS = [
 export default function EpisodeFacts() {
   const [idx, setIdx] = useState(0)
   const [visible, setVisible] = useState(true)
-  const timer = useRef(null)
+  const intervalRef = useRef(null)
+  const fadeRef = useRef(null)
 
   function goTo(i) {
+    clearTimeout(fadeRef.current)
     setVisible(false)
-    setTimeout(() => { setIdx(i); setVisible(true) }, 350)
+    fadeRef.current = setTimeout(() => { setIdx(i); setVisible(true) }, 350)
   }
 
   useEffect(() => {
-    timer.current = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setVisible(false)
-      setTimeout(() => {
+      fadeRef.current = setTimeout(() => {
         setIdx(i => (i + 1) % FACTS.length)
         setVisible(true)
       }, 450)
     }, 7000)
-    return () => clearInterval(timer.current)
+    return () => {
+      clearInterval(intervalRef.current)
+      clearTimeout(fadeRef.current)
+    }
   }, [])
 
   const fact = FACTS[idx]

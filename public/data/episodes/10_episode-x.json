@@ -20,7 +20,7 @@
   },
   "media": {
     "type": "tokenville",
-    "video": "/videos/deus-eth-explainer.mp4",
+    "video": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/deus-eth-explainer.mp4",
     "teamChat": {
       "header": { "title": "Deus ETH Production", "memberCount": "6 members" },
       "senderColors": {

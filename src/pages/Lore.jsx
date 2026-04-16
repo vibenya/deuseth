@@ -431,7 +431,7 @@ export default function Lore() {
             </div>
             <div className="lore__creature">
               <LoreImage
-                src="images/cards/card_00016.png"
+                src="/images/cards/card_00016.png"
                 alt="CryptoHamster"
               />
               <h3>The CryptoHamster</h3>

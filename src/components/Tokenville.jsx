@@ -2,7 +2,33 @@ import { useEffect, useRef, useState } from 'react'
 import '../styles/Tokenville.css'
 import TeamChat from './TeamChat'
 
+const DANKO_DEFAULT_IMAGE = '/images/characters/full/full_danko.png'
+const DANKO_REVEALED_IMAGE = '/images/cards/card_00007.png'
+
 const SCRIPT = [
+  // — The Hood —
+  { speaker: 5,    text: "Danko.",                                           pause_after_ms: 1500 },
+  { speaker: 10,   text: "What?",                                           pause_after_ms: 1500 },
+  { speaker: 5,    text: "Take off the hood.",                               pause_after_ms: 1500 },
+  { speaker: 10,   text: "No.",                                              pause_after_ms: 1500 },
+  { speaker: 11,   text: "Come on. We're done fighting.",                    pause_after_ms: 1500 },
+  { speaker: 10,   text: "It's none of your business.",                      pause_after_ms: 2000 },
+  { speaker: 5,    text: "We've been through everything together.",          pause_after_ms: 1500 },
+  { speaker: 10,   text: "Fine.",                                            pause_after_ms: 2000, action: { setImage: { id: 10, src: DANKO_REVEALED_IMAGE } } },
+  { speaker: 5,    text: "...",                                              pause_after_ms: 2500 },
+  { speaker: 11,   text: "You're a... girl?",                               pause_after_ms: 2000 },
+  { speaker: 10,   text: "Half token, half crypto-kitty. Got a problem?",    pause_after_ms: 2500 },
+  { speaker: 5,    text: "No. You're kind of cute actually.",                pause_after_ms: 2000 },
+  { speaker: 10,   text: "Don't push it.",                                   pause_after_ms: 2000 },
+  { speaker: 11,   text: "Wait, this whole time...?",                        pause_after_ms: 1500 },
+  { speaker: 10,   text: "This whole time.",                                 pause_after_ms: 2000 },
+  { speaker: 5,    text: "Why the hood?",                                    pause_after_ms: 1500 },
+  { speaker: 10,   text: "Try being pink in a blockchain war.",              pause_after_ms: 2500 },
+  { speaker: 11,   text: "Fair.",                                            pause_after_ms: 1500 },
+  { speaker: 10,   text: "Okay. Enough staring.",                           pause_after_ms: 2000, action: { setImage: { id: 10, src: DANKO_DEFAULT_IMAGE } } },
+  { speaker: 5,    text: "Hood's back.",                                     pause_after_ms: 1500 },
+  { speaker: 10,   text: "Hood's back.",                                     pause_after_ms: 3000 },
+
   // — Silence —
   { speaker: 5,    text: "Quiet.",                                           pause_after_ms: 1500 },
   { speaker: 10,   text: "Yes.",                                             pause_after_ms: 1500 },
@@ -79,11 +105,11 @@ const SCRIPT = [
   { speaker: 10,   text: "I like it.",                                       pause_after_ms: 5000 },
 ]
 
-const LOOP_START_INDEX = 51
+const LOOP_START_INDEX = 72
 
-const CHARACTERS = [
+const DEFAULT_CHARACTERS = [
   { id: 5,  name: 'Harold', image: '/images/characters/full/full_harold.png' },
-  { id: 10, name: 'Danko',  image: '/images/characters/full/full_danko.png' },
+  { id: 10, name: 'Danko',  image: DANKO_DEFAULT_IMAGE },
   { id: 11, name: 'Lucy',   image: '/images/characters/full/full_lucy.png' },
 ]
 
@@ -103,8 +129,7 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
   }
 
   // Expose skip to parent
-  useEffect(() => {
-    if (!skipRef) return
+  if (skipRef) {
     skipRef.current = () => {
       if (scene === 'video') goToScene('chat')
       else if (scene === 'chat') {
@@ -114,8 +139,9 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
         goToScene('stage')
       }
     }
-  })
+  }
 
+  const [characters, setCharacters] = useState(DEFAULT_CHARACTERS)
   const [aliveIds, setAliveIds] = useState(new Set([5, 10, 11]))
   const [dyingIds, setDyingIds] = useState(new Set())
   // Active speaker id (or null)
@@ -137,6 +163,11 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
 
   function runStep(index) {
     const step = SCRIPT[index]
+
+    if (step.action?.setImage) {
+      const { id, src } = step.action.setImage
+      setCharacters(prev => prev.map(c => c.id === id ? { ...c, image: src } : c))
+    }
 
     setActiveSpeaker(step.speaker)
     setBubble(step.text)
@@ -188,7 +219,7 @@ export default function Tokenville({ embedded = false, onSlideChange, teamChat, 
     }
   }, [scene])
 
-  const visibleChars = CHARACTERS.filter(c => aliveIds.has(c.id))
+  const visibleChars = characters.filter(c => aliveIds.has(c.id))
 
   if (scene === 'video') {
     return (
