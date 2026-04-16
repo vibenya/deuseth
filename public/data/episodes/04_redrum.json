@@ -19,11 +19,41 @@
     "map": null
   },
   "media": {
-    "type": "gallery",
-    "slides": [
-      "/images/episodes/4/cover.png"
-    ],
-    "cover": "/images/episodes/4/cover.png"
+    "type": "teamchat",
+    "teamChat": {
+      "header": { "title": "Deus ETH Production", "memberCount": "6 members" },
+      "senderColors": {
+        "Ivan Sokolov": "#5b8dee",
+        "Karen Tarzyan": "#e05c7a",
+        "Kesha Seifert": "#4db87a",
+        "Ekaterina Komrakova": "#e0a640",
+        "Kostya Dmitriev": "#20b2a0"
+      },
+      "script": [
+        { "type": "date",   "text": "March 24, 2018", "pause_after_ms": 400 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "01:14", "lines": ["calculated randao for ep 4"], "pause_after_ms": 1200 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "01:14", "lines": ["this episode's death:", "Boozy (30)"], "pause_after_ms": 2500 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "01:16", "lines": ["wait", "Boozy? he literally just came back"], "pause_after_ms": 1500 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "01:16", "lines": ["yep", "came back and instantly died"], "pause_after_ms": 1200 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "01:17", "lines": ["dramatic af"], "pause_after_ms": 1800 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "09:32", "lines": ["ok", "karen, start writing the script"], "pause_after_ms": 1500 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "09:33", "lines": ["already on it"], "pause_after_ms": 3500 },
+
+        { "type": "date",   "text": "March 25, 2018", "pause_after_ms": 400 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "11:47", "lines": ["hold on", "I recalculated"], "pause_after_ms": 1500 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "11:47", "lines": ["not Boozy", "it's Ben (4) who dies"], "pause_after_ms": 2500 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "11:48", "lines": ["fuck"], "pause_after_ms": 800 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "11:48", "lines": ["I already wrote half the script about Boozy"], "pause_after_ms": 1200 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "11:49", "lines": ["kesha", "you sure?"], "pause_after_ms": 1000 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "11:49", "lines": ["yes", "double-checked it twice"], "pause_after_ms": 1500 },
+        { "type": "msg",    "sender": "Ekaterina Komrakova", "time": "11:51", "lines": ["Kesha you're so dead after school"], "pause_after_ms": 1200 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "11:51", "lines": ["sorry"], "pause_after_ms": 1000 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "11:53", "lines": ["fine", "Ben it is", "rewriting"], "pause_after_ms": 1500 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "11:54", "lines": ["how are we supposed to trust you now?"], "pause_after_ms": 4000 },
+
+        { "type": "end" }
+      ]
+    }
   },
   "events": [],
   "obits": {

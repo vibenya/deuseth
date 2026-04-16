@@ -20,14 +20,17 @@
   "media": {
     "type": "video",
     "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_1.mp4",
-    "cover": "/images/episodes/1/comics.png"
+    "cover": "/images/episodes/1/cryptokitties.png"
   },
   "events": [
     {
       "characters": [
         13
       ],
-      "action": "die"
+      "action": "die",
+      "at": {
+        "videoTime": 48
+      }
     },
     {
       "characters": [
@@ -198,7 +201,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 80
+        "videoTime": 79
       }
     }
   ],

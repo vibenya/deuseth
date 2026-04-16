@@ -1,6 +1,7 @@
 .tnode {
   position: absolute;
-  left: 80px;
+  top: 120px;
+  left: -64px;
   transform: translateX(-50%);
   display: flex;
   align-items: center;

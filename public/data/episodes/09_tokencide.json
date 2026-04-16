@@ -32,54 +32,114 @@
   },
   "events": [
     {
-      "characters": [
-        1,
-        2,
-        3,
-        4,
-        6,
-        7,
-        8,
-        9,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32,
-        33,
-        34,
-        35,
-        37,
-        38,
-        39,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46,
-        47,
-        48,
-        49,
-        50
-      ],
-      "action": "die"
+      "characters": [39],
+      "action": "highlight",
+      "at": { "videoTime": 15 }
+    },
+    {
+      "characters": [47],
+      "action": "highlight",
+      "at": { "videoTime": 30 }
+    },
+    {
+      "characters": [39],
+      "action": "highlight",
+      "at": { "videoTime": 41 }
+    },
+    {
+      "characters": [34],
+      "action": "highlight",
+      "at": { "videoTime": 61 }
+    },
+    {
+      "characters": [39],
+      "action": "die",
+      "at": { "videoTime": 64 }
+    },
+    {
+      "characters": [1, 2, 3],
+      "action": "die",
+      "at": { "videoTime": 67 }
+    },
+    {
+      "characters": [4, 6, 7],
+      "action": "die",
+      "at": { "videoTime": 68 }
+    },
+    {
+      "characters": [8, 9],
+      "action": "die",
+      "at": { "videoTime": 69 }
+    },
+    {
+      "characters": [12, 13, 14],
+      "action": "die",
+      "at": { "videoTime": 70 }
+    },
+    {
+      "characters": [15, 16],
+      "action": "die",
+      "at": { "videoTime": 71 }
+    },
+    {
+      "characters": [17, 19, 20],
+      "action": "die",
+      "at": { "videoTime": 72 }
+    },
+    {
+      "characters": [21, 22],
+      "action": "die",
+      "at": { "videoTime": 73 }
+    },
+    {
+      "characters": [23, 24, 25],
+      "action": "die",
+      "at": { "videoTime": 74 }
+    },
+    {
+      "characters": [26, 27],
+      "action": "die",
+      "at": { "videoTime": 75 }
+    },
+    {
+      "characters": [28, 29, 30],
+      "action": "die",
+      "at": { "videoTime": 76 }
+    },
+    {
+      "characters": [31, 32],
+      "action": "die",
+      "at": { "videoTime": 77 }
+    },
+    {
+      "characters": [33, 34, 35],
+      "action": "die",
+      "at": { "videoTime": 78 }
+    },
+    {
+      "characters": [37, 38],
+      "action": "die",
+      "at": { "videoTime": 79 }
+    },
+    {
+      "characters": [40, 41, 42],
+      "action": "die",
+      "at": { "videoTime": 80 }
+    },
+    {
+      "characters": [43, 44],
+      "action": "die",
+      "at": { "videoTime": 81 }
+    },
+    {
+      "characters": [45, 46, 47],
+      "action": "die",
+      "at": { "videoTime": 82 }
+    },
+    {
+      "characters": [48, 49, 50],
+      "action": "die",
+      "at": { "videoTime": 83 }
     }
   ],
   "obits": {

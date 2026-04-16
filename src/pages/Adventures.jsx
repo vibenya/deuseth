@@ -1,21 +1,17 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import AdvSlider from '../components/AdvSlider'
 import Episode from '../components/Episode'
+import Header from '../components/Header'
 import { fetchAllEpisodes } from '../utils/episodeData'
-import logo from '../images/logo.svg'
 import '../styles/Adventures.css'
 
 export default function Adventures() {
   const [episodes, setEpisodes] = useState([])
   const [activeId, setActiveId] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
-  const [navOpen, setNavOpen] = useState(false)
   const { episodePath } = useParams()
   const navigate = useNavigate()
-  const location = useLocation()
-  const bgLocation = location.state?.backgroundLocation || location
-  const modalState = { backgroundLocation: bgLocation }
 
   useEffect(() => {
     fetchAllEpisodes()
@@ -36,7 +32,7 @@ export default function Adventures() {
     }
   }, [episodePath, episodes])
 
-  const activeEpisode = episodes.find(ep => ep.id === activeId)
+  const activeEpisode = episodes.find(ep => ep.id === activeId) || null
   const activeIdx = episodes.findIndex(ep => ep.id === activeId)
   const hasNext = activeIdx < episodes.length - 1
   const hasPrev = activeIdx > 0
@@ -63,32 +59,13 @@ export default function Adventures() {
 
   return (
     <div className={`adventures adventures--fullscreen${activeId === 0 ? ' adventures--intro' : ''}`}>
-      {/* Top bar */}
-      <div className={`adventures__topbar${activeId === 0 ? ' adventures__topbar--intro' : ''}`}>
-          <Link to="/" className="adventures__topbar-logo">
-            <img src={logo} alt="DEUS ETH" />
-          </Link>
-          {activeEpisode && (
-            <span className="adventures__topbar-title">
-              {activeEpisode.number !== undefined && (
-                <span className="adventures__topbar-ep">Ep. {activeEpisode.number}</span>
-              )}
-              {activeEpisode.title}
-            </span>
-          )}
-          <nav className={`adventures__topbar-nav${navOpen ? ' is-open' : ''}`}>
-            <Link to="/statement" state={modalState} className="adventures__topbar-link">Statement</Link>
-            <Link to="/history" state={modalState} className="adventures__topbar-link">History</Link>
-          </nav>
-          <button
-            type="button"
-            className={`adventures__burger${navOpen ? ' is-open' : ''}`}
-            onClick={() => setNavOpen(v => !v)}
-            aria-label="Menu"
-          >
-            <span /><span /><span />
-          </button>
-        </div>
+      {/* Mobile top bar */}
+      <div className="adventures__topbar-mobile">
+        <Header
+          variant={activeId === 0 ? 'intro' : undefined}
+          episode={activeEpisode}
+        />
+      </div>
 
       {/* Episode player */}
       {activeEpisode && (
@@ -99,15 +76,10 @@ export default function Adventures() {
           activeId={activeId}
           onChangeEpisode={handleChangeEpisode}
           topbarSlot={
-            <div className="adventures__topbar-desktop">
-              <Link to="/" className="adventures__topbar-logo">
-                <img src={logo} alt="DEUS ETH" />
-              </Link>
-              <nav className="adventures__topbar-nav adventures__topbar-nav--desktop">
-                <Link to="/statement" state={modalState} className="adventures__topbar-link">Statement</Link>
-                <Link to="/history" state={modalState} className="adventures__topbar-link">History</Link>
-              </nav>
-            </div>
+            <Header
+              inline
+              variant={activeId === 0 ? 'intro' : undefined}
+            />
           }
           episodeNav={{
             current: activeIdx,

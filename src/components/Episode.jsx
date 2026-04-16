@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from 'react'
 import CharacterList from './CharacterList'
 import EpisodeMedia from './EpisodeMedia'
 import EpisodeFacts from './EpisodeFacts'
-import EpisodeBlockchain from './EpisodeBlockchain'
 import { useCharacterStatuses } from '../hooks/useCharacterStatuses'
 import '../styles/Episode.css'
 import '../styles/Rip.css'
@@ -38,7 +37,7 @@ export default function Episode({
     currentSlide,
   })
 
-  const isPrologue = episode?.type === 'prologue'
+  const isPrologue = episode?.type === 'intro'
 
   const [statsUnlocked, setStatsUnlocked] = useState(!isPrologue)
   useEffect(() => { setStatsUnlocked(!isPrologue) }, [episode?.id])
@@ -75,6 +74,7 @@ export default function Episode({
           deadCount={deadCount}
           keyboardEnabled={!charModalOpen}
           showStats={statsUnlocked}
+          blockchain={episode.blockchain}
         />
 
         {episodes?.length > 0 && onChangeEpisode && (
@@ -95,7 +95,6 @@ export default function Episode({
               ))}
             </div>
             <EpisodeFacts />
-            {episode.blockchain && <EpisodeBlockchain blockchain={episode.blockchain} />}
           </>
         )}
       </div>

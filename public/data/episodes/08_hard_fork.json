@@ -31,7 +31,10 @@
   "events": [
     {
       "characters": "all",
-      "action": "revive"
+      "action": "revive",
+      "at": {
+        "videoTime": 125
+      }
     }
   ],
   "blockchain": {

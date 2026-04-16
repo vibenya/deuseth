@@ -1,12 +1,12 @@
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import Adventures from './pages/Adventures.jsx'
 import Statement from './pages/Statement.jsx'
 import History from './pages/History.jsx'
+import Lore from './pages/Lore.jsx'
 
-const MODAL_PATHS = ['/statement', '/history']
+const MODAL_PATHS = ['/statement', '/history', '/lore']
 
 function App() {
   const location = useLocation()
@@ -23,7 +23,6 @@ function App() {
   return (
     <div className="app">
       <ScrollToTop />
-      <Header />
       <main className="app__content">
         <Routes location={routingLocation}>
           <Route path="/" element={<Navigate to="/adventures" replace />} />
@@ -37,6 +36,7 @@ function App() {
           <Routes>
             <Route path="/statement" element={<Statement />} />
             <Route path="/history" element={<History />} />
+            <Route path="/lore" element={<Lore />} />
           </Routes>
         )}
       </main>

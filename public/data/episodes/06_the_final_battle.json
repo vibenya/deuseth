@@ -45,7 +45,10 @@
         30,
         31
       ],
-      "action": "die"
+      "action": "die",
+      "at": {
+        "slide": 3
+      }
     }
   ],
   "obits": {

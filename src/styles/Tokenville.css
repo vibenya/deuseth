@@ -25,6 +25,14 @@
   overflow: visible;
 }
 
+/* Video scene */
+.tokenville__video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
 /* Stage with characters */
 .tokenville__stage {
   position: relative;
@@ -32,7 +40,7 @@
   align-items: flex-end;
   justify-content: center;
   gap: 2vw;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   width: 100%;
   height: 45vh;
 }
@@ -40,10 +48,11 @@
 .tokenville--embedded .tokenville__stage {
   height: 100%;
   flex: 1;
+  padding-bottom: 5%;
 }
 
 .tokenville--embedded .tokenville__char img {
-  height: 65%;
+  max-height: 25vw;
 }
 
 /* Individual character wrapper */
@@ -62,7 +71,8 @@
 }
 
 .tokenville__char img {
-  height: 35vh;
+  height: auto;
+  max-height: 30vh;
   width: auto;
   object-fit: contain;
   display: block;
@@ -96,7 +106,7 @@
 /* Speech bubble */
 .tokenville__bubble {
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
@@ -136,49 +146,45 @@
   z-index: 1;
 }
 
+/* Shift bubbles for edge characters so they don't overflow */
+.tokenville__char:first-child .tokenville__bubble {
+  left: 0;
+  transform: none;
+}
+.tokenville__char:first-child .tokenville__bubble::after,
+.tokenville__char:first-child .tokenville__bubble::before {
+  left: 24px;
+  transform: none;
+}
+
+.tokenville__char:last-child .tokenville__bubble {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+.tokenville__char:last-child .tokenville__bubble::after,
+.tokenville__char:last-child .tokenville__bubble::before {
+  left: auto;
+  right: 24px;
+  transform: none;
+}
+
 @keyframes bubblePop {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-  }
+  from { opacity: 0; scale: 0.9; }
+  to   { opacity: 1; scale: 1; }
 }
 
-/* Credit text */
-.tokenville__credit {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--alsans, sans-serif);
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  color: #999;
-  text-transform: uppercase;
-  text-align: center;
-  animation: creditFade 1.5s ease;
-  pointer-events: none;
-  z-index: 20;
-}
-
-@keyframes creditFade {
-  0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { opacity: 0; }
-}
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
-  .tokenville__char img {
-    height: 25vh;
+  .tokenville--embedded .tokenville__char img {
+    max-height: 35vw;
   }
 
   .tokenville__bubble {
-    max-width: calc(100vw - 32px);
-    font-size: 14px;
+    max-width: 70vw;
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 8px 12px;
   }
 }

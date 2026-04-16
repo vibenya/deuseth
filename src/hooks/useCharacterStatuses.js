@@ -31,7 +31,7 @@ function resolveCharacters(characters) {
  * Assumes all events have fired (episode is fully in the past).
  */
 function applyPastEpisode(deadSet, episode) {
-  if (episode.type === 'prologue') {
+  if (episode.type === 'intro') {
     // Prologue starts with all 50 dead
     allCharIds.forEach(id => deadSet.add(id))
   }
@@ -70,7 +70,7 @@ function computeCurrentEpisodeFiredEvents(episode, videoTime, slide) {
   const died = new Set()
   const revived = new Set()
 
-  if (episode.type === 'prologue') {
+  if (episode.type === 'intro') {
     // All start dead — handled by deadBefore logic via computeDeadBefore
   }
 
@@ -231,7 +231,7 @@ export function useCharacterStatuses({ episode, episodes, currentVideoTime, curr
     const wasDead = deadBefore.has(id)
 
     // Prologue: all chars start dead; they only come alive when the revive event fires
-    if (episode?.type === 'prologue') {
+    if (episode?.type === 'intro') {
       return firedRevived.has(id) ? 'reviving' : 'dead'
     }
 

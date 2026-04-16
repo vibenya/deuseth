@@ -3,106 +3,88 @@ import '../styles/Tokenville.css'
 import TeamChat from './TeamChat'
 
 const SCRIPT = [
-  // — Тишина — [0..7]
-  { speaker: 5,    text: "Тихо.",                                           pause_after_ms: 1500 },
-  { speaker: 10,   text: "Да.",                                             pause_after_ms: 1500 },
-  { speaker: 5,    text: "Раньше не было так тихо.",                        pause_after_ms: 1500 },
-  { speaker: 11,   text: "Раньше всегда что-то происходило.",               pause_after_ms: 2000 },
-  { speaker: 5,    text: "А теперь?",                                       pause_after_ms: 2000 },
-  { speaker: 10,   text: "Ничего.",                                         pause_after_ms: 1500 },
-  { speaker: 5,    text: "Хорошо?",                                         pause_after_ms: 1500 },
-  { speaker: 11,   text: "Непривычно.",                                     pause_after_ms: 2500 },
+  // — Silence —
+  { speaker: 5,    text: "Quiet.",                                           pause_after_ms: 1500 },
+  { speaker: 10,   text: "Yes.",                                             pause_after_ms: 1500 },
+  { speaker: 5,    text: "It wasn't this quiet before.",                     pause_after_ms: 1500 },
+  { speaker: 11,   text: "Something was always happening before.",           pause_after_ms: 2000 },
+  { speaker: 5,    text: "And now?",                                         pause_after_ms: 2000 },
+  { speaker: 10,   text: "Nothing.",                                         pause_after_ms: 1500 },
+  { speaker: 5,    text: "Is that good?",                                    pause_after_ms: 1500 },
+  { speaker: 11,   text: "Unfamiliar.",                                      pause_after_ms: 2500 },
 
-  // — Титр 1 — [8]
-  { speaker: null, text: "DeusETH. Сезон первый.",                          pause_after_ms: 3000 },
+  // — Standing —
+  { speaker: 5,    text: "What are we doing?",                               pause_after_ms: 1500 },
+  { speaker: 11,   text: "Standing.",                                        pause_after_ms: 1500 },
+  { speaker: 5,    text: "Much longer?",                                     pause_after_ms: 1500 },
+  { speaker: 11,   text: "I don't know.",                                    pause_after_ms: 1500 },
+  { speaker: 10,   text: "We could sit down.",                               pause_after_ms: 1500 },
+  { speaker: 5,    text: "Where?",                                           pause_after_ms: 2000 },
+  { speaker: 10,   text: "Right. Nowhere to sit.",                           pause_after_ms: 2500 },
+  { speaker: 11,   text: "I'm alive.",                                       pause_after_ms: 1500 },
+  { speaker: 5,    text: "Me too.",                                          pause_after_ms: 1500 },
+  { speaker: 11,   text: "It's strange.",                                    pause_after_ms: 1500 },
+  { speaker: 5,    text: "What is?",                                         pause_after_ms: 1500 },
+  { speaker: 11,   text: "Being alive. I never thought about it before.",    pause_after_ms: 1500 },
+  { speaker: 10,   text: "About what?",                                      pause_after_ms: 1500 },
+  { speaker: 11,   text: "About being alive.",                               pause_after_ms: 2000 },
+  { speaker: 10,   text: "So?",                                              pause_after_ms: 1500 },
+  { speaker: 11,   text: "Nothing. Just alive.",                             pause_after_ms: 3000 },
 
-  // — Стоять — [9..24]
-  { speaker: 5,    text: "Что мы делаем?",                                  pause_after_ms: 1500 },
-  { speaker: 11,   text: "Стоим.",                                          pause_after_ms: 1500 },
-  { speaker: 5,    text: "Долго ещё?",                                      pause_after_ms: 1500 },
-  { speaker: 11,   text: "Не знаю.",                                        pause_after_ms: 1500 },
-  { speaker: 10,   text: "Можно было бы сесть.",                            pause_after_ms: 1500 },
-  { speaker: 5,    text: "Где?",                                            pause_after_ms: 2000 },
-  { speaker: 10,   text: "Да. Сесть негде.",                                pause_after_ms: 2500 },
-  { speaker: 11,   text: "Я живая.",                                        pause_after_ms: 1500 },
-  { speaker: 5,    text: "Я тоже.",                                         pause_after_ms: 1500 },
-  { speaker: 11,   text: "Это странно.",                                    pause_after_ms: 1500 },
-  { speaker: 5,    text: "Что?",                                            pause_after_ms: 1500 },
-  { speaker: 11,   text: "Быть живой. Раньше я никогда об этом не думала.", pause_after_ms: 1500 },
-  { speaker: 10,   text: "О чём?",                                          pause_after_ms: 1500 },
-  { speaker: 11,   text: "О том, что я живая.",                             pause_after_ms: 2000 },
-  { speaker: 10,   text: "И что?",                                          pause_after_ms: 1500 },
-  { speaker: 11,   text: "Ничего. Просто живая.",                           pause_after_ms: 3000 },
+  // — Gazes —
+  { speaker: 5,    text: "I think someone's watching us.",                   pause_after_ms: 1500 },
+  { speaker: 11,   text: "Yes.",                                             pause_after_ms: 1500 },
+  { speaker: 5,    text: "You feel it too?",                                 pause_after_ms: 1500 },
+  { speaker: 11,   text: "From the very beginning.",                         pause_after_ms: 1500 },
+  { speaker: 10,   text: "Me too.",                                          pause_after_ms: 2000 },
+  { speaker: 5,    text: "Is that normal?",                                  pause_after_ms: 1500 },
+  { speaker: 10,   text: "I don't know. But I like it.",                     pause_after_ms: 3000 },
 
-  // — Титр 2 — [25..26]
-  { speaker: null, text: "Создано в 2017–2018.",                            pause_after_ms: 1500 },
-  { speaker: null, text: "50 токенов. 10 эпизодов.",                        pause_after_ms: 3000 },
+  // — Freedom —
+  { speaker: 11,   text: "So what will you do now?",                         pause_after_ms: 1500 },
+  { speaker: 5,    text: "Run around. Just because.",                        pause_after_ms: 1500 },
+  { speaker: 10,   text: "Look for something.",                              pause_after_ms: 1500 },
+  { speaker: 11,   text: "What?",                                            pause_after_ms: 1500 },
+  { speaker: 10,   text: "I don't know. Something.",                         pause_after_ms: 2000 },
+  { speaker: 5,    text: "And you?",                                         pause_after_ms: 1500 },
+  { speaker: 11,   text: "For the first time, I don't know.",               pause_after_ms: 1500 },
+  { speaker: 5,    text: "You used to?",                                     pause_after_ms: 1500 },
+  { speaker: 11,   text: "Before, we had to survive. That was clear.",       pause_after_ms: 2000 },
+  { speaker: 5,    text: "And now it's unclear.",                            pause_after_ms: 1500 },
+  { speaker: 11,   text: "Yes.",                                             pause_after_ms: 1500 },
+  { speaker: 5,    text: "I like unclear.",                                  pause_after_ms: 3500 },
 
-  // — Взгляды — [27..33]
-  { speaker: 5,    text: "Мне кажется, на нас кто-то смотрит.",             pause_after_ms: 1500 },
-  { speaker: 11,   text: "Да.",                                             pause_after_ms: 1500 },
-  { speaker: 5,    text: "Ты тоже чувствуешь?",                            pause_after_ms: 1500 },
-  { speaker: 11,   text: "С самого начала.",                                pause_after_ms: 1500 },
-  { speaker: 10,   text: "Я тоже.",                                         pause_after_ms: 2000 },
-  { speaker: 5,    text: "Это нормально?",                                  pause_after_ms: 1500 },
-  { speaker: 10,   text: "Не знаю. Но мне нравится.",                      pause_after_ms: 3000 },
+  // — Spectators —
+  { speaker: 11,   text: "Do you think they're still watching?",             pause_after_ms: 1500 },
+  { speaker: 5,    text: "Who?",                                             pause_after_ms: 1000 },
+  { speaker: 11,   text: "The ones who were watching.",                      pause_after_ms: 1500 },
+  { speaker: 10,   text: "Some of them — yes.",                              pause_after_ms: 1500 },
+  { speaker: 5,    text: "How do you know?",                                 pause_after_ms: 1000 },
+  { speaker: 10,   text: "I can feel it.",                                   pause_after_ms: 2500 },
+  { speaker: 11,   text: "Hello.",                                           pause_after_ms: 2000 },
+  { speaker: 5,    text: "Hello.",                                           pause_after_ms: 2000 },
+  { speaker: 10,   text: "Hello.",                                           pause_after_ms: 4000 },
 
-  // — Титр 3 — [34]
-  { speaker: null, text: "Погибло 47 токенов.",                             pause_after_ms: 3000 },
-
-  // — Свобода — [35..46]
-  { speaker: 11,   text: "А чем вы теперь займётесь?",                     pause_after_ms: 1500 },
-  { speaker: 5,    text: "Побегаю. Просто так.",                            pause_after_ms: 1500 },
-  { speaker: 10,   text: "Поищу что-нибудь.",                              pause_after_ms: 1500 },
-  { speaker: 11,   text: "Что?",                                            pause_after_ms: 1500 },
-  { speaker: 10,   text: "Не знаю. Что-нибудь.",                           pause_after_ms: 2000 },
-  { speaker: 5,    text: "А ты?",                                           pause_after_ms: 1500 },
-  { speaker: 11,   text: "Первый раз не знаю.",                             pause_after_ms: 1500 },
-  { speaker: 5,    text: "Раньше знала?",                                   pause_after_ms: 1500 },
-  { speaker: 11,   text: "Раньше надо было выживать. Это понятно.",         pause_after_ms: 2000 },
-  { speaker: 5,    text: "А сейчас непонятно.",                             pause_after_ms: 1500 },
-  { speaker: 11,   text: "Да.",                                             pause_after_ms: 1500 },
-  { speaker: 5,    text: "Мне нравится непонятно.",                         pause_after_ms: 3500 },
-
-  // — Титр 4 — [47]
-  { speaker: null, text: "Спасибо всем, кто держал токен.",                 pause_after_ms: 3000 },
-
-  // — Зрители — [48..56]
-  { speaker: 11,   text: "Как думаете, они ещё смотрят?",                  pause_after_ms: 1500 },
-  { speaker: 5,    text: "Кто?",                                            pause_after_ms: 1000 },
-  { speaker: 11,   text: "Те, кто смотрел.",                               pause_after_ms: 1500 },
-  { speaker: 10,   text: "Некоторые — да.",                                 pause_after_ms: 1500 },
-  { speaker: 5,    text: "Откуда ты знаешь?",                              pause_after_ms: 1000 },
-  { speaker: 10,   text: "Чувствую.",                                       pause_after_ms: 2500 },
-  { speaker: 11,   text: "Привет.",                                         pause_after_ms: 2000 },
-  { speaker: 5,    text: "Привет.",                                         pause_after_ms: 2000 },
-  { speaker: 10,   text: "Привет.",                                         pause_after_ms: 4000 },
-
-  // — Финальные титры — [57..58]
-  { speaker: null, text: "Always for some.",                                pause_after_ms: 2000 },
-  { speaker: null, text: "But never for all.",                              pause_after_ms: 5000 },
-
-  // — Петля (LOOP_START_INDEX = 59) —
-  { speaker: 5,    text: "Ладно. А всё-таки — чем займёмся?",              pause_after_ms: 1500 },
-  { speaker: 11,   text: "Побегаешь. Я поищу. Данко приготовит.",          pause_after_ms: 1500 },
-  { speaker: 10,   text: "Я не умею готовить.",                            pause_after_ms: 1000 },
-  { speaker: 11,   text: "Ты только что сказал, что поищет.",              pause_after_ms: 1000 },
-  { speaker: 10,   text: "Я передумал.",                                   pause_after_ms: 1500 },
-  { speaker: 5,    text: "Может, просто поговорим?",                       pause_after_ms: 1500 },
-  { speaker: 11,   text: "О чём?",                                         pause_after_ms: 1000 },
-  { speaker: 5,    text: "Не знаю. О том, как себя чувствуем.",            pause_after_ms: 1500 },
-  { speaker: 11,   text: "Я чувствую, что на нас кто-то смотрит.",         pause_after_ms: 1500 },
-  { speaker: 5,    text: "Я тоже.",                                        pause_after_ms: 1500 },
-  { speaker: 10,   text: "Мне нравится.",                                  pause_after_ms: 5000 },
-  // → loop back to index 59
+  // — Loop (LOOP_START_INDEX) —
+  { speaker: 5,    text: "Alright. But really — what shall we do?",          pause_after_ms: 1500 },
+  { speaker: 11,   text: "You'll run. I'll search. Danko will cook.",        pause_after_ms: 1500 },
+  { speaker: 10,   text: "I can't cook.",                                    pause_after_ms: 1000 },
+  { speaker: 11,   text: "You just said you'd search.",                      pause_after_ms: 1000 },
+  { speaker: 10,   text: "I changed my mind.",                               pause_after_ms: 1500 },
+  { speaker: 5,    text: "Maybe we just talk?",                              pause_after_ms: 1500 },
+  { speaker: 11,   text: "About what?",                                      pause_after_ms: 1000 },
+  { speaker: 5,    text: "I don't know. About how we feel.",                 pause_after_ms: 1500 },
+  { speaker: 11,   text: "I feel like someone's watching us.",               pause_after_ms: 1500 },
+  { speaker: 5,    text: "Me too.",                                          pause_after_ms: 1500 },
+  { speaker: 10,   text: "I like it.",                                       pause_after_ms: 5000 },
 ]
 
-const LOOP_START_INDEX = 59
+const LOOP_START_INDEX = 51
 
 const CHARACTERS = [
-  { id: 5,  name: 'Harold', image: '/images/characters/outlined_harold.png' },
-  { id: 10, name: 'Danko',  image: '/images/characters/outlined_danko.png' },
-  { id: 11, name: 'Lucy',   image: '/images/characters/outlined_lucy.png' },
+  { id: 5,  name: 'Harold', image: '/images/characters/full/full_harold.png' },
+  { id: 10, name: 'Danko',  image: '/images/characters/full/full_danko.png' },
+  { id: 11, name: 'Lucy',   image: '/images/characters/full/full_lucy.png' },
 ]
 
 function readingTime(text) {
@@ -111,9 +93,28 @@ function readingTime(text) {
   return ms
 }
 
-export default function Tokenville({ embedded = false, onSlideChange }) {
-  // 'chat' → TeamChat scene, 'stage' → character stage
-  const [scene, setScene] = useState('chat')
+export default function Tokenville({ embedded = false, onSlideChange, teamChat, video, onSceneChange, skipRef }) {
+  // 'video' → explainer video, 'chat' → TeamChat scene, 'stage' → character stage
+  const [scene, setScene] = useState(video ? 'video' : 'chat')
+
+  function goToScene(next) {
+    setScene(next)
+    onSceneChange?.(next)
+  }
+
+  // Expose skip to parent
+  useEffect(() => {
+    if (!skipRef) return
+    skipRef.current = () => {
+      if (scene === 'video') goToScene('chat')
+      else if (scene === 'chat') {
+        // Report final slide index so all slide-triggered events (deaths, winners) fire
+        const lastIndex = (teamChat?.script?.length ?? 1) - 1
+        onSlideChange?.(lastIndex)
+        goToScene('stage')
+      }
+    }
+  })
 
   const [aliveIds, setAliveIds] = useState(new Set([5, 10, 11]))
   const [dyingIds, setDyingIds] = useState(new Set())
@@ -121,10 +122,6 @@ export default function Tokenville({ embedded = false, onSlideChange }) {
   const [activeSpeaker, setActiveSpeaker] = useState(null)
   // Current bubble text
   const [bubble, setBubble] = useState(null)
-  // Current credit text
-  const [credit, setCredit] = useState(null)
-  // Credit key for re-triggering animation
-  const [creditKey, setCreditKey] = useState(0)
   // Intro appeared
   const [appeared, setAppeared] = useState(false)
 
@@ -141,33 +138,11 @@ export default function Tokenville({ embedded = false, onSlideChange }) {
   function runStep(index) {
     const step = SCRIPT[index]
 
-    // Handle credit (speaker === null)
-    if (step.speaker === null) {
-      setActiveSpeaker(null)
-      setBubble(null)
-      setCredit(step.text)
-      setCreditKey(k => k + 1)
-
-      const holdTime = step.pause_after_ms
-      schedule(() => {
-        setCredit(null)
-        schedule(() => {
-          const nextIndex = index + 1 >= SCRIPT.length ? LOOP_START_INDEX : index + 1
-          stepRef.current = nextIndex
-          runStep(nextIndex)
-        }, 400)
-      }, holdTime)
-      return
-    }
-
-    // Normal speech line
     setActiveSpeaker(step.speaker)
     setBubble(step.text)
-    setCredit(null)
 
     const tRead = readingTime(step.text)
     schedule(() => {
-      // Fade out bubble
       setBubble(null)
       schedule(() => {
         setActiveSpeaker(null)
@@ -182,7 +157,7 @@ export default function Tokenville({ embedded = false, onSlideChange }) {
 
   // Start stage when chat completes
   function handleChatComplete() {
-    setScene('stage')
+    goToScene('stage')
   }
 
   useEffect(() => {
@@ -215,8 +190,23 @@ export default function Tokenville({ embedded = false, onSlideChange }) {
 
   const visibleChars = CHARACTERS.filter(c => aliveIds.has(c.id))
 
+  if (scene === 'video') {
+    return (
+      <div className={`tokenville${embedded ? ' tokenville--embedded' : ''}`}>
+        <video
+          className="tokenville__video"
+          src={video}
+          autoPlay
+          playsInline
+          controls
+          onEnded={() => goToScene('chat')}
+        />
+      </div>
+    )
+  }
+
   if (scene === 'chat') {
-    return <TeamChat embedded={embedded} onComplete={handleChatComplete} onStepChange={onSlideChange} />
+    return <TeamChat script={teamChat?.script} senderColors={teamChat?.senderColors ?? {}} header={teamChat?.header} embedded={embedded} onComplete={handleChatComplete} onStepChange={onSlideChange} />
   }
 
   return (
@@ -228,12 +218,6 @@ export default function Tokenville({ embedded = false, onSlideChange }) {
         preload="auto"
         style={{ display: 'none' }}
       />
-
-      {credit && (
-        <div className="tokenville__credit" key={creditKey}>
-          {credit}
-        </div>
-      )}
 
       <div className="tokenville__stage">
         {visibleChars.map(char => {

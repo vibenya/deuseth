@@ -1,136 +1,203 @@
+/* ===== Unified Header / Topbar ===== */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  transition: background 0.3s;
-}
-
-.header--default {
-  background: transparent;
-}
-
-.header--default .header__link {
-  color: #fff;
-}
-
-.header--light {
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-
-.header--light .header__link {
-  color: #333;
-}
-
-.header__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 24px;
+  gap: 16px;
+  padding: 0 20px;
+  height: 48px;
+  background: #fff;
+  color: #0e0e10;
 }
 
-.header__logo img {
-  height: 32px;
-  width: auto;
+/* Desktop inline variant (inside ep-player__left) */
+.header--inline {
+  display: none;
 }
 
-.header__nav {
-  display: flex;
-  gap: 32px;
+@media (min-width: 1024px) {
+  .header--inline {
+    display: flex;
+    gap: 12px;
+    padding: 0 22px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  /* Hide the mobile version on desktop */
+  .header:not(.header--inline) {
+    display: none;
+  }
 }
 
-.header__link {
-  font-family: var(--alsans);
-  font-size: 16px;
-  font-weight: 500;
+/* Logo */
+.header__logo {
+  flex-shrink: 0;
   text-decoration: none;
+  opacity: 0.9;
   transition: opacity 0.2s;
 }
+.header__logo img { display: block; height: 22px; width: auto; }
+.header__logo:hover { opacity: 1; }
+.header--inline .header__logo img { height: 20px; }
 
-.header__link:hover {
-  opacity: 0.7;
+/* Episode title (mobile bar only) */
+.header__title {
+  font-family: var(--alsans);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(14,14,16,0.45);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.header__ep {
+  margin-right: 8px;
+  color: rgba(14,14,16,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
 }
 
-.header__link--active {
-  font-weight: 700;
+/* Nav container — items separated by vertical hairlines */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
-.header__right {
-  width: 80px;
+/* Vertical dividers between buttons */
+.header__dash-btn + .header__dash-btn {
+  border-left: 1px solid rgba(14, 14, 16, 0.12);
 }
 
-/* Burger */
+/* ── Nav buttons — horizontal, no fill ── */
+.header__dash-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  height: 28px;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: rgba(14, 14, 16, 0.42);
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.header__dash-btn:hover {
+  color: #0e0e10;
+}
+
+.header__dash-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.header__dash-label {
+  font-family: var(--alsans);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* ── Burger (mobile only) ── */
 .header__burger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
-  width: 28px;
-  padding: 4px 0;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
   cursor: pointer;
-  z-index: 101;
+  padding: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
 }
-
 .header__burger span {
   display: block;
-  height: 2px;
   width: 100%;
-  background: #333;
-  border-radius: 1px;
-  transition: transform 0.3s, opacity 0.3s;
+  height: 1.5px;
+  background: rgba(14,14,16,0.7);
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  transform-origin: center;
 }
+.header__burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.header__burger.is-open span:nth-child(2) { opacity: 0; }
+.header__burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-.header--default .header__burger span {
-  background: #fff;
-}
-
-.header__burger--open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.header__burger--open span:nth-child(2) {
-  opacity: 0;
-}
-
-.header__burger--open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-  .header__burger {
-    display: flex;
-  }
+  .header__burger { display: flex; }
 
   .header__nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 260px;
-    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    left: 0;
     flex-direction: column;
     gap: 0;
+    margin-left: 0;
     background: #fff;
-    padding: 80px 32px 32px;
-    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s;
+    border-top: 1px solid rgba(14,14,16,0.08);
+    padding: 6px 0;
+    z-index: 400;
   }
+  .header__nav.is-open { display: flex; }
 
-  .header__nav--open {
-    right: 0;
+  /* Stack vertically — dividers become horizontal */
+  .header__nav .header__dash-btn + .header__dash-btn {
+    border-left: none;
+    border-top: 1px solid rgba(14,14,16,0.06);
   }
-
-  .header__nav .header__link {
-    color: #333;
-    padding: 16px 0;
-    font-size: 18px;
-    border-bottom: 1px solid #eee;
+  .header__nav .header__dash-btn {
+    height: 44px;
+    padding: 0 20px;
+    gap: 10px;
   }
+  .header__dash-icon { width: 18px; height: 18px; }
+  .header__dash-label { font-size: 12px; letter-spacing: 0.06em; }
 
-  .header__right {
-    display: none;
+  .header__title { display: none; }
+}
+
+/* ── Intro (dark) variant ── */
+.header--intro {
+  background: #000;
+  color: #fff;
+}
+.header--intro .header__logo img { filter: invert(1); }
+.header--intro .header__title { color: rgba(255,255,255,0.45); }
+.header--intro .header__ep { color: rgba(255,255,255,0.3); }
+.header--intro .header__burger span { background: #fff; }
+.header--intro .header__dash-btn {
+  color: rgba(255,255,255,0.42);
+}
+.header--intro .header__dash-btn:hover {
+  color: #fff;
+}
+.header--intro .header__dash-btn + .header__dash-btn {
+  border-left-color: rgba(255,255,255,0.12);
+}
+
+@media (max-width: 768px) {
+  .header--intro .header__nav {
+    background: #111;
+    border-top-color: rgba(255,255,255,0.1);
+  }
+  .header--intro .header__nav .header__dash-btn + .header__dash-btn {
+    border-left: none;
+    border-top-color: rgba(255,255,255,0.08);
   }
 }

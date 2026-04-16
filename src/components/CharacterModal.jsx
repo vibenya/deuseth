@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import timelines from '../data/token_timelines.json'
 import '../styles/CharacterModal.css'
 
@@ -166,7 +167,7 @@ export default function CharacterModal({ character, status, episode, onClose }) 
   const epNumber = episode?.number != null ? String(episode.number).padStart(2, '0') : null
   const epTitle = episode?.title
 
-  return (
+  return createPortal(
     <div
       className={`cm-overlay${mounted ? ' cm-overlay--in' : ''}`}
       onClick={onClose}
@@ -412,6 +413,7 @@ export default function CharacterModal({ character, status, episode, onClose }) 
 
         </div>
       </aside>
-    </div>
+    </div>,
+    document.body
   )
 }

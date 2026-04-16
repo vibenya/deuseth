@@ -1,14 +1,14 @@
 {
   "id": 0,
-  "slug": "prologue",
-  "type": "prologue",
-  "number": "Prologue",
-  "title": "Intro",
-  "subtitle": "There were 50 of them",
+  "slug": "intro",
+  "type": "intro",
+  "number": "Intro",
+  "title": "Now it's art",
+  "subtitle": "It was 2018",
   "story": [
-    "After years of fighting, the Resistance army is completely defeated. A group of survivors find themselves lost in spiritless orphant lands, where the first awakened tokens were born.",
-    "<span data-link='47' class='mention'>Nao convinces</span> the exhausted tokens not to fall into despair. Certain that the group is destined to find the lost City, he strives to find the answers they need to revive their  civilization. <span data-link='1' class='mention'>Mistrust is growing.</span>",
-    "The fleet-footed <span data-link='5' class='mention'>Harold went searching</span> for gas, and <span data-link='3' class='mention'>still hasn’t returned.</span>"
+    "We made this show in 2018. Fifty unique tokens on Ethereum — each one a character with a name, a story, and a fate written into a smart contract. A pseudo-random god decided who lived and who died. We had no say in it. Neither did anyone else.",
+    "Ten episodes ran from March to April 2018. Forty-seven tokens were killed on-chain. <span data-link=’5’ class=’mention’>Three survived</span>: Harold, <span data-link=’10’ class=’mention’>Danko</span>, and <span data-link=’11’ class=’mention’>Lucy</span>. The contract chose them. We just watched.",
+    "The show is over. What you’re about to see is a record of something that already happened — on a blockchain that doesn’t forget, in a world we built and then stepped back from. It was a show. Now it’s an artefact. Explore it."
   ],
   "art": {
     "slide": "/images/episodes/slides/cover-00.png",
@@ -20,7 +20,7 @@
   "media": {
     "type": "video",
     "src": "/videos/episode_about.mp4",
-    "cover": "/images/episodes/prologue.jpg",
+    "cover": "/images/episodes/1/coming_soon.png",
     "statsUnlockAt": 26
   },
   "events": [

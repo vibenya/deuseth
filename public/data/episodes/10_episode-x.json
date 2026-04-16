@@ -19,7 +19,36 @@
     "map": null
   },
   "media": {
-    "type": "tokenville"
+    "type": "tokenville",
+    "video": "/videos/deus-eth-explainer.mp4",
+    "teamChat": {
+      "header": { "title": "Deus ETH Production", "memberCount": "6 members" },
+      "senderColors": {
+        "Ivan Sokolov": "#5b8dee",
+        "Karen Tarzyan": "#e05c7a",
+        "Kesha Seifert": "#4db87a",
+        "Ekaterina Komrakova": "#e0a640",
+        "Kostya Dmitriev": "#20b2a0"
+      },
+      "script": [
+        { "type": "date",   "text": "April 12, 2018", "pause_after_ms": 400 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "10:03", "lines": ["wrote the finale script", "📎 synopsis_ep10_v1.docx"], "pause_after_ms": 1800 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "10:44", "lines": ["karen this is actually good"], "pause_after_ms": 800 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "10:45", "lines": ["but we have like 4 viewers", "as one owns 2 tokens"], "pause_after_ms": 2500 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "11:02", "lines": ["look", "let's just announce the winners", "deploy the contract and write a post"], "pause_after_ms": 1000 },
+        { "type": "msg",    "sender": "Ekaterina Komrakova", "time": "11:04", "lines": ["at least it's honest"],  "pause_after_ms": 800 },
+        { "type": "msg",    "sender": "Karen Tarzyan",        "time": "11:05", "lines": ["this is surrender"],         "pause_after_ms": 3500 },
+
+        { "type": "date",   "text": "April 13, 2018", "pause_after_ms": 400 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "15:12", "lines": ["alright", "drumroll..."], "pause_after_ms": 2800 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "15:13", "lines": ["episode 10 deaths:", "Noir and Kate"], "pause_after_ms": 2500 },
+        { "type": "msg",    "sender": "Kesha Seifert",        "time": "15:14", "lines": ["winners:", "Harold (5)", "Danko (10)", "Lucy (11)"], "pause_after_ms": 2500 },
+        { "type": "msg",    "sender": "Ivan Sokolov",        "time": "15:16", "lines": ["katya", "write the post"],       "pause_after_ms": 1000 },
+        { "type": "msg",    "sender": "Ekaterina Komrakova", "time": "15:17", "lines": ["OKAY"],                "pause_after_ms": 4000 },
+
+        { "type": "end" }
+      ]
+    }
   },
   "events": [
     {
@@ -29,7 +58,7 @@
       ],
       "action": "die",
       "at": {
-        "slide": 21
+        "slide": 9
       }
     },
     {
@@ -40,7 +69,7 @@
       ],
       "action": "winner",
       "at": {
-        "slide": 22
+        "slide": 10
       }
     }
   ],

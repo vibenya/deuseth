@@ -384,6 +384,62 @@
   animation: epFadeIn 0.5s 0.16s ease both;
 }
 
+/* Stats wrapper — positions overlay anchor */
+.ep-ctrl__stats-wrap {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border-left: 1px solid var(--ep-rule);
+}
+
+.ep-ctrl__stats-btn {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  -webkit-appearance: none;
+  transition: opacity 0.18s ease;
+}
+.ep-ctrl__stats-btn--static {
+  cursor: default;
+}
+.ep-ctrl__stats-btn:hover:not(.ep-ctrl__stats-btn--static) {
+  opacity: 0.72;
+}
+.ep-ctrl__stats-btn.is-active {
+  opacity: 1;
+}
+
+
+/* On-chain overlay — floats over media area, bottom-right */
+.ep-chain-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 450;
+  min-width: 280px;
+  max-width: 360px;
+  background: rgba(12, 12, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  animation: epChainIn 0.2s ease both;
+}
+
+@keyframes epChainIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Alive / dead counter — mirrors title block layout */
 .ep-counter {
   display: flex;

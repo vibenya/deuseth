@@ -207,6 +207,20 @@ export default function History() {
             each other. Neither was announced. Neither was ever played. Both
             exist permanently, waiting for queries that will never come.
           </p>
+
+          <ExhibitImage
+            exhibit="D"
+            date="2021"
+            source="Pitch deck"
+            caption="Slides from the funding presentation that secured the project's budget. The pitch framed DeusETH as a story about a world where tokens are alive, owned, and mortal — Tokenville thriving, Tokenville buried, and a leader addressing his people in between."
+            slides={[
+              { src: '/images/exhibits/exhibit-d1-pitch-tokenville.jpg', alt: 'Welcome to Tokenville — 363 inhabitants' },
+              { src: '/images/exhibits/exhibit-d2-pitch-dark-room.jpg', alt: 'A token alone in a dark room' },
+              { src: '/images/exhibits/exhibit-d3-pitch-nao-speech.jpg', alt: 'Nao addressing the token crowd' },
+              { src: '/images/exhibits/exhibit-d4-pitch-graveyard.jpg', alt: 'Tokenville graveyard — inhabitants crossed out' },
+            ]}
+          />
+
           <p>
             The first pair (<em>v0a</em>, nonces 0–2) was deployed at 11:16 UTC
             and linked to its lottery a minute later. A bug was found. By 16:06
@@ -232,6 +246,31 @@ export default function History() {
               meta="2017-12-29 · Nonce 7 · Fixed, still never public"
             />
           </div>
+
+          <ExhibitImage
+            exhibit="C.1"
+            date="2017"
+            source="Production archive"
+            src="/images/exhibits/exhibit-c1-prologue-sketch.jpg"
+            alt="Prologue sketch — Nao addressing the token crowd before the march"
+            caption="A production sketch for the prologue sequence. Nao addresses the assembled tokens before the march into the Orphant Lands. The contracts had not been written yet — the show existed only as drawings."
+          />
+          <ExhibitImage
+            exhibit="C.2"
+            date="2018"
+            source="Production archive"
+            src="/images/exhibits/exhibit-c2-team-photo.jpg"
+            alt="The DeusETH team during production"
+            caption="The team during production. Signs read &ldquo;Free Tokens&rdquo; and &ldquo;Legalize ICO&rdquo; — the humor of a group building crypto-theatre in the middle of the ICO boom. The characters in the photo are hand-drawn cutouts from the show."
+          />
+          <ExhibitImage
+            exhibit="C.3"
+            date="2018"
+            source="Production archive"
+            src="/images/exhibits/exhibit-c3-ep6-animatic.mp4"
+            alt="Episode VI animatic — The Final Battle"
+            caption="An animatic for Episode VI (The Final Battle). Fourteen tokens die in a single episode — the largest massacre in the show. This is what the scene looked like before it was rendered and committed to chain."
+          />
         </Section>
 
         {/* §02 */}
@@ -264,6 +303,15 @@ export default function History() {
               meta="2018-01-29 · Nonce 13 · 50 births, 0 deaths"
             />
           </div>
+
+          <ExhibitImage
+            exhibit="B.1"
+            date="2018-01"
+            source="deuseth.com"
+            src="/images/exhibits/exhibit-b1-initial-hero-offering.jpg"
+            alt="Original marketplace — last three unsold tokens"
+            caption="The original &ldquo;Initial Hero Offering&rdquo; page. Ashley Mazel, Narciss, and Mrs. Strict were the last three tokens still available — each at 0.3 ETH, each showing a 6% survival probability. All 50 were purchased within a day."
+          />
         </Section>
 
         {/* §03 */}
@@ -390,93 +438,63 @@ export default function History() {
           <div className="hist__exhibits-grid">
             <ExhibitImage
               exhibit="A.1"
-              date="2018-03-20"
-              source="Telegram"
-              alt="community reaction to Wolf Party deaths"
-              caption="A participant reacts to the second episode's death list within the hour of its broadcast."
+              date="2018-03"
+              source="Telegram DM"
+              src="/images/exhibits/exhibit-a1-holder-anticipation.jpg"
+              alt="Token holder anxiously asking about the next episode"
+              caption="A holder asks when the next episode drops, worries about his tokens' fate, and demands insider info on upcoming deaths. The emotional investment is real — these are not collectibles, they are characters someone is rooting for."
             />
             <ExhibitImage
               exhibit="A.2"
-              date="2018-04-06"
-              source="Telegram"
-              alt="announcement of the Hard Fork"
-              caption="The team announces the Hard Fork revival to the audience. Archived by a community member."
+              date="2018"
+              source="Email to help@deuseth.com"
+              src="/images/exhibits/exhibit-a2-konstanz-mourning.jpg"
+              alt="User mourning the death of Konstanz"
+              caption="A holder of Konstanz writes in to mourn the character's death and plead for resurrection. He invents a backstory — Konstanz survived, lost weight wandering the desert, became a leader. The emotional attachment outlived the token's on-chain state."
             />
             <ExhibitImage
               exhibit="A.3"
-              date="2018-04-13"
-              source="Telegram"
-              alt="Tokenville survivors moment"
-              caption="The end of the show — three token ids remain at state = 1. Witnessed live."
+              date="2018"
+              source="Email to help@deuseth.com"
+              src="/images/exhibits/exhibit-a3-claudia-customization.jpg"
+              alt="User requesting character customization for Claudia"
+              caption="The owner of Claudia (token 23) asks the team to redraw the character to resemble his girlfriend — a professional violinist. He provides a reference image. The team complied. A token became a portrait."
             />
             <ExhibitImage
               exhibit="A.4"
               date="2018"
-              source="Community archive"
-              alt="early secondary market reaction"
-              caption="Listings on the v1 stock exchange during the first speculative week."
+              source="Email to hello@deuseth.com"
+              src="/images/exhibits/exhibit-a4-zergaldo-customization.jpg"
+              alt="User requesting character customization for Zergaldo"
+              caption="Dăng from Vietnam asks the team to redraw Zergaldo (token 35) as General Trần Hưng Đạo, attaching reference armour. The team complied. A token became a national hero."
             />
           </div>
 
           <p>
-            These exhibits are placeholders for archival images the team is
-            assembling. Their function here is formal, not illustrative — a
-            work of this kind must be shown to have been <em>seen</em>, not
-            merely executed.
+            These are not curated testimonials. They are unedited messages
+            from participants who treated fictional tokens as extensions of
+            themselves — worrying about their survival, mourning their deaths,
+            reshaping their appearance. The emotional register is the evidence.
           </p>
+
+          <ExhibitImage
+            exhibit="E"
+            date="2018-05"
+            source="Cointelegraph Magazine, print edition"
+            src="/images/exhibits/exhibit-e1-cointelegraph-print.jpg"
+            alt="Life Tokenized — Cointelegraph Magazine spread featuring DeusETH"
+            caption="&ldquo;Life Tokenized: The Blockchain Reality Show Experience&rdquo; — a feature in the print edition of Cointelegraph Magazine, published shortly after the final episode. The spread uses the show's own artwork: tokens gathered, a masked figure looming. The article was written while the contracts were still warm."
+          />
         </Section>
 
-        {/* §07 — Gary Evidence */}
       </article>
-
-      <EvidenceBlock exhibit="B · Token 13" title="Gary's Arc — minted, burned, memorialized">
-        <div className="ev-grid">
-          <div className="ev-grid__narrative">
-            <p>
-              Of the 69 tokens minted on the post-show v3 ERC-721 relaunch,
-              exactly one was sent to the burn address. It was token 13, Gary.
-              The holder, having bought him on OpenSea in 2021 for 2.0 ETH,
-              transferred him to <span className="hist-mono">0x000…dEaD</span>{' '}
-              on January 1, 2024 — a ritual burn, not a contract call.
-            </p>
-            <p>
-              Gary's ten-step arc is the single most-documented lifecycle in
-              the project: minted for 0.3 ETH, sold at 0.8 ETH, migrated via
-              the team, re-minted on v3, resold for 0.1 ETH in 2018, and
-              finally achieved the project's all-time high resale of 2.0 ETH
-              in 2021 — before being voluntarily destroyed.
-            </p>
-            <p>
-              No other v3 token is at the burn address. This is an artefact
-              we did not plan for and cannot take credit for. A participant
-              extended the work.
-            </p>
-          </div>
-
-          <ol className="gary-ladder">
-            <li><span className="gary-ladder__date">2018-01-30</span><span className="gary-ladder__event"> bought on v1 · 0.3 ETH</span></li>
-            <li><span className="gary-ladder__date">2018-01-30</span><span className="gary-ladder__event"> listed on v1 StockExchange · 4.0 ETH</span></li>
-            <li><span className="gary-ladder__date">2018-02-01</span><span className="gary-ladder__event"> relisted at 0.8 ETH</span></li>
-            <li><span className="gary-ladder__date">2018-02-20</span><span className="gary-ladder__event"> sold on v1 · 0.8 ETH</span></li>
-            <li><span className="gary-ladder__date">2018-03-16</span><span className="gary-ladder__event"> migrated to v2 (team-held)</span></li>
-            <li><span className="gary-ladder__date">2018-03-27</span><span className="gary-ladder__event"> delisted · no buyer</span></li>
-            <li><span className="gary-ladder__date">2018-04-24</span><span className="gary-ladder__event"> minted on v3 ERC-721</span></li>
-            <li><span className="gary-ladder__date">2018-05-01</span><span className="gary-ladder__event"> sold on DeusMarketplace · 0.1 ETH</span></li>
-            <li><span className="gary-ladder__date">2021-08-30</span><span className="gary-ladder__event"> resold on OpenSea Wyvern · 2.0 ETH</span></li>
-            <li className="gary-ladder__final">
-              <div className="gary-ladder__final-line">2024-01-01 — Burned.</div>
-              <div className="gary-ladder__final-addr">0x000000000000000000000000000000000000dEaD</div>
-            </li>
-          </ol>
-        </div>
-      </EvidenceBlock>
 
       <article className="hist__article">
         <div className="hist__rail" />
 
-        {/* §08 — Lost Key */}
+        {/* §07 — Lost Key */}
         <Section
-          marker="§ 08 · Inaccessible"
+          marker="§ 07 · Inaccessible"
           title="The Lost Key"
           date="2018 → now"
         >
@@ -508,6 +526,7 @@ export default function History() {
       <EvidenceBlock exhibit="C · state = 1" title="The Three Survivors, and Their Claims">
         <div className="survivors-grid">
           <div className="survivor">
+            <img className="survivor__avatar" src="/images/characters/outlined_harold.png" alt="Harold" />
             <span className="survivor__id">Token 5</span>
             <div className="survivor__name">Harold</div>
             <div className="survivor__row">
@@ -523,6 +542,7 @@ export default function History() {
           </div>
 
           <div className="survivor">
+            <img className="survivor__avatar" src="/images/characters/outlined_danko.png" alt="Danko" />
             <span className="survivor__id">Token 10</span>
             <div className="survivor__name">Danko</div>
             <div className="survivor__row">
@@ -538,6 +558,7 @@ export default function History() {
           </div>
 
           <div className="survivor">
+            <img className="survivor__avatar" src="/images/characters/outlined_lucy.png" alt="Lucy" />
             <span className="survivor__id">Token 11</span>
             <div className="survivor__name">Lucy</div>
             <div className="survivor__row">

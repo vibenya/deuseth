@@ -357,7 +357,8 @@
 .exhibit:hover .exhibit__frame {
   border-color: var(--hist-fg-dim);
 }
-.exhibit__frame img {
+.exhibit__frame img,
+.exhibit__frame video {
   display: block;
   width: 100%;
   height: auto;
@@ -392,6 +393,48 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px 32px;
   margin: 32px 0;
+}
+
+/* ---------- Exhibit carousel ---------- */
+
+.exhibit__carousel {
+  position: relative;
+}
+.exhibit__carousel .exhibit__frame img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.exhibit__carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+.exhibit__carousel-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hist-bg-raised);
+  border: 1px solid var(--hist-fg-faint);
+  color: var(--hist-fg);
+  font-family: var(--mono);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.exhibit__carousel-btn:hover {
+  border-color: var(--hist-coral);
+  color: var(--hist-coral);
+}
+.exhibit__carousel-counter {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--hist-fg-dim);
 }
 
 /* ---------- Gary's arc ladder ---------- */
@@ -494,6 +537,14 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-items: center;
+  text-align: center;
+}
+.survivor__avatar {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-bottom: 4px;
 }
 .survivor__id {
   font-family: var(--mono);
@@ -515,6 +566,8 @@
   gap: 4px;
   padding-top: 12px;
   border-top: 1px solid var(--hist-fg-faint);
+  width: 100%;
+  text-align: left;
 }
 .survivor__row-label {
   font-family: var(--mono);

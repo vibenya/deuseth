@@ -40,7 +40,19 @@
         6,
         17
       ],
-      "action": "die"
+      "action": "die",
+      "at": {
+        "videoTime": 34
+      }
+    },
+    {
+      "characters": [
+        47
+      ],
+      "action": "highlight",
+      "at": {
+        "videoTime": 71
+      }
     }
   ],
   "obits": {

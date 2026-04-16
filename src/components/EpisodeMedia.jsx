@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import EpisodeStatCounter from './EpisodeStatCounter'
+import EpisodeBlockchain from './EpisodeBlockchain'
 import Tokenville from './Tokenville'
+import TeamChat from './TeamChat'
 
 /**
  * Normalize the structured media object into a flat list of slide items
@@ -10,7 +12,8 @@ import Tokenville from './Tokenville'
  *   { type: 'video',      src, cover, subtitles?, statsUnlockAt? }
  *   { type: 'gallery',    slides: [url, ...], cover }
  *   { type: 'image',      src }
- *   { type: 'tokenville' }
+ *   { type: 'tokenville', teamChat: {...} }
+ *   { type: 'teamchat',   teamChat: {...} }
  *   { type: 'youtube',    id, cover }
  *   { type: 'coub',       id, cover }
  */
@@ -39,8 +42,11 @@ export default function EpisodeMedia({
   deadCount,
   keyboardEnabled = true,
   showStats = true,
+  blockchain,
 }) {
   const [mediaIndex, setMediaIndex] = useState(0)
+  const [chainOpen, setChainOpen] = useState(false)
+  const chainRef = useRef(null)
   const items = useMemo(() => mediaToItems(media), [media])
   const subtitles = media?.subtitles ?? []
 
@@ -48,10 +54,27 @@ export default function EpisodeMedia({
   const [fadeOut, setFadeOut] = useState(null)
   const [videoEnded, setVideoEnded] = useState(false)
   const iframeRef = useRef(null)
+  // Track Tokenville's internal scene for skip button
+  const [tvScene, setTvScene] = useState(media?.video ? 'video' : 'chat')
+  const tvSkipRef = useRef(null)
+
+  // Close chain overlay on outside click
+  useEffect(() => {
+    if (!chainOpen) return
+    function onClick(e) {
+      if (chainRef.current && !chainRef.current.contains(e.target)) setChainOpen(false)
+    }
+    document.addEventListener('mousedown', onClick)
+    return () => document.removeEventListener('mousedown', onClick)
+  }, [chainOpen])
+
+  // Close chain overlay on episode change
+  useEffect(() => { setChainOpen(false) }, [episodeId])
 
   useEffect(() => {
     setMediaIndex(0)
     setVideoEnded(false)
+    setTvScene(media?.video ? 'video' : 'chat')
     onSlideChange?.(0)
   // onSlideChange is always a stable React setter (setCurrentSlide) — safe to omit
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,7 +85,7 @@ export default function EpisodeMedia({
     if (!ci) return
 
     // Types with no src (e.g. tokenville) — swap immediately
-    if (ci.type === 'tokenville') {
+    if (ci.type === 'tokenville' || ci.type === 'teamchat') {
       setDisplayed(ci)
       return
     }
@@ -120,6 +143,7 @@ export default function EpisodeMedia({
   }, [items.length, mediaIndex, keyboardEnabled, goToSlide])
 
   const isTokenville = displayed?.type === 'tokenville'
+  const isTeamChat = displayed?.type === 'teamchat'
   const isVideo = displayed && (displayed.type === 'youtube' || displayed.type === 'coub')
   const isLocalVideo = displayed?.type === 'video'
   const isCoub = displayed?.type === 'coub'
@@ -160,47 +184,56 @@ export default function EpisodeMedia({
 
   const hasNext = episodeNav?.nextEpisode && !episodeNav.nextEpisode.disabled
   const isLastSlide = mediaIndex === items.length - 1
-  const isMultiSlide = !isVideo && !isLocalVideo && !isTokenville && items.length > 1
+  const isMultiSlide = !isVideo && !isLocalVideo && !isTokenville && !isTeamChat && items.length > 1
 
-  // Single unified advance: slide → next slide, last slide/video/coub → next episode
-  // For video: "SKIP" goes straight to next episode (no forced wait)
+  // Single unified advance: slide → next slide, video playing → skip to cover, last slide/cover/coub → next episode
+  const canSkipVideo = ((isVideo && !isCoub) || isLocalVideo) && !videoEnded
+  const canSkipTokenville = (isTokenville && (tvScene === 'video' || tvScene === 'chat'))
   const canAdvanceSlide = isMultiSlide && !isLastSlide
-  const canAdvanceEp = hasNext && !canAdvanceSlide
+  const canAdvanceEp = hasNext && !canAdvanceSlide && !canSkipVideo && !canSkipTokenville
 
   function handleAdvance() {
-    if (canAdvanceSlide) goToSlide(mediaIndex + 1)
+    if (canSkipVideo) { setVideoEnded(true); onTimeUpdate?.(null) }
+    else if (canSkipTokenville) tvSkipRef.current?.()
+    else if (canAdvanceSlide) goToSlide(mediaIndex + 1)
     else if (canAdvanceEp) episodeNav.onNext()
   }
 
-  const advanceDisabled = !canAdvanceSlide && !canAdvanceEp
-  const advanceLabel = ((isVideo && !isCoub) || isLocalVideo) && !videoEnded ? 'Skip' : 'Next'
+  const advanceDisabled = !canSkipVideo && !canAdvanceSlide && !canAdvanceEp && !canSkipTokenville
+  const advanceLabel = (canSkipVideo || canSkipTokenville) ? 'Skip' : 'Next'
 
   return (
     <div className="ep-player__media-block">
-      <div className={`ep-player__media${isTokenville ? ' ep-player__media--tokenville' : ''}`}>
+      <div className={`ep-player__media${isTokenville || isTeamChat ? ' ep-player__media--tokenville' : ''}`}>
         {displayed && (
           <div className="ep-player__media-inner">
-            {isTokenville && <Tokenville embedded onSlideChange={onSlideChange} />}
+            {isTokenville && <Tokenville embedded onSlideChange={onSlideChange} teamChat={media.teamChat} video={media.video} onSceneChange={setTvScene} skipRef={tvSkipRef} />}
+            {isTeamChat && <TeamChat script={media.teamChat?.script} senderColors={media.teamChat?.senderColors ?? {}} header={media.teamChat?.header} embedded onSlideChange={onSlideChange} />}
             {displayed.type === 'image' && (
               <img className="ep-player__img" src={displayed.src} alt="" />
             )}
-            {isLocalVideo && (
-              <>
-                <video
-                  key={`${episodeId}-${mediaIndex}`}
-                  className="ep-player__iframe"
-                  src={displayed.src}
-                  autoPlay
-                  playsInline
-                  controls
-                  onEnded={() => { setVideoEnded(true); onTimeUpdate?.(null) }}
-                  onTimeUpdate={(e) => onTimeUpdate?.(e.target.currentTime)}
-                >
-                  {subtitles?.map(({ lang, label, src }) => (
-                    <track key={lang} kind="subtitles" src={src} srcLang={lang} label={label} default={lang === 'en'} />
-                  ))}
-                </video>
-              </>
+            {isLocalVideo && !videoEnded && (
+              <video
+                key={`${episodeId}-${mediaIndex}`}
+                className="ep-player__iframe"
+                src={displayed.src}
+                autoPlay
+                playsInline
+                controls
+                onEnded={() => { setVideoEnded(true); onTimeUpdate?.(null) }}
+                onTimeUpdate={(e) => onTimeUpdate?.(e.target.currentTime)}
+              >
+                {subtitles?.map(({ lang, label, src }) => (
+                  <track key={lang} kind="subtitles" src={src} srcLang={lang} label={label} default={lang === 'en'} />
+                ))}
+              </video>
+            )}
+            {isLocalVideo && videoEnded && displayed.preview && (
+              <img
+                className="ep-player__img ep-player__video-cover"
+                src={displayed.preview}
+                alt=""
+              />
             )}
             {isVideo && !videoEnded && (
               <iframe
@@ -248,6 +281,13 @@ export default function EpisodeMedia({
             onAnimationEnd={() => setFadeOut(null)}
           />
         )}
+
+        {/* On-chain proof overlay — inside media container */}
+        {chainOpen && blockchain && (
+          <div className="ep-chain-overlay">
+            <EpisodeBlockchain blockchain={blockchain} />
+          </div>
+        )}
       </div>
 
       {/* Title + controls */}
@@ -273,7 +313,17 @@ export default function EpisodeMedia({
 
         {/* Right: stats + prev + advance */}
         <div className="ep-ctrl__right">
-          {showStats && <EpisodeStatCounter alive={aliveCount} dead={deadCount} />}
+          {showStats && (
+            <div className="ep-ctrl__stats-wrap" ref={chainRef}>
+              <button
+                type="button"
+                className={`ep-ctrl__stats-btn${chainOpen ? ' is-active' : ''}${blockchain ? '' : ' ep-ctrl__stats-btn--static'}`}
+                onClick={() => blockchain && setChainOpen(v => !v)}
+              >
+                <EpisodeStatCounter alive={aliveCount} dead={deadCount} />
+              </button>
+            </div>
+          )}
 
           <div className="ep-ctrl__epnav">
             <button
@@ -324,6 +374,7 @@ export default function EpisodeMedia({
           </div>
         </div>
       </div>
+
     </div>
   )
 }
