@@ -35,20 +35,12 @@
   "events": [
     {
       "characters": [
-        42
-      ],
-      "action": "die",
-      "at": {
-        "slide": 6
-      }
-    },
-    {
-      "characters": [
         27,
         5,
         29,
         25,
         41,
+        42,
         45
       ],
       "action": "die",

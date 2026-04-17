@@ -209,6 +209,15 @@ export default function History() {
           </p>
 
           <ExhibitImage
+            exhibit="C.0"
+            date="2017"
+            source="Production archive"
+            src="/images/exhibits/exhibit-creation-of-token-sketch.jpeg"
+            alt="Early sketch — Creation of Token, referencing Michelangelo's Creation of Adam"
+            caption="An early production sketch for the key visual — a token receiving the spark of life from its creator. The composition references Michelangelo's Creation of Adam, recast with a naked token and a bearded developer."
+          />
+
+          <ExhibitImage
             exhibit="D"
             date="2021"
             source="Pitch deck"

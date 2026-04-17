@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import CharacterList from './CharacterList'
 import EpisodeMedia from './EpisodeMedia'
 import EpisodeList from './EpisodeList'
@@ -17,24 +17,14 @@ export default function Episode({
   onChangeEpisode,
   showStarted,
   onStart,
+  onVideoEnd,
 }) {
   const [charModalOpen, setCharModalOpen] = useState(false)
   const [currentVideoTime, setCurrentVideoTime] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  // 550ms delay so media crossfade settles before episode-level animations start
-  const [displayEpisodeId, setDisplayEpisodeId] = useState(episode?.id)
-  useEffect(() => {
-    const t = setTimeout(() => setDisplayEpisodeId(episode?.id), 550)
-    return () => clearTimeout(t)
-  }, [episode?.id])
-  const displayEpisode = useMemo(
-    () => (episodes ?? []).find(ep => ep.id === displayEpisodeId) ?? episode,
-    [episodes, displayEpisodeId, episode]
-  )
-
   const { statusOf, getDyingMeta, aliveCount, deadCount } = useCharacterStatuses({
-    episode: displayEpisode,
+    episode,
     episodes: episodes ?? [],
     currentVideoTime,
     currentSlide,
@@ -75,6 +65,7 @@ export default function Episode({
           onOpenDrawer={onOpenDrawer}
           onTimeUpdate={setCurrentVideoTime}
           onSlideChange={setCurrentSlide}
+          onVideoEnd={onVideoEnd}
           aliveCount={aliveCount}
           deadCount={deadCount}
           keyboardEnabled={!charModalOpen}
@@ -93,10 +84,10 @@ export default function Episode({
       </div>
 
       {/* Right column: characters */}
-      <div className="ep-player__right">
+      <div className={`ep-player__right${!showStarted ? ' ep-player__right--hidden' : ''}`}>
         {episodes?.length > 0 && (
           <CharacterList
-            episode={displayEpisode}
+            episode={episode}
             statusOf={statusOf}
             getDyingMeta={getDyingMeta}
             onModalOpenChange={setCharModalOpen}

@@ -43,8 +43,8 @@ export default function CharacterList({
   const deathPlayerRef  = useRef(null)
   const rebornPlayerRef = useRef(null)
   const winnerPlayerRef = useRef(null)
-  if (deathPlayerRef.current == null)  deathPlayerRef.current  = createPlayer('/sounds/buzzer.wav', 0.08)
-  if (rebornPlayerRef.current == null) rebornPlayerRef.current = createPlayer('/sounds/reborn.wav', 0.25, { debounce: 1000 })
+  if (deathPlayerRef.current == null)  deathPlayerRef.current  = createPlayer('/sounds/buzzer.wav', 0.08, { debounce: 13000 })
+  if (rebornPlayerRef.current == null) rebornPlayerRef.current = createPlayer('/sounds/reborn.wav', 0.25, { debounce: 2000 })
   if (winnerPlayerRef.current == null) winnerPlayerRef.current = createPlayer('/sounds/winner.wav', 0.6)
   const playDeath  = (d) => deathPlayerRef.current.play(d)
   const playReborn = ()  => rebornPlayerRef.current.play()
@@ -93,9 +93,9 @@ export default function CharacterList({
   /* eslint-enable react-hooks/exhaustive-deps */
 
   useEffect(() => {
-    if (currentVideoTime == null) return
+    if (currentVideoTime == null || !isFinite(currentVideoTime)) return
     for (const evt of videoHighlightEventsRef.current) {
-      if (currentVideoTime < evt.at.videoTime) continue
+      if (currentVideoTime < evt.at.videoTime || currentVideoTime > evt.at.videoTime + 2) continue
       const ids = evt.characters === 'all' ? mainCast.map(c => c.id) : evt.characters
       for (const id of ids) {
         const key = `${evt.at.videoTime}-${id}`

@@ -19,7 +19,7 @@
   },
   "media": {
     "type": "video",
-    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_1.mp4",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_1.mp4?v=2",
     "cover": "/images/episodes/1/cryptokitties.png"
   },
   "events": [
@@ -29,7 +29,7 @@
       ],
       "action": "die",
       "at": {
-        "videoTime": 48
+        "videoTime": 38
       }
     },
     {
@@ -38,7 +38,7 @@
       ],
       "action": "die",
       "at": {
-        "videoTime": 46
+        "videoTime": 39
       }
     },
     {
@@ -47,7 +47,7 @@
       ],
       "action": "die",
       "at": {
-        "videoTime": 47
+        "videoTime": 42
       }
     },
     {
@@ -56,7 +56,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 8
+        "videoTime": 5
       }
     },
     {
@@ -70,7 +70,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 20
+        "videoTime": 17
       }
     },
     {
@@ -79,7 +79,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 25
+        "videoTime": 22
       }
     },
     {
@@ -91,7 +91,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 26
+        "videoTime": 23
       }
     },
     {
@@ -102,7 +102,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 35
+        "videoTime": 32
       }
     },
     {
@@ -111,7 +111,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 41
+        "videoTime": 38
       }
     },
     {
@@ -122,7 +122,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 49
+        "videoTime": 46
       }
     },
     {
@@ -131,7 +131,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 51
+        "videoTime": 48
       }
     },
     {
@@ -140,7 +140,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 52
+        "videoTime": 49
       }
     },
     {
@@ -149,7 +149,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 53
+        "videoTime": 50
       }
     },
     {
@@ -158,7 +158,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 56
+        "videoTime": 53
       }
     },
     {
@@ -170,7 +170,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 64
+        "videoTime": 61
       }
     },
     {
@@ -181,7 +181,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 66
+        "videoTime": 63
       }
     },
     {
@@ -192,7 +192,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 70
+        "videoTime": 67
       }
     },
     {
@@ -201,7 +201,7 @@
       ],
       "action": "highlight",
       "at": {
-        "videoTime": 79
+        "videoTime": 76
       }
     }
   ],

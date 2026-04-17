@@ -20,7 +20,7 @@
   },
   "media": {
     "type": "video",
-    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_9.mp4",
+    "src": "https://pub-b9fc684561b5493f999806784ff9646d.r2.dev/videos/episode_9.mp4?v=2",
     "cover": "/images/episodes/9/cover.png",
     "subtitles": [
       {
@@ -34,112 +34,112 @@
     {
       "characters": [39],
       "action": "highlight",
-      "at": { "videoTime": 15 }
+      "at": { "videoTime": 10 }
     },
     {
       "characters": [47],
       "action": "highlight",
-      "at": { "videoTime": 30 }
+      "at": { "videoTime": 25 }
     },
     {
       "characters": [39],
       "action": "highlight",
-      "at": { "videoTime": 41 }
+      "at": { "videoTime": 36 }
     },
     {
       "characters": [34],
       "action": "highlight",
-      "at": { "videoTime": 61 }
+      "at": { "videoTime": 56 }
     },
     {
       "characters": [39],
       "action": "die",
-      "at": { "videoTime": 64 }
+      "at": { "videoTime": 59 }
     },
     {
       "characters": [1, 2, 3],
       "action": "die",
-      "at": { "videoTime": 67 }
+      "at": { "videoTime": 62 }
     },
     {
       "characters": [4, 6, 7],
       "action": "die",
-      "at": { "videoTime": 68 }
+      "at": { "videoTime": 63 }
     },
     {
       "characters": [8, 9],
       "action": "die",
-      "at": { "videoTime": 69 }
+      "at": { "videoTime": 65 }
     },
     {
       "characters": [12, 13, 14],
       "action": "die",
-      "at": { "videoTime": 70 }
+      "at": { "videoTime": 65 }
     },
     {
       "characters": [15, 16],
       "action": "die",
-      "at": { "videoTime": 71 }
+      "at": { "videoTime": 66 }
     },
     {
       "characters": [17, 19, 20],
       "action": "die",
-      "at": { "videoTime": 72 }
+      "at": { "videoTime": 67 }
     },
     {
       "characters": [21, 22],
       "action": "die",
-      "at": { "videoTime": 73 }
+      "at": { "videoTime": 68 }
     },
     {
       "characters": [23, 24, 25],
       "action": "die",
-      "at": { "videoTime": 74 }
+      "at": { "videoTime": 69 }
     },
     {
       "characters": [26, 27],
       "action": "die",
-      "at": { "videoTime": 75 }
+      "at": { "videoTime": 70 }
     },
     {
       "characters": [28, 29, 30],
       "action": "die",
-      "at": { "videoTime": 76 }
+      "at": { "videoTime": 71 }
     },
     {
       "characters": [31, 32],
       "action": "die",
-      "at": { "videoTime": 77 }
+      "at": { "videoTime": 72 }
     },
     {
       "characters": [33, 34, 35],
       "action": "die",
-      "at": { "videoTime": 78 }
+      "at": { "videoTime": 73 }
     },
     {
       "characters": [37, 38],
       "action": "die",
-      "at": { "videoTime": 79 }
+      "at": { "videoTime": 74 }
     },
     {
       "characters": [40, 41, 42],
       "action": "die",
-      "at": { "videoTime": 80 }
+      "at": { "videoTime": 75 }
     },
     {
       "characters": [43, 44],
       "action": "die",
-      "at": { "videoTime": 81 }
+      "at": { "videoTime": 76 }
     },
     {
       "characters": [45, 46, 47],
       "action": "die",
-      "at": { "videoTime": 82 }
+      "at": { "videoTime": 77 }
     },
     {
       "characters": [48, 49, 50],
       "action": "die",
-      "at": { "videoTime": 83 }
+      "at": { "videoTime": 78 }
     }
   ],
   "obits": {

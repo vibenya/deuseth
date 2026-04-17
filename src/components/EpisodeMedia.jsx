@@ -37,6 +37,7 @@ export default function EpisodeMedia({
   onOpenDrawer,
   onTimeUpdate,
   onSlideChange,
+  onVideoEnd,
   aliveCount,
   deadCount,
   keyboardEnabled = true,
@@ -158,6 +159,7 @@ export default function EpisodeMedia({
         const data = JSON.parse(e.data)
         if (data.event === 'onStateChange' && data.info === 0) {
           setVideoEnded(true)
+          onVideoEnd?.()
         }
         if (data.event === 'infoDelivery' && data.info?.currentTime != null) {
           onTimeUpdate?.(data.info.currentTime)
@@ -194,7 +196,7 @@ export default function EpisodeMedia({
   const canAdvanceEp = hasNext && !canAdvanceSlide && !canSkipVideo && !canSkipTokenville
 
   function handleAdvance() {
-    if (canSkipVideo) { setVideoEnded(true); onTimeUpdate?.(null) }
+    if (canSkipVideo) { setVideoEnded(true); onTimeUpdate?.(Infinity); onVideoEnd?.() }
     else if (canSkipTokenville) tvSkipRef.current?.()
     else if (canAdvanceSlide) goToSlide(mediaIndex + 1)
     else if (canAdvanceEp) episodeNav.onNext()
@@ -205,10 +207,13 @@ export default function EpisodeMedia({
 
   if (!showStarted) {
     return (
-      <div className="ep-player__media-block">
+      <div className="ep-player__media-block ep-player__media-block--start">
         <div className="ep-player__media">
           <div className="ep-player__media-inner">
-            <img className="ep-player__img" src="/images/share.jpg" alt="DEUS ETH" />
+            <picture>
+              <source media="(max-width: 768px)" srcSet="/images/hero-mob.jpg" />
+              <img className="ep-player__img" src="/images/share.jpg" alt="DEUS ETH" />
+            </picture>
           </div>
         </div>
         <div className="ep-player__media-overlay">
@@ -262,7 +267,7 @@ export default function EpisodeMedia({
                 autoPlay
                 playsInline
                 controls
-                onEnded={() => { setVideoEnded(true); onTimeUpdate?.(null) }}
+                onEnded={() => { setVideoEnded(true); onTimeUpdate?.(null); onVideoEnd?.() }}
                 onTimeUpdate={(e) => onTimeUpdate?.(e.target.currentTime)}
               >
                 {subtitles?.map(({ lang, label, src }) => (

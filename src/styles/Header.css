@@ -141,36 +141,27 @@
 .header__burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 @media (max-width: 768px) {
-  .header__burger { display: flex; }
+  /* Burger hidden — nav icons shown directly */
+  .header__burger { display: none !important; }
 
   .header__nav {
-    display: none;
-    position: absolute;
-    top: 48px;
-    right: 0;
-    left: 0;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     gap: 0;
-    margin-left: 0;
-    background: #fff;
-    border-top: 1px solid rgba(14,14,16,0.08);
-    padding: 6px 0;
-    z-index: 400;
+    margin-left: auto;
   }
-  .header__nav.is-open { display: flex; }
 
-  /* Stack vertically — dividers become horizontal */
+  /* Icon-only buttons on mobile */
+  .header__dash-label { display: none; }
+  .header__dash-btn {
+    padding: 0 12px;
+    height: 48px;
+  }
+  .header__dash-icon { width: 20px; height: 20px; }
+
   .header__nav .header__dash-btn + .header__dash-btn {
     border-left: none;
-    border-top: 1px solid rgba(14,14,16,0.06);
   }
-  .header__nav .header__dash-btn {
-    height: 44px;
-    padding: 0 20px;
-    gap: 10px;
-  }
-  .header__dash-icon { width: 18px; height: 18px; }
-  .header__dash-label { font-size: 12px; letter-spacing: 0.06em; }
 
   .header__title { display: none; }
 }
@@ -198,12 +189,7 @@
 }
 
 @media (max-width: 768px) {
-  .header--intro .header__nav {
-    background: #111;
-    border-top-color: rgba(255,255,255,0.1);
-  }
   .header--intro .header__nav .header__dash-btn + .header__dash-btn {
-    border-left: none;
-    border-top-color: rgba(255,255,255,0.08);
+    border-left-color: rgba(255,255,255,0.12);
   }
 }

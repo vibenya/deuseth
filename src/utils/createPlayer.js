@@ -1,27 +1,27 @@
 export function createPlayer(src, volume = 0.5, { debounce = 0 } = {}) {
   const audio = new Audio(src)
   audio.volume = volume
+  audio.preload = 'auto'
   let debounceTimer = null
-  const pending = new Set()
+  let delayTimer = null
 
   const play = (delayMs = 0) => {
     if (debounce > 0) {
       if (debounceTimer) return
       debounceTimer = setTimeout(() => { debounceTimer = null }, debounce)
     }
-    const t = setTimeout(() => {
-      pending.delete(t)
-      const clone = audio.cloneNode()
-      clone.volume = volume
-      clone.play().catch(() => {})
-      clone.addEventListener('ended', () => { clone.src = '' }, { once: true })
+    clearTimeout(delayTimer)
+    delayTimer = setTimeout(() => {
+      audio.currentTime = 0
+      audio.play().catch(() => {})
     }, delayMs)
-    pending.add(t)
   }
 
   const cancel = () => {
-    pending.forEach(clearTimeout)
-    pending.clear()
+    clearTimeout(delayTimer)
+    delayTimer = null
+    audio.pause()
+    audio.currentTime = 0
     clearTimeout(debounceTimer)
     debounceTimer = null
   }

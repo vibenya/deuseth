@@ -12,6 +12,7 @@ export default function Adventures() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const { episodePath } = useParams()
   const [showStarted, setShowStarted] = useState(!!episodePath)
+  const [introVideoEnded, setIntroVideoEnded] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function Adventures() {
     const ep = episodes.find(e => e.id === id)
     if (ep) {
       setActiveId(id)
+      setIntroVideoEnded(false)
       setDrawerOpen(false)
       navigate(`/adventures/${ep.slug}`)
     }
@@ -53,12 +55,14 @@ export default function Adventures() {
     if (hasPrev) handleChangeEpisode(episodes[activeIdx - 1].id)
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
+  const isIntro = activeId === 0 && showStarted && !introVideoEnded
+
   return (
-    <div className={`adventures adventures--fullscreen${activeId === 0 && showStarted ? ' adventures--intro' : ''}`}>
+    <div className={`adventures adventures--fullscreen${isIntro ? ' adventures--intro' : ''}`}>
       {/* Mobile top bar */}
       <div className="adventures__topbar-mobile">
         <Header
-          variant={activeId === 0 && showStarted ? 'intro' : undefined}
+          variant={isIntro ? 'intro' : undefined}
           episode={activeEpisode}
         />
       </div>
@@ -76,10 +80,11 @@ export default function Adventures() {
             setShowStarted(true)
             if (activeEpisode) navigate(`/adventures/${activeEpisode.slug}`)
           }}
+          onVideoEnd={() => setIntroVideoEnded(true)}
           topbarSlot={
             <Header
               inline
-              variant={activeId === 0 && showStarted ? 'intro' : undefined}
+              variant={isIntro ? 'intro' : undefined}
             />
           }
           episodeNav={{

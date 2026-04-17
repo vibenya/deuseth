@@ -206,11 +206,11 @@ export default function Lore() {
       {/* ---------- Map ---------- */}
       <div className="lore__map-wrap">
         <img
-          src="/images/episodes/map@2x.jpg"
+          src="/images/exhibits/exhibit-d1-pitch-tokenville.jpg"
           alt="Map of the Orphant Lands"
           className="lore__map"
         />
-        <span className="lore__map-caption">The Orphant Lands — where the first awakened tokens were born</span>
+        <span className="lore__map-caption">Tokenville before the destruction — the lost capital of the token civilization</span>
       </div>
 
       {/* ---------- Article ---------- */}
@@ -276,7 +276,7 @@ export default function Lore() {
             societies, beliefs, sciences, culture.
           </p>
           <LoreImage
-            src="/images/scheme_x50.png"
+            src="/images/exhibits/exhibit-creation-of-token.jpeg"
             alt="50 tokens"
             caption="Fifty unique tokens — each with a name, a story, and a fate"
           />

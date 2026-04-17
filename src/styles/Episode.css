@@ -748,6 +748,45 @@
   .ep-player__media-overlay .ep-player__title { font-size: 20px; }
 }
 
+/* Mobile start screen — fullscreen hero */
+@media (max-width: 768px) {
+  .ep-player__media-block--start {
+    position: absolute;
+    inset: 0;
+  }
+  .ep-player__media-block--start .ep-player__media {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    margin: 0;
+    background: transparent;
+  }
+  .ep-player__media-block--start .ep-player__media-inner {
+    position: absolute;
+    inset: 0;
+  }
+  .ep-player__media-block--start .ep-player__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .ep-player__media-block--start .ep-player__media-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: none;
+    z-index: 2;
+  }
+  .ep-player__right--hidden {
+    display: none;
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   /* Compact single-row control bar: title left, nav right */
