@@ -1,0 +1,230 @@
+/* ===== StageScene — three winners on white ===== */
+
+.stage-scene {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Pan down — camera starts above, slides down to characters at bottom */
+  transform: translateY(50%);
+  opacity: 0;
+  transition: transform 2.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 1.5s ease;
+}
+
+.stage-scene--revealed {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Embedded in media zone */
+.stage-scene--embedded {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 0;
+  transform: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.stage-scene--embedded.stage-scene--revealed {
+  transform: none;
+  opacity: 1;
+}
+
+.stage-scene--embedded .stage-scene__img--large {
+  max-height: 35vw;
+}
+
+.stage-scene--embedded .stage-scene__img--medium {
+  max-height: 28vw;
+}
+
+.stage-scene--embedded .stage-scene__img--small {
+  max-height: 23vw;
+}
+
+@media (min-width: 601px) {
+  .stage-scene--embedded .stage-scene__img--large {
+    max-height: 22vw;
+  }
+
+  .stage-scene--embedded .stage-scene__img--medium {
+    max-height: 17vw;
+  }
+
+  .stage-scene--embedded .stage-scene__img--small {
+    max-height: 14vw;
+  }
+}
+
+/* Row of characters, aligned at feet */
+.stage-scene__characters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6vw;
+  padding: 0 5vw 5vh;
+}
+
+/* Figure wraps one character image — bubble is positioned from this */
+.stage-scene__figure {
+  position: relative;
+  display: inline-block;
+}
+
+/* Character image */
+.stage-scene__img {
+  display: block;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+.stage-scene__img--large {
+  max-height: 35vh;
+}
+
+.stage-scene__img--medium {
+  max-height: 27vh;
+}
+
+.stage-scene__img--small {
+  max-height: 23vh;
+}
+
+/* ===== Bubble — absolutely positioned above figure ===== */
+.stage-scene__bubble {
+  position: absolute;
+  bottom: calc(100% + 16px);
+  background: #fff;
+  border: 1.5px solid #1a1a2e;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-family: var(--al, serif);
+  font-size: 15px;
+  line-height: 1.4;
+  color: #1a1a2e;
+  width: max-content;
+  max-width: 80vw;
+  z-index: 10;
+  pointer-events: none;
+  animation: stageBubblePop 0.25s ease;
+}
+
+@keyframes stageBubblePop {
+  from { opacity: 0; scale: 0.9; }
+  to   { opacity: 1; scale: 1; }
+}
+
+/* --- Center (Danko): centered above head --- */
+.stage-scene__bubble--center {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.stage-scene__bubble--center::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.stage-scene__bubble--center::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #fff;
+  z-index: 1;
+}
+
+/* --- Left (Harold): tail points to head center, bubble grows right --- */
+.stage-scene__bubble--left {
+  left: 50%;
+  transform: translateX(-20px);
+  text-align: left;
+}
+
+.stage-scene__bubble--left::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 12px;
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.stage-scene__bubble--left::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 13px;
+  border: 7px solid transparent;
+  border-top-color: #fff;
+  z-index: 1;
+}
+
+/* --- Right (Lucy): tail points to head center, bubble grows left --- */
+.stage-scene__bubble--right {
+  right: 50%;
+  transform: translateX(20px);
+  text-align: right;
+}
+
+.stage-scene__bubble--right::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 12px;
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.stage-scene__bubble--right::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 13px;
+  border: 7px solid transparent;
+  border-top-color: #fff;
+  z-index: 1;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .stage-scene__characters {
+    gap: 5vw;
+    padding: 0 3vw 3vh;
+  }
+
+  .stage-scene__img--large {
+    max-height: 30vh;
+  }
+
+  .stage-scene__img--medium {
+    max-height: 24vh;
+  }
+
+  .stage-scene__img--small {
+    max-height: 20vh;
+  }
+
+  .stage-scene__bubble {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
