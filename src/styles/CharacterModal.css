@@ -49,6 +49,7 @@
   color: var(--cm-ink);
   font-family: var(--alsans);
   overflow: hidden;
+  /* close button is positioned relative to panel */
   transform: translateY(24px);
   opacity: 0;
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -92,7 +93,6 @@
 /* Status-dependent palette tweaks */
 .cm-panel--dead .cm-stage__spot,
 .cm-panel--dead .cm-panel::before { opacity: 0.25; }
-.cm-panel--dead .cm-stage__figure { filter: grayscale(0.85) brightness(0.75); }
 
 .cm-panel--died-now .cm-stage__spot {
   background: radial-gradient(circle, rgba(255, 106, 90, 0.35) 0%, transparent 60%);
@@ -128,10 +128,24 @@
   transform: rotate(90deg);
 }
 
+/* ===== SCROLL CONTAINER ============================== */
+.cm-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cm-rule) transparent;
+}
+.cm-scroll::-webkit-scrollbar { width: 6px; }
+.cm-scroll::-webkit-scrollbar-thumb {
+  background: var(--cm-rule);
+  border-radius: 3px;
+}
+.cm-scroll::-webkit-scrollbar-thumb:hover { background: var(--cm-ink-dim); }
+
 /* ===== STAGE (hero area) ============================= */
 .cm-stage {
   position: relative;
-  flex-shrink: 0;
   padding: 26px 28px 22px;
   text-align: center;
   border-bottom: 1px solid var(--cm-rule);
@@ -208,8 +222,8 @@
 /* Figure on pedestal */
 .cm-stage__figure-wrap {
   position: relative;
-  width: 210px;
-  height: 230px;
+  width: 280px;
+  height: 320px;
   margin: 6px auto 18px;
   display: flex;
   align-items: flex-end;
@@ -228,8 +242,8 @@
 }
 .cm-stage__figure {
   position: relative;
-  max-width: 170px;
-  max-height: 210px;
+  max-width: 260px;
+  max-height: 300px;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.55));
@@ -372,19 +386,8 @@
 
 /* ===== BODY ========================================== */
 .cm-body {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
   padding: 24px 28px 40px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--cm-rule) transparent;
 }
-.cm-body::-webkit-scrollbar { width: 6px; }
-.cm-body::-webkit-scrollbar-thumb {
-  background: var(--cm-rule);
-  border-radius: 3px;
-}
-.cm-body::-webkit-scrollbar-thumb:hover { background: var(--cm-ink-dim); }
 
 .cm-pane[hidden] { display: none; }
 .cm-pane {
@@ -758,8 +761,8 @@
   }
   .cm-panel--in { transform: translateX(0); }
   .cm-stage { padding: 34px 30px 22px; }
-  .cm-stage__figure-wrap { width: 220px; height: 240px; }
-  .cm-stage__figure { max-height: 220px; }
+  .cm-stage__figure-wrap { width: 300px; height: 340px; }
+  .cm-stage__figure { max-width: 280px; max-height: 320px; }
   .cm-stage__name { font-size: 36px; }
 }
 
@@ -800,8 +803,8 @@
     height: 40px;
   }
   .cm-stage { padding: 48px 22px 20px; }
-  .cm-stage__figure-wrap { width: 180px; height: 200px; margin-bottom: 14px; }
-  .cm-stage__figure { max-width: 150px; max-height: 180px; }
+  .cm-stage__figure-wrap { width: 260px; height: 300px; margin-bottom: 14px; }
+  .cm-stage__figure { max-width: 240px; max-height: 280px; }
   .cm-stage__name { font-size: 30px; }
   .cm-body { padding: 20px 22px 60px; }
   .cm-bio { font-size: 15px; }

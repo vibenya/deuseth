@@ -185,6 +185,9 @@ export default function CharacterModal({ character, status, episode, onClose }) 
           </svg>
         </button>
 
+        {/* ===== FULL SCROLL CONTAINER ===== */}
+        <div className="cm-scroll">
+
         {/* ===== HERO STAGE ===== */}
         <header className="cm-stage">
           <div className="cm-stage__backdrop" aria-hidden="true">
@@ -199,7 +202,7 @@ export default function CharacterModal({ character, status, episode, onClose }) 
           <div className="cm-stage__figure-wrap">
             <div className="cm-stage__pedestal" aria-hidden="true" />
             <img
-              src={character.preview}
+              src={character.preview.replace('/images/characters/outlined_', '/images/characters/full/full_')}
               alt={character.name}
               className="cm-stage__figure"
               draggable="false"
@@ -247,7 +250,7 @@ export default function CharacterModal({ character, status, episode, onClose }) 
           </div>
         )}
 
-        {/* ===== SCROLLABLE BODY ===== */}
+        {/* ===== BODY ===== */}
         <div className="cm-body">
 
           {/* IDENTITY */}
@@ -413,6 +416,8 @@ export default function CharacterModal({ character, status, episode, onClose }) 
           )}
 
         </div>
+
+        </div>{/* cm-scroll */}
       </aside>
     </div>,
     document.body

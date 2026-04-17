@@ -55,14 +55,14 @@ export default function Adventures() {
     if (hasPrev) handleChangeEpisode(episodes[activeIdx - 1].id)
   }, [episodes, activeIdx, hasPrev, handleChangeEpisode])
 
-  const isIntro = activeId === 0 && showStarted && !introVideoEnded
+  const isDarkEpisode = (activeId === 0 || activeId === 9) && showStarted && !introVideoEnded
 
   return (
-    <div className={`adventures adventures--fullscreen${isIntro ? ' adventures--intro' : ''}`}>
+    <div className={`adventures adventures--fullscreen${isDarkEpisode ? ' adventures--intro' : ''}`}>
       {/* Mobile top bar */}
       <div className="adventures__topbar-mobile">
         <Header
-          variant={isIntro ? 'intro' : undefined}
+          variant={isDarkEpisode ? 'intro' : undefined}
           episode={activeEpisode}
         />
       </div>
@@ -84,7 +84,7 @@ export default function Adventures() {
           topbarSlot={
             <Header
               inline
-              variant={isIntro ? 'intro' : undefined}
+              variant={isDarkEpisode ? 'intro' : undefined}
             />
           }
           episodeNav={{
